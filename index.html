@@ -44,12 +44,31 @@
       "@type": "Organization",
       "@id": "https://bymou.space/#organization",
       "name": "BYMOU",
+      "alternateName": "BYMOU AI Creative Studio",
       "url": "https://bymou.space/",
-      "logo": "https://bymou.space/assets/logo/bymou-logo.png",
-      "image": "https://bymou.space/assets/images/og-image.png",
-      "description": "BYMOU is an AI creative studio in Marrakech, Morocco creating AI advertising, commercial production, luxury branding, hospitality, fashion and real estate campaigns.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://bymou.space/#logo",
+        "url": "https://bymou.space/assets/logo/bymou-logo.png",
+        "width": 1536,
+        "height": 1024
+      },
+      "image": {
+        "@id": "https://bymou.space/#primaryimage"
+      },
+      "description": "BYMOU is an AI creative studio and creative production studio in Marrakech, Morocco, creating AI advertising, cinematic commercial production, luxury branding, hospitality marketing, fashion campaigns, real estate marketing and product advertising for premium brands.",
       "founder": {
         "@id": "https://bymou.space/#founder"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "url": "https://bymou.space/#contact",
+        "contactType": "business inquiries",
+        "availableLanguage": [
+          "English",
+          "French",
+          "Italian"
+        ]
       },
       "sameAs": [
         "https://www.instagram.com/bymou.space/",
@@ -64,6 +83,8 @@
         "Hospitality Marketing",
         "Fashion Campaigns",
         "Real Estate Marketing",
+        "Product Advertising",
+        "Social Media Campaigns",
         "Marrakech",
         "Morocco"
       ]
@@ -74,16 +95,25 @@
       "name": "BYMOU",
       "jobTitle": "AI Creative Director",
       "image": "https://bymou.space/assets/images/founder-portrait.png",
-      "url": "https://bymou.space/#vision"
+      "url": "https://bymou.space/#vision",
+      "worksFor": {
+        "@id": "https://bymou.space/#organization"
+      }
     },
     {
       "@type": "LocalBusiness",
       "@id": "https://bymou.space/#localbusiness",
       "name": "BYMOU",
+      "alternateName": "BYMOU AI Creative Studio",
       "url": "https://bymou.space/",
-      "image": "https://bymou.space/assets/images/og-image.png",
-      "logo": "https://bymou.space/assets/logo/bymou-logo.png",
-      "description": "BYMOU is an AI creative studio in Marrakech, Morocco creating AI advertising, commercial production, luxury branding, hospitality, fashion and real estate campaigns.",
+      "image": {
+        "@id": "https://bymou.space/#primaryimage"
+      },
+      "logo": {
+        "@id": "https://bymou.space/#logo"
+      },
+      "description": "BYMOU is an AI creative studio and creative production studio in Marrakech, Morocco, creating AI advertising, cinematic commercial production, luxury branding, hospitality marketing, fashion campaigns, real estate marketing and product advertising for premium brands.",
+      "additionalType": "https://schema.org/ProfessionalService",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Marrakech",
@@ -95,44 +125,334 @@
           "name": "Morocco"
         },
         {
-          "@type": "Place",
+          "@type": "City",
           "name": "Marrakech"
         },
         {
           "@type": "Place",
-          "name": "Global"
+          "name": "Europe"
+        },
+        {
+          "@type": "Place",
+          "name": "Middle East"
+        },
+        {
+          "@type": "Place",
+          "name": "Global remote clients"
         }
       ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "url": "https://bymou.space/#contact",
+        "contactType": "business inquiries",
+        "availableLanguage": [
+          "English",
+          "French",
+          "Italian"
+        ]
+      },
       "sameAs": [
         "https://www.instagram.com/bymou.space/",
         "https://www.linkedin.com/in/mounia-el-oualid-6ba80b219/",
         "https://x.com/bymouuu"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@id": "https://bymou.space/#service-catalog"
+      }
     },
     {
       "@type": "ProfessionalService",
       "@id": "https://bymou.space/#professionalservice",
       "name": "BYMOU AI Creative Studio",
       "url": "https://bymou.space/",
-      "image": "https://bymou.space/assets/images/og-image.png",
-      "description": "BYMOU is an AI creative studio in Marrakech, Morocco creating AI advertising, commercial production, luxury branding, hospitality, fashion and real estate campaigns.",
+      "image": {
+        "@id": "https://bymou.space/#primaryimage"
+      },
+      "logo": {
+        "@id": "https://bymou.space/#logo"
+      },
+      "description": "BYMOU is an AI creative studio and creative production studio in Marrakech, Morocco, creating AI advertising, cinematic commercial production, luxury branding, hospitality marketing, fashion campaigns, real estate marketing and product advertising for premium brands.",
       "provider": {
         "@id": "https://bymou.space/#organization"
       },
       "areaServed": [
-        "Marrakech",
         "Morocco",
-        "Worldwide"
+        "Marrakech",
+        "Europe",
+        "Middle East",
+        "Global remote clients"
       ],
       "serviceType": [
-        "AI Advertising",
         "AI Commercial Production",
         "Luxury Branding",
+        "AI Fashion Campaigns",
         "Hospitality Marketing",
-        "Fashion Campaigns",
         "Real Estate Marketing",
-        "Creative Direction",
-        "Digital Experiences"
+        "Product Advertising",
+        "Social Media Campaigns"
+      ],
+      "hasOfferCatalog": {
+        "@id": "https://bymou.space/#service-catalog"
+      }
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://bymou.space/#service-catalog",
+      "name": "BYMOU Creative Production Services",
+      "description": "Service catalog for BYMOU AI creative studio and creative production work.",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "position": 1,
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://bymou.space/#service-1",
+            "name": "AI Commercial Production",
+            "description": "Cinematic AI commercial production for luxury, fashion, hospitality, real estate and product-led brands.",
+            "provider": {
+              "@id": "https://bymou.space/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Morocco"
+              },
+              {
+                "@type": "City",
+                "name": "Marrakech"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place",
+                "name": "Middle East"
+              },
+              {
+                "@type": "Place",
+                "name": "Global remote clients"
+              }
+            ],
+            "serviceType": "AI Commercial Production"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 2,
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://bymou.space/#service-2",
+            "name": "Luxury Branding",
+            "description": "Creative direction and luxury brand systems for premium visual identities and campaign worlds.",
+            "provider": {
+              "@id": "https://bymou.space/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Morocco"
+              },
+              {
+                "@type": "City",
+                "name": "Marrakech"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place",
+                "name": "Middle East"
+              },
+              {
+                "@type": "Place",
+                "name": "Global remote clients"
+              }
+            ],
+            "serviceType": "Luxury Branding"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 3,
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://bymou.space/#service-3",
+            "name": "AI Fashion Campaigns",
+            "description": "AI-powered fashion campaign concepts, films and visual assets for editorial and commercial launches.",
+            "provider": {
+              "@id": "https://bymou.space/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Morocco"
+              },
+              {
+                "@type": "City",
+                "name": "Marrakech"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place",
+                "name": "Middle East"
+              },
+              {
+                "@type": "Place",
+                "name": "Global remote clients"
+              }
+            ],
+            "serviceType": "AI Fashion Campaigns"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 4,
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://bymou.space/#service-4",
+            "name": "Hospitality Marketing",
+            "description": "Cinematic hospitality marketing for hotels, restaurants, destinations and premium guest experiences.",
+            "provider": {
+              "@id": "https://bymou.space/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Morocco"
+              },
+              {
+                "@type": "City",
+                "name": "Marrakech"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place",
+                "name": "Middle East"
+              },
+              {
+                "@type": "Place",
+                "name": "Global remote clients"
+              }
+            ],
+            "serviceType": "Hospitality Marketing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 5,
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://bymou.space/#service-5",
+            "name": "Real Estate Marketing",
+            "description": "High-end real estate marketing visuals, films and digital campaign assets for properties and developments.",
+            "provider": {
+              "@id": "https://bymou.space/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Morocco"
+              },
+              {
+                "@type": "City",
+                "name": "Marrakech"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place",
+                "name": "Middle East"
+              },
+              {
+                "@type": "Place",
+                "name": "Global remote clients"
+              }
+            ],
+            "serviceType": "Real Estate Marketing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 6,
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://bymou.space/#service-6",
+            "name": "Product Advertising",
+            "description": "Product advertising concepts, AI product visuals and commercial content for beauty, lifestyle and consumer brands.",
+            "provider": {
+              "@id": "https://bymou.space/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Morocco"
+              },
+              {
+                "@type": "City",
+                "name": "Marrakech"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place",
+                "name": "Middle East"
+              },
+              {
+                "@type": "Place",
+                "name": "Global remote clients"
+              }
+            ],
+            "serviceType": "Product Advertising"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 7,
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://bymou.space/#service-7",
+            "name": "Social Media Campaigns",
+            "description": "Social media campaign concepts, UGC-style content systems and short-form advertising assets.",
+            "provider": {
+              "@id": "https://bymou.space/#organization"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Morocco"
+              },
+              {
+                "@type": "City",
+                "name": "Marrakech"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place",
+                "name": "Middle East"
+              },
+              {
+                "@type": "Place",
+                "name": "Global remote clients"
+              }
+            ],
+            "serviceType": "Social Media Campaigns"
+          }
+        }
       ]
     },
     {
@@ -140,7 +460,7 @@
       "@id": "https://bymou.space/#website",
       "url": "https://bymou.space/",
       "name": "BYMOU",
-      "description": "BYMOU is an AI creative studio in Marrakech, Morocco creating AI advertising, commercial production, luxury branding, hospitality, fashion and real estate campaigns.",
+      "description": "BYMOU is an AI creative studio and creative production studio in Marrakech, Morocco, creating AI advertising, cinematic commercial production, luxury branding, hospitality marketing, fashion campaigns, real estate marketing and product advertising for premium brands.",
       "publisher": {
         "@id": "https://bymou.space/#organization"
       },
@@ -151,7 +471,7 @@
       "@id": "https://bymou.space/#webpage",
       "url": "https://bymou.space/",
       "name": "BYMOU — AI Creative Studio for Luxury Branding & Films",
-      "description": "BYMOU is an AI creative studio in Marrakech, Morocco creating AI advertising, commercial production, luxury branding, hospitality, fashion and real estate campaigns.",
+      "description": "BYMOU is an AI creative studio and creative production studio in Marrakech, Morocco, creating AI advertising, cinematic commercial production, luxury branding, hospitality marketing, fashion campaigns, real estate marketing and product advertising for premium brands.",
       "isPartOf": {
         "@id": "https://bymou.space/#website"
       },
