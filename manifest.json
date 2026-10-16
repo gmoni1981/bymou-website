@@ -1,12 +1,12 @@
 {
-  "name": "BYMOU — AI Creative Studio",
+  "name": "BYMOU \u2014 Mounia El",
   "short_name": "BYMOU",
-  "description": "BYMOU is an AI creative studio in Marrakech, Morocco creating AI advertising, commercial production, luxury branding, hospitality, fashion and real estate campaigns.",
+  "description": "Creative direction, AI films and visual experiments by Mounia El.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#f2f0e9",
+  "theme_color": "#f2f0e9",
   "icons": [
     {
       "src": "assets/favicon/favicon-16x16.png",
