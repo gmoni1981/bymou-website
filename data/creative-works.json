@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "slug": "off-script",
+      "title": "Off Script",
+      "media": "/assets/works/off-script.webp",
+      "poster": "/assets/works/off-script.webp"
+    },
+    {
+      "slug": "just-one-thing",
+      "title": "Just One Thing",
+      "media": "/assets/works/just-one-thing.webp",
+      "poster": "/assets/works/just-one-thing.webp",
+      "video": "/assets/works/just-one-thing.mp4"
+    },
+    {
+      "slug": "critical-charge",
+      "title": "Critical Charge",
+      "media": "/assets/works/critical-charge.webp",
+      "poster": "/assets/works/critical-charge.webp",
+      "video": "/assets/works/critical-charge.mp4"
+    },
+    {
+      "slug": "no-comment",
+      "title": "No Comment",
+      "media": "/assets/works/no-comment.webp",
+      "poster": "/assets/works/no-comment.webp"
+    },
+    {
+      "slug": "soft-glass",
+      "title": "Soft Glass",
+      "media": "/assets/works/soft-glass.webp",
+      "poster": "/assets/works/soft-glass.webp"
+    },
+    {
+      "slug": "drag-to-direct",
+      "title": "Drag to Direct",
+      "media": "/assets/works/drag-to-direct.webp",
+      "poster": "/assets/works/drag-to-direct.webp"
+    }
+  ]
+}

@@ -6,10 +6,10 @@ This is the existing `gmoni1981/bymou-website` repository. The current site is s
 
 ```bash
 cd "/Users/mouni/Desktop/Mymou cotex/bymou-website"
-python3 -m http.server 3000 --bind 127.0.0.1
+python3 scripts/preview.py
 ```
 
-Open http://localhost:3000. The existing website root is this repository's `index.html`. Do not create a duplicate project. Production deployment requires the owner's explicit approval; no deployment is part of this redesign.
+Open http://localhost:3000. The local server supports HTTP byte ranges, required for paused-video seeking in the signature scroll. A basic Python 3.9 `http.server` can report a zero-length seekable range even after buffering video. The existing website root is this repository's `index.html`. Do not create a duplicate project. The owner explicitly authorized production deployment on 16 October 2026. The existing Cloudflare Pages project is `bymou-website`, connected to `gmoni1981/bymou-website` on `main`. Its static deployment serves the repository-root `index.html`; there is no generated build directory or framework build step.
 
 ## Current files
 
@@ -39,7 +39,7 @@ Browser checks covered real video playback, project navigation, filters, all thr
 
 ## Historical export notes
 
-The original export instructions below are retained as project history. The current editable source is the repository root described above. Keep existing hosting settings until deployment is explicitly approved.
+The original export instructions below are retained as project history. The current editable and deployed source is the repository root described above. The historical `BYMOU_WEBSITE_EXPORT` directory is not present or used by the current repository. Reuse the existing Cloudflare Pages project and domain mapping.
 
 ---
 

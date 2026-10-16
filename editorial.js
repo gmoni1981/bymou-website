@@ -24,6 +24,7 @@
 
   function applyLanguage() {
     document.documentElement.lang = language;
+    document.dispatchEvent(new CustomEvent('bymou:languagechange'));
     $$('[data-i18n]').forEach(element => {
       const key = element.dataset.i18n;
       const value = translate(key);
@@ -42,6 +43,7 @@
     $$('[data-i18n-label]').forEach(element => element.setAttribute('aria-label',translate(element.dataset.i18nLabel)));
     updateMotionButton();
     renderResources();
+    $$('[data-work-preview]').forEach(updatePreviewButton);
     if ($('#inquiry-result') && !$('#inquiry-result').hidden) $('[data-inquiry-status]').textContent = translate('contact.ready');
   }
   languageInput?.addEventListener('change', () => {
@@ -129,6 +131,9 @@
     if (['ArrowRight','ArrowLeft'].includes(event.key)) { event.preventDefault(); moveNotebook(event.key === 'ArrowRight'?1:-1); }
   });
 
+  // Social campaign sequences keep native swipe, with keyboard support.
+  $$('.campaign-carousel').forEach(track => track.addEventListener('keydown',event=>{if(event.target!==track||!['ArrowLeft','ArrowRight'].includes(event.key))return;event.preventDefault();track.scrollBy({left:(event.key==='ArrowRight'?1:-1)*track.clientWidth*.8,behavior:isPaused()?'instant':'smooth'});}));
+
   // No video is requested until needed; offscreen and background videos pause.
   function loadVideo(video) {
     if (video.dataset.src && !video.getAttribute('src')) { video.src = video.dataset.src; video.load(); }
@@ -145,6 +150,26 @@
     parent.addEventListener('pointerleave', () => pauseVideo(video));
     parent.addEventListener('focusin', () => playVideo(video));
     parent.addEventListener('focusout', () => pauseVideo(video));
+  });
+  function updatePreviewButton(button) {
+    const video=$('video',button.closest('.project'));
+    if(!video)return;
+    const playing=!video.paused&&!video.ended;
+    button.setAttribute('aria-pressed',String(playing));
+    const key=playing?'work.previewPause':'work.preview';
+    const copy=translate(key);
+    button.textContent=copy===key?(playing?'Pause preview':'Play preview'):copy;
+  }
+  $$('[data-work-preview]').forEach(button=>{
+    const video=$('video',button.closest('.project'));
+    if(!video)return;
+    button.addEventListener('click',()=>{
+      if(!video.paused&&!video.ended){video.pause();return;}
+      loadVideo(video);
+      if(video.ended)video.currentTime=0;
+      video.play().then(()=>video.parentElement.classList.add('is-playing')).catch(()=>{});
+    });
+    ['play','pause','ended'].forEach(event=>video.addEventListener(event,()=>updatePreviewButton(button)));
   });
   const ambient = $$('[data-ambient-video]');
   const videoObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {

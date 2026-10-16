@@ -1,0 +1,30 @@
+#signature{position:relative;isolation:isolate;height:100svh;min-height:680px;background:var(--paper);scroll-margin-top:0;--entry-exit:0}
+html.entry-capable:not(.motion-paused) #signature{height:550svh;min-height:0}
+.signature-stage{position:relative;height:100svh;min-height:680px;overflow:clip;isolation:isolate;background:var(--paper)}
+html.entry-capable:not(.motion-paused) .signature-stage{position:sticky;top:0;min-height:0}
+#hero-composition{position:relative;z-index:1;will-change:transform,opacity}
+#signature-canvas{display:none;position:absolute;inset:0;z-index:2;width:100%;height:100%;pointer-events:none}
+#signature[data-entry-state=ready] #signature-canvas{display:block}
+#portal-anchor{position:absolute;right:4%;bottom:12%;width:clamp(220px,22vw,340px);aspect-ratio:16/9;z-index:3}
+#portal-anchor img{width:100%;height:100%;object-fit:contain;transform:rotate(-6deg)}
+#signature[data-entry-state=ready] #portal-anchor{visibility:hidden}
+#signature-progress{position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--olive);transform:scaleX(0);transform-origin:left;z-index:5}
+[data-skip-signature]{position:absolute;right:4%;top:100px;z-index:5;padding:9px 13px;background:#f2f0e9ee;color:var(--ink);font-size:10px;border:1px solid #24241f25}
+[data-entry-play]{position:absolute;right:4%;bottom:7%;z-index:5;padding:12px 18px;border:1px solid #f2f0e980;background:#24241fe8;color:var(--paper);font:11px var(--sans)}
+[data-entry-play]:focus-visible{outline:2px solid var(--paper);outline-offset:4px}
+.signature-outro{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--paper);opacity:var(--entry-exit);pointer-events:none;text-align:center;padding:40px}
+.signature-outro h2{font:400 clamp(60px,9vw,140px)/.95 var(--display);letter-spacing:-.035em;margin:24px 0 30px}.signature-outro .eyebrow{font-size:10px}.signature-outro a{pointer-events:none}#signature[data-entry-world=reveal] .signature-outro a{pointer-events:auto}#signature:not([data-entry-state=ready]) .signature-outro{display:none}
+html.motion-paused #signature,html.motion-paused .signature-stage{height:100svh;min-height:680px}html.motion-paused #signature-canvas{display:none}html.motion-paused #portal-anchor{visibility:visible}
+@media(max-width:700px){#signature,.signature-stage{min-height:660px}html.entry-capable:not(.motion-paused) #signature{height:450svh}#portal-anchor{right:5%;bottom:13%;width:clamp(155px,43vw,225px)}[data-skip-signature]{top:87px;right:5%;font-size:9px}[data-entry-play]{right:5%;bottom:7%;font-size:10px}.signature-outro{padding:25px}.signature-outro h2{font-size:20vw}}
+@media(prefers-reduced-motion:reduce){html.entry-capable #signature,#signature,.signature-stage{height:100svh;min-height:680px;position:relative}#signature-canvas{display:none!important}#portal-anchor{visibility:visible!important}#hero-composition{transform:none!important;opacity:1!important;will-change:auto}}
+
+/* Native, paused video is only a texture source. Scroll owns its timeline. */
+.scrub-media{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;clip-path:inset(50%)}
+.signature-stage::before{content:"";position:absolute;inset:0;background:#151513;opacity:var(--entry-dark,0);z-index:0;pointer-events:none}
+.film-scrub-hint{position:absolute;z-index:5;bottom:28px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;gap:25px;color:#fff;font:9px var(--sans);letter-spacing:.12em;text-shadow:0 1px 5px #000}
+.film-scrub-hint[hidden]{display:none}.film-timecode{font-variant-numeric:tabular-nums;white-space:nowrap}
+[data-load-scrub]{position:absolute;z-index:6;left:50%;bottom:18%;transform:translateX(-50%);padding:14px 20px;background:var(--paper);border:1px solid var(--ink);color:var(--ink);font:11px var(--sans);white-space:nowrap}
+#signature[data-entry-world=scrub] [data-skip-signature],#signature[data-entry-world=hold] [data-skip-signature]{opacity:1;pointer-events:auto}
+@media(max-width:700px){.film-scrub-hint{bottom:90px;font-size:7px;gap:15px}.film-timecode{font-size:9px}[data-load-scrub]{bottom:24%;font-size:9px}.signature-outro h2{font-size:20vw}}
+
+@media(min-width:701px){.film-scrub-hint{right:max(var(--gutter),155px)}}

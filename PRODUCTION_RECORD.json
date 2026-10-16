@@ -1,0 +1,189 @@
+{
+  "startingBalance": 179.28,
+  "ceiling": 50,
+  "images": [
+    {
+      "index": 1,
+      "job_id": "71df5b10-9d31-446e-b70e-a72b25192c09",
+      "status": "pending",
+      "slug": "off-script",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CkZCwJJ5zxrPI4d0A4jFrGXCQ8/hf_20261016_115446_71df5b10-9d31-446e-b70e-a72b25192c09.png"
+    },
+    {
+      "index": 2,
+      "job_id": "13ad0f7b-73f9-443c-af09-3f92eefea698",
+      "status": "pending",
+      "slug": "just-one-thing",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CkZCwJJ5zxrPI4d0A4jFrGXCQ8/hf_20261016_115445_13ad0f7b-73f9-443c-af09-3f92eefea698.png"
+    },
+    {
+      "index": 3,
+      "job_id": "7ee9b34f-ee3b-4b10-9e6b-26c41f16dc63",
+      "status": "pending",
+      "slug": "critical-charge",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CkZCwJJ5zxrPI4d0A4jFrGXCQ8/hf_20261016_115444_7ee9b34f-ee3b-4b10-9e6b-26c41f16dc63.png"
+    },
+    {
+      "index": 4,
+      "job_id": "22f87894-d3f3-4d62-8cad-312ace56ac61",
+      "status": "pending",
+      "slug": "no-comment",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CkZCwJJ5zxrPI4d0A4jFrGXCQ8/hf_20261016_115445_22f87894-d3f3-4d62-8cad-312ace56ac61.png"
+    },
+    {
+      "index": 5,
+      "job_id": "c76fff54-162e-4217-a3ae-cac25f43387b",
+      "status": "pending",
+      "slug": "soft-glass",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CkZCwJJ5zxrPI4d0A4jFrGXCQ8/hf_20261016_115445_c76fff54-162e-4217-a3ae-cac25f43387b.png"
+    },
+    {
+      "index": 6,
+      "job_id": "2a3f3495-6afe-4ff7-8d49-a8a6a0ec56b5",
+      "status": "pending",
+      "slug": "drag-to-direct",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CkZCwJJ5zxrPI4d0A4jFrGXCQ8/hf_20261016_115444_2a3f3495-6afe-4ff7-8d49-a8a6a0ec56b5.png"
+    }
+  ],
+  "imageParams": [
+    {
+      "index": 1,
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "A hyperreal contemporary independent fashion editorial photograph, horizontal 16:9. An unmistakable fictional adult digital character: deep brown freckled skin, very short platinum buzzcut, strong angular face, tailored charcoal blazer with one electric cobalt cuff. In a mundane dressing room, the woman stands three-quarter back to camera looking left, while her reflection in a large real wall mirror deliberately looks directly at the viewer with a calm knowing expression. Same recognizable face and clothing in reflection. Physically credible mirror geometry except this single impossible act of disobedience. Camera flash, real skin pores, candid contemporary magazine attitude, tactile scuffed floor and red tape mark, tight deliberate framing, striking photographic authorship. No beauty retouching, luxury interiors, architecture hero, logos, text, CGI, cartoon, collage or decorative objects.",
+        "max_credits": 2.75
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "A stunning hyperreal photograph for a contemporary experimental creative magazine. Ordinary small city grocery shop on an overcast day. A stylish adult shopper in a charcoal jacket stands deadpan by the open doorway holding one tiny lime. An impossibly long narrow white till receipt feeds from the checkout, cascades in crumpled supported folds across the threshold and winds along the sidewalk toward the foreground, tactile thin printed thermal paper with tiny illegible lines. Receipt is normal width, extreme length, clearly paper not silk. One cashier in the background calmly continues working. A vivid coral plastic shopping basket is the sole strong color accent. Low editorial viewpoint, direct flash mixed with daylight, credible street detail, delightful dry internet shopping humor, expensive fashion-magazine photography, 16:9 strong spatial composition. No readable brand text, no buildings as subject, no fantasy architecture, no giant person, no cartoon or CGI look.",
+        "max_credits": 2.75
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "An extraordinary hyperreal independent product advertising study, horizontal 16:9. Overhead close-up of an ordinary black smartphone lying on crinkled silver emergency foil on a cobalt blue worktable. Two anatomically correct adult hands wearing cobalt utility gloves carefully connect a real white USB-C cable from a compact smooth bright coral unbranded power bank to the phone, as if a nearly dead battery is being dramatically rescued. Phone screen black with a tiny red low-battery icon only, no words or invented brand. Sharp direct flash, hard convincing shadows, tactile foil, commercial macro clarity, precise real industrial design and functional connection points. Dry understated humor, contemporary Gen Z visual culture, striking coral blue silver palette. No medical claims, no blood, no toy ambulance, no cartoon, no floating props, no luxury packaging, no logo, no watermark.",
+        "max_credits": 2.75
+      }
+    },
+    {
+      "index": 4,
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "Hyperreal conceptual contemporary fashion editorial, horizontal 16:9. An adult woman with a sharp dark bob and natural skin texture stands confidently front-facing in a plain everyday charcoal studio wearing an impeccably tailored black oversized jacket whose shoulders and sleeves have been carefully constructed with hundreds of overlapping small ivory paper comment strips, black redaction bars and a few coral annotations. The physical paper strips are attached like dense sculptural feather-like tailoring, visibly weigh down the jacket, and make online opinion into tangible clothing. No legible text is needed. One strong hand-on-hip pose, dry self-possession, contemporary independent fashion magazine, direct flash, visible paper fibers, realistic garment construction and hands. Frame from knees upward with breathing room. Strong original conceptual fashion, not generic glamour. No luxury interior, silk, random floating objects, sci-fi interface, cartoon or plastic skin.",
+        "max_credits": 2.75
+      }
+    },
+    {
+      "index": 5,
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "A meticulous hyperreal impossible-material photographic experiment, horizontal 16:9, close-up on a charcoal everyday desk. A real unbranded smartphone rests flat, its solid brushed aluminum outer frame remains perfectly rigid. One natural adult hand with short unpainted nails gently pinches and lifts the continuous clear glass display from the top corner; the glass bends upward into one soft transparent curved flap like flexible glass while remaining connected to the phone. Display beneath is a clean electric coral gradient, no text. Single clear physically impossible material behavior, convincing optical refraction and glass edge highlights, realistic fingerprints and skin pores, crisp macro focus, direct editorial flash. Extraordinary tactile realism, elegant spare composition with dark negative space. No melted hands, extra fingers, shattered glass, flowing fabric, abstract sculpture, logos, packaging or CGI aesthetic.",
+        "max_credits": 2.75
+      }
+    },
+    {
+      "index": 6,
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "Hyperreal contemporary conceptual editorial photograph, horizontal 16:9. At dusk on an ordinary outdoor basketball court, a stylish adult in a sharply tailored dark outfit crouches and firmly grips a solid white computer arrow cursor prop, about 45 centimeters long, as a practical handheld lighting tool. The chunky familiar arrow is physically held with a believable grip, has weight, casts a real shadow, and directs one vivid electric coral triangular beam across the textured court surface toward a cobalt painted court line. The person looks thoughtfully where they are directing the light. A playful literalization of digital creative control, serious fashion art direction, low cinematic photographic angle, realistic skin and asphalt, direct flash, simple coherent single scene, no readable text. No floating UI panels, no generic futuristic city, no cartoon, no abstract geometry gallery, no luxury architecture.",
+        "max_credits": 2.75
+      }
+    }
+  ],
+  "videos": [
+    {
+      "index": 7,
+      "slug": "just-one-thing",
+      "params": {
+        "model": "kling3_0_turbo",
+        "duration": 5,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "max_credits": 10,
+        "medias": [
+          {
+            "role": "start_image",
+            "value": "13ad0f7b-73f9-443c-af09-3f92eefea698"
+          }
+        ],
+        "prompt": "Locked photographic camera. Preserve the exact original street, shopper, anatomy, shop and realistic photographic quality. The narrow thermal receipt slowly advances from the checkout and creeps another thirty centimeters across the sidewalk with small realistic paper crinkles. The adult shopper remains calm and nearly still, gently glancing down at the excessive receipt while holding the lime. A slight natural breeze moves only the receipt edges. Deadpan contemporary editorial, very subtle grounded movement. No camera cuts, no zoom, no new people, no changing face, no expanding paper width, no silk or liquid, no architecture transformation. End on a stable composition."
+      }
+    },
+    {
+      "index": 8,
+      "slug": "critical-charge",
+      "params": {
+        "model": "kling3_0_turbo",
+        "duration": 5,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "max_credits": 10,
+        "medias": [
+          {
+            "role": "start_image",
+            "value": "7ee9b34f-ee3b-4b10-9e6b-26c41f16dc63"
+          }
+        ],
+        "prompt": "Locked overhead macro advertising camera, no camera movement or cuts. Preserve exact phone, coral powerbank, blue gloved hands, cable and realistic foil material. The left hand gently finishes seating the existing USB-C plug into the phone, only a few millimeters of movement; the right hand holds the powerbank steady. Tiny foil crinkles respond naturally. The small red battery symbol on the black phone screen becomes a small green charging symbol without text. Subtle serious emergency rescue humor with real consumer electronics. Keep every finger anatomically stable, consistent device shapes and cable connectivity, no new objects, no logos, no dramatic transformation. End holding the connected composition."
+      }
+    }
+  ],
+  "videoJobs": {
+    "jobs": [
+      {
+        "index": 7,
+        "job_id": "5b9b0dc1-6666-45f8-a9be-88caf574d269",
+        "status": "pending"
+      },
+      {
+        "index": 8,
+        "job_id": "83e1fcca-53f9-4442-813c-2234d311b03b",
+        "status": "pending"
+      }
+    ],
+    "submitted_count": 2,
+    "failed_count": 0
+  },
+  "committedCredits": 36.5,
+  "finalBalance": 142.78,
+  "actualNewSpend": 36.5,
+  "unusedAuthorization": 13.5,
+  "status": "Complete; no further generation planned"
+}
