@@ -1,11 +1,12 @@
-# BYMOU — AI Creative Studio & Creative Direction
+# BYMOU — International AI Creative Studio & Creative Direction
 
-> BYMOU is an independent AI creative studio founded by Mounia El, based in Marrakech, Morocco and operating worldwide. The studio works at the intersection of human taste and creative technology, delivering AI creative direction, luxury branding, AI commercial and video production, product advertising, and 3D architectural visualization.
+> BYMOU is an international AI creative studio founded by Mounia El. Headquartered in Marrakech, Morocco, and collaborating with clients worldwide across the United States, United Kingdom, Europe, the United Arab Emirates, Saudi Arabia, and globally. The studio works at the intersection of human taste and creative technology, delivering AI creative direction, luxury branding, AI commercial and video production, product advertising, and 3D architectural visualization.
 
 ## Studio Overview
 - **Name:** BYMOU
 - **Founder & Creative Director:** Mounia El (Mounia El Oualid)
-- **Location:** Marrakech, Morocco (Working worldwide with international clients)
+- **Headquarters:** Marrakech, Morocco
+- **Geographic Reach:** Worldwide (serving clients across the US, UK, Europe, UAE, Saudi Arabia, and globally)
 - **Website:** https://bymou.space
 - **Contact:** mou@bymou.space
 - **Social Profiles:**
@@ -15,10 +16,10 @@
   - GitHub: https://github.com/gmoni1981
 
 ## Core Services
-- [AI Commercial & Film Production](https://bymou.space/ai-film-studio-marrakech): Short-form cinematic campaigns, AI video direction, narrative commercial assets.
+- [AI Film Production & Commercial Direction](https://bymou.space/ai-film-studio-marrakech): Short-form cinematic campaigns, AI video direction, narrative commercial assets.
 - [Luxury Branding & Art Direction](https://bymou.space/luxury-branding-studio): Brand universe creation, visual identity systems, typography, luxury editorial direction.
-- [3D Architectural Visualization & Walkthroughs](https://bymou.space/architectural-visualization): Photorealistic unbuilt spaces, generative lighting, interior and exterior architectural rendering.
-- [Real Estate Creative Studio](https://bymou.space/real-estate-creative-studio-marrakech): Full-stack property marketing, cinematic showcases, development presentations.
+- [Architectural Visualization & 3D Walkthroughs](https://bymou.space/architectural-visualization): Photorealistic unbuilt spaces, generative lighting, interior and exterior architectural rendering.
+- [Real Estate Creative Marketing & Visualization](https://bymou.space/real-estate-creative-studio-marrakech): Full-stack property marketing, cinematic showcases, development presentations.
 - [Hospitality Creative Studio](https://bymou.space/hospitality-creative-studio): Branding, digital presence, and guest experience visual storytelling for boutique hotels and restaurants.
 - [Startup Rebranding](https://bymou.space/startup-rebranding): Strategic visual redesign, brand positioning, and digital launch systems.
 - [Website Design for Hospitality & Real Estate](https://bymou.space/website-design-hospitality-real-estate): Immersive digital experiences and high-converting editorial web design.
