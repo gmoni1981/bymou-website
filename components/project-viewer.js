@@ -1,4 +1,5 @@
 import {campaignFilms} from '../data/campaign-films.js';
+import {selectedWork} from '../data/selected-work.js';
 
 export function createProjectViewer({reduced}) {
   const dialog = document.createElement('dialog');
@@ -571,13 +572,53 @@ export function createProjectViewer({reduced}) {
     }
   });
 
+  // Explicit Brand Background Artwork mapping
+  const brandProfiles = {
+    'casa-mirador': {
+      theme: 'casa',
+      bgImage: '/public/projects/casa-mirador/casa-gallery-bg.webp',
+      bgColor: '#dfd4c3',
+      name: 'Casa Mirador'
+    },
+    'elan-bakery': {
+      theme: 'elan',
+      bgImage: '/public/projects/elan-bakery/elan-gallery-bg.webp',
+      bgColor: '#f2ead9',
+      name: 'élan Pâtisserie'
+    },
+    'sable-glass-studio': {
+      theme: 'sable',
+      bgImage: '/public/projects/sable-glass-studio/sable-gallery-bg.webp',
+      bgColor: '#d0c4ac',
+      name: 'Sable Glass Studio'
+    },
+    'salt-and-silk': {
+      theme: 'salt',
+      bgImage: '/public/projects/salt-and-silk/salt-gallery-bg.webp',
+      bgColor: '#d8c2af',
+      name: 'Salt & Silk'
+    }
+  };
+
   return {
     get isOpen() { return dialog.open; },
-    open(project, trigger) {
-      if (dialog.open) return;
+    open(projectOrSlug, trigger) {
+      if (closing) {
+        animation?.kill();
+        closing = false;
+      }
+
+      let project = projectOrSlug;
+      if (typeof project === 'string') {
+        project = selectedWork.find(p => p.slug === project || p.id === project) || { slug: project };
+      } else if (project && project.slug && !project.images) {
+        const full = selectedWork.find(p => p.slug === project.slug);
+        if (full) project = { ...full, ...project };
+      }
+      if (!project) return;
+
       currentProject = project;
       opener = trigger instanceof HTMLElement ? trigger : document.activeElement;
-      closing = false;
       savedScrollY = window.scrollY;
 
       const lang = document.documentElement.lang || 'en';
@@ -588,19 +629,32 @@ export function createProjectViewer({reduced}) {
         ar: ['إغلاق النافذة', 'العودة إلى المشاريع', 'الدراسات البصرية', 'أفلام الحملة']
       }[lang] || ['Close window', 'Back to selected work', 'Visual Studies', 'Campaign Films'];
 
-      // Apply Individual Art Direction theme
-      dialog.dataset.theme = project.theme || 'casa';
+      // Apply Individual Art Direction theme & explicit brand background
+      const profile = brandProfiles[project.slug];
+      dialog.dataset.theme = profile ? profile.theme : (project.theme || 'casa');
+      dialog.dataset.project = project.slug;
+
+      if (profile) {
+        scroll.style.backgroundColor = profile.bgColor;
+        scroll.style.backgroundImage = `url('${profile.bgImage}')`;
+        scroll.style.backgroundRepeat = 'no-repeat';
+        scroll.style.backgroundPosition = 'top left';
+        scroll.style.backgroundSize = '100% auto';
+      } else {
+        scroll.style.backgroundColor = '';
+        scroll.style.backgroundImage = '';
+      }
 
       // Top Bar information
-      const projNum = project.number || '01';
+      const projNum = project.number || (selectedWork.findIndex(p => p.slug === project.slug) + 1).toString().padStart(2, '0');
       dialog.querySelector('[data-room-number]').textContent = `${projNum} / 04`;
       dialog.querySelector('[data-room-category]').textContent = project.category || project.title || 'Creative Direction';
-      dialog.querySelector('[data-room-name]').textContent = project.name || project.title;
+      dialog.querySelector('[data-room-name]').textContent = (profile && profile.name) || project.name || project.title;
       closeButton.setAttribute('aria-label', words[0]);
       returnBtn.querySelector('span:first-child').textContent = words[1];
 
       // Editorial Intro Block — Art-Directed Brand Backgrounds with Embedded Logos
-      const hasEmbeddedLogo = ['casa-mirador', 'elan-bakery', 'sable-glass-studio', 'salt-and-silk'].includes(project.slug);
+      const hasEmbeddedLogo = Boolean(profile);
       const logoSlot = dialog.querySelector('[data-brand-logo-slot]');
       const titleEl = dialog.querySelector('#project-room-title');
       const editorialHeader = dialog.querySelector('.project-editorial-header');
@@ -612,14 +666,7 @@ export function createProjectViewer({reduced}) {
         // We leave logoSlot empty and hide titleEl to remove duplicate logos and titles.
         logoSlot.innerHTML = '';
         titleEl.style.display = 'none';
-
-        const displayNames = {
-          'casa-mirador': 'Casa Mirador',
-          'elan-bakery': 'élan Pâtisserie',
-          'sable-glass-studio': 'Sable Glass Studio',
-          'salt-and-silk': 'Salt & Silk'
-        };
-        dialog.querySelector('[data-room-name]').textContent = displayNames[project.slug] || project.name || project.title;
+        dialog.querySelector('[data-room-name]').textContent = profile.name;
       } else {
         logoSlot.innerHTML = '';
         titleEl.style.display = '';
@@ -670,21 +717,23 @@ export function createProjectViewer({reduced}) {
       document.body.classList.add('project-window-open');
       document.dispatchEvent(new CustomEvent('bymou:vieweropen'));
 
-      dialog.showModal();
+      if (!dialog.open) {
+        dialog.showModal();
+        // Sophisticated entrance motion
+        if (!reduced.matches && window.gsap) {
+          animation = gsap.fromTo(dialog,
+            {opacity: 0, scale: 0.95, y: 20},
+            {opacity: 1, scale: 1, y: 0, duration: 0.38, ease: 'power3.out'}
+          );
+        } else {
+          dialog.style.opacity = '1';
+          dialog.style.transform = 'none';
+        }
+      }
+
       window.ByMouLocale?.localize(dialog);
       scroll.scrollTop = 0;
       closeButton.focus({preventScroll: true});
-
-      // Sophisticated entrance motion
-      if (!reduced.matches && window.gsap) {
-        animation = gsap.fromTo(dialog,
-          {opacity: 0, scale: 0.95, y: 20},
-          {opacity: 1, scale: 1, y: 0, duration: 0.38, ease: 'power3.out'}
-        );
-      } else {
-        dialog.style.opacity = '1';
-        dialog.style.transform = 'none';
-      }
     }
   };
 }

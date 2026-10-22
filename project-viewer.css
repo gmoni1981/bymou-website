@@ -26,7 +26,8 @@
 }
 
 /* 01. Casa Mirador — Warm Architectural Stone */
-.project-room[data-theme="casa"] {
+.project-room[data-theme="casa"],
+.project-room[data-project="casa-mirador"] {
   --proj-bg: #dfd4c3;
   --proj-bar-bg: #d4c7b4;
   --proj-text: #2a221a;
@@ -40,7 +41,8 @@
 }
 
 /* 02. Élan Pâtisserie — Warm Cream, Terracotta Orange & Deep Cocoa */
-.project-room[data-theme="elan"] {
+.project-room[data-theme="elan"],
+.project-room[data-project="elan-bakery"] {
   --proj-bg: #f2ead9;
   --proj-bar-bg: #eae0cd;
   --proj-text: #35221a;
@@ -54,7 +56,8 @@
 }
 
 /* 03. Sable Glass Studio — Translucent Olive Glass & Sand */
-.project-room[data-theme="sable"] {
+.project-room[data-theme="sable"],
+.project-room[data-project="sable-glass-studio"] {
   --proj-bg: #d0c4ac;
   --proj-bar-bg: #c4b79d;
   --proj-text: #1d2418;
@@ -68,7 +71,8 @@
 }
 
 /* 04. Salt & Silk — Light Chocolate-Brown & Natural Stone */
-.project-room[data-theme="salt"] {
+.project-room[data-theme="salt"],
+.project-room[data-project="salt-and-silk"] {
   --proj-bg: #cbba9f;
   --proj-bar-bg: #beac91;
   --proj-text: #2a1c15;
@@ -1178,7 +1182,8 @@ body.project-window-open {
 }
 
 /* 01. Casa Mirador — Warm Architectural Stone Brand Background */
-.project-room[data-theme="casa"] .project-room-scroll {
+.project-room[data-theme="casa"] .project-room-scroll,
+.project-room[data-project="casa-mirador"] .project-room-scroll {
   background-color: #dfd4c3;
   background-image: url('/public/projects/casa-mirador/casa-gallery-bg.webp');
   background-repeat: no-repeat;
@@ -1323,7 +1328,8 @@ body.project-window-open {
 }
 
 /* 02. Élan Pâtisserie — Cream & Terracotta Brand Background */
-.project-room[data-theme="elan"] .project-room-scroll {
+.project-room[data-theme="elan"] .project-room-scroll,
+.project-room[data-project="elan-bakery"] .project-room-scroll {
   background-color: #f2ead9;
   background-image: url('/public/projects/elan-bakery/elan-gallery-bg.webp');
   background-repeat: no-repeat;
@@ -1468,7 +1474,8 @@ body.project-window-open {
 }
 
 /* 03. Sable Glass Studio — Olive-Green Glass Brand Background */
-.project-room[data-theme="sable"] .project-room-scroll {
+.project-room[data-theme="sable"] .project-room-scroll,
+.project-room[data-project="sable-glass-studio"] .project-room-scroll {
   background-color: #d0c4ac;
   background-image: url('/public/projects/sable-glass-studio/sable-gallery-bg.webp');
   background-repeat: no-repeat;
@@ -1613,7 +1620,8 @@ body.project-window-open {
 }
 
 /* 04. Salt & Silk — Light Chocolate-Brown Brand Background */
-.project-room[data-theme="salt"] .project-room-scroll {
+.project-room[data-theme="salt"] .project-room-scroll,
+.project-room[data-project="salt-and-silk"] .project-room-scroll {
   background-color: #cbba9f;
   background-image: url('/public/projects/salt-and-silk/salt-gallery-bg.webp');
   background-repeat: no-repeat;
