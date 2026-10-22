@@ -599,31 +599,27 @@ export function createProjectViewer({reduced}) {
       closeButton.setAttribute('aria-label', words[0]);
       returnBtn.querySelector('span:first-child').textContent = words[1];
 
-      // Editorial Intro Block
-      const isElan = project.slug === 'elan-bakery';
-      const isSalt = project.slug === 'salt-and-silk';
+      // Editorial Intro Block — Art-Directed Brand Backgrounds with Embedded Logos
+      const hasEmbeddedLogo = ['casa-mirador', 'elan-bakery', 'sable-glass-studio', 'salt-and-silk'].includes(project.slug);
       const logoSlot = dialog.querySelector('[data-brand-logo-slot]');
       const titleEl = dialog.querySelector('#project-room-title');
       const editorialHeader = dialog.querySelector('.project-editorial-header');
 
-      editorialHeader.classList.toggle('is-elan-header', isElan);
-      editorialHeader.classList.toggle('is-salt-header', isSalt);
+      editorialHeader.classList.toggle('has-art-header', hasEmbeddedLogo);
 
-      if (isElan) {
-        // Élan: Logo is embedded directly in the background artwork at top-left.
-        // We leave logoSlot empty and hide titleEl to avoid duplicate logos/titles.
+      if (hasEmbeddedLogo) {
+        // Logo is already embedded directly in the brand background artwork at top-left.
+        // We leave logoSlot empty and hide titleEl to remove duplicate logos and titles.
         logoSlot.innerHTML = '';
         titleEl.style.display = 'none';
-        dialog.querySelector('[data-room-name]').textContent = 'élan Pâtisserie';
-      } else if (isSalt) {
-        // Salt & Silk: Authentic original handwritten wordmark & chocolate chips descriptor
-        logoSlot.innerHTML = `
-          <div class="salt-brand-header">
-            <img src="/public/projects/salt-and-silk/salt-silk-logo-ivory.webp" alt="Salt & Silk — Chocolate Covered Chips" class="salt-brand-logo-img" width="412" height="196">
-          </div>
-        `;
-        titleEl.style.display = 'none';
-        dialog.querySelector('[data-room-name]').textContent = 'Salt & Silk';
+
+        const displayNames = {
+          'casa-mirador': 'Casa Mirador',
+          'elan-bakery': 'élan Pâtisserie',
+          'sable-glass-studio': 'Sable Glass Studio',
+          'salt-and-silk': 'Salt & Silk'
+        };
+        dialog.querySelector('[data-room-name]').textContent = displayNames[project.slug] || project.name || project.title;
       } else {
         logoSlot.innerHTML = '';
         titleEl.style.display = '';

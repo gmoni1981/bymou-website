@@ -25,18 +25,18 @@
   --proj-card-bg: #e5dcce;
 }
 
-/* 01. Casa Mirador — Moroccan Terracotta Clay */
+/* 01. Casa Mirador — Warm Architectural Stone */
 .project-room[data-theme="casa"] {
-  --proj-bg: #a6442b;
-  --proj-bar-bg: #963b23;
-  --proj-text: #faf2ea;
-  --proj-muted: #e4beaf;
-  --proj-border: rgba(250, 242, 234, 0.16);
-  --proj-border-strong: rgba(250, 242, 234, 0.32);
-  --proj-pill-bg: rgba(250, 242, 234, 0.1);
-  --proj-pill-border: rgba(250, 242, 234, 0.26);
-  --proj-accent: #f2ad96;
-  --proj-card-bg: #b65239;
+  --proj-bg: #dfd4c3;
+  --proj-bar-bg: #d4c7b4;
+  --proj-text: #2a221a;
+  --proj-muted: #6e5844;
+  --proj-border: rgba(42, 34, 26, 0.16);
+  --proj-border-strong: rgba(42, 34, 26, 0.32);
+  --proj-pill-bg: rgba(42, 34, 26, 0.08);
+  --proj-pill-border: rgba(42, 34, 26, 0.24);
+  --proj-accent: #8e6843;
+  --proj-card-bg: rgba(223, 212, 195, 0.55);
 }
 
 /* 02. Élan Pâtisserie — Warm Cream, Terracotta Orange & Deep Cocoa */
@@ -45,40 +45,40 @@
   --proj-bar-bg: #eae0cd;
   --proj-text: #35221a;
   --proj-muted: #6b4d3c;
-  --proj-border: rgba(192, 91, 52, 0.16);
-  --proj-border-strong: rgba(192, 91, 52, 0.32);
+  --proj-border: rgba(192, 91, 52, 0.18);
+  --proj-border-strong: rgba(192, 91, 52, 0.35);
   --proj-pill-bg: rgba(192, 91, 52, 0.08);
-  --proj-pill-border: rgba(192, 91, 52, 0.24);
+  --proj-pill-border: rgba(192, 91, 52, 0.26);
   --proj-accent: #c05b34;
-  --proj-card-bg: #e9dfca;
+  --proj-card-bg: rgba(242, 234, 217, 0.55);
 }
 
-/* 03. Sable Glass Studio — Light Bottle Green / Translucent Olive Glass */
+/* 03. Sable Glass Studio — Translucent Olive Glass & Sand */
 .project-room[data-theme="sable"] {
-  --proj-bg: #c7d5c0;
-  --proj-bar-bg: #bacab3;
-  --proj-text: #182417;
-  --proj-muted: #4e624c;
-  --proj-border: rgba(24, 36, 23, 0.15);
-  --proj-border-strong: rgba(24, 36, 23, 0.3);
-  --proj-pill-bg: rgba(24, 36, 23, 0.08);
-  --proj-pill-border: rgba(24, 36, 23, 0.22);
-  --proj-accent: #33522f;
-  --proj-card-bg: #d4e0ce;
+  --proj-bg: #d0c4ac;
+  --proj-bar-bg: #c4b79d;
+  --proj-text: #1d2418;
+  --proj-muted: #4e5b41;
+  --proj-border: rgba(29, 36, 24, 0.16);
+  --proj-border-strong: rgba(29, 36, 24, 0.32);
+  --proj-pill-bg: rgba(29, 36, 24, 0.08);
+  --proj-pill-border: rgba(29, 36, 24, 0.24);
+  --proj-accent: #465b35;
+  --proj-card-bg: rgba(208, 196, 172, 0.55);
 }
 
-/* 04. Salt & Silk — Luxury Confectionery: Deep Chocolate, Warm Milk Chocolate & Soft Ivory */
+/* 04. Salt & Silk — Light Chocolate-Brown & Natural Stone */
 .project-room[data-theme="salt"] {
-  --proj-bg: #241914;
-  --proj-bar-bg: #1c130f;
-  --proj-text: #F2E9DB;
-  --proj-muted: #9B6A50;
-  --proj-border: rgba(155, 106, 80, 0.22);
-  --proj-border-strong: rgba(155, 106, 80, 0.42);
-  --proj-pill-bg: rgba(155, 106, 80, 0.12);
-  --proj-pill-border: rgba(155, 106, 80, 0.32);
-  --proj-accent: #D4A373;
-  --proj-card-bg: #2d1f19;
+  --proj-bg: #cbba9f;
+  --proj-bar-bg: #beac91;
+  --proj-text: #2a1c15;
+  --proj-muted: #6b4c37;
+  --proj-border: rgba(42, 28, 21, 0.16);
+  --proj-border-strong: rgba(42, 28, 21, 0.32);
+  --proj-pill-bg: rgba(42, 28, 21, 0.08);
+  --proj-pill-border: rgba(42, 28, 21, 0.24);
+  --proj-accent: #7a4628;
+  --proj-card-bg: rgba(203, 186, 159, 0.55);
 }
 
 /* --------------------------------------------------------------------------
@@ -1141,10 +1141,188 @@ body.project-window-open {
 }
 
 /* --------------------------------------------------------------------------
-   Élan Pâtisserie — Bespoke Editorial Brand Monograph Styles
-   Strictly scoped to [data-theme="elan"]
+   ART-DIRECTED BRAND BACKGROUNDS & EDITORIAL MONOGRAPH STYLES
+   - Casa Mirador: Warm architectural stone background with Casa Mirador logo
+   - Élan Pâtisserie: Cream and terracotta background with Élan logo
+   - Sable Glass Studio: Olive-green glass background with Sable logo
+   - Salt & Silk: Light chocolate-brown background with handwritten Salt & Silk logo
    -------------------------------------------------------------------------- */
 
+.project-editorial-header.has-art-header {
+  padding-top: clamp(140px, 15vw, 170px);
+}
+
+.project-room[data-theme="casa"] .project-editorial-header.has-art-header {
+  padding-top: clamp(130px, 13.5vw, 160px);
+}
+
+.project-room[data-theme="elan"] .project-editorial-header.has-art-header {
+  padding-top: clamp(150px, 15.5vw, 180px);
+}
+
+.project-room[data-theme="sable"] .project-editorial-header.has-art-header {
+  padding-top: clamp(155px, 16vw, 185px);
+}
+
+.project-room[data-theme="salt"] .project-editorial-header.has-art-header {
+  padding-top: clamp(175px, 18.5vw, 215px);
+}
+
+@media (max-width: 768px) {
+  .project-editorial-header.has-art-header {
+    padding-top: clamp(80px, 20vw, 105px);
+  }
+  .project-room[data-theme="salt"] .project-editorial-header.has-art-header {
+    padding-top: clamp(95px, 24vw, 120px);
+  }
+}
+
+/* 01. Casa Mirador — Warm Architectural Stone Brand Background */
+.project-room[data-theme="casa"] .project-room-scroll {
+  background-color: #dfd4c3;
+  background-image: url('/public/projects/casa-mirador/casa-gallery-bg.webp');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  color: #2a221a;
+}
+
+.project-room[data-theme="casa"] .proj-header-meta {
+  color: #8e6843;
+  margin-bottom: 6px;
+}
+
+.project-room[data-theme="casa"] .proj-kicker {
+  color: #8e6843;
+  letter-spacing: 0.22em;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+}
+
+.project-room[data-theme="casa"] .proj-year {
+  color: #6e5844;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+}
+
+.project-room[data-theme="casa"] .proj-narrative {
+  color: #2a221a;
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 620px;
+}
+
+.project-room[data-theme="casa"] .proj-pill {
+  background: rgba(42, 34, 26, 0.08);
+  border-color: rgba(42, 34, 26, 0.24);
+  color: #2a221a;
+  font-weight: 500;
+}
+
+.project-room[data-theme="casa"] .jump-pill.is-active {
+  background: #2a221a;
+  color: #dfd4c3;
+}
+
+.project-room[data-theme="casa"] .jump-badge {
+  background: rgba(142, 104, 67, 0.16);
+  color: #2a221a;
+}
+
+.project-room[data-theme="casa"] .jump-pill.is-active .jump-badge {
+  background: rgba(223, 212, 195, 0.25);
+  color: #dfd4c3;
+}
+
+.project-room[data-theme="casa"] .proj-section {
+  border-top-color: rgba(42, 34, 26, 0.18);
+}
+
+.project-room[data-theme="casa"] .proj-section-kicker {
+  color: #8e6843;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.project-room[data-theme="casa"] .proj-section-title {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(20px, 2.1vw, 25px);
+  color: #2a221a;
+  letter-spacing: 0.01em;
+}
+
+.project-room[data-theme="casa"] .proj-section-meta {
+  color: #6e5844;
+}
+
+.project-room[data-theme="casa"] .gallery-card-thumb {
+  background: rgba(223, 212, 195, 0.45);
+  border-color: rgba(42, 34, 26, 0.2);
+  box-shadow: 0 4px 16px -4px rgba(42, 34, 26, 0.08);
+}
+
+.project-room[data-theme="casa"] .gallery-card-thumb:hover {
+  border-color: #8e6843;
+  box-shadow: 0 10px 24px -4px rgba(142, 104, 67, 0.24);
+}
+
+.project-room[data-theme="casa"] .gallery-card-num {
+  color: #8e6843;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 600;
+}
+
+.project-room[data-theme="casa"] .gallery-card-title {
+  color: #2a221a;
+  font-size: 10.5px;
+}
+
+.project-room[data-theme="casa"] .film-card-thumb {
+  border-color: rgba(42, 34, 26, 0.24);
+}
+
+.project-room[data-theme="casa"] .film-format-tag {
+  background: rgba(42, 34, 26, 0.88);
+  border-color: rgba(223, 212, 195, 0.25);
+  color: #dfd4c3;
+}
+
+.project-room[data-theme="casa"] .film-play-badge {
+  background: rgba(42, 34, 26, 0.88);
+  border-color: rgba(142, 104, 67, 0.5);
+  color: #dfd4c3;
+}
+
+.project-room[data-theme="casa"] .film-play-badge .play-arrow {
+  color: #8e6843;
+}
+
+.project-room[data-theme="casa"] .film-card-title {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  color: #2a221a;
+}
+
+.project-room[data-theme="casa"] .film-card-num {
+  color: #8e6843;
+}
+
+.project-room[data-theme="casa"] .page-num-btn.is-active {
+  background: #8e6843;
+  border-color: #8e6843;
+  color: #dfd4c3;
+}
+
+.project-room[data-theme="casa"] .page-arrow:hover:not(:disabled) {
+  border-color: #8e6843;
+  color: #8e6843;
+}
+
+/* 02. Élan Pâtisserie — Cream & Terracotta Brand Background */
 .project-room[data-theme="elan"] .project-room-scroll {
   background-color: #f2ead9;
   background-image: url('/public/projects/elan-bakery/elan-gallery-bg.webp');
@@ -1152,10 +1330,6 @@ body.project-window-open {
   background-position: top left;
   background-size: 100% auto;
   color: #35221a;
-}
-
-.project-room[data-theme="elan"] .project-editorial-header.is-elan-header {
-  padding-top: clamp(150px, 16vw, 185px);
 }
 
 .project-room[data-theme="elan"] .proj-header-meta {
@@ -1230,7 +1404,7 @@ body.project-window-open {
 }
 
 .project-room[data-theme="elan"] .gallery-card-thumb {
-  background: rgba(242, 234, 217, 0.35);
+  background: rgba(242, 234, 217, 0.45);
   border-color: rgba(192, 91, 52, 0.22);
   box-shadow: 0 4px 16px -4px rgba(53, 34, 26, 0.08);
 }
@@ -1293,85 +1467,214 @@ body.project-window-open {
   color: #c05b34;
 }
 
-/* --------------------------------------------------------------------------
-   Salt & Silk — Bespoke Confectionery Brand Monograph Styles
-   Strictly scoped to [data-theme="salt"]
-   -------------------------------------------------------------------------- */
+/* 03. Sable Glass Studio — Olive-Green Glass Brand Background */
+.project-room[data-theme="sable"] .project-room-scroll {
+  background-color: #d0c4ac;
+  background-image: url('/public/projects/sable-glass-studio/sable-gallery-bg.webp');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  color: #1d2418;
+}
 
+.project-room[data-theme="sable"] .proj-header-meta {
+  color: #465b35;
+  margin-bottom: 6px;
+}
+
+.project-room[data-theme="sable"] .proj-kicker {
+  color: #465b35;
+  letter-spacing: 0.22em;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+}
+
+.project-room[data-theme="sable"] .proj-year {
+  color: #4e5b41;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+}
+
+.project-room[data-theme="sable"] .proj-narrative {
+  color: #1d2418;
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 620px;
+}
+
+.project-room[data-theme="sable"] .proj-pill {
+  background: rgba(29, 36, 24, 0.08);
+  border-color: rgba(29, 36, 24, 0.24);
+  color: #1d2418;
+  font-weight: 500;
+}
+
+.project-room[data-theme="sable"] .jump-pill.is-active {
+  background: #1d2418;
+  color: #d0c4ac;
+}
+
+.project-room[data-theme="sable"] .jump-badge {
+  background: rgba(70, 91, 53, 0.16);
+  color: #1d2418;
+}
+
+.project-room[data-theme="sable"] .jump-pill.is-active .jump-badge {
+  background: rgba(208, 196, 172, 0.25);
+  color: #d0c4ac;
+}
+
+.project-room[data-theme="sable"] .proj-section {
+  border-top-color: rgba(29, 36, 24, 0.18);
+}
+
+.project-room[data-theme="sable"] .proj-section-kicker {
+  color: #465b35;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.project-room[data-theme="sable"] .proj-section-title {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(20px, 2.1vw, 25px);
+  color: #1d2418;
+  letter-spacing: 0.01em;
+}
+
+.project-room[data-theme="sable"] .proj-section-meta {
+  color: #4e5b41;
+}
+
+.project-room[data-theme="sable"] .gallery-card-thumb {
+  background: rgba(208, 196, 172, 0.45);
+  border-color: rgba(29, 36, 24, 0.2);
+  box-shadow: 0 4px 16px -4px rgba(29, 36, 24, 0.08);
+}
+
+.project-room[data-theme="sable"] .gallery-card-thumb:hover {
+  border-color: #465b35;
+  box-shadow: 0 10px 24px -4px rgba(70, 91, 53, 0.24);
+}
+
+.project-room[data-theme="sable"] .gallery-card-num {
+  color: #465b35;
+  font-family: 'Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 600;
+}
+
+.project-room[data-theme="sable"] .gallery-card-title {
+  color: #1d2418;
+  font-size: 10.5px;
+}
+
+.project-room[data-theme="sable"] .film-card-thumb {
+  border-color: rgba(29, 36, 24, 0.24);
+}
+
+.project-room[data-theme="sable"] .film-format-tag {
+  background: rgba(29, 36, 24, 0.88);
+  border-color: rgba(208, 196, 172, 0.25);
+  color: #d0c4ac;
+}
+
+.project-room[data-theme="sable"] .film-play-badge {
+  background: rgba(29, 36, 24, 0.88);
+  border-color: rgba(70, 91, 53, 0.5);
+  color: #d0c4ac;
+}
+
+.project-room[data-theme="sable"] .film-play-badge .play-arrow {
+  color: #465b35;
+}
+
+.project-room[data-theme="sable"] .film-card-title {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  color: #1d2418;
+}
+
+.project-room[data-theme="sable"] .film-card-num {
+  color: #465b35;
+}
+
+.project-room[data-theme="sable"] .page-num-btn.is-active {
+  background: #465b35;
+  border-color: #465b35;
+  color: #d0c4ac;
+}
+
+.project-room[data-theme="sable"] .page-arrow:hover:not(:disabled) {
+  border-color: #465b35;
+  color: #465b35;
+}
+
+/* 04. Salt & Silk — Light Chocolate-Brown Brand Background */
 .project-room[data-theme="salt"] .project-room-scroll {
-  background:
-    radial-gradient(ellipse 65% 50% at 90% 8%, rgba(155, 106, 80, 0.16) 0%, transparent 68%),
-    radial-gradient(ellipse 55% 45% at 8% 92%, rgba(212, 163, 115, 0.08) 0%, transparent 62%),
-    #241914;
-  color: #F2E9DB;
-}
-
-.project-room[data-theme="salt"] .salt-brand-header {
-  margin: 4px 0 16px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.project-room[data-theme="salt"] .salt-brand-logo-img {
-  width: clamp(230px, 24vw, 310px);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+  background-color: #cbba9f;
+  background-image: url('/public/projects/salt-and-silk/salt-gallery-bg.webp');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  color: #2a1c15;
 }
 
 .project-room[data-theme="salt"] .proj-header-meta {
-  color: #9B6A50;
+  color: #7a4628;
   margin-bottom: 6px;
 }
 
 .project-room[data-theme="salt"] .proj-kicker {
-  color: #9B6A50;
+  color: #7a4628;
   letter-spacing: 0.22em;
   font-family: 'Mono', monospace;
   font-size: 9.5px;
 }
 
 .project-room[data-theme="salt"] .proj-year {
-  color: #D4A373;
+  color: #6b4c37;
   font-family: 'Mono', monospace;
   font-size: 9.5px;
 }
 
 .project-room[data-theme="salt"] .proj-narrative {
-  color: rgba(242, 233, 219, 0.9);
+  color: #2a1c15;
   font-size: 15px;
   line-height: 1.65;
   max-width: 620px;
 }
 
 .project-room[data-theme="salt"] .proj-pill {
-  background: rgba(155, 106, 80, 0.12);
-  border-color: rgba(155, 106, 80, 0.32);
-  color: #F2E9DB;
+  background: rgba(42, 28, 21, 0.08);
+  border-color: rgba(42, 28, 21, 0.24);
+  color: #2a1c15;
   font-weight: 500;
 }
 
 .project-room[data-theme="salt"] .jump-pill.is-active {
-  background: #F2E9DB;
-  color: #241914;
+  background: #2a1c15;
+  color: #cbba9f;
 }
 
 .project-room[data-theme="salt"] .jump-badge {
-  background: rgba(155, 106, 80, 0.25);
-  color: #F2E9DB;
+  background: rgba(122, 70, 40, 0.16);
+  color: #2a1c15;
 }
 
 .project-room[data-theme="salt"] .jump-pill.is-active .jump-badge {
-  background: rgba(36, 25, 20, 0.25);
-  color: #241914;
+  background: rgba(203, 186, 159, 0.25);
+  color: #cbba9f;
 }
 
 .project-room[data-theme="salt"] .proj-section {
-  border-top-color: rgba(155, 106, 80, 0.22);
+  border-top-color: rgba(42, 28, 21, 0.18);
 }
 
 .project-room[data-theme="salt"] .proj-section-kicker {
-  color: #9B6A50;
+  color: #7a4628;
   font-family: 'Mono', monospace;
   font-size: 9.5px;
   letter-spacing: 0.22em;
@@ -1382,77 +1685,74 @@ body.project-window-open {
   font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
   font-weight: 400;
   font-size: clamp(20px, 2.1vw, 25px);
-  color: #F2E9DB;
+  color: #2a1c15;
   letter-spacing: 0.01em;
 }
 
 .project-room[data-theme="salt"] .proj-section-meta {
-  color: #9B6A50;
+  color: #6b4c37;
 }
 
 .project-room[data-theme="salt"] .gallery-card-thumb {
-  background: #2d1f19;
-  border-color: rgba(155, 106, 80, 0.25);
-  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.35);
+  background: rgba(203, 186, 159, 0.45);
+  border-color: rgba(42, 28, 21, 0.2);
+  box-shadow: 0 4px 16px -4px rgba(42, 28, 21, 0.08);
 }
 
 .project-room[data-theme="salt"] .gallery-card-thumb:hover {
-  border-color: #D4A373;
-  box-shadow: 0 10px 24px -4px rgba(212, 163, 115, 0.25);
+  border-color: #7a4628;
+  box-shadow: 0 10px 24px -4px rgba(122, 70, 40, 0.24);
 }
 
 .project-room[data-theme="salt"] .gallery-card-num {
-  color: #D4A373;
+  color: #7a4628;
   font-family: 'Mono', monospace;
   font-size: 9.5px;
   font-weight: 600;
 }
 
 .project-room[data-theme="salt"] .gallery-card-title {
-  color: #F2E9DB;
+  color: #2a1c15;
   font-size: 10.5px;
-  font-weight: 400;
 }
 
 .project-room[data-theme="salt"] .film-card-thumb {
-  border-color: rgba(155, 106, 80, 0.3);
+  border-color: rgba(42, 28, 21, 0.24);
 }
 
 .project-room[data-theme="salt"] .film-format-tag {
-  background: rgba(36, 25, 20, 0.9);
-  border-color: rgba(242, 233, 219, 0.25);
-  color: #F2E9DB;
+  background: rgba(42, 28, 21, 0.88);
+  border-color: rgba(203, 186, 159, 0.25);
+  color: #cbba9f;
+}
+
+.project-room[data-theme="salt"] .film-play-badge {
+  background: rgba(42, 28, 21, 0.88);
+  border-color: rgba(122, 70, 40, 0.5);
+  color: #cbba9f;
+}
+
+.project-room[data-theme="salt"] .film-play-badge .play-arrow {
+  color: #7a4628;
 }
 
 .project-room[data-theme="salt"] .film-card-title {
   font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
   font-weight: 400;
-  color: #F2E9DB;
+  color: #2a1c15;
 }
 
 .project-room[data-theme="salt"] .film-card-num {
-  color: #D4A373;
-}
-
-.project-room[data-theme="salt"] .film-play-badge {
-  background: rgba(36, 25, 20, 0.85);
-  border-color: rgba(212, 163, 115, 0.4);
-  color: #F2E9DB;
-}
-
-.project-room[data-theme="salt"] .film-card:hover .film-play-badge {
-  background: #D4A373;
-  border-color: #D4A373;
-  color: #241914;
+  color: #7a4628;
 }
 
 .project-room[data-theme="salt"] .page-num-btn.is-active {
-  background: #9B6A50;
-  border-color: #9B6A50;
-  color: #F2E9DB;
+  background: #7a4628;
+  border-color: #7a4628;
+  color: #cbba9f;
 }
 
 .project-room[data-theme="salt"] .page-arrow:hover:not(:disabled) {
-  border-color: #D4A373;
-  color: #D4A373;
+  border-color: #7a4628;
+  color: #7a4628;
 }
