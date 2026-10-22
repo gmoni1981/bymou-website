@@ -2,7 +2,7 @@ import {initWalkthroughShowcase} from './components/walkthrough-showcase.js';
 import {initWebsiteShowcase} from './components/website-showcase.js?v=210';
 import {initInterlude} from './components/editorial-interlude.js';
 import {heroSignaturePaths} from './components/hero-signature.js';
-import {initSelectedWork} from './components/selected-work.js?v=80';
+import {initSelectedWork} from './components/selected-work.js?v=100';
 const reduced=matchMedia('(prefers-reduced-motion:reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
 const gsap=window.gsap,ST=window.ScrollTrigger;
 const showcase=initSelectedWork({reduced});
