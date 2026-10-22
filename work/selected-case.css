@@ -12,3 +12,38 @@
 @media(max-width:700px){.case-nav{padding:14px 5vw}.case-nav-tools{gap:16px;font-size:10px}.case-cover{min-height:600px;height:92svh}.case-cover-image{width:90%;height:66%;align-self:start;margin-top:85px}.case-heading{bottom:36px}.case-heading h1{font-size:17vw}.case-sequence{padding:64px 5vw}.case-sequence-heading{margin-bottom:50px;gap:24px}.case-sequence-heading h2{font-size:27px}.case-sequence-heading .case-label{font-size:8px;text-align:right}.case-gallery{display:block}.case-figure,.case-figure:nth-child(3n+3){margin:0 0 64px}.case-figure:last-child{margin-bottom:0}.case-next{padding:64px 5vw}.case-next-inner{display:block}.case-next img{width:45vw;max-height:240px}.case-next h2{font-size:13vw}.case-footer{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 .case-heading>.case-label{font:italic 400 26px/1.2 Bodoni,Georgia;letter-spacing:-.02em;text-transform:none}.case-heading h1{font-size:clamp(56px,8.5vw,130px);max-width:1100px;text-wrap:balance}.case-next h2{text-wrap:balance}@media(max-width:700px){.case-heading h1{font-size:13vw}.case-heading>.case-label{font-size:21px}}
+
+/* Compact Contact Sheet Override for Static Case Pages */
+.case-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px 20px !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+}
+.case-figure, .case-figure:nth-child(3n+2), .case-figure:nth-child(3n+3) {
+  margin: 0 !important;
+  grid-column: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 4px !important;
+  padding: 8px !important;
+}
+.case-figure img {
+  width: 100% !important;
+  height: 260px !important;
+  object-fit: contain !important;
+  display: block !important;
+  cursor: zoom-in !important;
+}
+@media (max-width: 768px) {
+  .case-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px 14px !important;
+  }
+  .case-figure img {
+    height: 180px !important;
+  }
+}
