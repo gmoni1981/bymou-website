@@ -1,13 +1,514 @@
-/* Compact website recordings. All rules scoped to this section. */
-.websites{background:#eeeae1;color:#25251f;padding:38px 4vw 32px}
-.web-compact-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;max-width:1440px;margin:0 auto 22px;padding-top:18px;border-top:1px solid #bdb7ac}
-.web-compact-heading p{font:10px/1.5 Mono,monospace;text-transform:uppercase;letter-spacing:.14em;margin:0 0 8px}
-.web-compact-heading h2{font:400 clamp(28px,2.7vw,42px)/1.1 Bodoni,Georgia,serif;letter-spacing:-.03em;margin:0}
-.web-compact-heading>span{font:10px/1.6 Mono,monospace;margin-bottom:3px}
-.web-motion-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1440px;margin:auto}
-.web-motion-strip figure{margin:0;min-width:0}.web-motion-strip video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#10100e;pointer-events:none}
-.web-motion-strip figcaption{display:flex;align-items:baseline;gap:14px;padding:13px 0 9px;border-bottom:1px solid #bdb7ac}
-.web-motion-strip figcaption span:first-child{font:italic 13px Bodoni,Georgia,serif;color:#6c675f}
-.web-motion-strip figcaption span:last-child{font:400 clamp(20px,2vw,30px)/1.2 Bodoni,Georgia,serif;letter-spacing:-.02em}
-.web-motion-strip:focus-visible{outline:2px solid #6f4b38;outline-offset:5px}
-@media(max-width:700px){.websites{padding:27px 0 25px;overflow:hidden}.web-compact-heading{margin:0 6vw 20px;padding-top:15px;display:block}.web-compact-heading h2{font-size:30px}.web-compact-heading>span{display:none}.web-motion-strip{display:flex;overflow-x:auto;gap:18px;padding:0 6vw 8px;scroll-padding-inline:6vw;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none}.web-motion-strip::-webkit-scrollbar{display:none}.web-motion-strip figure{flex:0 0 88%;scroll-snap-align:start}.web-motion-strip figcaption span:last-child{font-size:25px}}
+/* ==========================================================================
+   BYMOU — Selected Digital Experiences (Websites Showcase)
+   High-end editorial layout for interactive web architecture
+   ========================================================================== */
+
+.websites {
+  background: #f0ece1;
+  color: #25251f;
+  padding: clamp(72px, 7vw, 120px) var(--gutter, 5vw) clamp(64px, 6vw, 100px);
+  position: relative;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(37, 37, 31, 0.12);
+}
+
+.web-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.web-editorial-header {
+  margin-bottom: clamp(40px, 4.5vw, 64px);
+}
+
+.web-header-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid rgba(37, 37, 31, 0.2);
+  padding-top: 18px;
+  font: 10px/1.5 Mono, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #635f56;
+}
+
+.web-header-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(32px, 4vw, 64px);
+  align-items: end;
+  margin-top: clamp(24px, 3vw, 36px);
+}
+
+.web-title {
+  font: 400 clamp(38px, 4.8vw, 76px)/1.02 Bodoni, Georgia, serif;
+  letter-spacing: -0.04em;
+  margin: 0;
+  color: #171613;
+}
+
+.web-header-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.web-lead {
+  font: 12px/1.8 Mono, monospace;
+  color: #4b473f;
+  margin: 0;
+  max-width: 520px;
+  letter-spacing: -0.01em;
+}
+
+.web-header-badges {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.web-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 9px/1.5 Mono, monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid rgba(37, 37, 31, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: #2e2b24;
+}
+
+.web-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.25);
+  animation: webPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes webPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.75;
+  }
+}
+
+/* Showcase Spreads (Editorial Rhythm) */
+.web-editorial-showcase {
+  display: flex;
+  flex-direction: column;
+}
+
+.web-project-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
+  gap: clamp(36px, 4.5vw, 80px);
+  align-items: center;
+  padding: clamp(52px, 6vw, 96px) 0;
+  border-top: 1px solid rgba(37, 37, 31, 0.14);
+  position: relative;
+}
+
+.web-project-spread.is-reversed {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.38fr);
+}
+
+.web-project-spread.is-reversed .web-device-window {
+  order: 2;
+}
+
+.web-project-spread.is-reversed .web-spec-sheet {
+  order: 1;
+}
+
+/* Minimalist Luxury Browser Frame */
+.web-device-window {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f0f0e;
+  border: 1px solid rgba(37, 37, 31, 0.16);
+  box-shadow: 0 20px 48px -8px rgba(24, 23, 19, 0.14), 0 4px 12px rgba(24, 23, 19, 0.05);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+  will-change: transform;
+}
+
+.web-project-spread:hover .web-device-window {
+  transform: translateY(-6px) scale(1.008);
+  box-shadow: 0 32px 76px -10px rgba(24, 23, 19, 0.22), 0 12px 28px -4px rgba(24, 23, 19, 0.09);
+  border-color: rgba(37, 37, 31, 0.32);
+}
+
+.web-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 38px;
+  padding: 0 16px;
+  background: #e8e3d8;
+  border-bottom: 1px solid rgba(37, 37, 31, 0.12);
+  user-select: none;
+}
+
+.web-window-dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  width: 50px;
+}
+
+.web-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(37, 37, 31, 0.22);
+  transition: background 0.3s ease;
+}
+
+.web-project-spread:hover .web-dot:nth-child(1) { background: #e06c60; }
+.web-project-spread:hover .web-dot:nth-child(2) { background: #e5b352; }
+.web-project-spread:hover .web-dot:nth-child(3) { background: #57b77d; }
+
+.web-url-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(37, 37, 31, 0.08);
+  border-radius: 6px;
+  font: 10px/1.4 Mono, monospace;
+  color: #3d3a33;
+  letter-spacing: 0.02em;
+}
+
+.web-lock-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.web-window-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50px;
+}
+
+.web-fps-badge {
+  font: 9px/1 Mono, monospace;
+  letter-spacing: 0.08em;
+  color: #7b766b;
+}
+
+/* Video Viewport: Trims black bars mathematically with zero distortion */
+.web-screen-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--aspect, 1.4);
+  overflow: hidden;
+  background: #000;
+}
+
+.web-screen-viewport video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+}
+
+.web-viewport-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 45%, rgba(0, 0, 0, 0.12) 100%);
+  mix-blend-mode: overlay;
+}
+
+/* Editorial Spec Sheet Column */
+.web-spec-sheet {
+  display: flex;
+  flex-direction: column;
+}
+
+.web-spec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(37, 37, 31, 0.14);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+
+.web-spec-index {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  font: 400 13px/1 Bodoni, Georgia, serif;
+  color: #79746b;
+}
+
+.web-num {
+  font: 400 26px/1 Bodoni, Georgia, serif;
+  color: #1a1916;
+  letter-spacing: -0.02em;
+}
+
+.web-num-sep,
+.web-num-total {
+  font: 11px/1 Mono, monospace;
+  color: #79746b;
+}
+
+.web-spec-discipline {
+  font: 10px/1.4 Mono, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #656056;
+}
+
+.web-spec-body {
+  margin-bottom: 28px;
+}
+
+.web-project-name {
+  font: 400 clamp(32px, 3.8vw, 56px)/1.04 Bodoni, Georgia, serif;
+  letter-spacing: -0.035em;
+  color: #171613;
+  margin: 0 0 10px;
+  transition: color 0.3s ease;
+}
+
+.web-project-spread:hover .web-project-name {
+  color: #050505;
+}
+
+.web-project-category {
+  font: 10px/1.5 Mono, monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #837d72;
+  margin: 0 0 20px;
+}
+
+.web-project-narrative {
+  font: 13px/1.85 Mono, monospace;
+  color: #3d3931;
+  margin: 0;
+  max-width: 490px;
+  letter-spacing: -0.01em;
+}
+
+.web-spec-bottom {
+  border-top: 1px solid rgba(37, 37, 31, 0.14);
+  padding-top: 24px;
+}
+
+.web-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.web-tag-item {
+  font: 9px/1.5 Mono, monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: 1px solid rgba(37, 37, 31, 0.18);
+  background: rgba(255, 255, 255, 0.4);
+  color: #38342d;
+  border-radius: 2px;
+}
+
+.web-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.web-domain-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.web-domain-label {
+  font: 8px/1.4 Mono, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8c867c;
+}
+
+.web-domain-val {
+  font: 11px/1.4 Mono, monospace;
+  letter-spacing: 0.04em;
+  color: #1e1d19;
+  font-weight: 500;
+}
+
+.web-explore-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 10px/1.4 Mono, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  background: #1f1e1a;
+  color: #f3efe6;
+  border-radius: 999px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.web-project-spread:hover .web-explore-pill {
+  background: var(--accent, #ff2e88);
+  color: #0b0b0b;
+  transform: translateY(-2px);
+}
+
+.web-arrow {
+  display: inline-block;
+  font-size: 12px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.web-project-spread:hover .web-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* RTL Support (Arabic) */
+[dir="rtl"] .web-header-meta,
+[dir="rtl"] .web-spec-top,
+[dir="rtl"] .web-action-row {
+  direction: rtl;
+}
+
+[dir="rtl"] .web-project-spread:hover .web-arrow {
+  transform: translate(-3px, -3px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .web-header-main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .web-project-spread,
+  .web-project-spread.is-reversed {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 44px 0;
+  }
+
+  .web-project-spread.is-reversed .web-device-window,
+  .web-project-spread.is-reversed .web-spec-sheet {
+    order: initial;
+  }
+
+  .web-spec-sheet {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 700px) {
+  .websites {
+    padding: 48px var(--gutter, 6vw) 44px;
+  }
+
+  .web-header-meta {
+    font-size: 9px;
+    padding-top: 14px;
+  }
+
+  .web-title {
+    font-size: clamp(34px, 9vw, 44px);
+  }
+
+  .web-lead {
+    font-size: 11px;
+    line-height: 1.75;
+  }
+
+  .web-window-bar {
+    height: 32px;
+    padding: 0 12px;
+  }
+
+  .web-window-dots {
+    width: 36px;
+    gap: 5px;
+  }
+
+  .web-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .web-url-pill {
+    padding: 3px 10px;
+    font-size: 9px;
+  }
+
+  .web-fps-badge {
+    font-size: 8px;
+  }
+
+  .web-project-name {
+    font-size: 32px;
+  }
+
+  .web-project-narrative {
+    font-size: 12px;
+  }
+
+  .web-action-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .web-explore-pill {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .web-device-window,
+  .web-explore-pill,
+  .web-arrow,
+  .web-dot {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .web-pulse-dot {
+    animation: none;
+  }
+}
