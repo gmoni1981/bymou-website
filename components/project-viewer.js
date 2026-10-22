@@ -1,11 +1,11 @@
 import {mountCampaignFilms} from './campaign-films.js';
 
-// Curate images into an editorial fashion/design magazine spread rhythm while strictly preserving order
-function groupIntoSpreads(images) {
+// Curate images into an editorial fashion & design publication rhythm
+function groupIntoEditorialSpreads(images) {
   const spreads = [];
   let i = 0;
 
-  // First image is always the Lead Opening Feature
+  // 1. Lead Opening Hero
   if (images.length > 0) {
     spreads.push({ type: 'lead', items: [images[0]], startIndex: 0 });
     i = 1;
@@ -13,38 +13,48 @@ function groupIntoSpreads(images) {
 
   while (i < images.length) {
     const cur = images[i];
-    const isCurPortrait = cur.height > cur.width;
     const next = images[i + 1];
-    const isNextPortrait = next ? (next.height > next.width) : false;
-    const third = images[i + 2];
-    const isThirdPortrait = third ? (third.height > third.width) : false;
+    const next2 = images[i + 2];
 
-    // 3 consecutive portraits -> Triptych rhythm
-    if (next && third && isCurPortrait && isNextPortrait && isThirdPortrait && (i % 4 === 1)) {
-      spreads.push({ type: 'triptych', items: [cur, next, third], startIndex: i });
+    const isCurPortrait = cur.height > cur.width * 1.1;
+    const isNextPortrait = next && (next.height > next.width * 1.1);
+    const isNext2Portrait = next2 && (next2.height > next2.width * 1.1);
+
+    // 3 portraits in a row -> Triptych
+    if (cur && next && next2 && isCurPortrait && isNextPortrait && isNext2Portrait) {
+      spreads.push({ type: 'triptych', items: [cur, next, next2], startIndex: i });
       i += 3;
     }
-    // 2 consecutive portraits -> Classic Diptyque (pair)
+    // 2 portraits or 2 square-ish -> Side by Side Pair
     else if (next && isCurPortrait && isNextPortrait) {
       spreads.push({ type: 'pair', items: [cur, next], startIndex: i });
       i += 2;
     }
-    // Portrait + Landscape or Landscape + Portrait -> Dynamic Asymmetric Pairing
+    // Portrait + Landscape or Landscape + Portrait -> Asymmetric pairing
     else if (next && (isCurPortrait !== isNextPortrait)) {
       spreads.push({ type: 'asymmetric', items: [cur, next], startIndex: i });
       i += 2;
     }
-    // Solo Landscape Panorama
-    else if (!isCurPortrait) {
+    // Strong landscape panorama
+    else if (cur.width >= cur.height * 1.25) {
       spreads.push({ type: 'landscape', items: [cur], startIndex: i });
       i += 1;
     }
-    // Solo Portrait Focus
-    else {
+    // Solo portrait feature
+    else if (isCurPortrait) {
       spreads.push({ type: 'portrait-solo', items: [cur], startIndex: i });
       i += 1;
     }
+    // Fallback: Pair if 2 available, otherwise single
+    else if (next) {
+      spreads.push({ type: 'pair', items: [cur, next], startIndex: i });
+      i += 2;
+    } else {
+      spreads.push({ type: 'lead', items: [cur], startIndex: i });
+      i += 1;
+    }
   }
+
   return spreads;
 }
 
@@ -57,41 +67,50 @@ export function createProjectViewer({reduced}) {
   dialog.innerHTML = `
     <header class="project-room-bar">
       <div class="project-bar-left">
-        <span class="project-room-num" data-room-number></span>
-        <span class="project-room-divider" aria-hidden="true">/</span>
-        <h2 id="project-room-title" class="project-bar-title"></h2>
+        <span class="project-room-num" data-room-number>01 / 04</span>
+        <span class="project-room-divider" aria-hidden="true">·</span>
+        <span class="project-room-category" data-room-category>Category</span>
       </div>
       <div class="project-bar-center">
-        <span class="project-room-counter" data-room-count aria-live="polite">01 / 01</span>
-        <button type="button" class="project-thumbs-toggle" aria-expanded="false" data-thumbs-btn>
-          <span class="thumbs-icon" aria-hidden="true">▦</span>
-          <span data-thumbs-label>Thumbnails</span>
-        </button>
+        <span class="project-room-name" data-room-name>Project</span>
       </div>
       <div class="project-bar-right">
-        <div class="project-bar-arrows" aria-label="Navigate images">
-          <button type="button" class="project-bar-prev" aria-label="Previous frame">←</button>
-          <button type="button" class="project-bar-next" aria-label="Next frame">→</button>
-        </div>
-        <button type="button" class="project-room-close" aria-label="Close gallery">×</button>
+        <span class="project-room-counter" data-room-count aria-live="polite">01 / 01</span>
+        <button type="button" class="project-room-close" aria-label="Close project window">×</button>
       </div>
     </header>
-    <div class="project-thumbs-drawer" hidden aria-label="Image thumbnail index">
-      <div class="project-thumbs-track"></div>
+
+    <div class="project-filmstrip" aria-label="Project images index">
+      <div class="project-filmstrip-track"></div>
     </div>
+
     <div class="project-room-scroll" tabindex="0">
-      <div class="project-room-intro">
-        <p class="project-intro-kicker" data-room-label></p>
-        <div class="project-intro-title-wrap">
-          <span class="project-intro-statement" data-room-heading></span>
-          <span class="project-intro-instruction" data-room-instruction></span>
+      <header class="project-editorial-header">
+        <div class="proj-header-meta">
+          <span class="proj-kicker" data-meta-kicker></span>
+          <span class="proj-year" data-meta-year>2026</span>
         </div>
-      </div>
+        <h1 id="project-room-title" class="proj-main-title"></h1>
+        <p class="proj-narrative" data-meta-intro></p>
+        <div class="proj-tags" data-meta-tags></div>
+      </header>
+
+      <div class="project-films-slot"></div>
+
       <div class="project-room-sequence"></div>
-      <footer class="project-room-end">
-        <button type="button" data-room-return>Back to selected work ↗</button>
+
+      <footer class="project-room-footer">
+        <div class="proj-footer-info">
+          <span class="proj-footer-sign">BYMOU / MOU GRASSO</span>
+          <p class="proj-footer-note">All images, direction and visual design © 2026 Mou Grasso.</p>
+        </div>
+        <button type="button" class="proj-return-btn" data-room-return>
+          <span>Back to selected work</span>
+          <span aria-hidden="true">↗</span>
+        </button>
       </footer>
     </div>
+
     <dialog class="project-lightbox" aria-label="Fullscreen image inspection" data-lenis-prevent>
       <div class="lightbox-bar">
         <span class="lightbox-index"></span>
@@ -112,13 +131,11 @@ export function createProjectViewer({reduced}) {
 
   const scroll = dialog.querySelector('.project-room-scroll');
   const sequence = dialog.querySelector('.project-room-sequence');
+  const filmsSlot = dialog.querySelector('.project-films-slot');
   const closeButton = dialog.querySelector('.project-room-close');
-  const thumbsToggle = dialog.querySelector('[data-thumbs-btn]');
-  const thumbsDrawer = dialog.querySelector('.project-thumbs-drawer');
-  const thumbsTrack = dialog.querySelector('.project-thumbs-track');
-  const barPrev = dialog.querySelector('.project-bar-prev');
-  const barNext = dialog.querySelector('.project-bar-next');
+  const filmstripTrack = dialog.querySelector('.project-filmstrip-track');
   const counter = dialog.querySelector('[data-room-count]');
+  const returnBtn = dialog.querySelector('[data-room-return]');
 
   // Lightbox elements
   const lightbox = dialog.querySelector('.project-lightbox');
@@ -136,30 +153,52 @@ export function createProjectViewer({reduced}) {
   let observer = null;
   let animation = null;
   let closing = false;
-  let overflow = '';
+  let savedScrollY = 0;
   let campaign = null;
 
   function close() {
     if (!dialog.open || closing) return;
     closing = true;
     animation?.kill();
-    const finish = () => dialog.close();
+    const finish = () => {
+      dialog.close();
+      // Restore scroll position cleanly without any page jump
+      window.scrollTo({top: savedScrollY, behavior: 'instant'});
+    };
     if (reduced.matches || !window.gsap) finish();
-    else animation = gsap.to(dialog, {opacity: 0, y: 20, duration: 0.3, ease: 'power2.in', onComplete: finish});
+    else {
+      animation = gsap.to(dialog, {
+        opacity: 0,
+        scale: 0.96,
+        y: 16,
+        duration: 0.28,
+        ease: 'power3.in',
+        onComplete: finish
+      });
+    }
   }
+
+  // Backdrop click closes dialog (when clicking outside the window on the backdrop)
+  dialog.addEventListener('click', e => {
+    const rect = dialog.getBoundingClientRect();
+    const isInDialog = (
+      rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+      rect.left <= e.clientX && e.clientX <= rect.left + rect.width
+    );
+    if (!isInDialog) close();
+  });
 
   dialog.addEventListener('cancel', e => { e.preventDefault(); close(); });
   closeButton.addEventListener('click', close);
-  dialog.querySelector('[data-room-return]').addEventListener('click', close);
+  returnBtn.addEventListener('click', close);
 
   dialog.addEventListener('close', () => {
     observer?.disconnect();
     campaign?.destroy();
     campaign = null;
-    thumbsDrawer.hidden = true;
-    thumbsToggle.setAttribute('aria-expanded', 'false');
     if (lightbox.open) lightbox.close();
-    document.body.style.overflow = overflow;
+    document.body.style.overflow = '';
+    document.body.classList.remove('project-window-open');
     document.dispatchEvent(new CustomEvent('bymou:viewerclose'));
     opener?.focus({preventScroll: true});
     closing = false;
@@ -198,28 +237,24 @@ export function createProjectViewer({reduced}) {
     else if (e.key === 'ArrowLeft') { e.preventDefault(); prevLightbox(); }
   });
 
-  // Thumbnails toggle
-  thumbsToggle.addEventListener('click', () => {
-    const isHidden = thumbsDrawer.hidden;
-    thumbsDrawer.hidden = !isHidden;
-    thumbsToggle.setAttribute('aria-expanded', String(isHidden));
-  });
-
-  // Previous / Next buttons in top bar (scroll by image)
-  barPrev.addEventListener('click', () => {
-    const figures = sequence.querySelectorAll('figure[data-frame]');
-    if (!figures.length) return;
-    const targetIdx = Math.max(0, currentImageIdx - 1);
-    const targetFig = sequence.querySelector(`figure[data-frame="${targetIdx + 1}"]`);
-    if (targetFig) targetFig.scrollIntoView({behavior: reduced.matches ? 'auto' : 'smooth', block: 'center'});
-  });
-
-  barNext.addEventListener('click', () => {
-    const figures = sequence.querySelectorAll('figure[data-frame]');
-    if (!figures.length) return;
-    const targetIdx = Math.min(totalImages - 1, currentImageIdx + 1);
-    const targetFig = sequence.querySelector(`figure[data-frame="${targetIdx + 1}"]`);
-    if (targetFig) targetFig.scrollIntoView({behavior: reduced.matches ? 'auto' : 'smooth', block: 'center'});
+  // Global arrow keys when window is focused
+  dialog.addEventListener('keydown', e => {
+    if (lightbox.open) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      const nextIdx = Math.min(totalImages - 1, currentImageIdx + 1);
+      const target = sequence.querySelector(`figure[data-frame="${nextIdx + 1}"]`);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({behavior: reduced.matches ? 'auto' : 'smooth', block: 'center'});
+      }
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      const prevIdx = Math.max(0, currentImageIdx - 1);
+      const target = sequence.querySelector(`figure[data-frame="${prevIdx + 1}"]`);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({behavior: reduced.matches ? 'auto' : 'smooth', block: 'center'});
+      }
+    }
   });
 
   return {
@@ -229,41 +264,63 @@ export function createProjectViewer({reduced}) {
       currentProject = project;
       opener = trigger instanceof HTMLElement ? trigger : document.activeElement;
       closing = false;
+      savedScrollY = window.scrollY;
 
       const lang = document.documentElement.lang || 'en';
       const words = {
-        en: ['Project', 'Curated visual study', 'Explore the monograph', 'Close gallery', 'Back to selected work ↗', 'Thumbnails'],
-        fr: ['Projet', 'Étude visuelle choisie', 'Découvrir la monographie', 'Fermer la galerie', 'Retour aux projets ↗', 'Miniatures'],
-        it: ['Progetto', 'Studio visivo selezionato', 'Esplora la monografia', 'Chiudi galleria', 'Torna ai progetti ↗', 'Miniature'],
-        ar: ['المشروع', 'دراسة بصرية مختارة', 'استكشف الملف', 'إغلاق المعرض', 'العودة إلى الأعمال المختارة ↗', 'الصور المصغرة']
-      }[lang] || ['Project', 'Curated visual study', 'Explore the monograph', 'Close gallery', 'Back to selected work ↗', 'Thumbnails'];
+        en: ['Project', 'Close window', 'Back to selected work', 'Explore film'],
+        fr: ['Projet', 'Fermer la fenêtre', 'Retour aux projets', 'Voir le film'],
+        it: ['Progetto', 'Chiudi finestra', 'Torna ai progetti', 'Guarda il film'],
+        ar: ['المشروع', 'إغلاق النافذة', 'العودة إلى المشاريع', 'مشاهدة الفيلم']
+      }[lang] || ['Project', 'Close window', 'Back to selected work', 'Explore film'];
 
-      dialog.querySelector('[data-room-number]').textContent = `${words[0]} ${String(project.number || 1).padStart(2, '0')}`;
-      dialog.querySelector('#project-room-title').textContent = project.title || project.name;
-      dialog.querySelector('[data-room-label]').textContent = words[1];
-      dialog.querySelector('[data-room-heading]').textContent = project.title || project.name;
-      dialog.querySelector('[data-room-instruction]').textContent = words[2] + ' ↓';
-      dialog.querySelector('[data-thumbs-label]').textContent = words[5];
-      closeButton.setAttribute('aria-label', words[3]);
-      dialog.querySelector('[data-room-return]').textContent = words[4];
+      // Apply Individual Art Direction theme
+      dialog.dataset.theme = project.theme || 'casa';
 
+      // Bar information
+      const projNum = project.number || '01';
+      dialog.querySelector('[data-room-number]').textContent = `${projNum} / 04`;
+      dialog.querySelector('[data-room-category]').textContent = project.category || project.title || 'Creative Direction';
+      dialog.querySelector('[data-room-name]').textContent = project.name || project.title;
+      closeButton.setAttribute('aria-label', words[1]);
+      returnBtn.querySelector('span:first-child').textContent = words[2];
+
+      // Editorial Intro Block
+      dialog.querySelector('[data-meta-kicker]').textContent = (project.category || project.title || '').toUpperCase();
+      dialog.querySelector('[data-meta-year]').textContent = project.year || '2026';
+      dialog.querySelector('#project-room-title').textContent = project.name || project.title;
+      dialog.querySelector('[data-meta-intro]').textContent = project.intro || (project.title + ' — A curated creative monograph by Mou Grasso.');
+
+      // Deliverables Pills
+      const tagsContainer = dialog.querySelector('[data-meta-tags]');
+      tagsContainer.replaceChildren();
+      const deliverables = project.deliverables || [project.title || 'Creative Direction'];
+      deliverables.forEach(tag => {
+        const pill = document.createElement('span');
+        pill.className = 'proj-pill';
+        pill.textContent = tag;
+        tagsContainer.append(pill);
+      });
+
+      // Clear previous content
       sequence.replaceChildren();
-      thumbsTrack.replaceChildren();
+      filmstripTrack.replaceChildren();
+      filmsSlot.replaceChildren();
 
-      // Mount campaign films (with missing slots hidden)
-      campaign = mountCampaignFilms(sequence, project.slug, {root: scroll});
+      // Mount Campaign Films if project has any
+      campaign?.destroy();
+      campaign = mountCampaignFilms(filmsSlot, project.slug, {root: scroll});
 
       totalImages = project.images.length;
       const totalStr = String(totalImages).padStart(2, '0');
       counter.textContent = `01 / ${totalStr}`;
 
-      // Build thumbnail strip
+      // Build Always-Visible Filmstrip Thumbnail Track
       project.images.forEach((im, idx) => {
         const thumbBtn = document.createElement('button');
         thumbBtn.type = 'button';
-        thumbBtn.className = 'thumb-btn';
-        thumbBtn.dataset.index = idx;
-        thumbBtn.setAttribute('aria-label', `Jump to image ${idx + 1}`);
+        thumbBtn.className = 'thumb-btn' + (idx === 0 ? ' is-active' : '');
+        thumbBtn.setAttribute('aria-label', `Frame ${idx + 1}`);
 
         const thumbImg = document.createElement('img');
         thumbImg.src = im.preview || im.src;
@@ -279,15 +336,13 @@ export function createProjectViewer({reduced}) {
           const targetFig = sequence.querySelector(`figure[data-frame="${idx + 1}"]`);
           if (targetFig) {
             targetFig.scrollIntoView({behavior: reduced.matches ? 'auto' : 'smooth', block: 'center'});
-            thumbsDrawer.hidden = true;
-            thumbsToggle.setAttribute('aria-expanded', 'false');
           }
         });
-        thumbsTrack.append(thumbBtn);
+        filmstripTrack.append(thumbBtn);
       });
 
       // Build Curated Magazine Spreads
-      const spreads = groupIntoSpreads(project.images);
+      const spreads = groupIntoEditorialSpreads(project.images);
 
       spreads.forEach(spread => {
         const spreadEl = document.createElement('div');
@@ -308,13 +363,13 @@ export function createProjectViewer({reduced}) {
             alt: im.alt || '',
             width: im.width,
             height: im.height,
-            loading: globalIdx < 3 ? 'eager' : 'lazy',
+            loading: globalIdx < 4 ? 'eager' : 'lazy',
             decoding: 'async'
           });
           if (im.preview) img.srcset = `${im.preview} 640w, ${im.src} ${im.width}w`;
           img.sizes = spread.type === 'lead' || spread.type === 'landscape'
-            ? '(max-width: 768px) 94vw, 1120px'
-            : '(max-width: 768px) 94vw, 560px';
+            ? '(max-width: 768px) 94vw, 1200px'
+            : '(max-width: 768px) 94vw, 620px';
 
           const zoomHint = document.createElement('span');
           zoomHint.className = 'gallery-zoom-badge';
@@ -323,7 +378,7 @@ export function createProjectViewer({reduced}) {
 
           imgWrap.append(img, zoomHint);
 
-          // Click image to explore fullscreen in Lightbox
+          // Click to expand in fullscreen lightbox
           imgWrap.addEventListener('click', () => openLightbox(globalIdx));
 
           const caption = document.createElement('figcaption');
@@ -345,27 +400,29 @@ export function createProjectViewer({reduced}) {
         sequence.append(spreadEl);
       });
 
-      overflow = document.body.style.overflow;
+      // Prevent underlying page scrolling
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('project-window-open');
       document.dispatchEvent(new CustomEvent('bymou:vieweropen'));
 
-      dialog.style.opacity = '1';
-      dialog.style.transform = 'none';
       dialog.showModal();
       window.ByMouLocale?.localize(dialog);
       scroll.scrollTop = 0;
       closeButton.focus({preventScroll: true});
 
-      // Update counter as visitor scrolls through frames
+      // Active image tracking as user scrolls inside window
       observer = new IntersectionObserver(entries => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const frameNum = Number(entry.target.dataset.frame);
             currentImageIdx = frameNum - 1;
             counter.textContent = `${String(frameNum).padStart(2, '0')} / ${totalStr}`;
-            // Mark active thumb
-            thumbsTrack.querySelectorAll('.thumb-btn').forEach((b, i) => {
-              b.classList.toggle('is-active', i === currentImageIdx);
+            filmstripTrack.querySelectorAll('.thumb-btn').forEach((b, i) => {
+              const isActive = (i === currentImageIdx);
+              b.classList.toggle('is-active', isActive);
+              if (isActive) {
+                b.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+              }
             });
           }
         }
@@ -377,13 +434,15 @@ export function createProjectViewer({reduced}) {
 
       sequence.querySelectorAll('figure[data-frame]').forEach(f => observer.observe(f));
 
+      // Sophisticated entrance motion
       if (!reduced.matches && window.gsap) {
         animation = gsap.fromTo(dialog,
-          {clipPath: 'inset(8% 5% 8% 5%)', opacity: 0},
-          {clipPath: 'inset(0% 0% 0% 0%)', opacity: 1, duration: 0.5, ease: 'power3.inOut'}
+          {opacity: 0, scale: 0.95, y: 24},
+          {opacity: 1, scale: 1, y: 0, duration: 0.45, ease: 'power3.out'}
         );
       } else {
-        dialog.style.clipPath = 'none';
+        dialog.style.opacity = '1';
+        dialog.style.transform = 'none';
       }
     }
   };

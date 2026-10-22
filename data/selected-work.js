@@ -2,7 +2,14 @@
 export const selectedWork = [
   {
     "name": "Casa Mirador",
+    "title": "Architecture & Interiors",
     "slug": "casa-mirador",
+    "number": "01",
+    "theme": "casa",
+    "category": "Spatial Direction",
+    "year": "2026",
+    "intro": "A place taking shape. Material, light, and the quiet dignity of Moroccan stone.",
+    "deliverables": ["Spatial Architecture", "Interior Direction", "Material Palette", "Photographic Studies"],
     "images": [
       {
         "src": "/public/projects/casa-mirador/sequence/01.webp",
@@ -185,8 +192,15 @@ export const selectedWork = [
     }
   },
   {
-    "name": "Elan Bakery",
+    "name": "Élan Pâtisserie",
+    "title": "Hospitality Branding",
     "slug": "elan-bakery",
+    "number": "02",
+    "theme": "elan",
+    "category": "Identity & Campaign",
+    "year": "2026",
+    "intro": "An everyday ritual, seen a little closer. A tactile visual identity built around the warmth of the bakery counter.",
+    "deliverables": ["Brand Identity", "Packaging Suite", "Editorial Stills", "Campaign Direction"],
     "images": [
       {
         "src": "/public/projects/elan-bakery/exhibition/01.webp",
@@ -314,7 +328,14 @@ export const selectedWork = [
   },
   {
     "name": "Sable Glass Studio",
+    "title": "Brand Identity",
     "slug": "sable-glass-studio",
+    "number": "03",
+    "theme": "sable",
+    "category": "Identity & Art Direction",
+    "year": "2026",
+    "intro": "Light caught in glass. A study of sculptural form, warmth, and the objects we choose to live with.",
+    "deliverables": ["Visual Identity", "Lookbook Photography", "Material Tactility", "Studio Packaging"],
     "images": [
       {
         "src": "/public/projects/sable-glass-studio/exhibition/01.webp",
@@ -377,8 +398,15 @@ export const selectedWork = [
     }
   },
   {
-    "name": "Salt and Silk",
+    "name": "Salt & Silk",
+    "title": "Packaging & Art Direction",
     "slug": "salt-and-silk",
+    "number": "04",
+    "theme": "salt",
+    "category": "Packaging & Campaign",
+    "year": "2026",
+    "intro": "Salt, chocolate, and tactile contrast. An intimate art direction for a couture confectionery experience.",
+    "deliverables": ["Packaging Design", "Product Still Life", "Tactile Textures", "Couture Campaign"],
     "images": [
       {
         "src": "/public/projects/salt-and-silk/exhibition/01.webp",

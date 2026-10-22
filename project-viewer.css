@@ -1,332 +1,434 @@
 /* ==========================================================================
-   BYMOU — Interactive Editorial Project Gallery
-   High-end fashion & architectural publication spreads, pairings,
-   compact thumbnail navigation, and fullscreen image exploration.
+   BYMOU — Interactive Luxury Inset Project Window & Curated Editorial Gallery
+   Desktop: Inset window (90% width & height) over blurred backdrop.
+   Thematic Art Direction: Casa Mirador, Élan Pâtisserie, Sable Glass, Salt & Silk.
+   Curated spreads (pairs, asymmetric, triptychs, panoramas), permanent filmstrip index,
+   fullscreen lightbox zoom, and zero missing-video placeholders.
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Individual Project Art Direction Palettes
+   -------------------------------------------------------------------------- */
+
+:root {
+  --proj-bg: #f5f2eb;
+  --proj-bar-bg: #f5f2eb;
+  --proj-text: #1d1b18;
+  --proj-muted: #736d64;
+  --proj-border: rgba(29, 27, 24, 0.12);
+  --proj-border-strong: rgba(29, 27, 24, 0.28);
+  --proj-pill-bg: rgba(29, 27, 24, 0.04);
+  --proj-pill-border: rgba(29, 27, 24, 0.14);
+  --proj-accent: #8c7355;
+  --proj-card-bg: #eae5dc;
+  --proj-thumb-bg: #ece7de;
+}
+
+/* 01. Casa Mirador — Warm architectural stone & neutrals */
+.project-room[data-theme="casa"] {
+  --proj-bg: #f5f2eb;
+  --proj-bar-bg: #f5f2eb;
+  --proj-text: #1d1b18;
+  --proj-muted: #736d64;
+  --proj-border: rgba(29, 27, 24, 0.12);
+  --proj-border-strong: rgba(29, 27, 24, 0.28);
+  --proj-pill-bg: rgba(29, 27, 24, 0.04);
+  --proj-pill-border: rgba(29, 27, 24, 0.14);
+  --proj-accent: #8c7355;
+  --proj-card-bg: #ece7dd;
+  --proj-thumb-bg: #ece7dd;
+}
+
+/* 02. Élan Pâtisserie — Warm cream & terracotta */
+.project-room[data-theme="elan"] {
+  --proj-bg: #f7efea;
+  --proj-bar-bg: #f7efea;
+  --proj-text: #2a1a14;
+  --proj-muted: #7a5e54;
+  --proj-border: rgba(42, 26, 20, 0.12);
+  --proj-border-strong: rgba(42, 26, 20, 0.3);
+  --proj-pill-bg: rgba(200, 103, 73, 0.08);
+  --proj-pill-border: rgba(200, 103, 73, 0.24);
+  --proj-accent: #c86749;
+  --proj-card-bg: #eee2da;
+  --proj-thumb-bg: #eee2da;
+}
+
+/* 03. Sable Glass Studio — Luminous amber glass & warm neutrals */
+.project-room[data-theme="sable"] {
+  --proj-bg: #f5efe7;
+  --proj-bar-bg: #f5efe7;
+  --proj-text: #241e17;
+  --proj-muted: #7c6c58;
+  --proj-border: rgba(36, 30, 23, 0.12);
+  --proj-border-strong: rgba(36, 30, 23, 0.3);
+  --proj-pill-bg: rgba(196, 139, 71, 0.08);
+  --proj-pill-border: rgba(196, 139, 71, 0.24);
+  --proj-accent: #c48b47;
+  --proj-card-bg: #eae0d3;
+  --proj-thumb-bg: #eae0d3;
+}
+
+/* 04. Salt & Silk — Deep couture chocolate dark room */
+.project-room[data-theme="salt"] {
+  --proj-bg: #181412;
+  --proj-bar-bg: #181412;
+  --proj-text: #f5efeb;
+  --proj-muted: #9e9289;
+  --proj-border: rgba(245, 239, 235, 0.12);
+  --proj-border-strong: rgba(245, 239, 235, 0.28);
+  --proj-pill-bg: rgba(245, 239, 235, 0.06);
+  --proj-pill-border: rgba(245, 239, 235, 0.18);
+  --proj-accent: #d4a373;
+  --proj-card-bg: #221d1a;
+  --proj-thumb-bg: #221d1a;
+}
+
+/* --------------------------------------------------------------------------
+   The Inset Project Window Modal
+   Occupies approx 90% of viewport width & height on desktop,
+   revealing the dimmed, blurred underlying website around it.
+   -------------------------------------------------------------------------- */
 
 .project-room {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100dvh;
-  max-width: none;
-  max-height: none;
-  margin: 0;
+  width: min(92vw, 1480px);
+  height: min(91vh, 920px);
+  max-width: 1480px;
+  max-height: 91vh;
+  margin: auto;
   padding: 0;
-  border: 0;
-  background: #f4f1e9;
-  color: #25251f;
+  border: 1px solid var(--proj-border-strong);
+  border-radius: 8px;
+  background: var(--proj-bg);
+  color: var(--proj-text);
   overflow: hidden;
+  box-shadow: 0 32px 100px -12px rgba(0, 0, 0, 0.58), 0 0 0 1px rgba(255, 255, 255, 0.06);
   z-index: 10000;
+  outline: none;
 }
 
+/* Blurred & Darkened Backdrop */
 .project-room::backdrop {
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(10, 9, 8, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-/* Compact Luxury Editorial Bar */
+/* Underlying page scroll lock */
+body.project-window-open {
+  overflow: hidden !important;
+}
+
+/* --------------------------------------------------------------------------
+   Top Editorial Navigation Bar
+   -------------------------------------------------------------------------- */
+
 .project-room-bar {
-  height: 64px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 clamp(16px, 3.5vw, 48px);
-  border-bottom: 1px solid rgba(37, 37, 31, 0.15);
-  background: #f4f1e9;
+  padding: 0 clamp(16px, 3vw, 40px);
+  border-bottom: 1px solid var(--proj-border);
+  background: var(--proj-bar-bg);
   position: relative;
-  z-index: 20;
+  z-index: 30;
+  user-select: none;
 }
 
 .project-bar-left {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .project-room-num {
-  font: 10px/1 Mono, monospace;
+  font: 11px/1 Mono, monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #7a7569;
+  color: var(--proj-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .project-room-divider {
-  color: #b8b2a5;
+  color: var(--proj-border-strong);
   font-size: 11px;
+  flex-shrink: 0;
 }
 
-.project-bar-title {
-  font: 400 clamp(17px, 1.6vw, 22px)/1 Bodoni, Georgia, serif;
-  letter-spacing: -0.02em;
-  margin: 0;
-  color: #1a1916;
+.project-room-category {
+  font: 11px/1 Mono, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--proj-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .project-bar-center {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
-.project-room-counter {
-  font: 11px/1 Mono, monospace;
-  letter-spacing: 0.08em;
-  color: #4a463d;
-  background: rgba(37, 37, 31, 0.06);
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(37, 37, 31, 0.1);
-}
-
-.project-thumbs-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: none;
-  border: 1px solid rgba(37, 37, 31, 0.18);
-  border-radius: 20px;
-  padding: 5px 12px;
-  font: 10px/1 Mono, monospace;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #37342d;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.project-thumbs-toggle:hover {
-  background: rgba(37, 37, 31, 0.08);
-  border-color: rgba(37, 37, 31, 0.35);
-}
-
-.thumbs-icon {
-  font-size: 12px;
-  line-height: 1;
+.project-room-name {
+  font: 400 clamp(15px, 1.4vw, 19px)/1 Bodoni, Georgia, serif;
+  letter-spacing: -0.015em;
+  color: var(--proj-text);
+  white-space: nowrap;
 }
 
 .project-bar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
-.project-bar-arrows {
-  display: flex;
-  gap: 4px;
-}
-
-.project-bar-arrows button {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  background: none;
-  border: 1px solid rgba(37, 37, 31, 0.15);
-  border-radius: 50%;
-  color: #25251f;
-  font: 15px/1 Georgia, serif;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.project-bar-arrows button:hover {
-  background: rgba(37, 37, 31, 0.08);
-  border-color: rgba(37, 37, 31, 0.4);
+.project-room-counter {
+  font: 10px/1 Mono, monospace;
+  letter-spacing: 0.08em;
+  color: var(--proj-muted);
+  background: var(--proj-pill-bg);
+  padding: 5px 11px;
+  border-radius: 20px;
+  border: 1px solid var(--proj-border);
 }
 
 .project-room-close {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   padding: 0;
-  border: 0;
+  border: 1px solid var(--proj-border);
+  border-radius: 50%;
   background: none;
-  color: #1a1916;
+  color: var(--proj-text);
   font-family: Arial, sans-serif;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 200;
   line-height: 1;
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .project-room-close:hover {
-  transform: scale(1.1);
+  background: var(--proj-pill-bg);
+  border-color: var(--proj-border-strong);
+  transform: scale(1.06);
 }
 
-/* Compact Thumbnail Drawer */
-.project-thumbs-drawer {
-  background: #eae5d9;
-  border-bottom: 1px solid rgba(37, 37, 31, 0.16);
-  padding: 12px clamp(16px, 3.5vw, 48px);
-  position: relative;
-  z-index: 15;
-  box-shadow: 0 8px 24px -4px rgba(25, 23, 18, 0.08);
-  animation: slide-drawer-down 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* --------------------------------------------------------------------------
+   Permanent Visual Filmstrip (Easy thumbnail navigation without menus/drawers)
+   -------------------------------------------------------------------------- */
 
-.project-thumbs-drawer[hidden] {
-  display: none !important;
-}
-
-@keyframes slide-drawer-down {
-  from { transform: translateY(-8px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.project-thumbs-track {
+.project-filmstrip {
+  height: 52px;
+  background: var(--proj-bar-bg);
+  border-bottom: 1px solid var(--proj-border);
+  padding: 6px clamp(16px, 3vw, 40px);
   display: flex;
-  gap: 10px;
+  align-items: center;
+  position: relative;
+  z-index: 25;
+}
+
+.project-filmstrip-track {
+  display: flex;
+  gap: 8px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(37, 37, 31, 0.25) transparent;
-  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  align-items: center;
+}
+
+.project-filmstrip-track::-webkit-scrollbar {
+  display: none;
 }
 
 .thumb-btn {
   flex: 0 0 auto;
-  width: 64px;
-  background: none;
-  border: 1px solid rgba(37, 37, 31, 0.18);
+  width: 52px;
+  height: 38px;
+  background: var(--proj-card-bg);
+  border: 1px solid var(--proj-border);
   border-radius: 2px;
   padding: 0;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .thumb-btn:hover {
   transform: translateY(-2px);
-  border-color: #EA4788;
+  border-color: var(--proj-accent);
 }
 
 .thumb-btn.is-active {
-  border-color: #EA4788;
-  box-shadow: 0 0 0 1px #EA4788;
+  border-color: var(--proj-accent);
+  box-shadow: 0 0 0 1.5px var(--proj-accent);
 }
 
 .thumb-btn img {
   display: block;
   width: 100%;
-  height: 44px;
+  height: 100%;
   object-fit: cover;
-  background: #dcd6c8;
 }
 
 .thumb-num {
-  font: 8px/1.3 Mono, monospace;
-  color: #6a6458;
-  padding: 2px 0;
-  text-align: center;
-  background: #f4f1e9;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font: 8px/1.1 Mono, monospace;
+  background: rgba(18, 16, 14, 0.72);
+  color: #fff;
+  padding: 1px 3px;
+  border-top-left-radius: 2px;
+  pointer-events: none;
 }
 
-/* Scroll Chamber */
+/* --------------------------------------------------------------------------
+   Project Room Scroll Chamber
+   -------------------------------------------------------------------------- */
+
 .project-room-scroll {
-  height: calc(100% - 64px);
-  overflow: auto;
+  height: calc(100% - 106px);
+  overflow-y: auto;
+  overflow-x: hidden;
   overscroll-behavior: contain;
   scrollbar-width: thin;
-  scrollbar-color: #aaa393 transparent;
+  scrollbar-color: var(--proj-border-strong) transparent;
+  outline: none;
 }
 
-.project-room button:focus-visible,
 .project-room-scroll:focus-visible {
-  outline: 2px solid #514d42;
-  outline-offset: -2px;
+  outline: none;
 }
 
-/* Intro Section */
-.project-room-intro {
-  max-width: 1360px;
+/* --------------------------------------------------------------------------
+   Editorial Header Block (Refined, human-sized typography)
+   -------------------------------------------------------------------------- */
+
+.project-editorial-header {
+  max-width: 1240px;
   margin: 0 auto;
-  padding: clamp(32px, 4.5vw, 60px) clamp(20px, 4vw, 56px) clamp(24px, 3.5vw, 44px);
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 56px) clamp(20px, 3vw, 36px);
+  border-bottom: 1px solid var(--proj-border);
+  margin-bottom: clamp(28px, 3.5vw, 48px);
+}
+
+.proj-header-meta {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  border-bottom: 1px solid rgba(37, 37, 31, 0.12);
-  margin-bottom: clamp(36px, 4vw, 56px);
-}
-
-.project-intro-kicker {
-  font: 10px/1.4 Mono, monospace;
-  letter-spacing: 0.14em;
+  align-items: baseline;
+  font: 10px/1 Mono, monospace;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #787265;
-  margin: 0;
+  color: var(--proj-muted);
+  margin-bottom: 12px;
 }
 
-.project-intro-title-wrap {
+.proj-main-title {
+  font: 400 clamp(30px, 3.8vw, 48px)/1.1 Bodoni, Georgia, serif;
+  letter-spacing: -0.025em;
+  color: var(--proj-text);
+  margin: 0 0 14px 0;
+}
+
+.proj-narrative {
+  font: 300 clamp(15px, 1.3vw, 19px)/1.55 Bodoni, Georgia, serif;
+  color: var(--proj-muted);
+  max-width: 740px;
+  margin: 0 0 20px 0;
+}
+
+.proj-tags {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.project-intro-statement {
-  font: 400 clamp(28px, 3.6vw, 56px)/1.08 Bodoni, Georgia, serif;
-  letter-spacing: -0.03em;
-  color: #1a1916;
-}
-
-.project-intro-instruction {
-  font: 10px/1.5 Mono, monospace;
+.proj-pill {
+  font: 9px/1 Mono, monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #857f72;
+  color: var(--proj-text);
+  background: var(--proj-pill-bg);
+  border: 1px solid var(--proj-pill-border);
+  padding: 5px 11px;
+  border-radius: 16px;
 }
 
-/* Curated Editorial Spreads */
+/* --------------------------------------------------------------------------
+   Integrated Campaign Films Slot
+   -------------------------------------------------------------------------- */
+
+.project-films-slot {
+  max-width: 1320px;
+  margin: 0 auto clamp(32px, 4vw, 52px);
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+
+.project-films-slot:empty {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Curated Editorial Magazine Spreads
+   -------------------------------------------------------------------------- */
+
 .project-room-sequence {
-  max-width: 1360px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 56px) 60px;
+  padding: 0 clamp(20px, 4vw, 56px) 50px;
 }
 
 .editorial-spread {
-  margin-bottom: clamp(36px, 4.5vw, 64px);
+  margin-bottom: clamp(32px, 4vw, 56px);
 }
 
-/* 1. Lead Opening Spread */
+/* 1. Lead Opening Feature */
 .spread-lead {
-  max-width: 1040px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* 2. Diptyque (Pair) Spread: 2 portraits side by side */
+/* 2. Diptyque (Pair) Spread: 2 items side by side */
 .spread-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 3.5vw, 48px);
+  gap: clamp(18px, 3vw, 42px);
   align-items: start;
 }
 
-/* 3. Dynamic Asymmetric Pairing */
+/* 3. Asymmetric Pairing */
 .spread-asymmetric {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: clamp(20px, 3.5vw, 48px);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 42px);
   align-items: center;
 }
 
-/* 4. Landscape Panorama Spread */
+/* 4. Panoramic Landscape Feature */
 .spread-landscape {
-  max-width: 1160px;
+  max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* 5. Solo Portrait Feature */
 .spread-portrait-solo {
-  max-width: 680px;
+  max-width: 660px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -335,11 +437,14 @@
 .spread-triptych {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 24px);
+  gap: clamp(12px, 1.8vw, 22px);
   align-items: start;
 }
 
-/* Gallery Figure & Image Styling */
+/* --------------------------------------------------------------------------
+   Gallery Figure, Image Framing & Zoom Badges
+   -------------------------------------------------------------------------- */
+
 .gallery-figure {
   margin: 0;
   position: relative;
@@ -352,9 +457,9 @@
   overflow: hidden;
   border-radius: 3px;
   cursor: zoom-in;
-  background: #e5e0d5;
-  border: 1px solid rgba(37, 37, 31, 0.1);
-  box-shadow: 0 4px 18px -3px rgba(25, 23, 18, 0.05);
+  background: var(--proj-card-bg);
+  border: 1px solid var(--proj-border);
+  box-shadow: 0 4px 18px -3px rgba(0, 0, 0, 0.08);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.25s ease;
@@ -362,8 +467,8 @@
 
 .gallery-figure:hover .gallery-img-wrap {
   transform: translateY(-3px);
-  box-shadow: 0 14px 34px -6px rgba(25, 23, 18, 0.12);
-  border-color: rgba(37, 37, 31, 0.3);
+  box-shadow: 0 14px 34px -6px rgba(0, 0, 0, 0.16);
+  border-color: var(--proj-border-strong);
 }
 
 .gallery-img-wrap img {
@@ -377,16 +482,16 @@
   position: absolute;
   bottom: 12px;
   right: 12px;
-  width: 30px;
-  height: 30px;
-  background: rgba(244, 241, 233, 0.94);
+  width: 28px;
+  height: 28px;
+  background: var(--proj-bg);
   backdrop-filter: blur(6px);
-  color: #1a1916;
+  color: var(--proj-text);
   display: grid;
   place-items: center;
-  font-size: 15px;
+  font-size: 14px;
   border-radius: 2px;
-  border: 1px solid rgba(37, 37, 31, 0.15);
+  border: 1px solid var(--proj-border);
   opacity: 0;
   transform: translateY(4px);
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -403,17 +508,17 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 16px;
-  border-top: 1px solid rgba(37, 37, 31, 0.15);
+  gap: 14px;
+  border-top: 1px solid var(--proj-border);
   margin-top: 10px;
   padding-top: 8px;
   font: 9px/1.5 Mono, monospace;
-  color: #635e54;
+  color: var(--proj-muted);
 }
 
 .caption-num {
   font-weight: 500;
-  color: #857f72;
+  color: var(--proj-accent);
   flex-shrink: 0;
 }
 
@@ -423,31 +528,62 @@
   overflow-wrap: break-word;
 }
 
-/* Project End Footer */
-.project-room-end {
+/* --------------------------------------------------------------------------
+   Project Window Footer
+   -------------------------------------------------------------------------- */
+
+.project-room-footer {
+  max-width: 1320px;
   margin: 0 auto;
-  max-width: 1360px;
-  padding: 36px clamp(20px, 4vw, 56px) 60px;
-  border-top: 1px solid rgba(37, 37, 31, 0.16);
+  padding: 36px clamp(20px, 4vw, 56px) 50px;
+  border-top: 1px solid var(--proj-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.project-room-end button {
-  font: 400 clamp(24px, 3.2vw, 48px)/1.2 Bodoni, Georgia, serif;
-  color: #1a1916;
+.proj-footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.proj-footer-sign {
+  font: 10px/1 Mono, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--proj-muted);
+}
+
+.proj-footer-note {
+  font: 10px/1.4 Mono, monospace;
+  color: var(--proj-muted);
+  margin: 0;
+}
+
+.project-room-footer button {
+  font: 400 clamp(15px, 1.4vw, 20px)/1.2 Bodoni, Georgia, serif;
+  color: var(--proj-text);
   background: none;
-  border: 0;
-  padding: 8px 0;
+  border: 1px solid var(--proj-border);
+  padding: 8px 18px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
 }
 
-.project-room-end button:hover {
-  color: #EA4788;
+.project-room-footer button:hover {
+  background: var(--proj-pill-bg);
+  border-color: var(--proj-border-strong);
+  color: var(--proj-accent);
 }
 
-/* ==========================================================================
-   Fullscreen Lightbox Modal
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   Fullscreen Lightbox Modal (For in-depth zoom inspection)
+   -------------------------------------------------------------------------- */
 
 .project-lightbox {
   position: fixed;
@@ -459,16 +595,17 @@
   margin: 0;
   padding: 0;
   border: 0;
-  background: rgba(14, 13, 11, 0.96);
+  background: rgba(12, 11, 10, 0.96);
   backdrop-filter: blur(16px);
-  color: #f4f1e9;
+  -webkit-backdrop-filter: blur(16px);
+  color: #f5efeb;
   z-index: 30000;
   overflow: hidden;
 }
 
 .project-lightbox[open] {
   display: grid;
-  grid-template-rows: 56px minmax(0, 1fr);
+  grid-template-rows: 54px minmax(0, 1fr);
   animation: lightbox-fade 0.25s ease;
 }
 
@@ -507,8 +644,8 @@
 .lightbox-close {
   background: none;
   border: 0;
-  color: #f4f1e9;
-  font-size: 28px;
+  color: #f5efeb;
+  font-size: 26px;
   font-family: Arial, sans-serif;
   font-weight: 200;
   cursor: pointer;
@@ -547,15 +684,15 @@
 
 .lightbox-nav-prev,
 .lightbox-nav-next {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f4f1e9;
+  color: #f5efeb;
   border-radius: 50%;
-  font: 28px/1 Georgia, serif;
+  font: 26px/1 Georgia, serif;
   cursor: pointer;
   transition: all 0.2s ease;
   z-index: 5;
@@ -567,30 +704,64 @@
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Mobile Responsive */
+/* --------------------------------------------------------------------------
+   Mobile & Responsive Adaptations
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 768px) {
+  /* On mobile, window takes full screen seamlessly */
+  .project-room {
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-width: 100vw !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
   .project-room-bar {
-    height: 56px;
+    height: 50px;
     padding: 0 4vw;
   }
 
-  .project-bar-arrows {
+  .project-bar-left {
+    max-width: calc(100% - 85px);
+  }
+
+  .project-room-num,
+  .project-room-category {
+    font-size: 9px;
+  }
+
+  .project-room-name {
     display: none;
   }
 
-  .project-bar-title {
-    display: none;
+  .project-filmstrip {
+    height: 48px;
+    padding: 4px 4vw;
   }
 
-  .project-room-intro {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 24px 4vw;
-    gap: 12px;
+  .thumb-btn {
+    width: 46px;
+    height: 34px;
   }
 
-  .project-intro-title-wrap {
-    align-items: flex-start;
+  .project-room-scroll {
+    height: calc(100% - 98px);
+  }
+
+  .project-editorial-header {
+    padding: 20px 4vw;
+  }
+
+  .proj-main-title {
+    font-size: 28px;
+  }
+
+  .project-films-slot {
+    padding: 0 4vw;
   }
 
   .project-room-sequence {
@@ -601,11 +772,18 @@
   .spread-asymmetric,
   .spread-triptych {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
   .editorial-spread {
-    margin-bottom: 36px;
+    margin-bottom: 28px;
+  }
+
+  .project-room-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 28px 4vw 40px;
   }
 
   .lightbox-nav-prev,
@@ -622,7 +800,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .project-room {
-    clip-path: none !important;
     transform: none !important;
   }
   .gallery-img-wrap,
