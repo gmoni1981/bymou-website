@@ -34,20 +34,28 @@ export function createProjectViewer({reduced}) {
           <div class="proj-tags" data-meta-tags></div>
         </div>
 
-        <div class="proj-view-tabs" data-view-tabs hidden>
-          <button type="button" class="view-tab is-active" data-view-target="stills">
-            <span data-label-stills>Photography</span>
-            <span class="tab-badge" data-stills-count></span>
+        <nav class="proj-jump-nav" data-jump-nav aria-label="Project sections navigation">
+          <button type="button" class="jump-pill is-active" data-jump-target="stills">
+            <span data-label-stills>Visual Studies</span>
+            <span class="jump-badge" data-stills-count></span>
           </button>
-          <button type="button" class="view-tab" data-view-target="films">
-            <span data-label-films>Films</span>
-            <span class="tab-badge" data-films-count></span>
+          <button type="button" class="jump-pill" data-jump-target="films" data-jump-films hidden>
+            <span data-label-films>Campaign Films</span>
+            <span class="jump-badge" data-films-count></span>
           </button>
-        </div>
+        </nav>
       </header>
 
-      <!-- 1. Stills Contact Sheet Grid -->
-      <section class="project-view-panel" data-panel="stills">
+      <!-- Section 1: Visual Studies (Stills Contact Sheet) -->
+      <section class="proj-section" id="section-stills" data-section="stills">
+        <div class="proj-section-header">
+          <div class="proj-section-title-wrap">
+            <span class="proj-section-kicker">01 / Photographic Studies</span>
+            <h2 class="proj-section-title">Visual Studies</h2>
+          </div>
+          <span class="proj-section-meta" data-stills-meta>3-Column Contact Sheet · Click to inspect</span>
+        </div>
+
         <div class="project-grid" data-images-grid></div>
 
         <nav class="project-pagination" data-pagination aria-label="Project images pagination">
@@ -57,9 +65,17 @@ export function createProjectViewer({reduced}) {
         </nav>
       </section>
 
-      <!-- 2. Films Compact Collection -->
-      <section class="project-view-panel" data-panel="films" hidden>
-        <div class="project-films-grid" data-films-grid></div>
+      <!-- Section 2: Campaign Films (Compact & Editorial) -->
+      <section class="proj-section" id="section-films" data-section="films" hidden>
+        <div class="proj-section-header">
+          <div class="proj-section-title-wrap">
+            <span class="proj-section-kicker">02 / Motion & Commercial Direction</span>
+            <h2 class="proj-section-title">Campaign Films</h2>
+          </div>
+          <span class="proj-section-meta">Compact editorial motion · Click to open cinematic player</span>
+        </div>
+
+        <div class="project-films-slot" data-films-slot></div>
       </section>
 
       <footer class="project-room-footer">
@@ -71,7 +87,7 @@ export function createProjectViewer({reduced}) {
       </footer>
     </div>
 
-    <!-- Fullscreen Lightbox Zoom Modal (Only the lightbox shows huge images) -->
+    <!-- Fullscreen Lightbox Zoom Modal (Only the lightbox shows large images) -->
     <dialog class="project-lightbox" aria-label="Fullscreen image inspection" data-lenis-prevent>
       <div class="lightbox-bar">
         <span class="lightbox-index" data-lb-index>01 / 21</span>
@@ -87,21 +103,24 @@ export function createProjectViewer({reduced}) {
       </div>
     </dialog>
 
-    <!-- Cinematic Video Player Modal -->
-    <dialog class="campaign-player" data-film-player data-lenis-prevent aria-label="Film Player">
+    <!-- Luxury Cinematic Video Player Modal -->
+    <dialog class="campaign-player" data-film-player data-lenis-prevent aria-label="Cinematic Film Player">
       <div class="campaign-player-top">
-        <span data-player-title></span>
-        <button type="button" data-film-player-close aria-label="Close player">Close ×</button>
+        <div class="campaign-player-info">
+          <span class="player-kicker">BYMOU · MOTION DIRECTION</span>
+          <span class="player-title" data-player-title>Film Title</span>
+        </div>
+        <button type="button" class="player-close-btn" data-film-player-close aria-label="Close cinematic player">Close ×</button>
       </div>
       <div class="campaign-player-screen">
         <video playsinline preload="none"></video>
         <p role="status" hidden></p>
       </div>
       <div class="campaign-player-tools">
-        <button type="button" data-film-toggle>Play</button>
+        <button type="button" data-film-toggle>Pause</button>
         <button type="button" data-film-sound>Sound on</button>
+        <span class="player-time" data-film-time>00:00</span>
         <button type="button" data-film-full>Fullscreen ↗</button>
-        <span data-film-time>00:00</span>
       </div>
     </dialog>
   `;
@@ -110,21 +129,17 @@ export function createProjectViewer({reduced}) {
 
   const scroll = dialog.querySelector('.project-room-scroll');
   const closeButton = dialog.querySelector('.project-room-close');
-  const counter = dialog.querySelector('[data-room-count]');
   const returnBtn = dialog.querySelector('[data-room-return]');
-
-  const tabsContainer = dialog.querySelector('[data-view-tabs]');
-  const stillsTab = dialog.querySelector('[data-view-target="stills"]');
-  const filmsTab = dialog.querySelector('[data-view-target="films"]');
-  const stillsPanel = dialog.querySelector('[data-panel="stills"]');
-  const filmsPanel = dialog.querySelector('[data-panel="films"]');
-
+  const counter = dialog.querySelector('[data-room-count]');
   const imagesGrid = dialog.querySelector('[data-images-grid]');
   const paginationNav = dialog.querySelector('[data-pagination]');
   const pagePrev = dialog.querySelector('[data-page-prev]');
   const pageNext = dialog.querySelector('[data-page-next]');
   const pageNumbers = dialog.querySelector('[data-page-numbers]');
-  const filmsGrid = dialog.querySelector('[data-films-grid]');
+  const filmsSection = dialog.querySelector('#section-films');
+  const filmsSlot = dialog.querySelector('[data-films-slot]');
+  const jumpFilmsBtn = dialog.querySelector('[data-jump-films]');
+  const jumpPills = dialog.querySelectorAll('.jump-pill');
 
   // Lightbox elements
   const lightbox = dialog.querySelector('.project-lightbox');
@@ -152,39 +167,39 @@ export function createProjectViewer({reduced}) {
   let currentPage = 0;
   let totalPages = 1;
   let currentLightboxIdx = 0;
-  let activeView = 'stills';
   let opener = null;
   let closing = false;
-  let savedScrollY = 0;
   let animation = null;
+  let savedScrollY = 0;
 
   function close() {
     if (!dialog.open || closing) return;
     closing = true;
     animation?.kill();
-    playerVideo.pause();
-    if (filmPlayer.open) filmPlayer.close();
+
     if (lightbox.open) lightbox.close();
+    closeFilmPlayer();
 
     const finish = () => {
       dialog.close();
-      window.scrollTo({top: savedScrollY, behavior: 'instant'});
+      window.scrollTo({ top: savedScrollY, behavior: 'instant' });
     };
 
-    if (reduced.matches || !window.gsap) finish();
-    else {
+    if (reduced.matches || !window.gsap) {
+      finish();
+    } else {
       animation = gsap.to(dialog, {
         opacity: 0,
         scale: 0.96,
         y: 16,
-        duration: 0.28,
-        ease: 'power3.in',
+        duration: 0.26,
+        ease: 'power2.in',
         onComplete: finish
       });
     }
   }
 
-  // Backdrop click closes dialog (only when clicking the backdrop outside the dialog)
+  // Backdrop click on floating dialog window
   dialog.addEventListener('click', e => {
     if (e.target === dialog) {
       const rect = dialog.getBoundingClientRect();
@@ -211,18 +226,17 @@ export function createProjectViewer({reduced}) {
     closing = false;
   });
 
-  // Switch between Photography and Films tabs
-  function setView(view) {
-    activeView = view;
-    stillsTab.classList.toggle('is-active', view === 'stills');
-    filmsTab.classList.toggle('is-active', view === 'films');
-    stillsPanel.hidden = (view !== 'stills');
-    filmsPanel.hidden = (view !== 'films');
-    scroll.scrollTop = 0;
-  }
-
-  stillsTab.addEventListener('click', () => setView('stills'));
-  filmsTab.addEventListener('click', () => setView('films'));
+  // Jump navigation between sections
+  jumpPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const target = pill.dataset.jumpTarget;
+      jumpPills.forEach(p => p.classList.toggle('is-active', p === pill));
+      const sectionEl = target === 'films' ? filmsSection : dialog.querySelector('#section-stills');
+      if (sectionEl) {
+        sectionEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 
   // Lightbox handlers
   function openLightbox(index) {
@@ -254,8 +268,11 @@ export function createProjectViewer({reduced}) {
     if (e.key === 'ArrowRight') { e.preventDefault(); nextLightbox(); }
     else if (e.key === 'ArrowLeft') { e.preventDefault(); prevLightbox(); }
   });
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.close();
+  });
 
-  // Film player handlers
+  // Cinematic Film player handlers
   function openFilmPlayer(film) {
     playerTitle.textContent = `${currentProject.name} — ${film.title}`;
     playerVideo.src = film.src;
@@ -269,6 +286,7 @@ export function createProjectViewer({reduced}) {
   }
 
   function closeFilmPlayer() {
+    if (!filmPlayer.open) return;
     if (document.fullscreenElement && filmPlayer.contains(document.fullscreenElement)) {
       document.exitFullscreen?.().catch(() => {});
     }
@@ -278,14 +296,25 @@ export function createProjectViewer({reduced}) {
 
   playerClose.addEventListener('click', closeFilmPlayer);
   filmPlayer.addEventListener('cancel', e => { e.preventDefault(); closeFilmPlayer(); });
-  playerToggle.addEventListener('click', () => {
-    if (playerVideo.paused) { playerVideo.play(); playerToggle.textContent = 'Pause'; }
-    else { playerVideo.pause(); playerToggle.textContent = 'Play'; }
+  filmPlayer.addEventListener('click', e => {
+    if (e.target === filmPlayer) closeFilmPlayer();
   });
+
+  playerToggle.addEventListener('click', () => {
+    if (playerVideo.paused) {
+      playerVideo.play();
+      playerToggle.textContent = 'Pause';
+    } else {
+      playerVideo.pause();
+      playerToggle.textContent = 'Play';
+    }
+  });
+
   playerSound.addEventListener('click', () => {
     playerVideo.muted = !playerVideo.muted;
     playerSound.textContent = playerVideo.muted ? 'Sound on' : 'Sound off';
   });
+
   playerFull.addEventListener('click', async () => {
     try {
       if (document.fullscreenElement) await document.exitFullscreen();
@@ -295,6 +324,7 @@ export function createProjectViewer({reduced}) {
       playerVideo.controls = true;
     }
   });
+
   playerVideo.addEventListener('timeupdate', () => {
     const min = Math.floor(playerVideo.currentTime / 60).toString().padStart(2, '0');
     const sec = Math.floor(playerVideo.currentTime % 60).toString().padStart(2, '0');
@@ -310,7 +340,6 @@ export function createProjectViewer({reduced}) {
     const end = Math.min(start + IMAGES_PER_PAGE, currentImages.length);
     const pageItems = currentImages.slice(start, end);
 
-    // Update counter
     const startStr = String(start + 1).padStart(2, '0');
     const endStr = String(end).padStart(2, '0');
     const totalStr = String(currentImages.length).padStart(2, '0');
@@ -330,15 +359,15 @@ export function createProjectViewer({reduced}) {
       const img = document.createElement('img');
       img.src = im.preview || im.src;
       img.alt = im.alt || '';
-      img.width = im.width;
-      img.height = im.height;
+      img.width = im.width || 800;
+      img.height = im.height || 1000;
       img.loading = localIdx < 3 ? 'eager' : 'lazy';
       img.decoding = 'async';
 
       const zoomBadge = document.createElement('span');
-      zoomBadge.className = 'card-zoom-badge';
+      zoomBadge.className = 'gallery-zoom-badge';
+      zoomBadge.innerHTML = '⤢';
       zoomBadge.setAttribute('aria-hidden', 'true');
-      zoomBadge.textContent = '⤢';
 
       thumb.append(img, zoomBadge);
       thumb.addEventListener('click', () => openLightbox(globalIdx));
@@ -352,7 +381,7 @@ export function createProjectViewer({reduced}) {
 
       const title = document.createElement('span');
       title.className = 'gallery-card-title';
-      title.textContent = im.alt || currentProject.title;
+      title.textContent = im.alt || `${currentProject.title} — Frame ${globalIdx + 1}`;
 
       caption.append(num, title);
       card.append(thumb, caption);
@@ -362,7 +391,6 @@ export function createProjectViewer({reduced}) {
     renderPagination();
   }
 
-  // Render pagination buttons
   function renderPagination() {
     pageNumbers.replaceChildren();
 
@@ -395,63 +423,150 @@ export function createProjectViewer({reduced}) {
     if (currentPage < totalPages - 1) renderImagesPage(currentPage + 1);
   });
 
-  // Render compact films collection
+  // Render compact, refined campaign films
   function renderFilms(films) {
-    filmsGrid.replaceChildren();
-    if (!films || films.length === 0) return;
+    filmsSlot.replaceChildren();
+    if (!films || films.length === 0) {
+      filmsSection.hidden = true;
+      jumpFilmsBtn.hidden = true;
+      return;
+    }
 
-    films.forEach((f, idx) => {
-      const card = document.createElement('article');
-      card.className = 'film-card';
+    filmsSection.hidden = false;
+    jumpFilmsBtn.hidden = false;
+
+    // Single-Film Editorial Composition (e.g. Casa Mirador, Sable, Salt & Silk)
+    if (films.length === 1) {
+      const f = films[0];
+      const wrap = document.createElement('div');
+      wrap.className = 'project-films-single';
+
+      // Left: Compact vertical preview card
+      const filmCard = document.createElement('div');
+      filmCard.className = 'film-card';
 
       const thumb = document.createElement('button');
       thumb.type = 'button';
       thumb.className = 'film-card-thumb';
-      thumb.setAttribute('aria-label', `Play film ${idx + 1}: ${f.title}`);
+      thumb.setAttribute('aria-label', `Watch film: ${f.title}`);
 
       const poster = document.createElement('img');
       poster.src = f.poster;
       poster.alt = f.title || '';
       poster.loading = 'lazy';
 
-      const playMark = document.createElement('span');
-      playMark.className = 'film-card-play';
-      playMark.textContent = '↗';
-      playMark.setAttribute('aria-hidden', 'true');
+      const formatTag = document.createElement('span');
+      formatTag.className = 'film-format-tag';
+      formatTag.textContent = '9:16 FILM';
 
-      thumb.append(poster, playMark);
+      const playBadge = document.createElement('span');
+      playBadge.className = 'film-play-badge';
+      playBadge.innerHTML = '<span class="play-arrow">▶</span><span>Play</span>';
+
+      thumb.append(poster, formatTag, playBadge);
       thumb.addEventListener('click', () => openFilmPlayer(f));
+      filmCard.append(thumb);
 
-      const caption = document.createElement('div');
-      caption.className = 'film-card-caption';
+      // Right: Editorial description & action
+      const narrativeBox = document.createElement('div');
+      narrativeBox.className = 'film-single-editorial';
 
-      const num = document.createElement('span');
-      num.className = 'film-card-num';
-      num.textContent = String(idx + 1).padStart(2, '0');
+      const kicker = document.createElement('span');
+      kicker.className = 'film-single-kicker';
+      kicker.textContent = '01 / FEATURED CAMPAIGN FILM';
 
-      const title = document.createElement('span');
-      title.className = 'film-card-title';
-      title.textContent = f.title;
+      const heading = document.createElement('h3');
+      heading.className = 'film-single-title';
+      heading.textContent = f.title;
 
-      caption.append(num, title);
-      card.append(thumb, caption);
-      filmsGrid.append(card);
-    });
+      const desc = document.createElement('p');
+      desc.className = 'film-single-narrative';
+      const filmsEntry = campaignFilms[currentProject.slug];
+      desc.textContent = (filmsEntry && filmsEntry.description)
+        ? `${filmsEntry.description} Art-directed commercial motion and visual storytelling.`
+        : 'Editorial advertising motion designed to capture mood, texture and movement.';
+
+      const specs = document.createElement('div');
+      specs.className = 'film-single-specs';
+      specs.innerHTML = `
+        <span class="film-spec-item">4K UHD</span>
+        <span class="film-spec-item">9:16 Vertical</span>
+        <span class="film-spec-item">Commercial Direction</span>
+        <span class="film-spec-item">Stereo Master</span>
+      `;
+
+      const actionWrap = document.createElement('div');
+      actionWrap.className = 'film-single-action';
+      const watchBtn = document.createElement('button');
+      watchBtn.type = 'button';
+      watchBtn.className = 'film-watch-btn';
+      watchBtn.innerHTML = '<span>▶ Watch in Cinematic Player</span><span>↗</span>';
+      watchBtn.addEventListener('click', () => openFilmPlayer(f));
+      actionWrap.append(watchBtn);
+
+      narrativeBox.append(kicker, heading, desc, specs, actionWrap);
+      wrap.append(filmCard, narrativeBox);
+      filmsSlot.append(wrap);
+    } 
+    // Multi-Film Compact Grid (e.g. Élan Pâtisserie with 3 films)
+    else {
+      const grid = document.createElement('div');
+      grid.className = 'project-films-collection';
+
+      films.forEach((f, idx) => {
+        const card = document.createElement('article');
+        card.className = 'film-card';
+
+        const thumb = document.createElement('button');
+        thumb.type = 'button';
+        thumb.className = 'film-card-thumb';
+        thumb.setAttribute('aria-label', `Play film ${idx + 1}: ${f.title}`);
+
+        const poster = document.createElement('img');
+        poster.src = f.poster;
+        poster.alt = f.title || '';
+        poster.loading = 'lazy';
+
+        const formatTag = document.createElement('span');
+        formatTag.className = 'film-format-tag';
+        formatTag.textContent = '9:16 FILM';
+
+        const playBadge = document.createElement('span');
+        playBadge.className = 'film-play-badge';
+        playBadge.innerHTML = '<span class="play-arrow">▶</span><span>Play</span>';
+
+        thumb.append(poster, formatTag, playBadge);
+        thumb.addEventListener('click', () => openFilmPlayer(f));
+
+        const caption = document.createElement('div');
+        caption.className = 'film-card-caption';
+
+        const num = document.createElement('span');
+        num.className = 'film-card-num';
+        num.textContent = String(idx + 1).padStart(2, '0');
+
+        const title = document.createElement('span');
+        title.className = 'film-card-title';
+        title.textContent = f.title;
+
+        caption.append(num, title);
+        card.append(thumb, caption);
+        grid.append(card);
+      });
+
+      filmsSlot.append(grid);
+    }
   }
 
-  // Keyboard navigation
+  // Keyboard navigation for image pagination
   dialog.addEventListener('keydown', e => {
     if (lightbox.open || filmPlayer.open) return;
-    if (e.key === 'ArrowRight') {
-      if (activeView === 'stills' && currentPage < totalPages - 1) {
-        e.preventDefault();
-        renderImagesPage(currentPage + 1);
-      }
-    } else if (e.key === 'ArrowLeft') {
-      if (activeView === 'stills' && currentPage > 0) {
-        e.preventDefault();
-        renderImagesPage(currentPage - 1);
-      }
+    if (e.key === 'ArrowRight' && currentPage < totalPages - 1) {
+      e.preventDefault();
+      renderImagesPage(currentPage + 1);
+    } else if (e.key === 'ArrowLeft' && currentPage > 0) {
+      e.preventDefault();
+      renderImagesPage(currentPage - 1);
     }
   });
 
@@ -466,16 +581,16 @@ export function createProjectViewer({reduced}) {
 
       const lang = document.documentElement.lang || 'en';
       const words = {
-        en: ['Close window', 'Back to selected work', 'Photography', 'Films'],
-        fr: ['Fermer la fenêtre', 'Retour aux projets', 'Photographie', 'Films'],
-        it: ['Chiudi finestra', 'Torna ai progetti', 'Fotografia', 'Film'],
-        ar: ['إغلاق النافذة', 'العودة إلى المشاريع', 'التصوير', 'أفلام']
-      }[lang] || ['Close window', 'Back to selected work', 'Photography', 'Films'];
+        en: ['Close window', 'Back to selected work', 'Visual Studies', 'Campaign Films'],
+        fr: ['Fermer la fenêtre', 'Retour aux projets', 'Études visuelles', 'Films de campagne'],
+        it: ['Chiudi finestra', 'Torna ai progetti', 'Studi visivi', 'Film di campagna'],
+        ar: ['إغلاق النافذة', 'العودة إلى المشاريع', 'الدراسات البصرية', 'أفلام الحملة']
+      }[lang] || ['Close window', 'Back to selected work', 'Visual Studies', 'Campaign Films'];
 
       // Apply Individual Art Direction theme
       dialog.dataset.theme = project.theme || 'casa';
 
-      // Bar information
+      // Top Bar information
       const projNum = project.number || '01';
       dialog.querySelector('[data-room-number]').textContent = `${projNum} / 04`;
       dialog.querySelector('[data-room-category]').textContent = project.category || project.title || 'Creative Direction';
@@ -508,18 +623,18 @@ export function createProjectViewer({reduced}) {
       const filmsEntry = campaignFilms[project.slug];
       currentFilms = (filmsEntry && filmsEntry.films) ? filmsEntry.films : [];
 
-      // Configure View Tabs
+      // Configure Jump Navigation counts
+      dialog.querySelector('[data-stills-count]').textContent = String(currentImages.length);
+      dialog.querySelector('[data-label-stills]').textContent = words[2];
+      
       if (currentFilms.length > 0) {
-        tabsContainer.hidden = false;
-        dialog.querySelector('[data-stills-count]').textContent = String(currentImages.length);
+        jumpFilmsBtn.hidden = false;
         dialog.querySelector('[data-films-count]').textContent = String(currentFilms.length);
-        dialog.querySelector('[data-label-stills]').textContent = words[2];
         dialog.querySelector('[data-label-films]').textContent = words[3];
       } else {
-        tabsContainer.hidden = true;
+        jumpFilmsBtn.hidden = true;
       }
 
-      setView('stills');
       renderImagesPage(0);
       renderFilms(currentFilms);
 
