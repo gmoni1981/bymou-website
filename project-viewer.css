@@ -1,9 +1,10 @@
 /* ==========================================================================
-   BYMOU — Interactive Luxury Inset Project Window & Curated Editorial Gallery
-   Desktop: Inset window (90% width & height) over blurred backdrop.
-   Thematic Art Direction: Casa Mirador, Élan Pâtisserie, Sable Glass, Salt & Silk.
-   Curated spreads (pairs, asymmetric, triptychs, panoramas), permanent filmstrip index,
-   fullscreen lightbox zoom, and zero missing-video placeholders.
+   BYMOU — Interactive Luxury Inset Project Window & Contact Sheet Gallery
+   Desktop: Inset window (~91% width & height) over blurred backdrop.
+   Layout: 3 images side by side on desktop, preview height ~270px (250-320px).
+   Pagination: 6 images per page (2 rows of 3) with discreet pagination.
+   Lightbox: Only the fullscreen lightbox shows large images.
+   Themes: Casa Mirador, Élan Pâtisserie, Sable Glass Studio, Salt & Silk.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -21,7 +22,6 @@
   --proj-pill-border: rgba(29, 27, 24, 0.14);
   --proj-accent: #8c7355;
   --proj-card-bg: #eae5dc;
-  --proj-thumb-bg: #ece7de;
 }
 
 /* 01. Casa Mirador — Warm architectural stone & neutrals */
@@ -36,7 +36,6 @@
   --proj-pill-border: rgba(29, 27, 24, 0.14);
   --proj-accent: #8c7355;
   --proj-card-bg: #ece7dd;
-  --proj-thumb-bg: #ece7dd;
 }
 
 /* 02. Élan Pâtisserie — Warm cream & terracotta */
@@ -51,7 +50,6 @@
   --proj-pill-border: rgba(200, 103, 73, 0.24);
   --proj-accent: #c86749;
   --proj-card-bg: #eee2da;
-  --proj-thumb-bg: #eee2da;
 }
 
 /* 03. Sable Glass Studio — Luminous amber glass & warm neutrals */
@@ -66,7 +64,6 @@
   --proj-pill-border: rgba(196, 139, 71, 0.24);
   --proj-accent: #c48b47;
   --proj-card-bg: #eae0d3;
-  --proj-thumb-bg: #eae0d3;
 }
 
 /* 04. Salt & Silk — Deep couture chocolate dark room */
@@ -81,12 +78,11 @@
   --proj-pill-border: rgba(245, 239, 235, 0.18);
   --proj-accent: #d4a373;
   --proj-card-bg: #221d1a;
-  --proj-thumb-bg: #221d1a;
 }
 
 /* --------------------------------------------------------------------------
-   The Inset Project Window Modal
-   Occupies approx 90% of viewport width & height on desktop,
+   The Inset Floating Project Window Modal
+   Occupies ~91% of viewport width & height on desktop,
    revealing the dimmed, blurred underlying website around it.
    -------------------------------------------------------------------------- */
 
@@ -126,7 +122,7 @@ body.project-window-open {
    -------------------------------------------------------------------------- */
 
 .project-room-bar {
-  height: 54px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -224,354 +220,422 @@ body.project-window-open {
 }
 
 /* --------------------------------------------------------------------------
-   Permanent Visual Filmstrip (Easy thumbnail navigation without menus/drawers)
-   -------------------------------------------------------------------------- */
-
-.project-filmstrip {
-  height: 52px;
-  background: var(--proj-bar-bg);
-  border-bottom: 1px solid var(--proj-border);
-  padding: 6px clamp(16px, 3vw, 40px);
-  display: flex;
-  align-items: center;
-  position: relative;
-  z-index: 25;
-}
-
-.project-filmstrip-track {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  width: 100%;
-  align-items: center;
-}
-
-.project-filmstrip-track::-webkit-scrollbar {
-  display: none;
-}
-
-.thumb-btn {
-  flex: 0 0 auto;
-  width: 52px;
-  height: 38px;
-  background: var(--proj-card-bg);
-  border: 1px solid var(--proj-border);
-  border-radius: 2px;
-  padding: 0;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.thumb-btn:hover {
-  transform: translateY(-2px);
-  border-color: var(--proj-accent);
-}
-
-.thumb-btn.is-active {
-  border-color: var(--proj-accent);
-  box-shadow: 0 0 0 1.5px var(--proj-accent);
-}
-
-.thumb-btn img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.thumb-num {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font: 8px/1.1 Mono, monospace;
-  background: rgba(18, 16, 14, 0.72);
-  color: #fff;
-  padding: 1px 3px;
-  border-top-left-radius: 2px;
-  pointer-events: none;
-}
-
-/* --------------------------------------------------------------------------
-   Project Room Scroll Chamber
+   Scroll Chamber & Compact Editorial Header
    -------------------------------------------------------------------------- */
 
 .project-room-scroll {
-  height: calc(100% - 106px);
+  height: calc(100% - 52px);
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: var(--proj-border-strong) transparent;
   outline: none;
+  display: flex;
+  flex-direction: column;
 }
-
-.project-room-scroll:focus-visible {
-  outline: none;
-}
-
-/* --------------------------------------------------------------------------
-   Editorial Header Block (Refined, human-sized typography)
-   -------------------------------------------------------------------------- */
 
 .project-editorial-header {
-  max-width: 1240px;
+  max-width: 1320px;
+  width: 100%;
   margin: 0 auto;
-  padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 56px) clamp(20px, 3vw, 36px);
+  padding: 22px clamp(20px, 3.5vw, 48px) 16px;
   border-bottom: 1px solid var(--proj-border);
-  margin-bottom: clamp(28px, 3.5vw, 48px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.proj-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 780px;
 }
 
 .proj-header-meta {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
   align-items: baseline;
-  font: 10px/1 Mono, monospace;
+  font: 9.5px/1 Mono, monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--proj-muted);
-  margin-bottom: 12px;
 }
 
 .proj-main-title {
-  font: 400 clamp(30px, 3.8vw, 48px)/1.1 Bodoni, Georgia, serif;
+  font: 400 clamp(24px, 2.6vw, 36px)/1.12 Bodoni, Georgia, serif;
   letter-spacing: -0.025em;
   color: var(--proj-text);
-  margin: 0 0 14px 0;
+  margin: 0;
 }
 
 .proj-narrative {
-  font: 300 clamp(15px, 1.3vw, 19px)/1.55 Bodoni, Georgia, serif;
+  font: 300 clamp(14px, 1.1vw, 16px)/1.5 Bodoni, Georgia, serif;
   color: var(--proj-muted);
-  max-width: 740px;
-  margin: 0 0 20px 0;
+  margin: 0;
 }
 
 .proj-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
+  margin-top: 4px;
 }
 
 .proj-pill {
-  font: 9px/1 Mono, monospace;
+  font: 8.5px/1 Mono, monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--proj-text);
   background: var(--proj-pill-bg);
   border: 1px solid var(--proj-pill-border);
-  padding: 5px 11px;
-  border-radius: 16px;
+  padding: 4px 9px;
+  border-radius: 12px;
+}
+
+/* Tab Switcher: Photography vs Films */
+.proj-view-tabs {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--proj-pill-bg);
+  border: 1px solid var(--proj-border);
+  border-radius: 24px;
+  padding: 3px;
+}
+
+.view-tab {
+  background: none;
+  border: 0;
+  color: var(--proj-muted);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font: 10px/1 Mono, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.view-tab.is-active {
+  background: var(--proj-bg);
+  color: var(--proj-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tab-badge {
+  font-size: 8.5px;
+  color: var(--proj-accent);
+  opacity: 0.9;
 }
 
 /* --------------------------------------------------------------------------
-   Integrated Campaign Films Slot
+   Contact Sheet Grid: 3 Images Side by Side on Desktop
+   Height: ~270px (within 250-320px range), 6 images per page (2 rows of 3)
    -------------------------------------------------------------------------- */
 
-.project-films-slot {
+.project-view-panel {
   max-width: 1320px;
-  margin: 0 auto clamp(32px, 4vw, 52px);
-  padding: 0 clamp(20px, 4vw, 56px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 14px clamp(20px, 3.5vw, 48px) 14px;
+  flex: 1 0 auto;
 }
 
-.project-films-slot:empty {
+.project-view-panel[hidden] {
   display: none !important;
 }
 
-/* --------------------------------------------------------------------------
-   Curated Editorial Magazine Spreads
-   -------------------------------------------------------------------------- */
-
-.project-room-sequence {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 56px) 50px;
-}
-
-.editorial-spread {
-  margin-bottom: clamp(32px, 4vw, 56px);
-}
-
-/* 1. Lead Opening Feature */
-.spread-lead {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 2. Diptyque (Pair) Spread: 2 items side by side */
-.spread-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 42px);
-  align-items: start;
-}
-
-/* 3. Asymmetric Pairing */
-.spread-asymmetric {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: clamp(18px, 3vw, 42px);
-  align-items: center;
-}
-
-/* 4. Panoramic Landscape Feature */
-.spread-landscape {
-  max-width: 1180px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 5. Solo Portrait Feature */
-.spread-portrait-solo {
-  max-width: 660px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 6. Triptych Spread (3-up) */
-.spread-triptych {
+.project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.8vw, 22px);
-  align-items: start;
+  gap: 14px 20px;
+  margin-bottom: 14px;
 }
 
-/* --------------------------------------------------------------------------
-   Gallery Figure, Image Framing & Zoom Badges
-   -------------------------------------------------------------------------- */
-
-.gallery-figure {
-  margin: 0;
-  position: relative;
+.gallery-card {
   display: flex;
   flex-direction: column;
 }
 
-.gallery-img-wrap {
-  position: relative;
-  overflow: hidden;
-  border-radius: 3px;
-  cursor: zoom-in;
+.gallery-card-thumb {
+  height: 260px; /* Approximately 250-320px high per requirement */
+  width: 100%;
   background: var(--proj-card-bg);
   border: 1px solid var(--proj-border);
-  box-shadow: 0 4px 18px -3px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.25s ease;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+  position: relative;
+  padding: 8px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.gallery-figure:hover .gallery-img-wrap {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 34px -6px rgba(0, 0, 0, 0.16);
-  border-color: var(--proj-border-strong);
+.gallery-card-thumb:hover {
+  transform: translateY(-2px);
+  border-color: var(--proj-accent);
+  box-shadow: 0 10px 26px -6px rgba(0, 0, 0, 0.16);
 }
 
-.gallery-img-wrap img {
-  display: block;
-  width: 100%;
+.gallery-card-thumb img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
-  transition: transform 0.4s ease;
+  object-fit: contain; /* Preserves proportions, never crops branding or text */
+  display: block;
 }
 
-.gallery-zoom-badge {
+.card-zoom-badge {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
-  width: 28px;
-  height: 28px;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
   background: var(--proj-bg);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
   color: var(--proj-text);
   display: grid;
   place-items: center;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 2px;
   border: 1px solid var(--proj-border);
   opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(3px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
   pointer-events: none;
 }
 
-.gallery-figure:hover .gallery-zoom-badge {
+.gallery-card-thumb:hover .card-zoom-badge {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Hairline Caption */
-.gallery-caption {
+.gallery-card-caption {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 14px;
-  border-top: 1px solid var(--proj-border);
-  margin-top: 10px;
-  padding-top: 8px;
-  font: 9px/1.5 Mono, monospace;
+  gap: 10px;
+  padding-top: 7px;
+  font: 9px/1.4 Mono, monospace;
   color: var(--proj-muted);
 }
 
-.caption-num {
+.gallery-card-num {
   font-weight: 500;
   color: var(--proj-accent);
   flex-shrink: 0;
 }
 
-.caption-text {
+.gallery-card-title {
   text-align: right;
-  max-width: 82%;
-  overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 78%;
 }
 
 /* --------------------------------------------------------------------------
-   Project Window Footer
+   Discreet Pagination Controls
+   -------------------------------------------------------------------------- */
+
+.project-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0 8px;
+  user-select: none;
+}
+
+.project-pagination[hidden] {
+  display: none !important;
+}
+
+.page-arrow {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 1px solid var(--proj-border);
+  border-radius: 50%;
+  color: var(--proj-text);
+  font: 14px/1 Georgia, serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-arrow:hover:not(:disabled) {
+  background: var(--proj-pill-bg);
+  border-color: var(--proj-accent);
+  color: var(--proj-accent);
+}
+
+.page-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 6px;
+}
+
+.page-num-btn {
+  background: none;
+  border: 1px solid var(--proj-border);
+  color: var(--proj-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font: 10px/1 Mono, monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-num-btn:hover {
+  border-color: var(--proj-accent);
+  color: var(--proj-text);
+}
+
+.page-num-btn.is-active {
+  background: var(--proj-accent);
+  border-color: var(--proj-accent);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Compact Films Collection Grid
+   -------------------------------------------------------------------------- */
+
+.project-films-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px 22px;
+  margin-bottom: 22px;
+}
+
+.film-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.film-card-thumb {
+  height: 270px;
+  width: 100%;
+  background: var(--proj-card-bg);
+  border: 1px solid var(--proj-border);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.film-card-thumb:hover {
+  transform: translateY(-2px);
+  border-color: var(--proj-accent);
+  box-shadow: 0 10px 26px -6px rgba(0, 0, 0, 0.16);
+}
+
+.film-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.film-card-play {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(18, 16, 14, 0.65);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font: 15px Georgia, serif;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.film-card-thumb:hover .film-card-play {
+  transform: scale(1.08);
+  background: rgba(18, 16, 14, 0.85);
+}
+
+.film-card-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding-top: 7px;
+  font: 9px/1.4 Mono, monospace;
+  color: var(--proj-muted);
+}
+
+.film-card-num {
+  font-weight: 500;
+  color: var(--proj-accent);
+  flex-shrink: 0;
+}
+
+.film-card-title {
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Project Room Footer
    -------------------------------------------------------------------------- */
 
 .project-room-footer {
   max-width: 1320px;
-  margin: 0 auto;
-  padding: 36px clamp(20px, 4vw, 56px) 50px;
+  width: 100%;
+  margin: auto auto 0;
+  padding: 18px clamp(20px, 3.5vw, 48px) 24px;
   border-top: 1px solid var(--proj-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.proj-footer-info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
 .proj-footer-sign {
-  font: 10px/1 Mono, monospace;
+  font: 9.5px/1 Mono, monospace;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--proj-muted);
 }
 
-.proj-footer-note {
-  font: 10px/1.4 Mono, monospace;
-  color: var(--proj-muted);
-  margin: 0;
-}
-
 .project-room-footer button {
-  font: 400 clamp(15px, 1.4vw, 20px)/1.2 Bodoni, Georgia, serif;
+  font: 400 clamp(14px, 1.3vw, 17px)/1.2 Bodoni, Georgia, serif;
   color: var(--proj-text);
   background: none;
   border: 1px solid var(--proj-border);
-  padding: 8px 18px;
-  border-radius: 30px;
+  padding: 6px 16px;
+  border-radius: 24px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   transition: all 0.2s ease;
 }
 
@@ -582,7 +646,7 @@ body.project-window-open {
 }
 
 /* --------------------------------------------------------------------------
-   Fullscreen Lightbox Modal (For in-depth zoom inspection)
+   Fullscreen Lightbox Modal (ONLY lightbox shows huge images)
    -------------------------------------------------------------------------- */
 
 .project-lightbox {
@@ -605,8 +669,8 @@ body.project-window-open {
 
 .project-lightbox[open] {
   display: grid;
-  grid-template-rows: 54px minmax(0, 1fr);
-  animation: lightbox-fade 0.25s ease;
+  grid-template-rows: 52px minmax(0, 1fr);
+  animation: lightbox-fade 0.22s ease;
 }
 
 .project-lightbox::backdrop {
@@ -674,7 +738,7 @@ body.project-window-open {
 .lightbox-image {
   display: block;
   max-width: 90vw;
-  max-height: 82vh;
+  max-height: 84vh;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -705,11 +769,10 @@ body.project-window-open {
 }
 
 /* --------------------------------------------------------------------------
-   Mobile & Responsive Adaptations
+   Mobile Adaptations: 2 Columns Contact Sheet
    -------------------------------------------------------------------------- */
 
 @media (max-width: 768px) {
-  /* On mobile, window takes full screen seamlessly */
   .project-room {
     inset: 0 !important;
     width: 100vw !important;
@@ -721,7 +784,7 @@ body.project-window-open {
   }
 
   .project-room-bar {
-    height: 50px;
+    height: 48px;
     padding: 0 4vw;
   }
 
@@ -738,59 +801,42 @@ body.project-window-open {
     display: none;
   }
 
-  .project-filmstrip {
-    height: 48px;
-    padding: 4px 4vw;
-  }
-
-  .thumb-btn {
-    width: 46px;
-    height: 34px;
-  }
-
-  .project-room-scroll {
-    height: calc(100% - 98px);
-  }
-
   .project-editorial-header {
-    padding: 20px 4vw;
+    padding: 16px 4vw 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .proj-main-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
-  .project-films-slot {
-    padding: 0 4vw;
+  .project-view-panel {
+    padding: 14px 4vw 20px;
   }
 
-  .project-room-sequence {
-    padding: 0 4vw 40px;
+  .project-grid,
+  .project-films-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
   }
 
-  .spread-pair,
-  .spread-asymmetric,
-  .spread-triptych {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .editorial-spread {
-    margin-bottom: 28px;
+  .gallery-card-thumb,
+  .film-card-thumb {
+    height: 180px;
+    padding: 6px;
   }
 
   .project-room-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 28px 4vw 40px;
+    padding: 14px 4vw 24px;
   }
 
   .lightbox-nav-prev,
   .lightbox-nav-next {
     width: 36px;
     height: 36px;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .lightbox-caption {
@@ -802,8 +848,7 @@ body.project-window-open {
   .project-room {
     transform: none !important;
   }
-  .gallery-img-wrap,
-  .gallery-img-wrap img {
+  .gallery-card-thumb {
     transition: none !important;
     transform: none !important;
   }
