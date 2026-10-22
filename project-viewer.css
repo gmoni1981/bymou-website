@@ -39,18 +39,18 @@
   --proj-card-bg: #b65239;
 }
 
-/* 02. Élan Pâtisserie — Soft French Brand Orange (pleasant, non-eye-straining) */
+/* 02. Élan Pâtisserie — Warm Cream, Terracotta Orange & Deep Cocoa */
 .project-room[data-theme="elan"] {
-  --proj-bg: #eea276;
-  --proj-bar-bg: #e29467;
-  --proj-text: #281106;
-  --proj-muted: #6e3a1f;
-  --proj-border: rgba(40, 17, 6, 0.15);
-  --proj-border-strong: rgba(40, 17, 6, 0.3);
-  --proj-pill-bg: rgba(40, 17, 6, 0.08);
-  --proj-pill-border: rgba(40, 17, 6, 0.22);
-  --proj-accent: #8c2e0b;
-  --proj-card-bg: #f5b995;
+  --proj-bg: #f2ead9;
+  --proj-bar-bg: #eae0cd;
+  --proj-text: #35221a;
+  --proj-muted: #6b4d3c;
+  --proj-border: rgba(192, 91, 52, 0.16);
+  --proj-border-strong: rgba(192, 91, 52, 0.32);
+  --proj-pill-bg: rgba(192, 91, 52, 0.08);
+  --proj-pill-border: rgba(192, 91, 52, 0.24);
+  --proj-accent: #c05b34;
+  --proj-card-bg: #e9dfca;
 }
 
 /* 03. Sable Glass Studio — Light Bottle Green / Translucent Olive Glass */
@@ -1138,4 +1138,168 @@ body.project-window-open {
     transition: none !important;
     transform: none !important;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Élan Pâtisserie — Bespoke Editorial Brand Monograph Styles
+   Strictly scoped to [data-theme="elan"]
+   -------------------------------------------------------------------------- */
+
+.project-room[data-theme="elan"] .project-room-scroll {
+  background:
+    radial-gradient(ellipse 65% 50% at 92% 10%, rgba(192, 91, 52, 0.14) 0%, transparent 68%),
+    radial-gradient(ellipse 55% 45% at 8% 90%, rgba(192, 91, 52, 0.09) 0%, transparent 62%),
+    #f2ead9;
+  color: #35221a;
+}
+
+.project-room[data-theme="elan"] .elan-brand-header {
+  margin: 6px 0 16px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.project-room[data-theme="elan"] .elan-logo-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.project-room[data-theme="elan"] .elan-tagline-top {
+  font: 500 9px/1 Mono, monospace;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #c05b34;
+}
+
+.project-room[data-theme="elan"] .elan-brand-logo-svg {
+  width: clamp(210px, 22vw, 290px);
+  height: auto;
+  display: block;
+  color: #35221a;
+  filter: drop-shadow(0 2px 8px rgba(192, 91, 52, 0.08));
+}
+
+.project-room[data-theme="elan"] .elan-tagline-bottom {
+  font: 400 8.5px/1 Mono, monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #785341;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-room[data-theme="elan"] .elan-tagline-bottom::before {
+  content: "—";
+  color: #c05b34;
+  font-weight: 600;
+}
+
+.project-room[data-theme="elan"] .proj-header-meta {
+  color: #c05b34;
+  margin-bottom: 6px;
+}
+
+.project-room[data-theme="elan"] .proj-kicker {
+  color: #c05b34;
+  letter-spacing: 0.18em;
+}
+
+.project-room[data-theme="elan"] .proj-narrative {
+  color: #55382b;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.project-room[data-theme="elan"] .proj-pill {
+  background: rgba(192, 91, 52, 0.07);
+  border-color: rgba(192, 91, 52, 0.24);
+  color: #35221a;
+  font-weight: 500;
+}
+
+.project-room[data-theme="elan"] .jump-pill.is-active {
+  background: #35221a;
+  color: #f2ead9;
+}
+
+.project-room[data-theme="elan"] .jump-badge {
+  background: rgba(192, 91, 52, 0.14);
+  color: #35221a;
+}
+
+.project-room[data-theme="elan"] .jump-pill.is-active .jump-badge {
+  background: rgba(242, 234, 217, 0.25);
+  color: #f2ead9;
+}
+
+.project-room[data-theme="elan"] .proj-section {
+  border-top-color: rgba(192, 91, 52, 0.18);
+}
+
+.project-room[data-theme="elan"] .proj-section-kicker {
+  color: #c05b34;
+}
+
+.project-room[data-theme="elan"] .proj-section-title {
+  color: #35221a;
+}
+
+.project-room[data-theme="elan"] .gallery-card-thumb {
+  background: #e9dfca;
+  border-color: rgba(192, 91, 52, 0.18);
+  box-shadow: 0 4px 16px -4px rgba(53, 34, 26, 0.06);
+}
+
+.project-room[data-theme="elan"] .gallery-card-thumb:hover {
+  border-color: #c05b34;
+  box-shadow: 0 12px 28px -6px rgba(192, 91, 52, 0.2);
+}
+
+.project-room[data-theme="elan"] .gallery-card-num {
+  color: #c05b34;
+  font-weight: 600;
+}
+
+.project-room[data-theme="elan"] .gallery-card-title {
+  color: #4a3326;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 10px;
+}
+
+.project-room[data-theme="elan"] .film-card-thumb {
+  border-color: rgba(192, 91, 52, 0.24);
+}
+
+.project-room[data-theme="elan"] .film-format-tag {
+  background: rgba(53, 34, 26, 0.88);
+  border-color: rgba(242, 234, 217, 0.25);
+  color: #f2ead9;
+}
+
+.project-room[data-theme="elan"] .film-play-badge {
+  background: rgba(53, 34, 26, 0.88);
+  border-color: rgba(192, 91, 52, 0.5);
+  color: #f2ead9;
+}
+
+.project-room[data-theme="elan"] .film-play-badge .play-arrow {
+  color: #c05b34;
+}
+
+.project-room[data-theme="elan"] .film-card-num {
+  color: #c05b34;
+}
+
+.project-room[data-theme="elan"] .page-num-btn.is-active {
+  background: #c05b34;
+  border-color: #c05b34;
+  color: #f2ead9;
+}
+
+.project-room[data-theme="elan"] .page-arrow:hover:not(:disabled) {
+  border-color: #c05b34;
+  color: #c05b34;
 }

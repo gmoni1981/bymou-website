@@ -29,6 +29,7 @@ export function createProjectViewer({reduced}) {
             <span class="proj-kicker" data-meta-kicker></span>
             <span class="proj-year" data-meta-year>2026</span>
           </div>
+          <div class="proj-brand-logo-slot" data-brand-logo-slot></div>
           <h1 id="project-room-title" class="proj-main-title"></h1>
           <p class="proj-narrative" data-meta-intro></p>
           <div class="proj-tags" data-meta-tags></div>
@@ -599,9 +600,31 @@ export function createProjectViewer({reduced}) {
       returnBtn.querySelector('span:first-child').textContent = words[1];
 
       // Editorial Intro Block
+      const isElan = project.slug === 'elan-bakery';
+      const logoSlot = dialog.querySelector('[data-brand-logo-slot]');
+      const titleEl = dialog.querySelector('#project-room-title');
+
+      if (isElan) {
+        logoSlot.innerHTML = `
+          <div class="elan-brand-header">
+            <div class="elan-logo-lockup">
+              <span class="elan-tagline-top">BAKERY · CAFÉ · GOOD DAYS</span>
+              <img src="/public/projects/elan-bakery/elan-logo.svg" alt="élan PÂTISSERIE" class="elan-brand-logo-svg" width="270" height="172">
+              <span class="elan-tagline-bottom">A SWEETER BRIGHTER DAY</span>
+            </div>
+          </div>
+        `;
+        titleEl.style.display = 'none';
+        dialog.querySelector('[data-room-name]').textContent = 'élan Pâtisserie';
+      } else {
+        logoSlot.innerHTML = '';
+        titleEl.style.display = '';
+        titleEl.textContent = project.name || project.title;
+        dialog.querySelector('[data-room-name]').textContent = project.name || project.title;
+      }
+
       dialog.querySelector('[data-meta-kicker]').textContent = (project.category || project.title || '').toUpperCase();
       dialog.querySelector('[data-meta-year]').textContent = project.year || '2026';
-      dialog.querySelector('#project-room-title').textContent = project.name || project.title;
       dialog.querySelector('[data-meta-intro]').textContent = project.intro || (project.title + ' — A curated creative monograph by Mou Grasso.');
 
       // Deliverables Pills

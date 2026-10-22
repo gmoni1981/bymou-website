@@ -1,4 +1,4 @@
-import {createProjectViewer} from './project-viewer.js?v=75';
+import {createProjectViewer} from './project-viewer.js?v=80';
 import {selectedWork as projects} from '../data/selected-work.js';
 import {preset} from '../data/showcase-preset.js';
 const labels={en:{eyebrow:'A selection of perspectives / 01—04',heading:'Selected <em>Work</em>',note:'Four projects. A closer look.',project:'Selected project',view:'Explore project ↗',hint:'Scroll or drag · Click to enter',pause:'Pause motion',play:'Play motion'},fr:{eyebrow:'Une sélection de perspectives / 01—04',heading:'Projets <em>choisis</em>',note:'Quatre projets. Un regard de plus près.',project:'Projet sélectionné',view:'Découvrir le projet ↗',hint:'Défilez ou glissez · Cliquez pour entrer',pause:'Mettre en pause',play:'Animer'},it:{eyebrow:'Una selezione di prospettive / 01—04',heading:'Lavori <em>scelti</em>',note:'Quattro progetti. Uno sguardo più vicino.',project:'Progetto selezionato',view:'Esplora il progetto ↗',hint:'Scorri o trascina · Clicca per entrare',pause:'Pausa movimento',play:'Avvia movimento'}};
