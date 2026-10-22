@@ -338,6 +338,14 @@ export const selectedWork = [
     "deliverables": ["Visual Identity", "Lookbook Photography", "Material Tactility", "Studio Packaging"],
     "images": [
       {
+        "src": "/public/projects/sable-glass-studio/exhibition/03.webp",
+        "preview": "/public/projects/sable-glass-studio/exhibition/03-640.webp",
+        "width": 1122,
+        "height": 1402,
+        "sourceFilename": "Sable Glass Studio Poster.png",
+        "alt": "Sable Glass Studio Poster"
+      },
+      {
         "src": "/public/projects/sable-glass-studio/exhibition/01.webp",
         "preview": "/public/projects/sable-glass-studio/exhibition/01-640.webp",
         "width": 1122,
@@ -352,14 +360,6 @@ export const selectedWork = [
         "height": 1402,
         "sourceFilename": "Sable Glass Studio Editorial.png",
         "alt": "Sable Glass Studio Editorial"
-      },
-      {
-        "src": "/public/projects/sable-glass-studio/exhibition/03.webp",
-        "preview": "/public/projects/sable-glass-studio/exhibition/03-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Sable Glass Studio Poster.png",
-        "alt": "Sable Glass Studio Poster"
       },
       {
         "src": "/public/projects/sable-glass-studio/exhibition/04.webp",
