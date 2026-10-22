@@ -3,7 +3,7 @@
 .studio-editorial .studio-masthead{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line,#c9c7bf);padding-top:20px;font:10px/1.6 Mono,monospace;letter-spacing:.12em;text-transform:uppercase}
 .studio-editorial .studio-spread{display:grid;grid-template-columns:34% 1fr;gap:11%;align-items:center;margin-top:65px}
 .studio-editorial .studio-portrait{margin:0;position:relative;align-self:start}
-.studio-editorial .studio-portrait img{display:block;width:100%;height:auto;aspect-ratio:1122/1402;object-fit:contain;filter:none}
+.studio-editorial .studio-portrait img,.studio-editorial .studio-portrait video{display:block;width:100%;height:auto;aspect-ratio:1080/1920;object-fit:cover;border-radius:3px;filter:none}
 .studio-editorial .studio-portrait figcaption{display:flex;justify-content:space-between;gap:15px;align-items:baseline;margin-top:18px;border-top:1px solid var(--line,#c9c7bf);padding-top:15px}
 .studio-editorial .studio-portrait figcaption span:first-child{font:400 29px/1.15 Bodoni,Georgia,serif;letter-spacing:-.025em}
 .studio-editorial .studio-portrait figcaption span:last-child{font:9px/1.6 Mono,monospace;max-width:100px;text-align:right;color:#5b5b52}
