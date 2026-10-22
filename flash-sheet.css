@@ -10,3 +10,12 @@
 html.viewer-open{overflow:hidden}.sv-signature-path{stroke-width:.6}.sv-signature-path.sv-draw{animation:sv-signature-draw 1.5s ease both,tag-fill .3s 1.25s both}.sv-signature-path.sv-static{fill:var(--accent)}@keyframes tag-fill{to{fill:var(--accent)}}.sv-title{font-family:var(--display);text-transform:uppercase;font-size:clamp(25px,4vw,60px)}
 
 .hero-sticker{text-transform:uppercase;max-width:330px}.film-screen{clip-path:none;transform:translate(-3.5vw,-5svh) scale(.25) rotate(-4deg);transform-origin:100% 100%;will-change:transform}.film-label{font-size:28px;padding:8px 12px;background:#05050570;right:4%;bottom:4%}.fit-preview{height:760px}.portrait-scene{overflow:clip}@media(max-width:700px){.hero-sticker{max-width:170px}.film-screen{transform:translate(-3.5vw,-17svh) scale(.27) rotate(-4deg)}.film-label{font-size:16px}.fit-preview{height:760px}.mirror-ring{max-width:80%}}@media(prefers-reduced-motion:reduce){.film-screen{transform:none!important;clip-path:none!important}.portrait-scene{overflow:clip}.mirror-ring{margin-left:0;transform:translateX(-50%)!important}}
+
+.wordmark { display: inline-flex; align-items: center; line-height: 1; }
+.wordmark-svg { height: 26px; width: auto; display: block; }
+.boot-gate .wordmark-svg { height: clamp(52px, 8vw, 84px); }
+.footer-wordmark .wordmark-svg { width: 100%; max-width: 900px; height: auto; }
+@media (max-width: 700px) {
+  .wordmark-svg { height: 22px; }
+  .boot-gate .wordmark-svg { height: clamp(40px, 10vw, 64px); }
+}
