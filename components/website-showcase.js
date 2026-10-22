@@ -2,40 +2,40 @@ import { websiteVideos } from '../data/websites.js';
 
 const uiCopy = {
   en: {
-    eyebrow: 'Websites · Motion Architecture',
+    eyebrow: 'Selected Work · Digital Architecture',
     title: 'Selected digital experiences',
-    lead: 'Editorial web systems, interactive flagships, and spatial motion designed to transform digital presence into an indelible brand experience.',
-    counter: '03 Works · 2026',
-    status: 'Live Production',
-    explore: 'Explore Experience',
-    urlLabel: 'Production Domain'
+    lead: 'Interactive flagships, kinetic storefronts, and brand worlds engineered for deep immersion and seamless motion.',
+    counter: 'Index [ 01 — 03 ]',
+    status: 'All Platforms Active · 2026',
+    viewSite: 'Launch Experience',
+    productionUrl: 'Production URL'
   },
   fr: {
-    eyebrow: 'Sites Web · Architecture Cinetique',
+    eyebrow: 'Projets Choisis · Architecture Digitale',
     title: 'Expériences digitales choisies',
-    lead: 'Systèmes web éditoriaux, flagships interactifs et mouvement spatial conçus pour transformer la présence numérique en une expérience de marque indélébile.',
-    counter: '03 Projets · 2026',
-    status: 'Production En Ligne',
-    explore: 'Découvrir le Projet',
-    urlLabel: 'Domaine Officiel'
+    lead: 'Flagships interactifs, boutiques cinétiques et univers de marque conçus pour une immersion totale et un mouvement fluide.',
+    counter: 'Index [ 01 — 03 ]',
+    status: 'Plateformes Actives · 2026',
+    viewSite: 'Découvrir le Projet',
+    productionUrl: 'URL de Production'
   },
   it: {
-    eyebrow: 'Siti Web · Architettura del Movimento',
+    eyebrow: 'Lavori Selezionati · Architettura Digitale',
     title: 'Esperienze digitali selezionate',
-    lead: 'Sistemi web editoriali, flagship interattivi e movimento spaziale pensati per trasformare la presenza digitale in un’esperienza memorabile.',
-    counter: '03 Progetti · 2026',
-    status: 'Online in Produzione',
-    explore: 'Esplora Esperienza',
-    urlLabel: 'Dominio Ufficiale'
+    lead: 'Flagship interattivi, store cinetici e mondi di marca progettati per un’immersione profonda e un movimento fluido.',
+    counter: 'Indice [ 01 — 03 ]',
+    status: 'Piattaforme Attive · 2026',
+    viewSite: 'Esplora Esperienza',
+    productionUrl: 'URL di Produzione'
   },
   ar: {
-    eyebrow: 'المواقع الرقمية · هندسة الحركة',
+    eyebrow: 'أعمال مختارة · العمارة الرقمية',
     title: 'تجارب رقمية مختارة',
-    lead: 'منظومات رقمية تحريرية، وواجهات رائدة تفاعلية، وحركة مكانية صُممت لتحويل الحضور الرقمي إلى بصمة تجارية استثنائية.',
-    counter: '٠٣ أعمال · ٢٠٢٦',
-    status: 'منصة مفعلة',
-    explore: 'استكشف التجربة',
-    urlLabel: 'النطاق الرسمي'
+    lead: 'واجهات رائدة تفاعلية، ومتاجر رقمية حركية، وعوالم علامات تجارية صُممت لانغماس عميق وحركة انسيابية.',
+    counter: 'الفهرس [ ٠١ — ٠٣ ]',
+    status: 'جميع المنصات مفعلة · ٢٠٢٦',
+    viewSite: 'استكشف التجربة',
+    productionUrl: 'رابط الإنتاج'
   }
 };
 
@@ -53,94 +53,76 @@ export function initWebsiteShowcase({ reduced }) {
   let modalOpen = false;
 
   root.innerHTML = `
-    <div class="web-container">
-      <header class="web-editorial-header">
-        <div class="web-header-meta">
+    <div class="web-editorial-wrap">
+      <header class="web-monograph-masthead">
+        <div class="web-meta-bar">
           <span class="web-eyebrow" data-web-eyebrow></span>
-          <span class="web-counter" data-web-counter aria-hidden="true"></span>
+          <span class="web-index-label" data-web-counter aria-hidden="true"></span>
         </div>
-        <div class="web-header-main">
-          <h2 class="web-title" data-web-title></h2>
-          <div class="web-header-aside">
-            <p class="web-lead" data-web-lead></p>
-            <div class="web-header-badges">
-              <span class="web-badge-pill"><span class="web-pulse-dot" aria-hidden="true"></span> <span data-web-status></span></span>
+        <div class="web-headline-row">
+          <h2 class="web-headline" data-web-title></h2>
+          <div class="web-headline-sub">
+            <p class="web-synopsis" data-web-lead></p>
+            <div class="web-status-pill">
+              <span class="web-status-glow" aria-hidden="true"></span>
+              <span data-web-status></span>
             </div>
           </div>
         </div>
       </header>
 
-      <div class="web-editorial-showcase" role="region" aria-label="Selected digital experiences">
+      <div class="web-asymmetric-monograph" role="region" aria-label="Selected digital experiences">
         ${websiteVideos.map((item, i) => `
-          <article class="web-project-spread ${i % 2 === 1 ? 'is-reversed' : ''}" data-project="${item.slug}">
-            <!-- Digital Viewport Window -->
-            <div class="web-device-window">
-              <div class="web-window-bar">
-                <div class="web-window-dots" aria-hidden="true">
-                  <span class="web-dot"></span>
-                  <span class="web-dot"></span>
-                  <span class="web-dot"></span>
-                </div>
-                <div class="web-url-pill">
-                  <svg class="web-lock-icon" viewBox="0 0 12 12" width="10" height="10" fill="currentColor" aria-hidden="true">
-                    <path d="M9 4.5V3.5a3 3 0 0 0-6 0v1H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H9zM4.5 3.5a1.5 1.5 0 0 1 3 0v1h-3v-1z"/>
-                  </svg>
-                  <span class="web-url-text">${item.url}</span>
-                </div>
-                <div class="web-window-status">
-                  <span class="web-fps-badge">60 FPS</span>
-                </div>
-              </div>
-              <div class="web-screen-viewport" style="--aspect: ${item.aspect};">
+          <article class="web-entry ${i % 2 === 1 ? 'is-alternate' : ''}" data-slug="${item.slug}">
+            <!-- Immersive Media Frame (No fake browser chrome) -->
+            <div class="web-stage-cell">
+              <div class="web-media-canvas" style="--ratio: ${item.aspect};">
                 <video
+                  src="${item.src}"
+                  poster="${item.poster}"
                   muted
                   defaultMuted
                   autoplay
                   loop
                   playsinline
-                  preload="none"
-                  poster="${item.poster}"
+                  preload="auto"
                   width="${item.width}"
                   height="${item.height}"
-                  data-src="${item.src}"
-                  aria-label="${item.name} website preview recording in motion"
+                  aria-label="${item.name} website preview in motion"
                 ></video>
-                <div class="web-viewport-glare" aria-hidden="true"></div>
               </div>
             </div>
 
-            <!-- Editorial Spec Sheet Column -->
-            <div class="web-spec-sheet">
-              <div class="web-spec-top">
-                <div class="web-spec-index">
-                  <span class="web-num">${String(i + 1).padStart(2, '0')}</span>
-                  <span class="web-num-sep">/</span>
-                  <span class="web-num-total">03</span>
+            <!-- Asymmetric Editorial Content Column -->
+            <div class="web-info-cell">
+              <div class="web-specimen-header">
+                <span class="web-serial-digit">${String(i + 1).padStart(2, '0')}</span>
+                <div class="web-serial-meta">
+                  <span class="web-serial-total">/ 03</span>
+                  <span class="web-discipline-tag">${item.discipline}</span>
                 </div>
-                <span class="web-spec-discipline">${item.discipline}</span>
               </div>
 
-              <div class="web-spec-body">
-                <h3 class="web-project-name">${item.name}</h3>
-                <p class="web-project-category">${item.category}</p>
-                <p class="web-project-narrative" data-desc-slug="${item.slug}">
+              <div class="web-specimen-body">
+                <h3 class="web-project-title">${item.name}</h3>
+                <p class="web-category-subtitle">${item.category}</p>
+                <p class="web-narrative-copy" data-desc-slug="${item.slug}">
                   ${item.descriptions[language] || item.descriptions.en}
                 </p>
               </div>
 
-              <div class="web-spec-bottom">
-                <ul class="web-tags-list" aria-label="Deliverables">
-                  ${item.deliverables.map(tag => `<li class="web-tag-item">${tag}</li>`).join('')}
-                </ul>
-                <div class="web-action-row">
-                  <div class="web-domain-spec">
-                    <span class="web-domain-label" data-web-urllabel></span>
-                    <span class="web-domain-val">${item.url}</span>
+              <div class="web-specimen-meta">
+                <div class="web-disciplines-row" aria-label="Key deliverables">
+                  ${item.deliverables.map(d => `<span class="web-chip">${d}</span>`).join('')}
+                </div>
+                <div class="web-action-footer">
+                  <div class="web-domain-lockup">
+                    <span class="web-url-caption" data-web-urllabel></span>
+                    <a class="web-domain-link" href="https://${item.url}" target="_blank" rel="noopener noreferrer">
+                      <span>${item.url}</span>
+                      <span class="web-arrow" aria-hidden="true">↗</span>
+                    </a>
                   </div>
-                  <span class="web-explore-pill">
-                    <span data-web-explore></span>
-                    <span class="web-arrow" aria-hidden="true">↗</span>
-                  </span>
                 </div>
               </div>
             </div>
@@ -157,9 +139,6 @@ export function initWebsiteShowcase({ reduced }) {
   function sync() {
     videos.forEach(v => {
       if (visibility.get(v) && !document.hidden && !modalOpen && !reduced.matches) {
-        if (!v.getAttribute('src')) {
-          v.src = v.dataset.src;
-        }
         v.play().catch(() => {});
       } else {
         v.pause();
@@ -170,7 +149,7 @@ export function initWebsiteShowcase({ reduced }) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => visibility.set(e.target, e.isIntersecting));
     sync();
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
 
   videos.forEach(v => observer.observe(v));
 
@@ -197,11 +176,7 @@ export function initWebsiteShowcase({ reduced }) {
     if (status) status.textContent = t.status;
 
     root.querySelectorAll('[data-web-urllabel]').forEach(el => {
-      el.textContent = t.urlLabel;
-    });
-
-    root.querySelectorAll('[data-web-explore]').forEach(el => {
-      el.textContent = t.explore;
+      el.textContent = t.productionUrl;
     });
 
     websiteVideos.forEach(item => {
