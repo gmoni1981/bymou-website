@@ -601,21 +601,29 @@ export function createProjectViewer({reduced}) {
 
       // Editorial Intro Block
       const isElan = project.slug === 'elan-bakery';
+      const isSalt = project.slug === 'salt-and-silk';
       const logoSlot = dialog.querySelector('[data-brand-logo-slot]');
       const titleEl = dialog.querySelector('#project-room-title');
+      const editorialHeader = dialog.querySelector('.project-editorial-header');
+
+      editorialHeader.classList.toggle('is-elan-header', isElan);
+      editorialHeader.classList.toggle('is-salt-header', isSalt);
 
       if (isElan) {
+        // Élan: Logo is embedded directly in the background artwork at top-left.
+        // We leave logoSlot empty and hide titleEl to avoid duplicate logos/titles.
+        logoSlot.innerHTML = '';
+        titleEl.style.display = 'none';
+        dialog.querySelector('[data-room-name]').textContent = 'élan Pâtisserie';
+      } else if (isSalt) {
+        // Salt & Silk: Authentic original handwritten wordmark & chocolate chips descriptor
         logoSlot.innerHTML = `
-          <div class="elan-brand-header">
-            <div class="elan-logo-lockup">
-              <span class="elan-tagline-top">BAKERY · CAFÉ · GOOD DAYS</span>
-              <img src="/public/projects/elan-bakery/elan-logo.svg" alt="élan PÂTISSERIE" class="elan-brand-logo-svg" width="270" height="172">
-              <span class="elan-tagline-bottom">A SWEETER BRIGHTER DAY</span>
-            </div>
+          <div class="salt-brand-header">
+            <img src="/public/projects/salt-and-silk/salt-silk-logo-ivory.webp" alt="Salt & Silk — Chocolate Covered Chips" class="salt-brand-logo-img" width="412" height="196">
           </div>
         `;
         titleEl.style.display = 'none';
-        dialog.querySelector('[data-room-name]').textContent = 'élan Pâtisserie';
+        dialog.querySelector('[data-room-name]').textContent = 'Salt & Silk';
       } else {
         logoSlot.innerHTML = '';
         titleEl.style.display = '';
