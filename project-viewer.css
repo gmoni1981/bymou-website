@@ -25,49 +25,49 @@
   --proj-card-bg: #e5dcce;
 }
 
-/* 01. Casa Mirador — Warm architectural neutrals */
+/* 01. Casa Mirador — Moroccan Terracotta Clay */
 .project-room[data-theme="casa"] {
-  --proj-bg: #f3ede5;
-  --proj-bar-bg: #e8dfd5;
-  --proj-text: #1d1915;
-  --proj-muted: #6e6457;
-  --proj-border: rgba(45, 38, 30, 0.12);
-  --proj-border-strong: rgba(45, 38, 30, 0.28);
-  --proj-pill-bg: rgba(142, 113, 83, 0.08);
-  --proj-pill-border: rgba(142, 113, 83, 0.24);
-  --proj-accent: #8e7153;
-  --proj-card-bg: #e5dcce;
+  --proj-bg: #a6442b;
+  --proj-bar-bg: #963b23;
+  --proj-text: #faf2ea;
+  --proj-muted: #e4beaf;
+  --proj-border: rgba(250, 242, 234, 0.16);
+  --proj-border-strong: rgba(250, 242, 234, 0.32);
+  --proj-pill-bg: rgba(250, 242, 234, 0.1);
+  --proj-pill-border: rgba(250, 242, 234, 0.26);
+  --proj-accent: #f2ad96;
+  --proj-card-bg: #b65239;
 }
 
-/* 02. Élan Pâtisserie — Cream & terracotta */
+/* 02. Élan Pâtisserie — Soft French Brand Orange (pleasant, non-eye-straining) */
 .project-room[data-theme="elan"] {
-  --proj-bg: #f7ede5;
-  --proj-bar-bg: #eedecf;
-  --proj-text: #2b150e;
-  --proj-muted: #7d493a;
-  --proj-border: rgba(168, 70, 44, 0.16);
-  --proj-border-strong: rgba(168, 70, 44, 0.32);
-  --proj-pill-bg: rgba(194, 79, 50, 0.1);
-  --proj-pill-border: rgba(194, 79, 50, 0.28);
-  --proj-accent: #be4e32;
-  --proj-card-bg: #e8d3c3;
+  --proj-bg: #eea276;
+  --proj-bar-bg: #e29467;
+  --proj-text: #281106;
+  --proj-muted: #6e3a1f;
+  --proj-border: rgba(40, 17, 6, 0.15);
+  --proj-border-strong: rgba(40, 17, 6, 0.3);
+  --proj-pill-bg: rgba(40, 17, 6, 0.08);
+  --proj-pill-border: rgba(40, 17, 6, 0.22);
+  --proj-accent: #8c2e0b;
+  --proj-card-bg: #f5b995;
 }
 
-/* 03. Sable Glass Studio — Amber and sand */
+/* 03. Sable Glass Studio — Light Bottle Green / Translucent Olive Glass */
 .project-room[data-theme="sable"] {
-  --proj-bg: #f5eedb;
-  --proj-bar-bg: #ebdcc0;
-  --proj-text: #241708;
-  --proj-muted: #755934;
-  --proj-border: rgba(138, 88, 22, 0.16);
-  --proj-border-strong: rgba(138, 88, 22, 0.32);
-  --proj-pill-bg: rgba(184, 116, 26, 0.1);
-  --proj-pill-border: rgba(184, 116, 26, 0.28);
-  --proj-accent: #b4701a;
-  --proj-card-bg: #e5d4b4;
+  --proj-bg: #c7d5c0;
+  --proj-bar-bg: #bacab3;
+  --proj-text: #182417;
+  --proj-muted: #4e624c;
+  --proj-border: rgba(24, 36, 23, 0.15);
+  --proj-border-strong: rgba(24, 36, 23, 0.3);
+  --proj-pill-bg: rgba(24, 36, 23, 0.08);
+  --proj-pill-border: rgba(24, 36, 23, 0.22);
+  --proj-accent: #33522f;
+  --proj-card-bg: #d4e0ce;
 }
 
-/* 04. Salt & Silk — Rich chocolate tones */
+/* 04. Salt & Silk — Rich 85% Cacao Couture Dark Chocolate (Kept exactly as user loved) */
 .project-room[data-theme="salt"] {
   --proj-bg: #15100e;
   --proj-bar-bg: #1c1512;
