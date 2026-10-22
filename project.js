@@ -181,6 +181,8 @@
   }
 
   function applyLanguage(lang) {
+    const routeLanguage = location.pathname.split('/')[1];
+    if (['en','fr','it','ar'].includes(routeLanguage)) { currentLang = routeLanguage; document.documentElement.lang = routeLanguage; return; }
     currentLang = translations[lang] ? lang : 'en';
     document.documentElement.lang = currentLang;
 

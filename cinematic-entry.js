@@ -39,7 +39,7 @@ async function createEntry(T){
  renderer.outputColorSpace=T.SRGBColorSpace;
  const scene=new T.Scene(),camera=new T.PerspectiveCamera(48,1,.025,60),group=new T.Group();scene.add(group);
  let poster;
- try{poster=await Promise.race([new T.TextureLoader().loadAsync('/assets/works/mounia-opening.webp'),new Promise((_,r)=>setTimeout(()=>r(Error('Opening frame timeout')),10000))])}catch(e){renderer.dispose();throw e}
+ try{poster=await Promise.race([new T.TextureLoader().loadAsync('/assets/works/mou-grasso-opening.webp'),new Promise((_,r)=>setTimeout(()=>r(Error('Opening frame timeout')),10000))])}catch(e){renderer.dispose();throw e}
  poster.colorSpace=T.SRGBColorSpace;
  const geometry=new T.PlaneGeometry(1,1),material=new T.MeshBasicMaterial({map:poster,toneMapped:false,transparent:true});
  const screen=new T.Mesh(geometry,material);group.add(screen);
@@ -71,7 +71,7 @@ async function createEntry(T){
  }
  function loadFilm(){
   if(requested||!allowVideo)return;
-  requested=true;video.src='/assets/works/mounia-scroll.mp4';video.load();
+  requested=true;video.src='/assets/works/mou-grasso-scroll.mp4';video.load();
  }
  function sync(){
   if(!alive||!active||paused())return;
@@ -113,7 +113,8 @@ async function createEntry(T){
   const unit=24*Math.tan(camera.fov*Math.PI/360)/h,sw=a.width*unit,sh=a.height*unit;
   x=(a.left+a.width/2-r.left-w/2)*unit;y=-(a.top+a.height/2-r.top-h/2)*unit;
   screen.scale.set(sw,sh,1);edge.scale.set(sw+.022,sh+.022,1);
-  const fit=compact.matches?Math.max:Math.min;
+  // Cover the viewport without stretching; the mobile crop stays centered on the subject.
+  const fit=Math.min;
   arrival=fit(sh/(2*Math.tan(camera.fov*Math.PI/360)),sw/(2*Math.tan(camera.fov*Math.PI/360)*camera.aspect))*.985;
   sync();
  }

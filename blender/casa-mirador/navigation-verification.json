@@ -1,0 +1,283 @@
+{
+  "passed": true,
+  "tests": [
+    {
+      "kind": "stair ascent",
+      "floor": 0,
+      "target": [
+        11.5,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 11.47500000000001,
+        "z": -0.8,
+        "h": 0
+      }
+    },
+    {
+      "kind": "stair ascent",
+      "floor": 0,
+      "target": [
+        14.25,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.22500000000005,
+        "z": -0.8,
+        "h": 1.62
+      }
+    },
+    {
+      "kind": "stair ascent",
+      "floor": 0,
+      "target": [
+        14.25,
+        2
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.249473856076158,
+        "z": -1.9747450916555358,
+        "h": 1.62
+      }
+    },
+    {
+      "kind": "stair ascent",
+      "floor": 0,
+      "target": [
+        11.3,
+        2
+      ],
+      "passed": true,
+      "position": {
+        "x": 11.32458107575103,
+        "z": -1.9997895242184223,
+        "h": 3.24
+      }
+    },
+    {
+      "kind": "level approach",
+      "passed": true
+    },
+    {
+      "kind": "level approach",
+      "passed": true
+    },
+    {
+      "kind": "stair ascent",
+      "floor": 1,
+      "target": [
+        11.5,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 11.475078065985803,
+        "z": -0.8008991560758565,
+        "h": 3.24
+      }
+    },
+    {
+      "kind": "stair ascent",
+      "floor": 1,
+      "target": [
+        14.25,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.225077921617645,
+        "z": -0.8000080754841878,
+        "h": 4.86
+      }
+    },
+    {
+      "kind": "stair ascent",
+      "floor": 1,
+      "target": [
+        14.25,
+        2
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.249475693050824,
+        "z": -1.974754749771495,
+        "h": 4.86
+      }
+    },
+    {
+      "kind": "stair ascent",
+      "floor": 1,
+      "target": [
+        11.3,
+        2
+      ],
+      "passed": true,
+      "position": {
+        "x": 11.324582830605387,
+        "z": -1.9997895898205162,
+        "h": 6.48
+      }
+    },
+    {
+      "kind": "stair descent",
+      "floor": 1,
+      "target": [
+        14.25,
+        2
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.22458282310432,
+        "z": -1.9999981718734652,
+        "h": 4.86
+      }
+    },
+    {
+      "kind": "stair descent",
+      "floor": 1,
+      "target": [
+        14.25,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.24946493252562,
+        "z": -0.8252616564663909,
+        "h": 4.86
+      }
+    },
+    {
+      "kind": "stair descent",
+      "floor": 1,
+      "target": [
+        11.3,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 11.324572210152441,
+        "z": -0.8002104567254371,
+        "h": 3.24
+      }
+    },
+    {
+      "kind": "stair descent",
+      "floor": 0,
+      "target": [
+        14.25,
+        2
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.22542511119014,
+        "z": -1.9998202101908702,
+        "h": 1.62
+      }
+    },
+    {
+      "kind": "stair descent",
+      "floor": 0,
+      "target": [
+        14.25,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 14.249486582329027,
+        "z": -0.8250665995955989,
+        "h": 1.62
+      }
+    },
+    {
+      "kind": "stair descent",
+      "floor": 0,
+      "target": [
+        11.3,
+        0.8
+      ],
+      "passed": true,
+      "position": {
+        "x": 11.324592208210834,
+        "z": -0.8002090001155069,
+        "h": 0
+      }
+    },
+    {
+      "kind": "room spawn",
+      "id": "entry",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "living",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "dining",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "kitchen",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "court",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "guest1",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "guest2",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "primary",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "library",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "office",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "terrace",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "garden",
+      "passed": true
+    },
+    {
+      "kind": "room spawn",
+      "id": "roof",
+      "passed": true
+    },
+    {
+      "kind": "pool blocked",
+      "passed": true,
+      "position": {
+        "x": 6.675000000000007,
+        "z": -7,
+        "h": 0
+      }
+    }
+  ]
+}

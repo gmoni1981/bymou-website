@@ -1,0 +1,20 @@
+.project-room{position:fixed;inset:0;width:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#f4f1e9;color:#25251f;overflow:hidden;z-index:10000}
+.project-room::backdrop{background:rgba(10,10,10,.75)}
+.project-room-bar{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;border-bottom:1px solid #d1ccc1;background:#f4f1e9;font-family:Mono,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.project-room-close{width:48px;height:48px;padding:0;border:0;background:none;color:inherit;font-family:Arial,sans-serif;font-size:34px;font-weight:200;cursor:pointer}
+.project-room button:focus-visible,.project-room-scroll:focus-visible{outline:2px solid #514d42;outline-offset:-4px}
+.project-room-scroll{height:calc(100% - 76px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#aaa393 transparent}
+.project-room-intro{padding:70px 8vw 64px;display:grid;grid-template-columns:1fr 3fr;gap:24px;align-items:start}
+.project-room-intro p,.project-room-intro>span{font:10px/1.7 Mono,monospace;letter-spacing:.12em;text-transform:uppercase;margin:12px 0 0}
+.project-room-intro h2{font:400 clamp(48px,6.8vw,110px)/.98 Bodoni,Georgia,serif;letter-spacing:-.045em;margin:0;max-width:850px;text-wrap:balance}
+.project-room-intro>span{grid-column:2}
+.project-room-sequence{padding:0 8vw 40px}
+.project-room-sequence>figure{width:min(76%,850px);margin:0 0 clamp(60px,10vw,150px)}
+.project-room-sequence>figure:nth-child(3n+2){margin-left:auto}
+.project-room-sequence>figure:nth-child(3n){margin-left:auto;margin-right:auto;width:min(68%,760px)}
+.project-room-sequence img{display:block;width:100%;height:auto;background:#e5e0d5}
+.project-room-sequence figcaption{display:flex;gap:24px;justify-content:space-between;border-top:1px solid #d1ccc1;margin-top:17px;padding-top:13px;font:10px/1.7 Mono,monospace;color:#57544d}
+.project-room-sequence figcaption span:first-child{flex-shrink:0}.project-room-sequence figcaption span:last-child{max-width:70%;text-align:right}
+.project-room-end{margin:0 8vw;padding:40px 0 70px;border-top:1px solid #d1ccc1}.project-room-end button{font:400 clamp(28px,4vw,60px)/1.2 Bodoni,Georgia,serif;color:inherit;background:none;border:0;padding:12px 0;cursor:pointer}
+@media(max-width:700px){.project-room-bar{height:64px;padding:0 5vw;font-size:10px}.project-room-scroll{height:calc(100% - 64px)}.project-room-intro{display:block;padding:40px 5vw}.project-room-intro h2{font-size:49px;margin:20px 0 24px}.project-room-sequence{padding:0 4vw 16px}.project-room-sequence>figure,.project-room-sequence>figure:nth-child(3n){width:100%;margin:0 0 64px}.project-room-sequence figcaption{gap:12px;font-size:9px}.project-room-end{margin:0 5vw}}
+@media(prefers-reduced-motion:reduce){.project-room{clip-path:none!important;transform:none!important}}

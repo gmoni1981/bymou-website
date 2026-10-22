@@ -1,0 +1,36 @@
+/* Intro-only selectors; the existing hero and page styles remain unchanged. */
+.signature-intro-active { overscroll-behavior: none; }
+.signature-intro-active .boot-gate { visibility: hidden; }
+.signature-intro-active:not(.signature-intro-mounted)::after {
+  content: ''; position: fixed; inset: 0; z-index: 9998;
+  background: var(--bg, #f4f4f1); pointer-events: auto;
+}
+.signature-intro {
+  position: fixed; inset: 0; z-index: 9999;
+  display: grid; place-items: center;
+  background: var(--bg, #f4f4f1); color: var(--ink, #0b0b0b);
+  overflow: hidden; isolation: isolate; touch-action: none;
+}
+.signature-intro-composition {
+  width: min(78vw, 840px); transform: translateY(-3vh) rotate(-4deg);
+}
+.signature-intro svg { display: block; width: 100%; height: auto; overflow: visible; }
+.signature-intro .intro-ink { fill: currentColor; }
+.signature-intro .intro-pen { opacity: 0; stroke-dasharray: 10000; stroke-dashoffset: 10000; }
+.signature-intro-brand { width: 24%; margin: 10px auto 0; color: var(--accent, #ff2e88); }
+.signature-intro-skip {
+  position: absolute; right: clamp(20px,4vw,64px); bottom: max(24px,env(safe-area-inset-bottom));
+  min-width: 100px; min-height: 44px; padding: 10px 0;
+  background: transparent; border: 0; color: inherit;
+  font: 10px/1.5 var(--mono, monospace); letter-spacing: .12em; text-transform: uppercase;
+  cursor: pointer;
+}
+.signature-intro-skip:focus { outline: none; }
+.signature-intro-skip:focus-visible { outline: 1px solid currentColor; outline-offset: 5px; }
+@media (max-width:700px) {
+  .signature-intro-composition { width: 89vw; transform: translateY(-4vh) rotate(-4deg); }
+  .signature-intro-brand { width: 31%; margin-top: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signature-intro { display: none; }
+}

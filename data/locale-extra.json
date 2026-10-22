@@ -1,0 +1,992 @@
+{
+  "A successful rebrand is more than a new logo; it's a realignment of your company's visual communication with its current market position and product offering.": {
+    "fr": "Un repositionnement de marque réussi ne se résume pas à un nouveau logo : il aligne la communication visuelle de votre entreprise sur sa position actuelle sur le marché et sur son offre.",
+    "it": "Un rebranding efficace è più di un nuovo logo: riallinea la comunicazione visiva dell’azienda al suo attuale posizionamento sul mercato e alla sua offerta.",
+    "ar": "إعادة بناء العلامة التجارية الناجحة تتجاوز تصميم شعار جديد؛ فهي توائم التواصل البصري للشركة مع مكانتها الحالية في السوق وما تقدمه من منتجات وخدمات."
+  },
+  "Advising on the deployment of bespoke AI agents and chatbots to handle customer inquiries, internal knowledge retrieval, and data analysis.": {
+    "fr": "Conseil pour le déploiement d’agents IA et de chatbots sur mesure, capables de traiter les demandes des clients, de retrouver les connaissances internes et d’analyser les données.",
+    "it": "Consulenza sull’implementazione di agenti IA e chatbot su misura per gestire le richieste dei clienti, recuperare conoscenze interne e analizzare i dati.",
+    "ar": "استشارات لنشر وكلاء ذكاء اصطناعي وروبوتات محادثة مخصصة لمعالجة استفسارات العملاء واسترجاع المعرفة الداخلية وتحليل البيانات."
+  },
+  "Architectural visualization has evolved. Traditional 3D rendering can be slow and rigid. BYMOU utilizes AI-powered workflows to revolutionize how architects, developers, and designers present unbuilt spaces.": {
+    "fr": "La visualisation architecturale a évolué. Le rendu 3D traditionnel peut être lent et rigide. BYMOU s’appuie sur des workflows assistés par l’IA pour transformer la manière dont les architectes, promoteurs et designers présentent des espaces encore à construire.",
+    "it": "La visualizzazione architettonica si è evoluta. Il rendering 3D tradizionale può essere lento e poco flessibile. BYMOU utilizza flussi di lavoro basati sull’IA per rivoluzionare il modo in cui architetti, sviluppatori e designer presentano spazi ancora da realizzare.",
+    "ar": "تطوّر التصوّر المعماري. قد يكون التصيير التقليدي ثلاثي الأبعاد بطيئًا ومقيّدًا. تستخدم BYMOU سير عمل مدعومًا بالذكاء الاصطناعي لتغيير طريقة عرض المعماريين والمطوّرين والمصممين للمساحات التي لم تُبنَ بعد."
+  },
+  "As startups mature from early-stage ventures into market leaders, their initial branding often becomes a liability. BYMOU partners with ambitious startups to execute strategic rebrands that reflect their growth and future trajectory.": {
+    "fr": "À mesure que les startups passent des premiers stades à une position de leader, leur identité de départ peut devenir un frein. BYMOU accompagne les startups ambitieuses dans des repositionnements stratégiques qui reflètent leur croissance et leurs perspectives.",
+    "it": "Quando le startup passano dalle fasi iniziali alla leadership di mercato, il branding originario può diventare un limite. BYMOU affianca le startup ambiziose in rebranding strategici che riflettono la loro crescita e il percorso futuro.",
+    "ar": "مع انتقال الشركات الناشئة من مراحلها الأولى إلى ريادة السوق، قد تتحول هويتها الأولية إلى عبء. تتعاون BYMOU مع الشركات الطموحة لإعادة بناء علاماتها استراتيجيًا بما يعكس نموها ومسارها المستقبلي."
+  },
+  "Assisting architects during the ideation phase by quickly visualizing structural concepts and material combinations.": {
+    "fr": "Accompagnement des architectes dès la phase de conception grâce à la visualisation rapide de concepts structurels et d’associations de matériaux.",
+    "it": "Supporto agli architetti nella fase di ideazione, visualizzando rapidamente concetti strutturali e combinazioni di materiali.",
+    "ar": "مساندة المعماريين في مرحلة ابتكار الأفكار عبر التصوّر السريع للمفاهيم الإنشائية وتوليفات المواد."
+  },
+  "At BYMOU, our AI Film Studio in Marrakech represents the convergence of high-end cinematic production and generative AI technology. We cater exclusively to luxury brands, offering an innovative approach to commercial campaigns that reduces the logistical constraints of traditional film shoots.": {
+    "fr": "Chez BYMOU, notre studio de films IA à Marrakech réunit production cinématographique haut de gamme et IA générative. Nous travaillons exclusivement avec des marques de luxe et proposons une approche novatrice des campagnes publicitaires, qui allège les contraintes logistiques des tournages traditionnels.",
+    "it": "In BYMOU, il nostro AI Film Studio a Marrakech unisce produzione cinematografica di alto livello e intelligenza artificiale generativa. Lavoriamo esclusivamente con brand di lusso e proponiamo un approccio innovativo alle campagne commerciali, riducendo i vincoli logistici delle riprese tradizionali.",
+    "ar": "يجمع استوديو الأفلام بالذكاء الاصطناعي التابع لـ BYMOU في مراكش بين الإنتاج السينمائي الراقي وتقنيات الذكاء الاصطناعي التوليدي. نعمل حصريًا مع العلامات الفاخرة، ونقدم نهجًا مبتكرًا للحملات التجارية يخفف القيود اللوجستية للتصوير التقليدي."
+  },
+  "At the core of every iconic luxury brand is a distinct, uncompromising visual system. BYMOU acts as a strategic creative partner to premium brands, designing identities that command prestige and longevity.": {
+    "fr": "Toute marque de luxe emblématique repose sur un système visuel singulier et sans compromis. BYMOU accompagne les marques haut de gamme en tant que partenaire créatif stratégique et conçoit des identités synonymes de prestige et de pérennité.",
+    "it": "Al centro di ogni brand di lusso iconico c’è un sistema visivo distintivo e senza compromessi. BYMOU è partner creativo strategico dei brand premium e progetta identità capaci di esprimere prestigio e durare nel tempo.",
+    "ar": "ترتكز كل علامة فاخرة راسخة على نظام بصري مميز لا يقبل المساومة. تعمل BYMOU شريكًا إبداعيًا استراتيجيًا للعلامات الراقية، وتصمم هويات تعبّر عن المكانة وتدوم طويلًا."
+  },
+  "BYMOU is a creative studio based in Marrakech, Morocco, working across branding, AI-assisted film, digital experiences, real estate, hospitality and business automation.": {
+    "fr": "BYMOU est un studio créatif basé à Marrakech, au Maroc. Ses domaines d’activité comprennent l’identité de marque, le film assisté par l’IA, les expériences numériques, l’immobilier, l’hôtellerie et l’automatisation des entreprises.",
+    "it": "BYMOU è uno studio creativo con sede a Marrakech, in Marocco. Si occupa di branding, film assistiti dall’IA, esperienze digitali, immobiliare, ospitalità e automazione aziendale.",
+    "ar": "BYMOU استوديو إبداعي مقره مراكش، المغرب، يعمل في مجالات بناء العلامات والأفلام المدعومة بالذكاء الاصطناعي والتجارب الرقمية والعقارات والضيافة وأتمتة الأعمال."
+  },
+  "Beyond creative output, BYMOU assists forward-thinking businesses in Morocco and globally in integrating AI automation into their daily operations. We help demystify AI, turning it from a buzzword into a tangible competitive advantage.": {
+    "fr": "Au-delà de la création, BYMOU aide les entreprises visionnaires au Maroc et à l’international à intégrer l’automatisation par l’IA dans leurs activités quotidiennes. Nous rendons l’IA plus accessible et la transformons d’un simple mot à la mode en avantage concurrentiel concret.",
+    "it": "Oltre alla produzione creativa, BYMOU aiuta le aziende più innovative in Marocco e nel mondo a integrare l’automazione IA nelle attività quotidiane. Rendiamo l’IA più comprensibile e la trasformiamo da parola di moda in un vantaggio competitivo concreto.",
+    "ar": "إلى جانب الإنتاج الإبداعي، تساعد BYMOU الشركات الطموحة في المغرب وحول العالم على دمج أتمتة الذكاء الاصطناعي في عملياتها اليومية. نبسّط فهم هذه التقنية ونحوّلها من مصطلح رائج إلى ميزة تنافسية ملموسة."
+  },
+  "Build campaign layouts in three formats. Export a PNG, or make 100 crop variants in one ZIP. Runs in this browser.": {
+    "fr": "Créez des compositions de campagne en trois formats. Exportez un PNG ou générez 100 variantes de recadrage dans un seul fichier ZIP. L’outil fonctionne dans ce navigateur.",
+    "it": "Crea layout di campagna in tre formati. Esporta un PNG oppure genera 100 varianti di ritaglio in un unico file ZIP. L’operazione avviene in questo browser.",
+    "ar": "أنشئ تصاميم الحملة بثلاثة تنسيقات. صدّر ملف PNG أو أنشئ 100 نسخة باقتصاصات مختلفة في ملف ZIP واحد. تعمل الأداة في هذا المتصفح."
+  },
+  "By blending our deep understanding of luxury aesthetics with cutting-edge AI tools, we deliver campaigns that command attention and elevate brand perception.": {
+    "fr": "En associant notre connaissance approfondie des codes du luxe aux outils d’IA les plus récents, nous créons des campagnes qui captent l’attention et renforcent la perception de la marque.",
+    "it": "Unendo la nostra profonda conoscenza dell’estetica del lusso agli strumenti IA più avanzati, realizziamo campagne capaci di catturare l’attenzione e valorizzare la percezione del brand.",
+    "ar": "نجمع فهمنا العميق لجماليات الفخامة بأحدث أدوات الذكاء الاصطناعي، لنقدم حملات تستحوذ على الانتباه وتعزز صورة العلامة التجارية."
+  },
+  "By blending traditional artistry with computational power, BYMOU creates highly polished, captivating campaigns that resonate deeply with high-end audiences, creating impactful digital luxury marketing.": {
+    "fr": "En alliant savoir-faire artistique traditionnel et puissance informatique, BYMOU crée des campagnes soignées et captivantes qui touchent les publics haut de gamme et donnent une nouvelle portée au marketing numérique du luxe.",
+    "it": "Combinando sensibilità artistica tradizionale e potenza computazionale, BYMOU crea campagne curate e coinvolgenti, capaci di parlare al pubblico premium e dare incisività al marketing digitale di lusso.",
+    "ar": "تمزج BYMOU بين الحرفية الفنية التقليدية والقدرة الحاسوبية لتصميم حملات متقنة وجذابة تخاطب الجمهور الراقي بعمق، وتمنح التسويق الرقمي للفخامة أثرًا واضحًا."
+  },
+  "By integrating generative AI with traditional 3D modeling, we dramatically accelerate the visualization process while achieving advanced levels of photorealism and atmospheric depth.": {
+    "fr": "En intégrant l’IA générative à la modélisation 3D traditionnelle, nous accélérons considérablement la visualisation tout en obtenant un photoréalisme poussé et une grande profondeur d’atmosphère.",
+    "it": "Integrando l’IA generativa con la modellazione 3D tradizionale, acceleriamo notevolmente il processo di visualizzazione, raggiungendo al contempo elevati livelli di fotorealismo e profondità atmosferica.",
+    "ar": "من خلال دمج الذكاء الاصطناعي التوليدي مع النمذجة التقليدية ثلاثية الأبعاد، نسرّع عملية التصوّر كثيرًا ونحقق مستويات متقدمة من الواقعية الفوتوغرافية والعمق الجوي."
+  },
+  "Comprehensive identity systems for new developments, including naming, logo design, and brand guidelines that resonate with international investors.": {
+    "fr": "Systèmes d’identité complets pour les nouveaux projets immobiliers : naming, création de logo et chartes de marque conçues pour parler aux investisseurs internationaux.",
+    "it": "Sistemi d’identità completi per nuovi sviluppi immobiliari, con naming, progettazione del logo e linee guida di brand pensate per gli investitori internazionali.",
+    "ar": "أنظمة هوية متكاملة للمشروعات العقارية الجديدة، تشمل التسمية وتصميم الشعار وإرشادات العلامة التجارية بما يلقى صدى لدى المستثمرين الدوليين."
+  },
+  "Custom, high-performance websites for specific property developments, featuring interactive master plans, localized storytelling, and lead-generation tools.": {
+    "fr": "Sites web sur mesure et performants pour des projets immobiliers précis, avec plans d’ensemble interactifs, récits ancrés dans le lieu et outils de génération de prospects.",
+    "it": "Siti web personalizzati e ad alte prestazioni per specifici sviluppi immobiliari, con planimetrie interattive, storytelling legato al territorio e strumenti per acquisire contatti.",
+    "ar": "مواقع عالية الأداء ومصممة خصيصًا لمشروعات عقارية محددة، مع مخططات عامة تفاعلية وسرد مرتبط بالمكان وأدوات لاستقطاب العملاء المحتملين."
+  },
+  "Designing modern, scalable identity systems that work across digital products, marketing materials, and corporate communications.": {
+    "fr": "Conception de systèmes d’identité modernes et évolutifs, adaptés aux produits numériques, aux supports marketing et à la communication d’entreprise.",
+    "it": "Progettazione di sistemi d’identità moderni e scalabili, adatti a prodotti digitali, materiali di marketing e comunicazione aziendale.",
+    "ar": "تصميم أنظمة هوية حديثة قابلة للتوسع، وتعمل عبر المنتجات الرقمية والمواد التسويقية والاتصالات المؤسسية."
+  },
+  "Directing the visual style for photography, film, and AI-generated assets to ensure a cohesive brand narrative across all media.": {
+    "fr": "Direction du style visuel des photographies, des films et des contenus générés par l’IA afin d’assurer un récit de marque cohérent sur tous les supports.",
+    "it": "Direzione dello stile visivo di fotografie, film e contenuti generati dall’IA per garantire una narrazione di brand coerente su tutti i media.",
+    "ar": "توجيه الأسلوب البصري للتصوير الفوتوغرافي والأفلام والمواد المنشأة بالذكاء الاصطناعي لضمان سرد متماسك للعلامة عبر جميع الوسائط."
+  },
+  "Historically, luxury film campaigns required massive logistical efforts: flying crews to remote locations, building elaborate sets, and managing unpredictable elements. Today, AI allows us to bypass these constraints. We can conceptualize and execute campaigns in surreal, hyper-realistic environments that would be highly complex or prohibitively expensive to film in reality.": {
+    "fr": "Jusqu’ici, les campagnes filmées pour le luxe exigeaient une logistique considérable : équipes envoyées dans des lieux reculés, décors complexes à construire et imprévus à gérer. L’IA permet aujourd’hui de contourner ces contraintes. Nous pouvons imaginer et produire des campagnes dans des univers surréalistes et hyperréalistes, très complexes ou trop coûteux à filmer dans le monde réel.",
+    "it": "In passato, le campagne filmate per il lusso richiedevano una logistica imponente: troupe trasferite in luoghi remoti, scenografie elaborate e imprevisti da gestire. Oggi l’IA permette di superare questi vincoli. Possiamo ideare e realizzare campagne in ambienti surreali e iperrealistici, troppo complessi o costosi da filmare nella realtà.",
+    "ar": "تطلبت حملات الأفلام الفاخرة تقليديًا جهودًا لوجستية ضخمة: نقل فرق التصوير إلى مواقع نائية، وبناء ديكورات متقنة، والتعامل مع ظروف غير متوقعة. يتيح لنا الذكاء الاصطناعي اليوم تجاوز هذه القيود، وابتكار حملات وتنفيذها في بيئات سريالية مفرطة الواقعية يصعب تصويرها فعليًا أو ترتفع كلفتها كثيرًا."
+  },
+  "However, AI is simply a tool; it is not a replacement for human taste and creative direction. The success of an AI-assisted campaign hinges entirely on the director's vision. We apply traditional cinematic principles—lighting, composition, pacing, and color grading—to AI-generated assets, ensuring the final output aligns perfectly with the brand's heritage and aesthetic standards.": {
+    "fr": "L’IA reste toutefois un outil : elle ne remplace ni le goût humain ni la direction créative. La réussite d’une campagne assistée par l’IA dépend entièrement de la vision de sa direction. Nous appliquons aux contenus générés les principes du cinéma — lumière, composition, rythme et étalonnage — pour que le résultat respecte pleinement l’héritage et les codes esthétiques de la marque.",
+    "it": "L’IA resta comunque uno strumento, non sostituisce il gusto umano né la direzione creativa. Il successo di una campagna assistita dall’IA dipende interamente dalla visione del direttore. Applichiamo ai contenuti generati i principi cinematografici tradizionali — luce, composizione, ritmo e color grading — affinché il risultato rispecchi pienamente la storia e i codici estetici del brand.",
+    "ar": "لكن الذكاء الاصطناعي يظل أداة، ولا يحل محل الذائقة الإنسانية أو الإدارة الإبداعية. يعتمد نجاح الحملة المدعومة به بالكامل على رؤية المخرج. نطبّق مبادئ السينما التقليدية—الإضاءة والتكوين والإيقاع ومعالجة الألوان—على المواد المولّدة، لضمان توافق النتيجة مع إرث العلامة ومعاييرها الجمالية."
+  },
+  "Implementing generative AI tools (such as advanced image synthesis models and large language models) into your internal creative processes to improve output speed and efficiency.": {
+    "fr": "Intégration d’outils d’IA générative — modèles avancés de synthèse d’images et grands modèles de langage, par exemple — dans vos processus créatifs internes afin d’en améliorer la rapidité et l’efficacité.",
+    "it": "Integrazione di strumenti di IA generativa — come modelli avanzati di sintesi delle immagini e modelli linguistici di grandi dimensioni — nei processi creativi interni per aumentare velocità ed efficienza.",
+    "ar": "دمج أدوات الذكاء الاصطناعي التوليدي، مثل نماذج تركيب الصور المتقدمة والنماذج اللغوية الكبيرة، في العمليات الإبداعية الداخلية لتحسين سرعة الإنتاج وكفاءته."
+  },
+  "In a competitive real estate market, compelling visual storytelling is not just an asset; it is a highly influential component in engaging high-value prospects.": {
+    "fr": "Sur un marché immobilier concurrentiel, un récit visuel convaincant n’est pas un simple atout : il joue un rôle déterminant pour attirer des prospects à forte valeur.",
+    "it": "In un mercato immobiliare competitivo, uno storytelling visivo efficace non è solo un vantaggio: è uno strumento decisivo per coinvolgere potenziali clienti di alto valore.",
+    "ar": "في سوق عقارية تنافسية، لا يقتصر السرد البصري المقنع على كونه ميزة؛ بل يؤدي دورًا مؤثرًا في جذب العملاء المحتملين ذوي القيمة العالية."
+  },
+  "Interactive sites featuring dynamic master plans, property availability filtering, and secure investor portals.": {
+    "fr": "Sites interactifs avec plans d’ensemble dynamiques, filtres de disponibilité des biens et portails sécurisés pour les investisseurs.",
+    "it": "Siti interattivi con planimetrie dinamiche, filtri sulla disponibilità degli immobili e portali sicuri per gli investitori.",
+    "ar": "مواقع تفاعلية تضم مخططات عامة ديناميكية ومرشحات لتوافر العقارات وبوابات آمنة للمستثمرين."
+  },
+  "Marketing luxury real estate requires more than just floor plans and static renderings; it requires creating a compelling vision of a lifestyle. BYMOU operates as a specialized creative studio for real estate developers and agencies in Marrakech, transforming unbuilt properties into highly desirable visual experiences.": {
+    "fr": "La commercialisation de biens immobiliers de luxe ne se limite pas aux plans et aux rendus statiques : elle doit faire naître une vision séduisante d’un art de vivre. À Marrakech, BYMOU accompagne promoteurs et agences en tant que studio créatif spécialisé et transforme des biens encore à construire en expériences visuelles désirables.",
+    "it": "Il marketing immobiliare di lusso richiede più di planimetrie e rendering statici: deve creare una visione coinvolgente di uno stile di vita. A Marrakech, BYMOU è uno studio creativo specializzato per sviluppatori e agenzie immobiliari e trasforma immobili ancora da costruire in esperienze visive desiderabili.",
+    "ar": "يتطلب تسويق العقارات الفاخرة أكثر من المخططات والتصييرات الثابتة؛ فهو يحتاج إلى رسم صورة آسرة لأسلوب حياة. تعمل BYMOU استوديو إبداعيًا متخصصًا مع المطورين والوكالات في مراكش، وتحول العقارات التي لم تُبنَ بعد إلى تجارب بصرية مرغوبة."
+  },
+  "Marrakech is home to some of the most stunning luxury properties and architectural developments in the world. Marketing these prestige properties effectively requires visuals that match their exclusivity and allure.": {
+    "fr": "Marrakech abrite certains des biens de luxe et projets architecturaux les plus remarquables au monde. Pour promouvoir efficacement ces propriétés d’exception, il faut des visuels à la hauteur de leur exclusivité et de leur attrait.",
+    "it": "Marrakech ospita alcuni degli immobili di lusso e progetti architettonici più straordinari al mondo. Per promuoverli con efficacia servono immagini all’altezza della loro esclusività e del loro fascino.",
+    "ar": "تضم مراكش بعضًا من أروع العقارات الفاخرة والمشروعات المعمارية في العالم. ويتطلب تسويق هذه العقارات المرموقة بفاعلية صورًا تليق بتفرّدها وجاذبيتها."
+  },
+  "Our approach to luxury branding goes beyond simple aesthetics; we build comprehensive universes. Whether launching a new fragrance, a high-end fashion line, or a boutique lifestyle product, we ensure every touchpoint exudes exclusivity and quality.": {
+    "fr": "Notre approche des marques de luxe dépasse l’esthétique : nous créons des univers complets. Qu’il s’agisse de lancer un nouveau parfum, une ligne de mode haut de gamme ou un produit lifestyle de niche, nous veillons à ce que chaque point de contact exprime l’exclusivité et la qualité.",
+    "it": "Il nostro approccio al branding di lusso va oltre l’estetica: costruiamo universi completi. Che si tratti di lanciare una nuova fragranza, una linea moda di alta gamma o un prodotto lifestyle di nicchia, curiamo ogni punto di contatto perché esprima esclusività e qualità.",
+    "ar": "يتجاوز نهجنا في بناء العلامات الفاخرة الجانب الجمالي البسيط؛ فنحن نصوغ عوالم متكاملة. سواء أكان الإطلاق لعطر جديد أم لخط أزياء راقٍ أم لمنتج أسلوب حياة محدود الإصدار، نضمن أن تعكس كل نقطة تواصل التفرد والجودة."
+  },
+  "Our deep roots in Marrakech give us a unique perspective on the intersection of modern luxury and traditional Moroccan aesthetics, making our real estate campaigns highly effective for both local and global markets.": {
+    "fr": "Nos racines profondes à Marrakech nous offrent un regard singulier sur la rencontre entre luxe contemporain et esthétique marocaine traditionnelle. Nos campagnes immobilières gagnent ainsi en pertinence sur les marchés locaux comme internationaux.",
+    "it": "Le nostre profonde radici a Marrakech ci offrono uno sguardo unico sull’incontro tra lusso moderno ed estetica tradizionale marocchina, rendendo le nostre campagne immobiliari efficaci nei mercati locali e internazionali.",
+    "ar": "تمنحنا جذورنا الراسخة في مراكش منظورًا فريدًا عند تقاطع الفخامة المعاصرة والجماليات المغربية التقليدية، ما يجعل حملاتنا العقارية فعالة في الأسواق المحلية والعالمية."
+  },
+  "Our focus extends beyond technical accuracy. We aim to evoke an emotional response. By utilizing cinematic motion and AI-enhanced imagery, we create immersive digital experiences that allow potential buyers to truly feel the space. Whether it's a sprawling villa in the Palmeraie or a boutique riad in the Medina, our campaigns are designed to highlight the unique intersection of modern luxury and traditional Moroccan craftsmanship.": {
+    "fr": "Notre objectif va au-delà de la précision technique : nous voulons susciter une émotion. Grâce au mouvement cinématographique et aux images enrichies par l’IA, nous créons des expériences numériques immersives qui permettent aux acheteurs potentiels de ressentir pleinement les lieux. Villa spacieuse de la Palmeraie ou riad de charme dans la Médina, nos campagnes révèlent la rencontre singulière entre luxe contemporain et artisanat marocain traditionnel.",
+    "it": "Il nostro obiettivo va oltre la precisione tecnica: vogliamo suscitare emozioni. Con movimento cinematografico e immagini potenziate dall’IA creiamo esperienze digitali immersive che permettono ai potenziali acquirenti di percepire davvero lo spazio. Che si tratti di una villa nella Palmeraie o di un riad boutique nella Medina, le campagne mettono in risalto l’incontro unico tra lusso moderno e artigianato marocchino tradizionale.",
+    "ar": "لا يقتصر تركيزنا على الدقة التقنية؛ بل نهدف إلى إثارة إحساس عاطفي. وباستخدام الحركة السينمائية والصور المعززة بالذكاء الاصطناعي، نصنع تجارب رقمية غامرة تتيح للمشترين المحتملين أن يستشعروا المكان حقًا. سواء أكانت فيلا فسيحة في النخيل أم رياضًا بوتيكيًا في المدينة العتيقة، تبرز حملاتنا التلاقي الفريد بين الفخامة الحديثة والحرفية المغربية التقليدية."
+  },
+  "Our team leverages AI-assisted 3D rendering and cinematic motion design to produce marketing assets that sell properties faster and at higher valuations.": {
+    "fr": "Notre équipe associe rendu 3D assisté par l’IA et conception de mouvements cinématographiques pour créer des supports marketing qui favorisent une vente plus rapide et à une meilleure valeur.",
+    "it": "Il nostro team combina rendering 3D assistito dall’IA e motion design cinematografico per creare materiali di marketing che aiutano a vendere gli immobili più rapidamente e a un valore superiore.",
+    "ar": "يجمع فريقنا بين التصيير ثلاثي الأبعاد المدعوم بالذكاء الاصطناعي وتصميم الحركة السينمائية لإنتاج مواد تسويقية تساعد على بيع العقارات بسرعة أكبر وبقيمة أعلى."
+  },
+  "Our websites are designed to be visual journeys, utilizing high-quality video integration, elegant typography, and intuitive booking flows to maximize direct reservations.": {
+    "fr": "Nos sites sont conçus comme des parcours visuels : vidéos de qualité, typographie élégante et réservation intuitive, pour favoriser les réservations directes.",
+    "it": "Progettiamo i nostri siti come percorsi visivi, con video di alta qualità, tipografia elegante e processi di prenotazione intuitivi per favorire le prenotazioni dirette.",
+    "ar": "نصمم مواقعنا كرحلات بصرية، مع دمج فيديو عالي الجودة وطباعة أنيقة ومسارات حجز سهلة الاستخدام لتعزيز الحجوزات المباشرة."
+  },
+  "Partnering with BYMOU ensures your hospitality brand communicates its unique value proposition with elegance and sophistication.": {
+    "fr": "En travaillant avec BYMOU, votre marque dans l’hôtellerie exprime sa proposition de valeur singulière avec élégance et raffinement.",
+    "it": "Collaborare con BYMOU permette al tuo brand dell’ospitalità di comunicare la propria proposta di valore distintiva con eleganza e raffinatezza.",
+    "ar": "يضمن التعاون مع BYMOU أن تعبّر علامتك في قطاع الضيافة عن قيمتها الفريدة بأناقة ورقي."
+  },
+  "Platforms designed to showcase the property through stunning visuals while ensuring a frictionless booking experience.": {
+    "fr": "Des plateformes qui mettent le bien en valeur par des visuels remarquables tout en offrant un parcours de réservation fluide.",
+    "it": "Piattaforme progettate per valorizzare l’immobile con immagini d’impatto e offrire un’esperienza di prenotazione senza ostacoli.",
+    "ar": "منصات تعرض العقار بصور آسرة وتوفر في الوقت نفسه تجربة حجز سلسة."
+  },
+  "Pre-visualization for large-scale campaigns, allowing directors and stakeholders to see the final look before committing to a physical shoot.": {
+    "fr": "Prévisualisation de campagnes d’envergure, pour permettre aux réalisateurs et aux parties prenantes de découvrir le rendu final avant d’engager un tournage réel.",
+    "it": "Previsualizzazione di campagne su larga scala, per consentire a registi e stakeholder di vedere il risultato finale prima di avviare le riprese.",
+    "ar": "تصوّر مسبق للحملات واسعة النطاق يتيح للمخرجين وأصحاب المصلحة معاينة الشكل النهائي قبل الالتزام بالتصوير الفعلي."
+  },
+  "Rebuilding your marketing site to communicate your evolved value proposition clearly, effectively, and beautifully, ensuring it serves as a powerful engine for growth.": {
+    "fr": "Refonte de votre site marketing pour présenter clairement, efficacement et avec élégance votre proposition de valeur renouvelée et en faire un véritable moteur de croissance.",
+    "it": "Riprogettazione del sito marketing per comunicare con chiarezza, efficacia ed eleganza la nuova proposta di valore, trasformandolo in un motore di crescita.",
+    "ar": "إعادة بناء موقعك التسويقي ليعرض عرض القيمة المتطور بوضوح وفاعلية وجمال، وليصبح محركًا قويًا للنمو."
+  },
+  "Shape the essentials of a project into a concise, shareable brief. Copy the summary or download its structured JSON. Nothing is submitted or stored.": {
+    "fr": "Rassemblez l’essentiel d’un projet dans un brief concis et facile à partager. Copiez le résumé ou téléchargez le fichier JSON structuré. Aucune donnée n’est envoyée ni stockée.",
+    "it": "Raccogli gli elementi essenziali di un progetto in un brief sintetico e facile da condividere. Copia il riepilogo o scarica il JSON strutturato. Non viene inviato né archiviato nulla.",
+    "ar": "اجمع أساسيات المشروع في موجز موجز يسهل مشاركته. انسخ الملخص أو نزّل ملف JSON المنظم. لا تُرسل أي بيانات ولا تُخزّن."
+  },
+  "The ability to rapidly iterate through different lighting scenarios (dawn, dusk, night) and interior design styles without rebuilding 3D scenes from scratch.": {
+    "fr": "La possibilité d’explorer rapidement différents éclairages — aube, crépuscule ou nuit — et styles d’intérieur sans recréer les scènes 3D depuis le début.",
+    "it": "La possibilità di provare rapidamente diverse condizioni di luce — alba, tramonto, notte — e stili d’interni senza ricostruire da zero le scene 3D.",
+    "ar": "إمكانية تجربة سيناريوهات إضاءة مختلفة بسرعة—الفجر والغروب والليل—وأنماط تصميم داخلية متنوعة دون إعادة بناء المشاهد ثلاثية الأبعاد من الصفر."
+  },
+  "The hospitality sector in Marrakech is renowned worldwide, and standing out requires a digital presence that effectively reflects the physical guest experience. BYMOU specializes in crafting the digital identity and marketing campaigns for boutique hotels, riads, and luxury resorts.": {
+    "fr": "Le secteur hôtelier de Marrakech est reconnu dans le monde entier. Pour se distinguer, une présence numérique doit refléter fidèlement l’expérience vécue sur place. BYMOU crée l’identité numérique et les campagnes marketing des hôtels de charme, riads et complexes de luxe.",
+    "it": "Il settore dell’ospitalità di Marrakech è conosciuto in tutto il mondo. Per distinguersi serve una presenza digitale che rispecchi l’esperienza reale degli ospiti. BYMOU crea identità digitali e campagne marketing per boutique hotel, riad e resort di lusso.",
+    "ar": "يشتهر قطاع الضيافة في مراكش حول العالم، ويتطلب التميز حضورًا رقميًا يعكس تجربة الضيف الفعلية بصدق. تتخصص BYMOU في ابتكار الهوية الرقمية والحملات التسويقية للفنادق البوتيكية والرياض والمنتجعات الفاخرة."
+  },
+  "The landscape of luxury advertising is undergoing a profound transformation. At BYMOU, we are actively working within this shift, leveraging generative AI to push the boundaries of commercial production and storytelling.": {
+    "fr": "La publicité de luxe connaît une profonde transformation. Chez BYMOU, nous prenons part à cette évolution et utilisons l’IA générative pour repousser les limites de la production publicitaire et du récit de marque.",
+    "it": "Il panorama della pubblicità di lusso sta attraversando una profonda trasformazione. In BYMOU partecipiamo attivamente a questo cambiamento, usando l’IA generativa per ampliare i confini della produzione commerciale e dello storytelling.",
+    "ar": "يشهد عالم إعلانات الفخامة تحولًا عميقًا. وتشارك BYMOU بفاعلية في هذا التغيير، مستفيدةً من الذكاء الاصطناعي التوليدي لتوسيع آفاق الإنتاج التجاري والسرد القصصي."
+  },
+  "Traditional 3D rendering has long been the standard for real estate marketing, but it can be a slow, iterative process. At BYMOU, we integrate AI-assisted tools into our architectural visualization workflows. This allows us to rapidly prototype different lighting scenarios, interior design styles, and atmospheric conditions, giving developers substantial flexibility in how they present unbuilt properties.": {
+    "fr": "Le rendu 3D traditionnel est depuis longtemps la norme du marketing immobilier, mais son processus itératif peut être lent. Chez BYMOU, nous intégrons des outils assistés par l’IA à nos workflows de visualisation architecturale. Nous pouvons ainsi prototyper rapidement différents éclairages, styles d’intérieur et ambiances, et offrir aux promoteurs une grande liberté pour présenter des biens encore à construire.",
+    "it": "Il rendering 3D tradizionale è da tempo lo standard del marketing immobiliare, ma il processo iterativo può essere lento. In BYMOU integriamo strumenti assistiti dall’IA nei flussi di visualizzazione architettonica. Possiamo così prototipare rapidamente diverse luci, stili d’interni e atmosfere, offrendo agli sviluppatori maggiore flessibilità nel presentare immobili ancora da costruire.",
+    "ar": "لطالما كان التصيير التقليدي ثلاثي الأبعاد معيارًا في تسويق العقارات، لكن تنفيذه التكراري قد يستغرق وقتًا. تدمج BYMOU أدوات مدعومة بالذكاء الاصطناعي في سير عمل التصوّر المعماري، ما يتيح إنشاء نماذج أولية سريعة لسيناريوهات الإضاءة وأنماط الديكور والأجواء المختلفة، ويمنح المطورين مرونة كبيرة في عرض العقارات قبل بنائها."
+  },
+  "We analyze your current brand equity, market positioning, and competitor landscape to identify opportunities for differentiation.": {
+    "fr": "Nous analysons la valeur actuelle de votre marque, son positionnement et son environnement concurrentiel afin de repérer les pistes de différenciation.",
+    "it": "Analizziamo il valore attuale del brand, il suo posizionamento sul mercato e il panorama competitivo per individuare opportunità di differenziazione.",
+    "ar": "نحلل قيمة علامتك الحالية ومكانتها في السوق ومشهد المنافسين لتحديد فرص التميز."
+  },
+  "We believe a guest's experience begins the moment they discover your property online. Our creative studio builds that initial connection through highly curated visual storytelling and seamless digital touchpoints.": {
+    "fr": "Nous pensons que l’expérience d’un client commence lorsqu’il découvre votre établissement en ligne. Notre studio crée ce premier lien grâce à un récit visuel soigneusement composé et à des points de contact numériques fluides.",
+    "it": "Crediamo che l’esperienza dell’ospite inizi quando scopre la struttura online. Il nostro studio crea quel primo legame con uno storytelling visivo curato e touchpoint digitali fluidi.",
+    "ar": "نؤمن بأن تجربة الضيف تبدأ لحظة اكتشافه لمكان إقامتك عبر الإنترنت. يبني استوديو الإبداع هذا الانطباع الأول بسرد بصري منتقى بعناية ونقاط تواصل رقمية سلسة."
+  },
+  "We combine cutting-edge web technologies (like WebGL and GSAP animations) with refined design sensibilities to create websites that feel less like brochures and more like interactive films.": {
+    "fr": "Nous associons des technologies web de pointe, comme WebGL et les animations GSAP, à une conception raffinée pour créer des sites qui ressemblent moins à des brochures qu’à des films interactifs.",
+    "it": "Combiniamo tecnologie web all’avanguardia, come WebGL e le animazioni GSAP, con un design ricercato per creare siti che somigliano meno a brochure e più a film interattivi.",
+    "ar": "نجمع تقنيات الويب المتقدمة، مثل WebGL وتحريكات GSAP، مع حس تصميمي رفيع لنصنع مواقع تشبه الأفلام التفاعلية أكثر مما تشبه الكتيبات."
+  },
+  "We consult on and implement AI solutions designed to streamline repetitive tasks, enhance creative workflows, and improve marketing efficiency.": {
+    "fr": "Nous conseillons et déployons des solutions d’IA pour simplifier les tâches répétitives, enrichir les workflows créatifs et améliorer l’efficacité marketing.",
+    "it": "Offriamo consulenza e implementiamo soluzioni IA per semplificare le attività ripetitive, migliorare i flussi creativi e aumentare l’efficienza del marketing.",
+    "ar": "نقدم الاستشارات وننفذ حلول الذكاء الاصطناعي لتبسيط المهام المتكررة وتعزيز سير العمل الإبداعي وتحسين كفاءة التسويق."
+  },
+  "We create immersive, fly-through animations of luxury villas and resorts, focusing on atmosphere, lighting, and the unique character of Moroccan architecture.": {
+    "fr": "Nous créons des animations immersives qui traversent villas et complexes de luxe, en mettant l’accent sur l’atmosphère, la lumière et le caractère singulier de l’architecture marocaine.",
+    "it": "Creiamo animazioni immersive che attraversano ville e resort di lusso, concentrandoci su atmosfera, luce e carattere unico dell’architettura marocchina.",
+    "ar": "نصمم رسومًا متحركة غامرة تجول داخل الفلل والمنتجعات الفاخرة، مع التركيز على الأجواء والإضاءة والطابع الفريد للعمارة المغربية."
+  },
+  "We create sustainable, high-end social media content frameworks and advertising assets that continuously drive engagement and aspiration.": {
+    "fr": "Nous créons des systèmes de contenu pour les réseaux sociaux et des supports publicitaires haut de gamme et durables, conçus pour nourrir l’engagement et le désir dans la durée.",
+    "it": "Creiamo framework sostenibili di contenuti social di alta gamma e materiali pubblicitari capaci di alimentare nel tempo coinvolgimento e aspirazione.",
+    "ar": "نبتكر أطرًا مستدامة لمحتوى التواصل الاجتماعي ومواد إعلانية راقية تحفّز التفاعل والتطلع باستمرار."
+  },
+  "We develop visual identities that capture the soul of your property, from typography and color palettes to art direction.": {
+    "fr": "Nous développons des identités visuelles qui expriment l’âme de votre établissement, de la typographie et des palettes de couleurs à la direction artistique.",
+    "it": "Sviluppiamo identità visive che raccontano l’anima della struttura, dalla tipografia e palette cromatiche alla direzione artistica.",
+    "ar": "نطور هويات بصرية تجسد روح مكانك، من الطباعة ولوحات الألوان إلى التوجيه الفني."
+  },
+  "We do not simply generate images; we direct them. Our process starts with rigorous storyboarding, mood boarding, and creative direction. We then utilize advanced diffusion models and AI video synthesis to craft scenes that are visually striking, emotionally resonant, and aligned with your brand's heritage.": {
+    "fr": "Nous ne nous contentons pas de générer des images : nous les mettons en scène. Notre processus commence par un storyboard rigoureux, des planches d’inspiration et une direction créative. Nous utilisons ensuite des modèles de diffusion avancés et la synthèse vidéo par IA pour créer des scènes marquantes, évocatrices et fidèles à l’héritage de votre marque.",
+    "it": "Non ci limitiamo a generare immagini: le dirigiamo. Il processo inizia con storyboard accurati, moodboard e direzione creativa. Utilizziamo poi modelli di diffusione avanzati e sintesi video IA per creare scene d’impatto, emozionanti e coerenti con la storia del brand.",
+    "ar": "لا نكتفي بتوليد الصور؛ بل نوجّهها. تبدأ عمليتنا بإعداد لوحات مشاهد دقيقة ولوحات إلهام وإدارة إبداعية، ثم نستخدم نماذج الانتشار المتقدمة وتوليد الفيديو بالذكاء الاصطناعي لصياغة مشاهد لافتة بصريًا ومؤثرة عاطفيًا ومتوافقة مع إرث علامتك."
+  },
+  "We provide startups with the visual authority required to win enterprise clients, attract top-tier talent, and secure later-stage funding.": {
+    "fr": "Nous donnons aux startups l’autorité visuelle nécessaire pour convaincre de grands clients, attirer les meilleurs talents et obtenir des financements à des stades ultérieurs.",
+    "it": "Forniamo alle startup l’autorevolezza visiva necessaria per conquistare clienti aziendali, attrarre talenti di alto livello e ottenere finanziamenti nelle fasi successive.",
+    "ar": "نمنح الشركات الناشئة الحضور البصري اللازم لكسب عملاء من كبرى المؤسسات واستقطاب أفضل المواهب وتأمين التمويل في مراحل النمو اللاحقة."
+  },
+  "While our sites are visually rich, we ensure they are heavily optimized for speed, mobile responsiveness, and technical SEO to maximize organic discoverability.": {
+    "fr": "Malgré leur richesse visuelle, nos sites sont optimisés pour la vitesse, l’affichage mobile et le référencement technique, afin de renforcer leur visibilité naturelle.",
+    "it": "Pur essendo ricchi di contenuti visivi, i nostri siti sono ottimizzati per velocità, responsività su dispositivi mobili e SEO tecnica, così da massimizzare la visibilità organica.",
+    "ar": "مع ثراء مواقعنا البصري، نحرص على تحسينها لتكون سريعة ومتجاوبة مع الهواتف ومحسّنة تقنيًا لمحركات البحث، بما يعزز ظهورها العضوي."
+  },
+  "Your website is often the first and most critical interaction a client has with your brand. For luxury real estate and hospitality, a templated website is a missed opportunity. BYMOU designs bespoke, immersive web experiences that captivate and convert.": {
+    "fr": "Votre site web est souvent le premier contact — et le plus déterminant — d’un client avec votre marque. Dans l’immobilier de luxe et l’hôtellerie, un site standard est une occasion manquée. BYMOU conçoit des expériences web immersives et sur mesure, qui captivent et convertissent.",
+    "it": "Il sito web è spesso il primo e più importante contatto tra un cliente e il brand. Nel real estate di lusso e nell’ospitalità, un sito basato su un template è un’opportunità sprecata. BYMOU progetta esperienze web immersive e su misura, capaci di coinvolgere e convertire.",
+    "ar": "غالبًا ما يكون موقعك الإلكتروني أول تفاعل للعميل مع علامتك وأكثرها تأثيرًا. وفي العقارات الفاخرة والضيافة، يمثل الموقع الجاهز فرصة ضائعة. تصمم BYMOU تجارب ويب غامرة ومخصصة تأسر الزوار وتحولهم إلى عملاء."
+  },
+  "A fictional record club for full attention. An original five-frame social campaign by BYMOU.": {
+    "fr": "Un club de vinyles fictif dédié à l’écoute attentive. Campagne sociale originale en cinq images par BYMOU.",
+    "it": "Un club di vinili immaginario dedicato all’ascolto attento. Campagna social originale di BYMOU in cinque immagini.",
+    "ar": "نادٍ خيالي للأسطوانات يمنح الإصغاء كامل الاهتمام. حملة اجتماعية أصلية من BYMOU في خمسة إطارات."
+  },
+  "A little ritual. Pick it. Put it on. Stay. Three staggered steps linked by a vermilion line on ink black.": {
+    "fr": "Un petit rituel. Choisissez. Enfilez. Restez. Trois étapes décalées reliées par un trait vermillon sur fond noir encré.",
+    "it": "Un piccolo rituale. Scegli. Indossa. Resta. Tre passaggi sfalsati, uniti da una linea vermiglio su nero inchiostro.",
+    "ar": "طقس صغير. اخترها، ارتدها، وتمسّك بها. ثلاث خطوات متدرجة يصل بينها خط قرمزي على خلفية سوداء حبرية."
+  },
+  "A local campaign layout tool for composing and exporting image formats.": {
+    "fr": "Un outil local de mise en page de campagne pour composer et exporter des formats d’image.",
+    "it": "Uno strumento locale per comporre ed esportare layout di campagna in diversi formati immagine.",
+    "ar": "أداة محلية لتنسيق مواد الحملات وتصديرها بصيغ صور مختلفة."
+  },
+  "A scroll-controlled spatial experiment in identity, colour and physical transformation by BYMOU.": {
+    "fr": "Une expérience spatiale contrôlée par le défilement, autour de l’identité, de la couleur et de la transformation physique, par BYMOU.",
+    "it": "Un’esperienza spaziale controllata dallo scorrimento, tra identità, colore e trasformazione fisica, a cura di BYMOU.",
+    "ar": "تجربة مكانية تتحكم بها حركة التمرير، تستكشف الهوية واللون والتحول المادي من BYMOU."
+  },
+  "AI CREATIVE DIRECTOR": {
+    "fr": "DIRECTRICE CRÉATIVE IA",
+    "it": "DIRETTRICE CREATIVA IA",
+    "ar": "مديرة إبداعية للذكاء الاصطناعي"
+  },
+  "AI automation solutions for businesses in Morocco by BYMOU.": {
+    "fr": "Solutions d’automatisation par l’IA pour les entreprises au Maroc, par BYMOU.",
+    "it": "Soluzioni di automazione IA per le aziende in Marocco, a cura di BYMOU.",
+    "ar": "حلول أتمتة بالذكاء الاصطناعي للشركات في المغرب من BYMOU."
+  },
+  "AI-created advertising concept: an orange can rests beside a wave rising through a steel laundromat table.": {
+    "fr": "Concept publicitaire créé par IA : une canette orange posée près d’une vague qui se soulève à travers une table de laverie en acier.",
+    "it": "Concept pubblicitario creato con l’IA: una lattina arancione accanto a un’onda che si solleva attraverso un tavolo d’acciaio di una lavanderia.",
+    "ar": "مفهوم إعلاني مولّد بالذكاء الاصطناعي: علبة برتقالية بجانب موجة تعلو عبر طاولة فولاذية في مغسلة."
+  },
+  "AI-created fashion editorial: a silver-haired woman wears a cobalt jacquard suit matching the seats of a city bus.": {
+    "fr": "Éditorial mode créé par IA : une femme aux cheveux argentés porte un tailleur jacquard bleu cobalt assorti aux sièges d’un bus urbain.",
+    "it": "Editoriale moda creato con l’IA: una donna dai capelli argentati indossa un completo jacquard blu cobalto abbinato ai sedili di un autobus cittadino.",
+    "ar": "تحرير أزياء مولّد بالذكاء الاصطناعي: امرأة بشعر فضي ترتدي بدلة جاكار زرقاء بلون الكوبالت تطابق مقاعد حافلة المدينة."
+  },
+  "AI-powered architectural visualization for luxury real estate and hospitality.": {
+    "fr": "Visualisation architecturale assistée par l’IA pour l’immobilier de luxe et l’hôtellerie.",
+    "it": "Visualizzazione architettonica assistita dall’IA per immobili di lusso e ospitalità.",
+    "ar": "تصوّر معماري مدعوم بالذكاء الاصطناعي للعقارات الفاخرة والضيافة."
+  },
+  "All selected projects": {
+    "fr": "Tous les projets sélectionnés",
+    "it": "Tutti i progetti selezionati",
+    "ar": "جميع المشروعات المختارة"
+  },
+  "Annotated courtyard perspective with arches and a central tree": {
+    "fr": "Perspective annotée d’une cour avec des arches et un arbre au centre",
+    "it": "Prospettiva annotata di un cortile con archi e un albero centrale",
+    "ar": "منظور مشروح لساحة داخلية بأقواس وشجرة في الوسط"
+  },
+  "Architectural presentation with elevation, floor plan and material palette": {
+    "fr": "Présentation architecturale avec élévation, plan et palette de matériaux",
+    "it": "Presentazione architettonica con prospetto, planimetria e palette di materiali",
+    "ar": "عرض معماري يضم واجهة ومخططًا أرضيًا ولوحة للمواد"
+  },
+  "Architecture & Interiors | BYMOU": {
+    "fr": "Architecture et intérieurs | BYMOU",
+    "it": "Architettura e interni | BYMOU",
+    "ar": "العمارة والديكورات الداخلية | BYMOU"
+  },
+  "Architecture & Interiors. Selected visual work from the portfolio of Mou Grasso.": {
+    "fr": "Architecture et intérieurs. Sélection de travaux visuels du portfolio de Mou Grasso.",
+    "it": "Architettura e interni. Selezione di lavori visivi dal portfolio di Mou Grasso.",
+    "ar": "العمارة والديكورات الداخلية. مجموعة مختارة من الأعمال البصرية في محفظة Mou Grasso."
+  },
+  "BYMOU AI Creative Studio": {
+    "fr": "Studio créatif IA BYMOU",
+    "it": "Studio creativo IA BYMOU",
+    "ar": "استوديو BYMOU الإبداعي للذكاء الاصطناعي"
+  },
+  "BYMOU AI creative studio in Marrakech, Morocco": {
+    "fr": "Studio créatif IA BYMOU à Marrakech, Maroc",
+    "it": "Studio creativo IA BYMOU a Marrakech, Marocco",
+    "ar": "استوديو BYMOU الإبداعي للذكاء الاصطناعي في مراكش، المغرب"
+  },
+  "BYMOU creates luxury brand systems for premium visual identities and campaign worlds.": {
+    "fr": "BYMOU crée des systèmes de marque de luxe pour des identités visuelles et des univers de campagne haut de gamme.",
+    "it": "BYMOU crea sistemi di brand di lusso per identità visive e universi di campagna premium.",
+    "ar": "تصمم BYMOU أنظمة علامات فاخرة للهويات البصرية وعوالم الحملات الراقية."
+  },
+  "BYMOU home": {
+    "fr": "Accueil BYMOU",
+    "it": "Home BYMOU",
+    "ar": "الصفحة الرئيسية لـ BYMOU"
+  },
+  "BYMOU is a real estate creative studio in Marrakech providing architectural visualization and marketing campaigns.": {
+    "fr": "BYMOU est un studio créatif immobilier à Marrakech, spécialisé en visualisation architecturale et campagnes marketing.",
+    "it": "BYMOU è uno studio creativo immobiliare a Marrakech, specializzato in visualizzazione architettonica e campagne marketing.",
+    "ar": "BYMOU استوديو إبداعي للعقارات في مراكش، يقدم التصوّر المعماري والحملات التسويقية."
+  },
+  "BYMOU is an AI Film Studio in Marrakech, Morocco producing cutting-edge AI-assisted film campaigns for luxury brands.": {
+    "fr": "BYMOU est un studio de films IA à Marrakech, au Maroc, qui produit des campagnes cinématographiques de pointe assistées par l’IA pour les marques de luxe.",
+    "it": "BYMOU è un AI Film Studio a Marrakech, in Marocco, che realizza campagne cinematografiche all’avanguardia assistite dall’IA per i brand di lusso.",
+    "ar": "BYMOU استوديو أفلام بالذكاء الاصطناعي في مراكش، المغرب، ينتج حملات سينمائية متطورة مدعومة بالذكاء الاصطناعي للعلامات الفاخرة."
+  },
+  "BYMOU is an AI creative studio in Marrakech, Morocco creating AI advertising, commercial production, luxury branding, hospitality, fashion and real estate campaigns.": {
+    "fr": "BYMOU est un studio créatif IA à Marrakech, au Maroc, qui crée des publicités par IA, des productions commerciales, des marques de luxe et des campagnes pour l’hôtellerie, la mode et l’immobilier.",
+    "it": "BYMOU è uno studio creativo IA a Marrakech, in Marocco, che realizza pubblicità IA, produzioni commerciali, branding di lusso e campagne per ospitalità, moda e immobiliare.",
+    "ar": "BYMOU استوديو إبداعي للذكاء الاصطناعي في مراكش، المغرب، ينفذ إعلانات وإنتاجًا تجاريًا وبناء علامات فاخرة وحملات للضيافة والأزياء والعقارات."
+  },
+  "BYMOU — A working identity — original BYMOU design study": {
+    "fr": "BYMOU — Une identité en cours — étude de design originale de BYMOU",
+    "it": "BYMOU — Un’identità in evoluzione — studio di design originale BYMOU",
+    "ar": "BYMOU — هوية قيد التطوير — دراسة تصميم أصلية من BYMOU"
+  },
+  "BYMOU — AI Creative Studio for Luxury Branding & Films": {
+    "fr": "BYMOU — Studio créatif IA pour les marques et films de luxe",
+    "it": "BYMOU — Studio creativo IA per branding e film di lusso",
+    "ar": "BYMOU — استوديو إبداعي للذكاء الاصطناعي للعلامات والأفلام الفاخرة"
+  },
+  "BYMOU — Mou Grasso · Reality Is Editable": {
+    "fr": "BYMOU — Mou Grasso · Le réel est transformable",
+    "it": "BYMOU — Mou Grasso · La realtà è modificabile",
+    "ar": "BYMOU — Mou Grasso · الواقع قابل لإعادة التشكيل"
+  },
+  "BYMOU, back to work": {
+    "fr": "BYMOU, retour aux projets",
+    "it": "BYMOU, torna ai progetti",
+    "ar": "BYMOU، العودة إلى الأعمال"
+  },
+  "Brand Identity | BYMOU": {
+    "fr": "Identité de marque | BYMOU",
+    "it": "Identità del brand | BYMOU",
+    "ar": "هوية العلامة | BYMOU"
+  },
+  "Brand Identity. Selected visual work from the portfolio of Mou Grasso.": {
+    "fr": "Identité de marque. Sélection de travaux visuels du portfolio de Mou Grasso.",
+    "it": "Identità del brand. Selezione di lavori visivi dal portfolio di Mou Grasso.",
+    "ar": "هوية العلامة. مجموعة مختارة من الأعمال البصرية في محفظة Mou Grasso."
+  },
+  "Build a clear creative project brief in your browser.": {
+    "fr": "Rédigez un brief de projet créatif clair dans votre navigateur.",
+    "it": "Crea un brief creativo chiaro per il tuo progetto nel browser.",
+    "ar": "أنشئ موجزًا واضحًا لمشروعك الإبداعي في المتصفح."
+  },
+  "Build and save a simple outfit plan in your browser.": {
+    "fr": "Créez et enregistrez un plan de tenue simple dans votre navigateur.",
+    "it": "Crea e salva un semplice piano outfit nel browser.",
+    "ar": "أنشئ واحفظ تنسيقًا بسيطًا لملابسك في المتصفح."
+  },
+  "CITY / SKIN: an independent AI fashion editorial, casting and visual identity study by BYMOU.": {
+    "fr": "CITY / SKIN : étude indépendante de mode, de casting et d’identité visuelle par IA, par BYMOU.",
+    "it": "CITY / SKIN: studio indipendente di moda, casting e identità visiva con IA, a cura di BYMOU.",
+    "ar": "CITY / SKIN: دراسة مستقلة للأزياء واختيار الشخصيات والهوية البصرية بالذكاء الاصطناعي من BYMOU."
+  },
+  "CITY-SKIN — BYMOU": {
+    "fr": "CITY-SKIN — BYMOU",
+    "it": "CITY-SKIN — BYMOU",
+    "ar": "CITY-SKIN — BYMOU"
+  },
+  "Campaign colour palette": {
+    "fr": "Palette de couleurs de la campagne",
+    "it": "Palette cromatica della campagna",
+    "ar": "لوحة ألوان الحملة"
+  },
+  "Campaign composition preview": {
+    "fr": "Aperçu de la composition de la campagne",
+    "it": "Anteprima della composizione della campagna",
+    "ar": "معاينة تكوين الحملة"
+  },
+  "Campaign slides; use arrow keys": {
+    "fr": "Diapositives de la campagne ; utilisez les touches fléchées",
+    "it": "Slide della campagna; usa i tasti freccia",
+    "ar": "شرائح الحملة؛ استخدم مفاتيح الأسهم"
+  },
+  "Case 01 — image or video placeholder": {
+    "fr": "Dossier 01 — emplacement réservé pour image ou vidéo",
+    "it": "Caso 01 — segnaposto per immagine o video",
+    "ar": "دراسة 01 — موضع مؤقت لصورة أو فيديو"
+  },
+  "Case 02 — image or video placeholder": {
+    "fr": "Dossier 02 — emplacement réservé pour image ou vidéo",
+    "it": "Caso 02 — segnaposto per immagine o video",
+    "ar": "دراسة 02 — موضع مؤقت لصورة أو فيديو"
+  },
+  "Case 03 — image or video placeholder": {
+    "fr": "Dossier 03 — emplacement réservé pour image ou vidéo",
+    "it": "Caso 03 — segnaposto per immagine o video",
+    "ar": "دراسة 03 — موضع مؤقت لصورة أو فيديو"
+  },
+  "Close-up of an open orange can and tangerine on scratched steel.": {
+    "fr": "Gros plan d’une canette orange ouverte et d’une mandarine sur de l’acier rayé.",
+    "it": "Primo piano di una lattina arancione aperta e un mandarino su acciaio graffiato.",
+    "ar": "لقطة مقرّبة لعلبة برتقالية مفتوحة وثمار يوسفي على فولاذ مخدوش."
+  },
+  "Close-up of the cobalt jacquard suit, lapel construction and aged hand.": {
+    "fr": "Gros plan du costume jacquard bleu cobalt, de sa construction au revers et d’une main marquée par le temps.",
+    "it": "Primo piano del completo jacquard blu cobalto, del rever e di una mano segnata dal tempo.",
+    "ar": "لقطة مقرّبة لبدلة الجاكار الزرقاء بلون الكوبالت وبنية ياقة البدلة ويد أنهكها الزمن."
+  },
+  "Completed living and dining room in warm afternoon light": {
+    "fr": "Salon et salle à manger achevés, baignés par la lumière chaude de l’après-midi",
+    "it": "Soggiorno e sala da pranzo completati, nella calda luce pomeridiana",
+    "ar": "غرفة معيشة وطعام مكتملتان بضوء دافئ في فترة ما بعد الظهر"
+  },
+  "Concept image of a fictional dark-skinned character with a platinum buzzcut facing a disobedient mirror.": {
+    "fr": "Image conceptuelle d’un personnage fictif à la peau foncée et à la coupe courte platine, face à un miroir récalcitrant.",
+    "it": "Immagine concettuale di un personaggio immaginario dalla pelle scura e con buzzcut platino, davanti a uno specchio ribelle.",
+    "ar": "صورة مفاهيمية لشخصية خيالية داكنة البشرة بقصة شعر قصيرة بلاتينية تواجه مرآة متمردة."
+  },
+  "Concept image of a phone screen peeling away from its rigid frame like flexible glass.": {
+    "fr": "Image conceptuelle d’un écran de téléphone qui se détache de son cadre rigide comme du verre souple.",
+    "it": "Immagine concettuale di uno schermo di telefono che si stacca dalla cornice rigida come vetro flessibile.",
+    "ar": "صورة مفاهيمية لشاشة هاتف تنفصل عن إطارها الصلب مثل لوح زجاج مرن."
+  },
+  "Concept image of a white cursor directing coral light across a court.": {
+    "fr": "Image conceptuelle d’un curseur blanc qui dirige une lumière corail sur un terrain de sport.",
+    "it": "Immagine concettuale di un cursore bianco che dirige una luce corallo su un campo.",
+    "ar": "صورة مفاهيمية لمؤشر أبيض يوجّه ضوءًا مرجانيًا عبر ملعب."
+  },
+  "Concept image of black tailoring covered in paper comment strips and redactions.": {
+    "fr": "Image conceptuelle d’une tenue noire recouverte de bandes de papier portant des commentaires et des passages caviardés.",
+    "it": "Immagine concettuale di un completo nero coperto da strisce di carta con commenti e parti censurate.",
+    "ar": "صورة مفاهيمية لملابس سوداء تغطيها شرائط ورقية تحمل تعليقات ومقاطع محجوبة."
+  },
+  "Construction interior overlaid with furniture and lighting drawings": {
+    "fr": "Intérieur en construction, superposé de dessins de mobilier et d’éclairage",
+    "it": "Interno in costruzione con disegni di arredi e illuminazione sovrapposti",
+    "ar": "مساحة داخلية قيد الإنشاء تعلوها رسومات للأثاث والإضاءة"
+  },
+  "Courtyard at blue hour illuminated by lanterns and candles": {
+    "fr": "Cour intérieure au crépuscule bleu, éclairée par des lanternes et des bougies",
+    "it": "Cortile all’ora blu illuminato da lanterne e candele",
+    "ar": "ساحة داخلية في زرقة الغسق تنيرها الفوانيس والشموع"
+  },
+  "Creative branding and digital marketing for boutique hotels, restaurants, and premium guest experiences.": {
+    "fr": "Identité de marque et marketing numérique créatifs pour hôtels de charme, restaurants et expériences d’accueil haut de gamme.",
+    "it": "Branding creativo e marketing digitale per boutique hotel, ristoranti ed esperienze premium per gli ospiti.",
+    "ar": "بناء علامات تجارية وتسويق رقمي إبداعي للفنادق البوتيكية والمطاعم وتجارب الضيافة الراقية."
+  },
+  "Creative direction, branding, advertising, AI video and social content by Mou Grasso. Discover the BYMOU portfolio.": {
+    "fr": "Direction créative, identité de marque, publicité, vidéo IA et contenu social par Mou Grasso. Découvrez le portfolio BYMOU.",
+    "it": "Direzione creativa, branding, pubblicità, video IA e contenuti social di Mou Grasso. Scopri il portfolio BYMOU.",
+    "ar": "إدارة إبداعية وهوية وإعلانات وفيديو بالذكاء الاصطناعي ومحتوى اجتماعي من Mou Grasso. اكتشف محفظة BYMOU."
+  },
+  "DEEP CUT campaign: two original poster compositions on a lilac field": {
+    "fr": "Campagne DEEP CUT : deux compositions d’affiches originales sur fond lilas",
+    "it": "Campagna DEEP CUT: due composizioni originali di poster su fondo lilla",
+    "ar": "حملة DEEP CUT: تكوينا ملصقين أصليين على خلفية ليلكية"
+  },
+  "DEEP CUT. Keep listening. A record club for full attention. Oversized italic brand lettering and a cut-groove mark on vermilion.": {
+    "fr": "DEEP CUT. Continuez d’écouter. Un club de vinyles dédié à l’écoute attentive. Lettrage de marque italique surdimensionné et motif d’un sillon découpé sur fond vermillon.",
+    "it": "DEEP CUT. Continua ad ascoltare. Un club di vinili dedicato all’ascolto attento. Lettere del brand in corsivo oversize e segno di un solco inciso su fondo vermiglio.",
+    "ar": "DEEP CUT. واصل الإصغاء. نادٍ للأسطوانات يمنح الاستماع كامل الاهتمام. حروف ضخمة مائلة للعلامة وعلامة أخدود محفور على خلفية قرمزية."
+  },
+  "Download campaign slide 1": {
+    "fr": "Télécharger la diapositive 1 de la campagne",
+    "it": "Scarica la slide 1 della campagna",
+    "ar": "تنزيل شريحة الحملة 1"
+  },
+  "Download campaign slide 2": {
+    "fr": "Télécharger la diapositive 2 de la campagne",
+    "it": "Scarica la slide 2 della campagna",
+    "ar": "تنزيل شريحة الحملة 2"
+  },
+  "Download campaign slide 3": {
+    "fr": "Télécharger la diapositive 3 de la campagne",
+    "it": "Scarica la slide 3 della campagna",
+    "ar": "تنزيل شريحة الحملة 3"
+  },
+  "Download campaign slide 4": {
+    "fr": "Télécharger la diapositive 4 de la campagne",
+    "it": "Scarica la slide 4 della campagna",
+    "ar": "تنزيل شريحة الحملة 4"
+  },
+  "Download campaign slide 5": {
+    "fr": "Télécharger la diapositive 5 de la campagne",
+    "it": "Scarica la slide 5 della campagna",
+    "ar": "تنزيل شريحة الحملة 5"
+  },
+  "Editorial Café Matcha and Latte Portraits": {
+    "fr": "Portraits de cafés, matcha et latte, style éditorial",
+    "it": "Ritratti editoriali di caffè, matcha e latte",
+    "ar": "بورتريهات تحريرية للقهوة والماتشا واللاتيه"
+  },
+  "Elan Bakery Croissant Delight": {
+    "fr": "Délice de croissant de la boulangerie Elan",
+    "it": "Delizia al croissant della panetteria Elan",
+    "ar": "متعة كرواسون مخبز Elan"
+  },
+  "Elan Pâtisserie Bakery Moodboard": {
+    "fr": "Planche d’inspiration de la boulangerie Elan Pâtisserie",
+    "it": "Moodboard del forno Elan Pâtisserie",
+    "ar": "لوحة إلهام لمخبز Elan Pâtisserie"
+  },
+  "Elan Pâtisserie Branding Flat Lay": {
+    "fr": "Composition à plat de l’identité Elan Pâtisserie",
+    "it": "Composizione flat lay del branding Elan Pâtisserie",
+    "ar": "تكوين مسطح لهوية Elan Pâtisserie"
+  },
+  "Elan Pâtisserie Material Moodboard": {
+    "fr": "Planche d’inspiration des matières d’Elan Pâtisserie",
+    "it": "Moodboard dei materiali di Elan Pâtisserie",
+    "ar": "لوحة إلهام بخامات Elan Pâtisserie"
+  },
+  "Elan Pâtisserie Menu Poster": {
+    "fr": "Affiche du menu d’Elan Pâtisserie",
+    "it": "Poster del menu di Elan Pâtisserie",
+    "ar": "ملصق قائمة Elan Pâtisserie"
+  },
+  "Elan Pâtisserie Sandwich Spread": {
+    "fr": "Sélection de sandwichs d’Elan Pâtisserie",
+    "it": "Selezione di sandwich Elan Pâtisserie",
+    "ar": "تشكيلة شطائر من Elan Pâtisserie"
+  },
+  "Elan Pâtisserie: Warm Pastry Moments": {
+    "fr": "Elan Pâtisserie : instants de pâtisserie chaleureux",
+    "it": "Elan Pâtisserie: dolci momenti di pasticceria",
+    "ar": "Elan Pâtisserie: لحظات دافئة مع المعجنات"
+  },
+  "Elegant Elan Pâtisserie Menu": {
+    "fr": "Menu raffiné d’Elan Pâtisserie",
+    "it": "Menu raffinato di Elan Pâtisserie",
+    "ar": "قائمة أنيقة من Elan Pâtisserie"
+  },
+  "Email": {
+    "fr": "E-mail",
+    "it": "E-mail",
+    "ar": "البريد الإلكتروني"
+  },
+  "Exploded axonometric of the courtyard house and roof terrace": {
+    "fr": "Axonométrie éclatée de la maison avec cour et terrasse sur le toit",
+    "it": "Assonometria esplosa della casa con cortile e terrazza sul tetto",
+    "ar": "منظور محوري تفكيكي لمنزل الفناء وشرفة السطح"
+  },
+  "First frame of Mou Grasso's original film": {
+    "fr": "Première image du film original de Mou Grasso",
+    "it": "Primo fotogramma del film originale di Mou Grasso",
+    "ar": "الإطار الأول من فيلم Mou Grasso الأصلي"
+  },
+  "Footer links": {
+    "fr": "Liens de pied de page",
+    "it": "Link nel piè di pagina",
+    "ar": "روابط التذييل"
+  },
+  "Furniture and greenery emerging from a sketched paper envelope on olive green": {
+    "fr": "Mobilier et végétation émergeant d’une enveloppe en papier esquissée sur fond vert olive",
+    "it": "Arredi e verde emergono da una busta di carta disegnata su fondo verde oliva",
+    "ar": "أثاث ونباتات تنبثق من مظروف ورقي مرسوم على خلفية زيتونية"
+  },
+  "Furniture layout and selected furnishings for the courtyard house": {
+    "fr": "Disposition du mobilier et sélection de pièces pour la maison avec cour",
+    "it": "Layout degli arredi e selezione dei mobili per la casa con cortile",
+    "ar": "توزيع الأثاث واختيار القطع لمنزل الفناء"
+  },
+  "Furniture, lighting and decorative objects with a material palette": {
+    "fr": "Mobilier, luminaires et objets décoratifs accompagnés d’une palette de matières",
+    "it": "Arredi, illuminazione e oggetti decorativi con palette di materiali",
+    "ar": "أثاث وإضاءة وقطع ديكور مع لوحة للخامات"
+  },
+  "Give it a whole side. A lilac circular label floats over a different extreme macro photograph of record grooves.": {
+    "fr": "Écoutez un album entier. Une étiquette circulaire lilas flotte sur une autre macro extrême des sillons d’un disque.",
+    "it": "Ascoltalo per intero. Un’etichetta circolare lilla fluttua su un’altra macro estrema dei solchi di un disco.",
+    "ar": "امنح الأسطوانة جانبًا كاملًا. يطفو ملصق دائري ليلكي فوق صورة ماكرو مختلفة لأخاديد الأسطوانة."
+  },
+  "Gourmet Chocolate-Covered Potato Chips": {
+    "fr": "Chips de pomme de terre enrobées de chocolat gourmand",
+    "it": "Patatine gourmet ricoperte di cioccolato",
+    "ar": "رقائق بطاطس فاخرة مغطاة بالشوكولاتة"
+  },
+  "Hand drawn facade elevation and courtyard floor plan": {
+    "fr": "Élévation de façade dessinée à la main et plan du patio",
+    "it": "Prospetto della facciata disegnato a mano e planimetria del cortile",
+    "ar": "واجهة مرسومة يدويًا ومخطط أرضي للفناء"
+  },
+  "Hospitality Branding | BYMOU": {
+    "fr": "Identité de marque hôtelière | BYMOU",
+    "it": "Branding per l’ospitalità | BYMOU",
+    "ar": "هوية علامة الضيافة | BYMOU"
+  },
+  "Hospitality Branding. Selected visual work from the portfolio of Mou Grasso.": {
+    "fr": "Identité de marque hôtelière. Sélection de travaux visuels du portfolio de Mou Grasso.",
+    "it": "Branding per l’ospitalità. Selezione di lavori visivi dal portfolio di Mou Grasso.",
+    "ar": "هوية علامة للضيافة. مجموعة مختارة من الأعمال البصرية في محفظة Mou Grasso."
+  },
+  "How AI is transforming luxury brand campaigns and commercial production.": {
+    "fr": "Comment l’IA transforme les campagnes des marques de luxe et la production publicitaire.",
+    "it": "Come l’IA sta trasformando le campagne dei brand di lusso e la produzione commerciale.",
+    "ar": "كيف يغيّر الذكاء الاصطناعي حملات العلامات الفاخرة والإنتاج التجاري."
+  },
+  "Illustrated outfit on an abstract dress form": {
+    "fr": "Tenue illustrée sur un mannequin abstrait",
+    "it": "Outfit illustrato su un manichino astratto",
+    "ar": "ملابس مرسومة على مجسّم أزياء تجريدي"
+  },
+  "Immersive website design for real estate and hospitality brands by BYMOU.": {
+    "fr": "Conception de sites immersifs pour les marques immobilières et hôtelières par BYMOU.",
+    "it": "Progettazione di siti immersivi per brand immobiliari e dell’ospitalità, a cura di BYMOU.",
+    "ar": "تصميم مواقع غامرة لعلامات العقارات والضيافة من BYMOU."
+  },
+  "Instagram": {
+    "fr": "Instagram",
+    "it": "Instagram",
+    "ar": "Instagram"
+  },
+  "Interior moodboard with plaster, timber, linen and bronze finishes": {
+    "fr": "Planche d’inspiration intérieure : plâtre, bois, lin et finitions bronze",
+    "it": "Moodboard per gli interni con intonaco, legno, lino e finiture in bronzo",
+    "ar": "لوحة إلهام للديكور: جص وخشب وكتان ولمسات برونزية"
+  },
+  "Language selector": {
+    "fr": "Sélecteur de langue",
+    "it": "Selettore della lingua",
+    "ar": "اختيار اللغة"
+  },
+  "Let chance pick. A lilac composition opens into a circular photograph of a hand discovering an orange record sleeve.": {
+    "fr": "Laissez le hasard choisir. Une composition lilas s’ouvre sur une photo circulaire d’une main découvrant une pochette de disque orange.",
+    "it": "Lascia scegliere al caso. Una composizione lilla si apre in una foto circolare di una mano che scopre una copertina arancione.",
+    "ar": "دع الاختيار للصدفة. ينفتح تكوين ليلكي على صورة دائرية ليد تكتشف غلاف أسطوانة برتقاليًا."
+  },
+  "Linen dressed bedroom with brass pendants beside the courtyard": {
+    "fr": "Chambre habillée de lin avec suspensions en laiton, près de la cour",
+    "it": "Camera da letto vestita di lino con lampade a sospensione in ottone accanto al cortile",
+    "ar": "غرفة نوم بكسوة من الكتان ومصابيح نحاسية معلقة بجوار الفناء"
+  },
+  "LinkedIn": {
+    "fr": "LinkedIn",
+    "it": "LinkedIn",
+    "ar": "LinkedIn"
+  },
+  "Living room looking through an arched doorway to the pool": {
+    "fr": "Salon donnant sur la piscine à travers une porte cintrée",
+    "it": "Soggiorno che guarda la piscina attraverso una porta ad arco",
+    "ar": "غرفة معيشة تطل على المسبح عبر مدخل مقوّس"
+  },
+  "Maison Élan Pâtisserie Moodboard": {
+    "fr": "Planche d’inspiration Maison Élan Pâtisserie",
+    "it": "Moodboard Maison Élan Pâtisserie",
+    "ar": "لوحة إلهام Maison Élan Pâtisserie"
+  },
+  "Material samples and furniture selection on a cream presentation board": {
+    "fr": "Échantillons de matières et sélection de mobilier sur un panneau de présentation crème",
+    "it": "Campioni di materiali e selezione di arredi su un pannello color crema",
+    "ar": "عينات مواد واختيار أثاث على لوحة عرض بلون كريمي"
+  },
+  "Meet Mou Grasso, the independent creative behind BYMOU. Creative direction, AI films and visual storytelling.": {
+    "fr": "Rencontrez Mou Grasso, la créative indépendante derrière BYMOU. Direction créative, films IA et narration visuelle.",
+    "it": "Conosci Mou Grasso, la creativa indipendente dietro BYMOU. Direzione creativa, film IA e storytelling visivo.",
+    "ar": "تعرّف إلى Mou Grasso، المبدعة المستقلة وراء BYMOU. إدارة إبداعية وأفلام بالذكاء الاصطناعي وسرد بصري."
+  },
+  "Mou Grasso in a long black coat and sunglasses, standing beside a courtyard pool": {
+    "fr": "Mou Grasso, en long manteau noir et lunettes de soleil, debout près de la piscine d’une cour intérieure",
+    "it": "Mou Grasso con lungo cappotto nero e occhiali da sole, accanto alla piscina di un cortile",
+    "ar": "Mou Grasso بمعطف أسود طويل ونظارة شمسية، تقف بجانب مسبح فناء داخلي"
+  },
+  "Mou Grasso in her black coat and tortoiseshell sunglasses": {
+    "fr": "Mou Grasso dans son manteau noir et ses lunettes écaille",
+    "it": "Mou Grasso con cappotto nero e occhiali tartarugati",
+    "ar": "Mou Grasso بمعطفها الأسود ونظارتها ذات الإطار السلحفاتي"
+  },
+  "Mou Grasso introduction": {
+    "fr": "Présentation de Mou Grasso",
+    "it": "Presentazione di Mou Grasso",
+    "ar": "مقدمة عن Mou Grasso"
+  },
+  "Mou Grasso original seven-second film, controlled by scrolling": {
+    "fr": "Film original de sept secondes de Mou Grasso, contrôlé par le défilement",
+    "it": "Film originale di sette secondi di Mou Grasso, controllato dallo scorrimento",
+    "ar": "فيلم Mou Grasso الأصلي ومدته سبع ثوانٍ، يتحكم فيه التمرير"
+  },
+  "Mou Grasso — BYMOU. Reality is editable.": {
+    "fr": "Mou Grasso — BYMOU. Le réel est transformable.",
+    "it": "Mou Grasso — BYMOU. La realtà è modificabile.",
+    "ar": "Mou Grasso — BYMOU. الواقع قابل لإعادة التشكيل."
+  },
+  "Mou Grasso, creative director at BYMOU": {
+    "fr": "Mou Grasso, directrice créative chez BYMOU",
+    "it": "Mou Grasso, direttrice creativa di BYMOU",
+    "ar": "Mou Grasso، مديرة إبداعية في BYMOU"
+  },
+  "Mou Grasso. Creative Director and Visual Storyteller. Independent concepts in campaigns, websites, film, interiors and creative technology.": {
+    "fr": "Mou Grasso. Directrice créative et narratrice visuelle. Concepts indépendants pour des campagnes, sites web, films, intérieurs et technologies créatives.",
+    "it": "Mou Grasso. Direttrice creativa e storyteller visiva. Concept indipendenti per campagne, siti web, film, interni e tecnologie creative.",
+    "ar": "Mou Grasso. مديرة إبداعية وراوية بصرية. مفاهيم مستقلة للحملات والمواقع والأفلام والديكورات والتقنيات الإبداعية."
+  },
+  "Next slide": {
+    "fr": "Diapositive suivante",
+    "it": "Slide successiva",
+    "ar": "الشريحة التالية"
+  },
+  "OPEN END — an editable typographic identity": {
+    "fr": "OPEN END — une identité typographique modifiable",
+    "it": "OPEN END — un’identità tipografica modificabile",
+    "ar": "OPEN END — هوية طباعية قابلة للتحرير"
+  },
+  "OPEN END: a speculative participatory journal identity with an editable SVG composition by BYMOU.": {
+    "fr": "OPEN END : identité spéculative d’une revue participative, avec une composition SVG modifiable par BYMOU.",
+    "it": "OPEN END: identità immaginaria di una rivista partecipativa, con una composizione SVG modificabile di BYMOU.",
+    "ar": "OPEN END: هوية افتراضية لمجلة تشاركية، بتكوين SVG قابل للتحرير من BYMOU."
+  },
+  "OPEN-END — BYMOU": {
+    "fr": "OPEN-END — BYMOU",
+    "it": "OPEN-END — BYMOU",
+    "ar": "OPEN-END — BYMOU"
+  },
+  "Open living room, dining area and kitchen with natural finishes": {
+    "fr": "Salon ouvert, salle à manger et cuisine aux finitions naturelles",
+    "it": "Open space con soggiorno, zona pranzo e cucina dalle finiture naturali",
+    "ar": "غرفة معيشة مفتوحة ومنطقة طعام ومطبخ بلمسات طبيعية"
+  },
+  "Packaging & Art Direction | BYMOU": {
+    "fr": "Packaging et direction artistique | BYMOU",
+    "it": "Packaging e direzione artistica | BYMOU",
+    "ar": "التغليف والتوجيه الفني | BYMOU"
+  },
+  "Packaging & Art Direction. Selected visual work from the portfolio of Mou Grasso.": {
+    "fr": "Packaging et direction artistique. Sélection de travaux visuels du portfolio de Mou Grasso.",
+    "it": "Packaging e direzione artistica. Selezione di lavori visivi dal portfolio di Mou Grasso.",
+    "ar": "التغليف والتوجيه الفني. مجموعة مختارة من الأعمال البصرية في محفظة Mou Grasso."
+  },
+  "Pool courtyard viewed from a shaded seating area": {
+    "fr": "Cour avec piscine vue depuis un espace salon ombragé",
+    "it": "Cortile con piscina visto da una zona relax ombreggiata",
+    "ar": "فناء المسبح من منطقة جلوس مظللة"
+  },
+  "Previous project": {
+    "fr": "Projet précédent",
+    "it": "Progetto precedente",
+    "ar": "المشروع السابق"
+  },
+  "Previous slide": {
+    "fr": "Diapositive précédente",
+    "it": "Slide precedente",
+    "ar": "الشريحة السابقة"
+  },
+  "Procedural compact-camera study inside the Feed Escapes experience": {
+    "fr": "Étude d’un appareil photo compact procédural dans l’expérience Feed Escapes",
+    "it": "Studio procedurale di una fotocamera compatta nell’esperienza Feed Escapes",
+    "ar": "دراسة إجرائية لكاميرا مدمجة ضمن تجربة Feed Escapes"
+  },
+  "Property presentation combining courtyard, interiors and roof terrace": {
+    "fr": "Présentation immobilière associant cour intérieure, espaces intérieurs et terrasse sur le toit",
+    "it": "Presentazione immobiliare che unisce cortile, interni e terrazza sul tetto",
+    "ar": "عرض عقاري يجمع الفناء والديكورات الداخلية وشرفة السطح"
+  },
+  "Range or to be discussed": {
+    "fr": "Fourchette ou à définir",
+    "it": "Fascia o da concordare",
+    "ar": "نطاق أو يُحدد لاحقًا"
+  },
+  "Reality is editable. The independent creative practice of Mou Grasso.": {
+    "fr": "Le réel est transformable. La pratique créative indépendante de Mou Grasso.",
+    "it": "La realtà è modificabile. La pratica creativa indipendente di Mou Grasso.",
+    "ar": "الواقع قابل لإعادة التشكيل. ممارسة Mou Grasso الإبداعية المستقلة."
+  },
+  "Sable Glass Studio Editorial": {
+    "fr": "Éditorial Sable Glass Studio",
+    "it": "Editoriale Sable Glass Studio",
+    "ar": "تحرير Sable Glass Studio"
+  },
+  "Sable Glass Studio Poster": {
+    "fr": "Affiche Sable Glass Studio",
+    "it": "Poster Sable Glass Studio",
+    "ar": "ملصق Sable Glass Studio"
+  },
+  "Sable Glass Studio contact sheet with glassware, sketches and material studies": {
+    "fr": "Planche-contact de Sable Glass Studio : verrerie, croquis et études de matières",
+    "it": "Contact sheet di Sable Glass Studio con vetreria, schizzi e studi sui materiali",
+    "ar": "ورقة تواصل لـ Sable Glass Studio تضم أدوات زجاجية ورسومات ودراسات مواد"
+  },
+  "Sable Hand-Blown Glass Studio Lookbook": {
+    "fr": "Lookbook du studio de verre soufflé Sable",
+    "it": "Lookbook dello studio di vetro soffiato Sable",
+    "ar": "كتالوج Sable لاستوديو الزجاج المنفوخ يدويًا"
+  },
+  "Sable Hand-Blown Glass Studio Poster": {
+    "fr": "Affiche du studio de verre soufflé Sable",
+    "it": "Poster dello studio di vetro soffiato Sable",
+    "ar": "ملصق استوديو Sable للزجاج المنفوخ يدويًا"
+  },
+  "Salt & Silk Chocolate Chip Packaging": {
+    "fr": "Packaging de pépites de chocolat Salt & Silk",
+    "it": "Packaging delle gocce di cioccolato Salt & Silk",
+    "ar": "تغليف رقائق الشوكولاتة من Salt & Silk"
+  },
+  "Salt & Silk Chocolate Chip Still Life": {
+    "fr": "Nature morte de pépites de chocolat Salt & Silk",
+    "it": "Natura morta con gocce di cioccolato Salt & Silk",
+    "ar": "ترتيب فني ثابت لرقائق شوكولاتة Salt & Silk"
+  },
+  "Salt & Silk Chocolate Chips": {
+    "fr": "Pépites de chocolat Salt & Silk",
+    "it": "Gocce di cioccolato Salt & Silk",
+    "ar": "رقائق شوكولاتة Salt & Silk"
+  },
+  "Salt & Silk Chocolate Tin Trio": {
+    "fr": "Trio de boîtes de chocolat Salt & Silk",
+    "it": "Trio di latte per cioccolato Salt & Silk",
+    "ar": "ثلاث علب شوكولاتة من Salt & Silk"
+  },
+  "Salt & Silk Gourmet Chocolate Chip Gift Box": {
+    "fr": "Coffret cadeau de pépites de chocolat gourmand Salt & Silk",
+    "it": "Confezione regalo gourmet di gocce di cioccolato Salt & Silk",
+    "ar": "علبة هدايا فاخرة من رقائق الشوكولاتة من Salt & Silk"
+  },
+  "Selected projects": {
+    "fr": "Projets sélectionnés",
+    "it": "Progetti selezionati",
+    "ar": "المشروعات المختارة"
+  },
+  "Services and Insights": {
+    "fr": "Services et réflexions",
+    "it": "Servizi e approfondimenti",
+    "ar": "الخدمات والرؤى"
+  },
+  "Strategic rebranding and website design for ambitious startups.": {
+    "fr": "Repositionnement stratégique et conception de sites web pour les startups ambitieuses.",
+    "it": "Rebranding strategico e progettazione di siti web per startup ambiziose.",
+    "ar": "إعادة بناء استراتيجية للعلامة وتصميم مواقع للشركات الناشئة الطموحة."
+  },
+  "Sunlit Elan Bakery Pastry Moment": {
+    "fr": "Instant pâtisserie ensoleillé chez Elan Bakery",
+    "it": "Momento di pasticceria al sole da Elan Bakery",
+    "ar": "لحظة مع المعجنات في مخبز Elan تحت ضوء الشمس"
+  },
+  "Sunlit Elan Pâtisserie Interior": {
+    "fr": "Intérieur ensoleillé d’Elan Pâtisserie",
+    "it": "Interno soleggiato di Elan Pâtisserie",
+    "ar": "الداخل المشرق لـ Elan Pâtisserie"
+  },
+  "Sunlit Signature Eggies Still Life": {
+    "fr": "Nature morte ensoleillée des Eggies signature",
+    "it": "Natura morta soleggiata degli Eggies signature",
+    "ar": "ترتيب فني ثابت لـ Eggies المميزة تحت ضوء الشمس"
+  },
+  "Sunlit courtyard with twin arches and a reflecting pool": {
+    "fr": "Cour ensoleillée avec deux arches et un bassin réfléchissant",
+    "it": "Cortile soleggiato con doppio arco e vasca riflettente",
+    "ar": "فناء مشمس بقوسين وحوض عاكس"
+  },
+  "Target dates or milestones": {
+    "fr": "Dates ou étapes clés visées",
+    "it": "Date o traguardi previsti",
+    "ar": "التواريخ أو المراحل المستهدفة"
+  },
+  "There’s more after the hook. Black vinyl emerges from a vermilion sleeve; oversized editorial lettering runs from white wall to orange paper.": {
+    "fr": "Il y a plus après l’accroche. Un vinyle noir sort d’une pochette vermillon ; une grande typographie éditoriale s’étire du mur blanc au papier orange.",
+    "it": "C’è altro dopo il gancio. Un vinile nero emerge da una custodia vermiglio; grandi caratteri editoriali si estendono dalla parete bianca alla carta arancione.",
+    "ar": "ثمة المزيد بعد المقطع الجاذب. تخرج أسطوانة سوداء من غلاف قرمزي، وتمتد حروف تحريرية ضخمة من جدار أبيض إلى ورق برتقالي."
+  },
+  "Three Chocolates, One Salt": {
+    "fr": "Trois chocolats, un sel",
+    "it": "Tre cioccolati, un sale",
+    "ar": "ثلاثة أنواع شوكولاتة وملح واحد"
+  },
+  "Torn paper collage of Moroccan textures and white furniture silhouettes": {
+    "fr": "Collage en papier déchiré de textures marocaines et de silhouettes de mobilier blanc",
+    "it": "Collage di carta strappata con texture marocchine e sagome di arredi bianchi",
+    "ar": "كولاج من ورق ممزق بخامات مغربية وظلال أثاث أبيض"
+  },
+  "Twitter": {
+    "fr": "Twitter",
+    "it": "Twitter",
+    "ar": "Twitter"
+  },
+  "UNFLATTEN — BYMOU": {
+    "fr": "UNFLATTEN — BYMOU",
+    "it": "UNFLATTEN — BYMOU",
+    "ar": "UNFLATTEN — BYMOU"
+  },
+  "UNFLATTEN — five-slide campaign": {
+    "fr": "UNFLATTEN — campagne en cinq diapositives",
+    "it": "UNFLATTEN — campagna in cinque slide",
+    "ar": "UNFLATTEN — حملة من خمس شرائح"
+  },
+  "UNFLATTEN: a speculative sparkling-citrus identity and five-slide advertising campaign by BYMOU.": {
+    "fr": "UNFLATTEN : identité spéculative pour une boisson pétillante aux agrumes et campagne publicitaire en cinq diapositives par BYMOU.",
+    "it": "UNFLATTEN: identità immaginaria per una bevanda frizzante agli agrumi e campagna pubblicitaria in cinque slide, a cura di BYMOU.",
+    "ar": "UNFLATTEN: هوية افتراضية لمشروب غازي بالحمضيات وحملة إعلانية من خمس شرائح من BYMOU."
+  },
+  "Unfinished interior before furnishing, with exposed plaster and tools": {
+    "fr": "Intérieur inachevé avant ameublement, avec plâtre apparent et outils",
+    "it": "Interno non finito prima dell’arredamento, con intonaco a vista e attrezzi",
+    "ar": "ديكور داخلي غير مكتمل قبل التأثيث، بجص مكشوف وأدوات"
+  },
+  "Unfinished room with proposed furnishings outlined in white": {
+    "fr": "Pièce inachevée avec mobilier proposé dessiné en blanc",
+    "it": "Stanza non finita con arredi proposti delineati in bianco",
+    "ar": "غرفة غير مكتملة مع أثاث مقترح محدد بخطوط بيضاء"
+  },
+  "Using AI for architectural visualization and real estate marketing in Morocco.": {
+    "fr": "L’IA au service de la visualisation architecturale et du marketing immobilier au Maroc.",
+    "it": "L’IA per la visualizzazione architettonica e il marketing immobiliare in Marocco.",
+    "ar": "استخدام الذكاء الاصطناعي في التصوّر المعماري وتسويق العقارات في المغرب."
+  },
+  "Vision": {
+    "fr": "Vision",
+    "it": "Visione",
+    "ar": "الرؤية"
+  },
+  "Warm Artisan Glass Studio Moodboard": {
+    "fr": "Planche d’inspiration d’un studio de verre artisanal chaleureux",
+    "it": "Moodboard per uno studio artigianale del vetro, caldo e accogliente",
+    "ar": "لوحة إلهام لاستوديو زجاج حرفي دافئ"
+  },
+  "Warm Pâtisserie Café Moment": {
+    "fr": "Instant chaleureux dans un café-pâtisserie",
+    "it": "Momento accogliente in una pasticceria-caffè",
+    "ar": "لحظة دافئة في مقهى ومعجنات"
+  },
+  "Website design portfolio": {
+    "fr": "Portfolio de conception web",
+    "it": "Portfolio di web design",
+    "ar": "محفظة تصميم المواقع"
+  },
+  "What needs to be made?": {
+    "fr": "Que faut-il créer ?",
+    "it": "Che cosa bisogna realizzare?",
+    "ar": "ما الذي ينبغي إنجازه؟"
+  },
+  "What should the project help achieve?": {
+    "fr": "Quel objectif le projet doit-il atteindre ?",
+    "it": "Quale obiettivo dovrebbe raggiungere il progetto?",
+    "ar": "ما الهدف الذي يُراد للمشروع تحقيقه؟"
+  },
+  "Who is this for?": {
+    "fr": "À qui ce projet s’adresse-t-il ?",
+    "it": "A chi è destinato il progetto?",
+    "ar": "لمن هذا المشروع؟"
+  },
+  "Your prepared inquiry": {
+    "fr": "Votre demande préparée",
+    "it": "La tua richiesta pronta",
+    "ar": "استفسارك جاهز"
+  },
+  "critical charge — five-second original motion study": {
+    "fr": "critical charge — étude originale de film de cinq secondes",
+    "it": "critical charge — studio originale di motion di cinque secondi",
+    "ar": "critical charge — دراسة حركة أصلية مدتها خمس ثوانٍ"
+  },
+  "e.g. Spring launch": {
+    "fr": "par ex. lancement de printemps",
+    "it": "es. lancio primaverile",
+    "ar": "مثال: إطلاق الربيع"
+  },
+  "just one thing — five-second original motion study": {
+    "fr": "just one thing — étude originale de film de cinq secondes",
+    "it": "just one thing — studio originale di motion di cinque secondi",
+    "ar": "just one thing — دراسة حركة أصلية مدتها خمس ثوانٍ"
+  }
+}

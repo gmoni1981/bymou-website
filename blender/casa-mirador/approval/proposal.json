@@ -1,0 +1,205 @@
+{
+  "revision": "P02",
+  "status": "ARCHITECTURAL PROPOSAL \u2014 APPROVAL REQUIRED",
+  "dimensions": {
+    "width": 15.0,
+    "depth": 14.0,
+    "floorToFloor": 3.24,
+    "courtyard": [
+      6,
+      8
+    ],
+    "pool": [
+      2,
+      5
+    ],
+    "upperTerrace": [
+      5,
+      6.8
+    ],
+    "gardenProposed": [
+      15,
+      4
+    ]
+  },
+  "areas": {
+    "footprint": 210.0,
+    "courtyard": 48,
+    "groundEnclosedGross": 162.0,
+    "upperOpenTerrace": 34.0,
+    "upperEnclosedGross": 128.0,
+    "roofStairEnclosedGross": 10.0,
+    "totalEnclosedGross": 300.0,
+    "pool": 10.0,
+    "courtyardDryAreaBeforePlanting": 38.0,
+    "proposedGarden": 60.0,
+    "roofOpenGross": 118,
+    "pergolaCoverage": 15.0
+  },
+  "rooms": {
+    "GF": [
+      [
+        "G01",
+        "Living",
+        0.25,
+        0.25,
+        4.75,
+        6.0,
+        "25.88",
+        "Open to dining; courtyard arches"
+      ],
+      [
+        "G02",
+        "Dining",
+        0.25,
+        6.0,
+        4.75,
+        10.0,
+        "18.00",
+        "8-place table; no partition to living/kitchen"
+      ],
+      [
+        "G03",
+        "Kitchen",
+        0.25,
+        10.0,
+        4.75,
+        13.75,
+        "16.88",
+        "Island, 1.10 m working aisle; pantry nearby"
+      ],
+      [
+        "G04",
+        "Entrance",
+        5.25,
+        0.25,
+        8.1,
+        2.75,
+        "7.12",
+        "Entry \u2192 living / courtyard / stair lobby"
+      ],
+      [
+        "G05",
+        "WC",
+        8.25,
+        0.25,
+        10.0,
+        1.55,
+        "2.28",
+        "Guest powder room"
+      ],
+      [
+        "G06",
+        "Laundry",
+        8.25,
+        11.25,
+        10.75,
+        12.35,
+        "2.75",
+        "Rear utility cupboard; garden-room access"
+      ],
+      [
+        "G07",
+        "Guest suite 1",
+        11.25,
+        3.25,
+        14.75,
+        8.4,
+        "18.03",
+        "Includes 1.85 \u00d7 2.10 m en-suite"
+      ],
+      [
+        "G08",
+        "Guest suite 2",
+        11.25,
+        8.55,
+        14.75,
+        13.75,
+        "18.20",
+        "Includes 1.85 \u00d7 2.10 m en-suite"
+      ],
+      [
+        "G09",
+        "Garden room / passage",
+        5.25,
+        11.25,
+        8.1,
+        13.75,
+        "7.12",
+        "Court \u2192 kitchen / rear garden"
+      ],
+      [
+        "G10",
+        "Pantry / storage",
+        8.25,
+        12.5,
+        10.75,
+        13.75,
+        "3.12",
+        "Access from garden room"
+      ]
+    ],
+    "Upper": [
+      [
+        "U01",
+        "Library / shared landing",
+        0.25,
+        0.25,
+        4.75,
+        3.95,
+        "16.65",
+        "Shared route to open terrace; not a fourth bedroom"
+      ],
+      [
+        "U02",
+        "Front landing",
+        5.25,
+        0.25,
+        10.75,
+        2.75,
+        "13.75",
+        "Stair \u2192 library / primary suite"
+      ],
+      [
+        "U03",
+        "Primary suite",
+        11.25,
+        4.0,
+        14.75,
+        13.75,
+        "34.12",
+        "Sleeping + dressing + 3.50 \u00d7 2.30 m bathroom"
+      ],
+      [
+        "U04",
+        "Office",
+        0.25,
+        11.25,
+        4.75,
+        13.75,
+        "11.25",
+        "Access via open terrace; desk for two"
+      ],
+      [
+        "U05",
+        "Rear landing / linen",
+        5.25,
+        11.25,
+        10.75,
+        13.75,
+        "13.75",
+        "Terrace \u2192 office / primary suite"
+      ]
+    ]
+  },
+  "bedrooms": 3,
+  "notes": [
+    "All P02 dimensions are proposed, not a surveyed reconstruction.",
+    "Enclosed gross includes walls and stair allocation on served levels. Courtyard, open terraces, garden and pergola are excluded.",
+    "Upper office access uses an open terrace, via the shared library. It never passes through a bedroom.",
+    "The garden apron is a 15 x 4 m landscape study, not an assertion of plot ownership or boundary.",
+    "Roof gross outdoor area is 118 m\u00b2 before parapets, planting, furniture and clearance deductions. Pergola covers 15 m\u00b2 of that area, not additional area.",
+    "Final finishes, structural design, waterproofing and detailed stair headroom remain to be resolved after architectural approval.",
+    "Closeable courtyard glazing and doors are proposed; moving leaves are omitted from this schematic. Enclosed area assumes these openings can close."
+  ]
+}

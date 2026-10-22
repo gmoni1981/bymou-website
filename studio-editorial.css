@@ -1,0 +1,17 @@
+/* Portrait editorial: scoped to the Studio section. */
+.studio-editorial{background:var(--bg,#f4f4f1);color:var(--ink,#0b0b0b);padding:75px 7vw 100px}
+.studio-editorial .studio-masthead{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line,#c9c7bf);padding-top:20px;font:10px/1.6 Mono,monospace;letter-spacing:.12em;text-transform:uppercase}
+.studio-editorial .studio-spread{display:grid;grid-template-columns:34% 1fr;gap:11%;align-items:center;margin-top:65px}
+.studio-editorial .studio-portrait{margin:0;position:relative;align-self:start}
+.studio-editorial .studio-portrait img{display:block;width:100%;height:auto;aspect-ratio:1122/1402;object-fit:contain;filter:none}
+.studio-editorial .studio-portrait figcaption{display:flex;justify-content:space-between;gap:15px;align-items:baseline;margin-top:18px;border-top:1px solid var(--line,#c9c7bf);padding-top:15px}
+.studio-editorial .studio-portrait figcaption span:first-child{font:400 29px/1.15 Bodoni,Georgia,serif;letter-spacing:-.025em}
+.studio-editorial .studio-portrait figcaption span:last-child{font:9px/1.6 Mono,monospace;max-width:100px;text-align:right;color:#5b5b52}
+.studio-editorial .studio-voice{position:relative;padding:28px 0 20px}
+.studio-editorial .studio-quotation{font:400 80px/.7 Bodoni,Georgia,serif;color:#9b978d;display:block;margin-bottom:17px}
+.studio-editorial .studio-statement{font:400 clamp(39px,4.8vw,76px)/1.06 Bodoni,Georgia,serif;letter-spacing:-.035em;text-transform:none;margin:0;font-style:normal}
+.studio-editorial .studio-bio{font:12px/1.95 Mono,monospace;max-width:440px;margin:32px 0 0;color:#494940}
+.studio-editorial .studio-disciplines{display:flex;flex-wrap:wrap;gap:12px 22px;padding:24px 0 0;margin:34px 0 0;border-top:1px solid var(--line,#c9c7bf);list-style:none;max-width:470px}
+.studio-editorial .studio-disciplines li{font:9px/1.7 Mono,monospace;letter-spacing:.07em;text-transform:uppercase;max-width:125px}
+@media(min-width:1700px){.studio-editorial .studio-spread{max-width:1400px;margin-inline:auto}}
+@media(max-width:700px){.studio-editorial{padding:45px 6vw 60px}.studio-editorial .studio-masthead{font-size:8px;letter-spacing:.08em;padding-top:17px}.studio-editorial .studio-spread{grid-template-columns:1fr;gap:35px;margin-top:30px}.studio-editorial .studio-portrait{width:82%;max-width:330px;margin:0}.studio-editorial .studio-portrait figcaption{margin-top:12px;padding-top:12px;gap:10px}.studio-editorial .studio-portrait figcaption span:first-child{font-size:25px}.studio-editorial .studio-portrait figcaption span:last-child{font-size:8px;max-width:90px}.studio-editorial .studio-voice{padding:12px 0 0}.studio-editorial .studio-quotation{font-size:62px;margin-bottom:12px}.studio-editorial .studio-statement{font-size:clamp(35px,9.8vw,56px)}.studio-editorial .studio-bio{font-size:11px;line-height:1.9;margin-top:24px}.studio-editorial .studio-disciplines{gap:14px 18px;margin-top:27px;padding-top:20px}.studio-editorial .studio-disciplines li{font-size:8px;max-width:90px}}

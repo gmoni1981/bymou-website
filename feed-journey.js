@@ -75,7 +75,7 @@ async function createJourney(T){
     const tex=imageLoader.load(url,()=>{if(alive)draw();},undefined,()=>{});
     tex.colorSpace=T.SRGBColorSpace;tex.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());textures.add(tex);return tex;
   };
-  const portrait=loadTexture('/assets/editorial/mounia-640.webp');portrait.userData.aspect=849/1151;
+  const portrait=loadTexture('/assets/editorial/mou-grasso-portrait-640.webp');portrait.userData.aspect=849/1151;
   const typeStill=loadTexture('/assets/editorial/bymou-branding.webp');
   function typeTexture(lines,{bg='#f2f0e9',fg='#24241f',small='BYMOU / INDEPENDENT EXPERIMENT',size=132}={}){
     const c=document.createElement('canvas');c.width=1024;c.height=768;

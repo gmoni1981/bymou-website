@@ -1,0 +1,13 @@
+/* Compact website recordings. All rules scoped to this section. */
+.websites{background:#eeeae1;color:#25251f;padding:38px 4vw 32px}
+.web-compact-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;max-width:1440px;margin:0 auto 22px;padding-top:18px;border-top:1px solid #bdb7ac}
+.web-compact-heading p{font:10px/1.5 Mono,monospace;text-transform:uppercase;letter-spacing:.14em;margin:0 0 8px}
+.web-compact-heading h2{font:400 clamp(28px,2.7vw,42px)/1.1 Bodoni,Georgia,serif;letter-spacing:-.03em;margin:0}
+.web-compact-heading>span{font:10px/1.6 Mono,monospace;margin-bottom:3px}
+.web-motion-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1440px;margin:auto}
+.web-motion-strip figure{margin:0;min-width:0}.web-motion-strip video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#10100e;pointer-events:none}
+.web-motion-strip figcaption{display:flex;align-items:baseline;gap:14px;padding:13px 0 9px;border-bottom:1px solid #bdb7ac}
+.web-motion-strip figcaption span:first-child{font:italic 13px Bodoni,Georgia,serif;color:#6c675f}
+.web-motion-strip figcaption span:last-child{font:400 clamp(20px,2vw,30px)/1.2 Bodoni,Georgia,serif;letter-spacing:-.02em}
+.web-motion-strip:focus-visible{outline:2px solid #6f4b38;outline-offset:5px}
+@media(max-width:700px){.websites{padding:27px 0 25px;overflow:hidden}.web-compact-heading{margin:0 6vw 20px;padding-top:15px;display:block}.web-compact-heading h2{font-size:30px}.web-compact-heading>span{display:none}.web-motion-strip{display:flex;overflow-x:auto;gap:18px;padding:0 6vw 8px;scroll-padding-inline:6vw;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none}.web-motion-strip::-webkit-scrollbar{display:none}.web-motion-strip figure{flex:0 0 88%;scroll-snap-align:start}.web-motion-strip figcaption span:last-child{font-size:25px}}

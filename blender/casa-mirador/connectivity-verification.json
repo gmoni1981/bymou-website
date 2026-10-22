@@ -1,0 +1,28 @@
+{
+  "passed": false,
+  "reached": {
+    "entry": true,
+    "guestWC": true,
+    "court": true,
+    "living": true,
+    "guest1": true,
+    "dining": true,
+    "bath1": true,
+    "kitchen": true,
+    "guest2": true,
+    "laundry": true,
+    "pantry": true,
+    "primary": true,
+    "garden": true,
+    "bath2": true,
+    "library": true,
+    "roof": true,
+    "terrace": true,
+    "office": true
+  },
+  "missing": [
+    "primaryBath"
+  ],
+  "visited": 27561,
+  "scope": "Connected 3D navigation graph: all rooms, bathrooms, roof, garden and both stairs from the entrance; 0.1m spacing and 0.20m radius."
+}

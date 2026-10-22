@@ -7,15 +7,13 @@
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const slowConnection = navigator.connection?.saveData;
   let content = null;
-  let language = 'en';
+  let language = ['en','fr','it','ar'].includes(location.pathname.split('/')[1]) ? location.pathname.split('/')[1] : 'en';
   let userPaused = false;
   let dialogOpener = null;
   let preparedInquiry = '';
   const isPaused = () => userPaused || reduced.matches;
   const translate = key => content?.locales?.[language]?.[key] ?? content?.locales?.en?.[key] ?? key;
   try {
-    const saved = localStorage.getItem('bymou-language');
-    if (['en','fr','it'].includes(saved)) language = saved;
     userPaused = localStorage.getItem('bymou-motion-paused') === 'true';
   } catch (_) { /* Portfolio works with storage blocked. */ }
 
@@ -24,7 +22,6 @@
 
   function applyLanguage() {
     document.documentElement.lang = language;
-    document.dispatchEvent(new CustomEvent('bymou:languagechange'));
     $$('[data-i18n]').forEach(element => {
       const key = element.dataset.i18n;
       const value = translate(key);
@@ -45,11 +42,13 @@
     renderResources();
     $$('[data-work-preview]').forEach(updatePreviewButton);
     if ($('#inquiry-result') && !$('#inquiry-result').hidden) $('[data-inquiry-status]').textContent = translate('contact.ready');
+    document.dispatchEvent(new CustomEvent('bymou:languagechange',{detail:{language,strings:content.locales[language]}}));
   }
   languageInput?.addEventListener('change', () => {
     language = languageInput.value;
     try { localStorage.setItem('bymou-language',language); } catch (_) {}
-    if (content) applyLanguage();
+    const path = location.pathname.replace(/^\/(en|fr|it|ar)(?=\/|$)/,'') || '/';
+    location.assign('/'+language+path+location.search+location.hash);
   });
 
   // Small-screen navigation supports keyboard, Escape and outside clicks.

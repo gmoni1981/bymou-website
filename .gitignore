@@ -1,2 +1,5 @@
 .DS_Store
 *.zip
+*.blend1
+*.pyc
+__pycache__/

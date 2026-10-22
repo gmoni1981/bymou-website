@@ -1,0 +1,36 @@
+{
+  "areaArithmetic": "passed",
+  "scope": "2D schematic connectivity at 0.10 m grid, body radius 0.20 m; excludes door swings, structural/headroom certification and final walking route.",
+  "levels": {
+    "GF": {
+      "targets": {
+        "living": true,
+        "dining": true,
+        "kitchen": true,
+        "entry": true,
+        "WC": true,
+        "utility": true,
+        "guest1": true,
+        "guest2": true,
+        "bath1": true,
+        "bath2": true,
+        "garden passage": true,
+        "pantry": true,
+        "courtyard": true
+      },
+      "reachableCells": 10192
+    },
+    "Upper": {
+      "targets": {
+        "library": true,
+        "open terrace": true,
+        "office": true,
+        "rear landing": true,
+        "primary": true,
+        "primary bath": true,
+        "stair lobby": true
+      },
+      "reachableCells": 9599
+    }
+  }
+}

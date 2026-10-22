@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "instruction": "P02 final approval; dimensions and spatial arrangement locked",
+  "sha256": {
+    "proposal.json": "199c5c60081efe787113613a750bae889b1e074c94c6417a74dcf686a57b6657",
+    "layout-geometry.json": "6cf05dd95202fd7005d198ad3211e624f101811a7f80ceaee971c4a656a6ffa5",
+    "ground-plan.svg": "04a9779f6a023b11d02001f79b3656b99987476b4c404a18c1ce7577d37b8181",
+    "upper-plan.svg": "503b24c61c6cd79925f90c8d76c35059ab043c9479e4a69b4700354a833b9868",
+    "roof-plan.svg": "ad8a1c7ab55a64eb98a2dc8c553d7666d5b39420f82db66fa927cc2c1f25006e"
+  }
+}

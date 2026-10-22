@@ -1,0 +1,188 @@
+{
+  "status": "PROPOSAL \u2014 FOR LAYOUT APPROVAL ONLY",
+  "dimensions": {
+    "width": 11.2,
+    "depth": 16.7,
+    "floorToFloor": 3.24,
+    "courtyardGround": [
+      4.2,
+      10
+    ],
+    "openSky": [
+      3,
+      10
+    ],
+    "pool": [
+      1.6,
+      4.2
+    ],
+    "galleryGrossWidth": 1.2,
+    "galleryClearWidth": 1.1
+  },
+  "areas": {
+    "mainFloorEnvelope": 187.04,
+    "groundEnclosedGross": 145.04,
+    "upperEnclosedGross": 145.04,
+    "roofStairEnclosedGross": 9.8,
+    "totalEnclosedGross": 299.88,
+    "groundCoveredArcade": 12,
+    "upperCoveredGallery": 12,
+    "groundCourtyardIncludingArcade": 42,
+    "openSkyCourtyardIncludingPool": 30,
+    "poolSurface": 6.72,
+    "openSkyCourtyardExcludingPool": 23.28,
+    "roofOpenGrossBeforeParapets": 147.24,
+    "combinedCoveredGross": 323.88
+  },
+  "rooms": [
+    [
+      "G01",
+      "Entrance hall",
+      "GF",
+      "4.20 \u00d7 3.35",
+      "14.07",
+      "Shared entrance, stair, services and courtyard"
+    ],
+    [
+      "G02",
+      "Living room",
+      "GF",
+      "3.10 \u00d7 4.78",
+      "14.80",
+      "Independent arcade door; kitchen connection"
+    ],
+    [
+      "G03",
+      "Kitchen",
+      "GF",
+      "3.10 \u00d7 4.78",
+      "14.80",
+      "Arcade, living and rear dining space"
+    ],
+    [
+      "G04",
+      "Dining + shared rear circulation",
+      "GF",
+      "7.45 \u00d7 2.85",
+      "21.23",
+      "Kitchen and courtyard; 6-seat table"
+    ],
+    [
+      "G05",
+      "Guest suite 1",
+      "GF",
+      "3.10 \u00d7 4.78 overall clear zone",
+      "14.80",
+      "Courtyard access; includes 1.85 \u00d7 1.85 en-suite"
+    ],
+    [
+      "G06",
+      "Guest suite 2",
+      "GF",
+      "3.10 \u00d7 4.78 overall clear zone",
+      "14.80",
+      "Courtyard access; includes 1.85 \u00d7 1.85 en-suite"
+    ],
+    [
+      "G07",
+      "Guest WC",
+      "GF",
+      "1.55 \u00d7 1.50",
+      "2.33",
+      "Front shared service vestibule"
+    ],
+    [
+      "G08",
+      "Laundry",
+      "GF",
+      "1.55 \u00d7 1.55",
+      "2.40",
+      "Front shared service vestibule"
+    ],
+    [
+      "G09",
+      "Pantry / utility",
+      "GF",
+      "3.10 \u00d7 2.85",
+      "8.84",
+      "Rear shared dining/circulation"
+    ],
+    [
+      "S01",
+      "U-stair clear allocation",
+      "GF / upper / roof",
+      "3.10 \u00d7 2.20",
+      "6.82",
+      "Two 1.05m flights; 1.02m landing; open lobby approach"
+    ],
+    [
+      "U01",
+      "Primary bedroom suite",
+      "Upper",
+      "3.10 \u00d7 8.28 overall clear zone",
+      "25.65",
+      "Front hall; includes dressing and 1.85 \u00d7 2.50 bath"
+    ],
+    [
+      "U02",
+      "Bedroom 2 suite",
+      "Upper",
+      "3.10 \u00d7 7.78 overall clear zone",
+      "24.10",
+      "Rear hall; includes dressing and 1.85 \u00d7 2.35 bath"
+    ],
+    [
+      "U03",
+      "Office",
+      "Upper",
+      "3.10 \u00d7 4.78",
+      "14.80",
+      "Independent west gallery door"
+    ],
+    [
+      "U04",
+      "Family lounge / library",
+      "Upper",
+      "3.10 \u00d7 4.78",
+      "14.80",
+      "Independent gallery door; rear hall"
+    ],
+    [
+      "U05",
+      "Front landing",
+      "Upper",
+      "4.20 \u00d7 3.35",
+      "14.07",
+      "Stair, primary suite, gallery"
+    ],
+    [
+      "U06",
+      "Rear landing / linen storage",
+      "Upper",
+      "7.45 \u00d7 2.85",
+      "21.23",
+      "Gallery, family lounge, Bedroom 2"
+    ],
+    [
+      "R01",
+      "Roof stair enclosure",
+      "Roof",
+      "3.50 \u00d7 2.80 gross",
+      "9.80",
+      "Continuation of same stair; door to roof terrace"
+    ]
+  ],
+  "notes": [
+    "Indoor courtyard boundaries have proposed closeable glazing, including glazed doors in the arches and end halls.",
+    "All new room arrangements, depth, floor heights and upper-floor dimensions are proposals, not surveyed facts.",
+    "Room-zone areas are approximate clear planning areas, not net usable room certificates; suite zones include bathrooms and internal partitions. Do not add this room table to calculate gross floor area.",
+    "Enclosed gross area includes enclosing/internal walls and stair allocation at each level. Covered outdoor galleries/arcades are reported separately.",
+    "The exterior garden boundary and total plot area are unknown; garden planting is contained in the courtyard for this study.",
+    "Upper west gallery shelters 12m\u00b2 of the ground courtyard. Only 3.0m \u00d7 10.0m is open to the sky.",
+    "Pool retains the supplied 1.6m \u00d7 4.2m surface. Landscape beds are proposed at its ends, keeping 1.2m nominal continuous side routes.",
+    "Upper and roof slabs have explicit 3.10 \u00d7 2.20 stair openings. Stair clear vertical separation is 3.06m between matching flight tread surfaces and their 180mm thick treads above.",
+    "18 risers \u00d7 180mm = 3.24m floor-to-floor. Two flights, 8 treads \u00d7 260mm per flight and 1.02m turn landing. Stair headroom must be checked in the detailed model before walking footage.",
+    "Four bedrooms are proposed: primary, Bedroom 2 and two ground-floor guest suites. This expands the two-bedroom references.",
+    "The open roof terrace gross plate is 147.24m\u00b2 before parapets, planting and furniture; no roof terrace area is counted as enclosed house area."
+  ]
+}
