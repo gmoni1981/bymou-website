@@ -1,42 +1,10 @@
 import { websiteVideos } from '../data/websites.js';
 
-const uiCopy = {
-  en: {
-    eyebrow: 'Selected Work · Digital Architecture',
-    title: 'Selected digital experiences',
-    lead: 'Interactive flagships, kinetic storefronts, and brand worlds engineered for deep immersion and seamless motion.',
-    counter: 'Index [ 01 — 03 ]',
-    status: 'All Platforms Active · 2026',
-    viewSite: 'Launch Experience',
-    productionUrl: 'Production URL'
-  },
-  fr: {
-    eyebrow: 'Projets Choisis · Architecture Digitale',
-    title: 'Expériences digitales choisies',
-    lead: 'Flagships interactifs, boutiques cinétiques et univers de marque conçus pour une immersion totale et un mouvement fluide.',
-    counter: 'Index [ 01 — 03 ]',
-    status: 'Plateformes Actives · 2026',
-    viewSite: 'Découvrir le Projet',
-    productionUrl: 'URL de Production'
-  },
-  it: {
-    eyebrow: 'Lavori Selezionati · Architettura Digitale',
-    title: 'Esperienze digitali selezionate',
-    lead: 'Flagship interattivi, store cinetici e mondi di marca progettati per un’immersione profonda e un movimento fluido.',
-    counter: 'Indice [ 01 — 03 ]',
-    status: 'Piattaforme Attive · 2026',
-    viewSite: 'Esplora Esperienza',
-    productionUrl: 'URL di Produzione'
-  },
-  ar: {
-    eyebrow: 'أعمال مختارة · العمارة الرقمية',
-    title: 'تجارب رقمية مختارة',
-    lead: 'واجهات رائدة تفاعلية، ومتاجر رقمية حركية، وعوالم علامات تجارية صُممت لانغماس عميق وحركة انسيابية.',
-    counter: 'الفهرس [ ٠١ — ٠٣ ]',
-    status: 'جميع المنصات مفعلة · ٢٠٢٦',
-    viewSite: 'استكشف التجربة',
-    productionUrl: 'رابط الإنتاج'
-  }
+const labels = {
+  en: ['Websites · Selected Works', 'Selected digital experiences', '03 Works · In Motion'],
+  fr: ['Sites Web · Projets Choisis', 'Expériences digitales choisies', '03 Projets · En Mouvement'],
+  it: ['Siti Web · Lavori Selezionati', 'Esperienze digitali selezionate', '03 Progetti · In Movimento'],
+  ar: ['المواقع الرقمية · أعمال مختارة', 'تجارب رقمية مختارة', '٠٣ أعمال · في حركة']
 };
 
 export function initWebsiteShowcase({ reduced }) {
@@ -53,85 +21,47 @@ export function initWebsiteShowcase({ reduced }) {
   let modalOpen = false;
 
   root.innerHTML = `
-    <div class="web-editorial-wrap">
-      <header class="web-monograph-masthead">
-        <div class="web-meta-bar">
-          <span class="web-eyebrow" data-web-eyebrow></span>
-          <span class="web-index-label" data-web-counter aria-hidden="true"></span>
+    <div class="web-showcase-wrap">
+      <header class="web-section-header">
+        <div class="web-header-left">
+          <p class="web-eyebrow" data-web-eyebrow></p>
+          <h2 class="web-title" data-web-title></h2>
         </div>
-        <div class="web-headline-row">
-          <h2 class="web-headline" data-web-title></h2>
-          <div class="web-headline-sub">
-            <p class="web-synopsis" data-web-lead></p>
-            <div class="web-status-pill">
-              <span class="web-status-glow" aria-hidden="true"></span>
-              <span data-web-status></span>
-            </div>
-          </div>
-        </div>
+        <span class="web-count-tag" data-web-note></span>
       </header>
 
-      <div class="web-asymmetric-monograph" role="region" aria-label="Selected digital experiences">
+      <div class="web-horizontal-row" tabindex="0" role="region" aria-label="Selected digital experiences">
         ${websiteVideos.map((item, i) => `
-          <article class="web-entry ${i % 2 === 1 ? 'is-alternate' : ''}" data-slug="${item.slug}">
-            <!-- Immersive Media Frame (No fake browser chrome) -->
-            <div class="web-stage-cell">
-              <div class="web-media-canvas" style="--ratio: ${item.aspect};">
-                <video
-                  src="${item.src}"
-                  poster="${item.poster}"
-                  muted
-                  defaultMuted
-                  autoplay
-                  loop
-                  playsinline
-                  preload="auto"
-                  width="${item.width}"
-                  height="${item.height}"
-                  aria-label="${item.name} website preview in motion"
-                ></video>
-              </div>
+          <figure class="web-item" data-project="${item.slug}">
+            <div class="web-preview-frame">
+              <video
+                src="${item.src}"
+                poster="${item.poster}"
+                muted
+                defaultMuted
+                autoplay
+                loop
+                playsinline
+                preload="auto"
+                width="${item.width}"
+                height="${item.height}"
+                aria-label="${item.name} website preview"
+              ></video>
             </div>
-
-            <!-- Asymmetric Editorial Content Column -->
-            <div class="web-info-cell">
-              <div class="web-specimen-header">
-                <span class="web-serial-digit">${String(i + 1).padStart(2, '0')}</span>
-                <div class="web-serial-meta">
-                  <span class="web-serial-total">/ 03</span>
-                  <span class="web-discipline-tag">${item.discipline}</span>
-                </div>
+            <figcaption class="web-caption">
+              <div class="web-caption-main">
+                <span class="web-item-num">${String(i + 1).padStart(2, '0')}</span>
+                <span class="web-item-name">${item.name}</span>
               </div>
-
-              <div class="web-specimen-body">
-                <h3 class="web-project-title">${item.name}</h3>
-                <p class="web-category-subtitle">${item.category}</p>
-                <p class="web-narrative-copy" data-desc-slug="${item.slug}">
-                  ${item.descriptions[language] || item.descriptions.en}
-                </p>
-              </div>
-
-              <div class="web-specimen-meta">
-                <div class="web-disciplines-row" aria-label="Key deliverables">
-                  ${item.deliverables.map(d => `<span class="web-chip">${d}</span>`).join('')}
-                </div>
-                <div class="web-action-footer">
-                  <div class="web-domain-lockup">
-                    <span class="web-url-caption" data-web-urllabel></span>
-                    <a class="web-domain-link" href="https://${item.url}" target="_blank" rel="noopener noreferrer">
-                      <span>${item.url}</span>
-                      <span class="web-arrow" aria-hidden="true">↗</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
+              <span class="web-item-category">${item.category}</span>
+            </figcaption>
+          </figure>
         `).join('')}
       </div>
     </div>
   `;
 
+  const strip = root.querySelector('.web-horizontal-row');
   const videos = [...root.querySelectorAll('video')];
   const visibility = new Map();
   videos.forEach(v => visibility.set(v, false));
@@ -149,7 +79,7 @@ export function initWebsiteShowcase({ reduced }) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => visibility.set(e.target, e.isIntersecting));
     sync();
-  }, { threshold: 0.1 });
+  }, { threshold: 0.15 });
 
   videos.forEach(v => observer.observe(v));
 
@@ -158,43 +88,36 @@ export function initWebsiteShowcase({ reduced }) {
   document.addEventListener('bymou:viewerclose', () => { modalOpen = false; sync(); });
   reduced.addEventListener('change', sync);
 
-  function applyLanguage() {
-    const t = uiCopy[language] || uiCopy.en;
+  // Keyboard navigation for carousel
+  if (strip) {
+    strip.addEventListener('keydown', e => {
+      if (e.target !== strip || !['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
+      e.preventDefault();
+      strip.scrollBy({
+        left: strip.clientWidth * 0.85 * (e.key === 'ArrowRight' ? 1 : -1),
+        behavior: reduced.matches ? 'instant' : 'smooth'
+      });
+    });
+  }
+
+  function translate() {
+    const t = labels[language] || labels.en;
     const eyebrow = root.querySelector('[data-web-eyebrow]');
-    if (eyebrow) eyebrow.textContent = t.eyebrow;
-
-    const counter = root.querySelector('[data-web-counter]');
-    if (counter) counter.textContent = t.counter;
-
+    if (eyebrow) eyebrow.textContent = t[0];
     const title = root.querySelector('[data-web-title]');
-    if (title) title.textContent = t.title;
-
-    const lead = root.querySelector('[data-web-lead]');
-    if (lead) lead.textContent = t.lead;
-
-    const status = root.querySelector('[data-web-status]');
-    if (status) status.textContent = t.status;
-
-    root.querySelectorAll('[data-web-urllabel]').forEach(el => {
-      el.textContent = t.productionUrl;
-    });
-
-    websiteVideos.forEach(item => {
-      const descEl = root.querySelector(`[data-desc-slug="${item.slug}"]`);
-      if (descEl) {
-        descEl.textContent = item.descriptions[language] || item.descriptions.en;
-      }
-    });
+    if (title) title.textContent = t[1];
+    const note = root.querySelector('[data-web-note]');
+    if (note) note.textContent = t[2];
   }
 
   document.addEventListener('bymou:languagechange', e => {
     language = e.detail?.language || getCurrentLang();
-    applyLanguage();
+    translate();
   });
   document.addEventListener('bymou:localeready', e => {
     language = e.detail?.language || getCurrentLang();
-    applyLanguage();
+    translate();
   });
 
-  applyLanguage();
+  translate();
 }
