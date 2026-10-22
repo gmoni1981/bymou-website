@@ -2,6 +2,13 @@ import {campaignFilms} from '../data/campaign-films.js';
 import {selectedWork} from '../data/selected-work.js';
 
 export function createProjectViewer({reduced}) {
+  if (!document.querySelector('link[href*="project-gallery.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/project-gallery.css?v=200';
+    document.head.append(link);
+  }
+
   const dialog = document.createElement('dialog');
   dialog.className = 'project-room';
   dialog.setAttribute('aria-labelledby', 'project-room-title');
