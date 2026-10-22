@@ -1,17 +1,328 @@
-/* Portrait editorial: scoped to the Studio section. */
-.studio-editorial{background:var(--bg,#f4f4f1);color:var(--ink,#0b0b0b);padding:75px 7vw 100px}
-.studio-editorial .studio-masthead{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line,#c9c7bf);padding-top:20px;font:10px/1.6 Mono,monospace;letter-spacing:.12em;text-transform:uppercase}
-.studio-editorial .studio-spread{display:grid;grid-template-columns:34% 1fr;gap:11%;align-items:center;margin-top:65px}
-.studio-editorial .studio-portrait{margin:0;position:relative;align-self:start}
-.studio-editorial .studio-portrait img,.studio-editorial .studio-portrait video{display:block;width:100%;height:auto;aspect-ratio:1080/1920;object-fit:cover;border-radius:3px;filter:none}
-.studio-editorial .studio-portrait figcaption{display:flex;justify-content:space-between;gap:15px;align-items:baseline;margin-top:18px;border-top:1px solid var(--line,#c9c7bf);padding-top:15px}
-.studio-editorial .studio-portrait figcaption span:first-child{font:400 29px/1.15 Bodoni,Georgia,serif;letter-spacing:-.025em}
-.studio-editorial .studio-portrait figcaption span:last-child{font:9px/1.6 Mono,monospace;max-width:100px;text-align:right;color:#5b5b52}
-.studio-editorial .studio-voice{position:relative;padding:28px 0 20px}
-.studio-editorial .studio-quotation{font:400 80px/.7 Bodoni,Georgia,serif;color:#9b978d;display:block;margin-bottom:17px}
-.studio-editorial .studio-statement{font:400 clamp(39px,4.8vw,76px)/1.06 Bodoni,Georgia,serif;letter-spacing:-.035em;text-transform:none;margin:0;font-style:normal}
-.studio-editorial .studio-bio{font:12px/1.95 Mono,monospace;max-width:440px;margin:32px 0 0;color:#494940}
-.studio-editorial .studio-disciplines{display:flex;flex-wrap:wrap;gap:12px 22px;padding:24px 0 0;margin:34px 0 0;border-top:1px solid var(--line,#c9c7bf);list-style:none;max-width:470px}
-.studio-editorial .studio-disciplines li{font:9px/1.7 Mono,monospace;letter-spacing:.07em;text-transform:uppercase;max-width:125px}
-@media(min-width:1700px){.studio-editorial .studio-spread{max-width:1400px;margin-inline:auto}}
-@media(max-width:700px){.studio-editorial{padding:45px 6vw 60px}.studio-editorial .studio-masthead{font-size:8px;letter-spacing:.08em;padding-top:17px}.studio-editorial .studio-spread{grid-template-columns:1fr;gap:35px;margin-top:30px}.studio-editorial .studio-portrait{width:82%;max-width:330px;margin:0}.studio-editorial .studio-portrait figcaption{margin-top:12px;padding-top:12px;gap:10px}.studio-editorial .studio-portrait figcaption span:first-child{font-size:25px}.studio-editorial .studio-portrait figcaption span:last-child{font-size:8px;max-width:90px}.studio-editorial .studio-voice{padding:12px 0 0}.studio-editorial .studio-quotation{font-size:62px;margin-bottom:12px}.studio-editorial .studio-statement{font-size:clamp(35px,9.8vw,56px)}.studio-editorial .studio-bio{font-size:11px;line-height:1.9;margin-top:24px}.studio-editorial .studio-disciplines{gap:14px 18px;margin-top:27px;padding-top:20px}.studio-editorial .studio-disciplines li{font-size:8px;max-width:90px}}
+/* ==========================================================================
+   BYMOU — THE STUDIO (Director's Editorial Monograph)
+   Dark Charcoal (#111111) / Warm Ivory (#F4F2ED) / Signature Pink (#EA4788)
+   Asymmetric Fashion Magazine Art Direction
+   ========================================================================== */
+
+.studio-editorial {
+  background: #111111 !important;
+  color: #F4F2ED !important;
+  padding: clamp(60px, 7vw, 110px) var(--gutter, 7vw) clamp(70px, 8vw, 120px);
+  position: relative;
+  isolation: isolate;
+  border-top: 1px solid rgba(244, 242, 237, 0.12);
+  border-bottom: 1px solid rgba(244, 242, 237, 0.12);
+}
+
+.studio-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Masthead Header */
+.studio-masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(244, 242, 237, 0.15);
+  padding-bottom: 18px;
+  margin-bottom: clamp(36px, 4vw, 64px);
+}
+
+.studio-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.studio-tag {
+  background: #EA4788;
+  color: #111111;
+  font-family: Anton, 'Arial Narrow', sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  padding: 5px 10px 4px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.studio-subtag {
+  font-family: Mono, 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 237, 0.55);
+}
+
+.studio-meta {
+  font-family: Mono, 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 237, 0.65);
+}
+
+/* Asymmetric 2-Column Editorial Grid */
+.studio-spread {
+  display: grid;
+  grid-template-columns: minmax(300px, 36%) minmax(400px, 1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+
+/* LEFT: Portrait Video & Caption */
+.studio-media-col {
+  position: relative;
+}
+
+.studio-portrait {
+  margin: 0;
+  position: relative;
+}
+
+.studio-video-frame {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(244, 242, 237, 0.08);
+}
+
+.studio-video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1080 / 1920;
+  object-fit: cover;
+  filter: contrast(1.03);
+}
+
+.studio-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 18px;
+  border-top: 1px solid rgba(244, 242, 237, 0.15);
+  padding-top: 14px;
+}
+
+.studio-caption .studio-name {
+  font-family: Bodoni, 'Bodoni Moda', Georgia, serif;
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #F4F2ED;
+  line-height: 1.1;
+}
+
+.studio-caption .studio-role {
+  font-family: Mono, 'JetBrains Mono', monospace;
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: rgba(244, 242, 237, 0.6);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/* RIGHT: Typographic Monograph */
+.studio-voice {
+  position: relative;
+  padding-top: 6px;
+}
+
+.studio-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.studio-kicker {
+  font-family: Mono, 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #EA4788;
+  font-weight: 500;
+}
+
+.studio-accent-rule {
+  flex: 0 0 36px;
+  height: 1px;
+  background: #EA4788;
+}
+
+/* Featured Statement: Sophisticated Editorial Serif */
+.studio-statement {
+  font-family: Bodoni, 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 3.4vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #F4F2ED;
+  margin: 0 0 clamp(24px, 2.5vw, 36px) 0;
+  max-width: 680px;
+  text-transform: none;
+}
+
+/* Long Copy: Modern, Highly Readable Sans-Serif */
+.studio-copy {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.8;
+  color: rgba(244, 242, 237, 0.82);
+  max-width: 620px;
+}
+
+.studio-copy p {
+  margin: 0 0 16px 0;
+}
+
+.studio-copy .studio-lead {
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.65;
+  font-weight: 500;
+  color: #F4F2ED;
+  margin-bottom: 22px;
+}
+
+/* Call to Action */
+.studio-cta-wrap {
+  margin-top: 32px;
+  padding-top: 6px;
+}
+
+.studio-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Mono, 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #EA4788;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(234, 71, 136, 0.45);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.studio-cta:hover {
+  color: #ffffff;
+  border-bottom-color: #EA4788;
+  transform: translateX(4px);
+}
+
+.studio-arrow {
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.studio-cta:hover .studio-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Sign-off Meta */
+.studio-signoff {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(244, 242, 237, 0.12);
+}
+
+.studio-sign-name {
+  font-family: Bodoni, 'Bodoni Moda', Georgia, serif;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: #F4F2ED;
+}
+
+.studio-sign-title {
+  font-family: Mono, 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 237, 0.55);
+}
+
+/* RTL Support (Arabic) */
+[dir="rtl"] .studio-editorial {
+  text-align: right;
+}
+
+[dir="rtl"] .studio-caption {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .studio-caption .studio-role {
+  text-align: left;
+}
+
+[dir="rtl"] .studio-eyebrow {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .studio-cta:hover {
+  transform: translateX(-4px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .studio-spread {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .studio-media-col {
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .studio-caption {
+    margin-top: 14px;
+  }
+
+  .studio-statement {
+    font-size: clamp(28px, 6.5vw, 42px);
+    margin-bottom: 20px;
+  }
+
+  .studio-voice {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .studio-masthead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .studio-meta {
+    font-size: 9px;
+  }
+
+  .studio-tag {
+    font-size: 11px;
+  }
+
+  .studio-caption {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .studio-caption .studio-role {
+    text-align: left;
+  }
+}
