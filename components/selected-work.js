@@ -1,9 +1,10 @@
-import {createProjectViewer} from './project-viewer.js?v=110';
+import {createProjectViewer} from './project-viewer.js?v=130';
 import {selectedWork as projects} from '../data/selected-work.js';
 import {preset} from '../data/showcase-preset.js';
 const labels={en:{eyebrow:'A selection of perspectives / 01—04',heading:'Selected <em>Work</em>',note:'Four projects. A closer look.',project:'Selected project',view:'Explore project ↗',hint:'Scroll or drag · Click to enter',pause:'Pause motion',play:'Play motion'},fr:{eyebrow:'Une sélection de perspectives / 01—04',heading:'Projets <em>choisis</em>',note:'Quatre projets. Un regard de plus près.',project:'Projet sélectionné',view:'Découvrir le projet ↗',hint:'Défilez ou glissez · Cliquez pour entrer',pause:'Mettre en pause',play:'Animer'},it:{eyebrow:'Una selezione di prospettive / 01—04',heading:'Lavori <em>scelti</em>',note:'Quattro progetti. Uno sguardo più vicino.',project:'Progetto selezionato',view:'Esplora il progetto ↗',hint:'Scorri o trascina · Clicca per entrare',pause:'Pausa movimento',play:'Avvia movimento'}};
 export function initSelectedWork({reduced}){
  const viewer=createProjectViewer({reduced});
+ window.projectViewer = viewer;
  const section=document.querySelector('#work'),stage=section.querySelector('[data-stage]'),exhibition=section.querySelector('.exhibition'),fallback=section.querySelector('[data-project-covers]');
  const title=section.querySelector('[data-active-project]'),open=section.querySelector('[data-active-link]'),pause=section.querySelector('[data-work-pause]');
  const sticky=document.createElement('div');sticky.className='work-sticky';while(section.firstChild)sticky.append(section.firstChild);section.append(sticky);

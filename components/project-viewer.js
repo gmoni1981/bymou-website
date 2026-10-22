@@ -55,7 +55,7 @@ export function createProjectViewer({reduced}) {
             <span class="proj-section-kicker">01 / Photographic Studies</span>
             <h2 class="proj-section-title">Visual Studies</h2>
           </div>
-          <span class="proj-section-meta" data-stills-meta>3-Column Contact Sheet · Click to inspect</span>
+          <span class="proj-section-meta" data-stills-meta>3-Column Contact Sheet · Click to enlarge</span>
         </div>
 
         <div class="project-grid" data-images-grid></div>
@@ -74,7 +74,7 @@ export function createProjectViewer({reduced}) {
             <span class="proj-section-kicker">02 / Motion & Commercial Direction</span>
             <h2 class="proj-section-title">Campaign Films</h2>
           </div>
-          <span class="proj-section-meta">Compact editorial motion · Click to open cinematic player</span>
+          <span class="proj-section-meta">9:16 Vertical format · Working playback controls</span>
         </div>
 
         <div class="project-films-slot" data-films-slot></div>
@@ -99,24 +99,23 @@ export function createProjectViewer({reduced}) {
       <div class="lightbox-stage">
         <button type="button" class="lightbox-nav-prev" data-lb-prev aria-label="Previous image">‹</button>
         <div class="lightbox-image-wrap">
-          <img class="lightbox-image" data-lb-img src="" alt="">
+          <img class="lightbox-image" data-lb-img src="" alt="" />
         </div>
         <button type="button" class="lightbox-nav-next" data-lb-next aria-label="Next image">›</button>
       </div>
     </dialog>
 
     <!-- Luxury Cinematic Video Player Modal -->
-    <dialog class="campaign-player" data-film-player data-lenis-prevent aria-label="Cinematic Film Player">
+    <dialog class="campaign-player" data-film-player aria-label="Campaign film cinematic player" data-lenis-prevent>
       <div class="campaign-player-top">
         <div class="campaign-player-info">
-          <span class="player-kicker">BYMOU · MOTION DIRECTION</span>
-          <span class="player-title" data-player-title>Film Title</span>
+          <span class="player-kicker">CAMPAIGN MOTION</span>
+          <span class="player-title" data-player-title></span>
         </div>
-        <button type="button" class="player-close-btn" data-film-player-close aria-label="Close cinematic player">Close ×</button>
+        <button type="button" class="player-close-btn" data-film-player-close aria-label="Close player">Close [ESC]</button>
       </div>
       <div class="campaign-player-screen">
-        <video playsinline preload="none"></video>
-        <p role="status" hidden></p>
+        <video playsinline controls preload="metadata"></video>
       </div>
       <div class="campaign-player-tools">
         <button type="button" data-film-toggle>Pause</button>
@@ -182,6 +181,11 @@ export function createProjectViewer({reduced}) {
     if (lightbox.open) lightbox.close();
     closeFilmPlayer();
 
+    // Pause any inline videos that might be playing
+    dialog.querySelectorAll('video').forEach(v => {
+      try { v.pause(); } catch (_) {}
+    });
+
     const finish = () => {
       dialog.close();
       window.scrollTo({ top: savedScrollY, behavior: 'instant' });
@@ -199,34 +203,17 @@ export function createProjectViewer({reduced}) {
         onComplete: finish
       });
     }
-  }
 
-  // Backdrop click on floating dialog window
-  dialog.addEventListener('click', e => {
-    if (e.target === dialog) {
-      const rect = dialog.getBoundingClientRect();
-      const isInDialog = (
-        rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
-        rect.left <= e.clientX && e.clientX <= rect.left + rect.width
-      );
-      if (!isInDialog) close();
-    }
-  });
-
-  dialog.addEventListener('cancel', e => { e.preventDefault(); close(); });
-  closeButton.addEventListener('click', close);
-  returnBtn.addEventListener('click', close);
-
-  dialog.addEventListener('close', () => {
-    playerVideo.pause();
-    playerVideo.removeAttribute('src');
-    playerVideo.load();
     document.body.style.overflow = '';
     document.body.classList.remove('project-window-open');
     document.dispatchEvent(new CustomEvent('bymou:viewerclose'));
-    opener?.focus({preventScroll: true});
+    if (opener && typeof opener.focus === 'function') opener.focus();
     closing = false;
-  });
+  }
+
+  closeButton.addEventListener('click', close);
+  returnBtn.addEventListener('click', close);
+  dialog.addEventListener('cancel', e => { e.preventDefault(); close(); });
 
   // Jump navigation between sections
   jumpPills.forEach(pill => {
@@ -266,21 +253,20 @@ export function createProjectViewer({reduced}) {
   lbClose.addEventListener('click', () => lightbox.close());
   lbNext.addEventListener('click', nextLightbox);
   lbPrev.addEventListener('click', prevLightbox);
-  lightbox.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') { e.preventDefault(); nextLightbox(); }
-    else if (e.key === 'ArrowLeft') { e.preventDefault(); prevLightbox(); }
-  });
+  lightbox.addEventListener('cancel', e => { e.preventDefault(); lightbox.close(); });
   lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) lightbox.close();
+    if (e.target === lightbox || e.target.classList.contains('lightbox-stage')) {
+      lightbox.close();
+    }
   });
 
-  // Cinematic Film player handlers
+  // Cinematic Film Player Handlers
   function openFilmPlayer(film) {
-    playerTitle.textContent = `${currentProject.name} — ${film.title}`;
+    playerTitle.textContent = `${currentProject.name || currentProject.title} — ${film.title}`;
     playerVideo.src = film.src;
     playerVideo.poster = film.poster;
-    playerVideo.muted = true;
-    playerSound.textContent = 'Sound on';
+    playerVideo.muted = false;
+    playerSound.textContent = 'Sound off';
     playerToggle.textContent = 'Pause';
     filmPlayer.showModal();
     playerVideo.play().catch(() => {});
@@ -317,23 +303,26 @@ export function createProjectViewer({reduced}) {
     playerSound.textContent = playerVideo.muted ? 'Sound on' : 'Sound off';
   });
 
-  playerFull.addEventListener('click', async () => {
-    try {
-      if (document.fullscreenElement) await document.exitFullscreen();
-      else if (filmPlayer.requestFullscreen) await filmPlayer.requestFullscreen();
-      else playerVideo.webkitEnterFullscreen?.();
-    } catch {
-      playerVideo.controls = true;
+  playerFull.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      filmPlayer.requestFullscreen?.().catch(() => {});
+    } else {
+      document.exitFullscreen?.().catch(() => {});
     }
   });
 
   playerVideo.addEventListener('timeupdate', () => {
-    const min = Math.floor(playerVideo.currentTime / 60).toString().padStart(2, '0');
-    const sec = Math.floor(playerVideo.currentTime % 60).toString().padStart(2, '0');
-    playerTime.textContent = `${min}:${sec}`;
+    const cur = Math.floor(playerVideo.currentTime || 0);
+    const dur = Math.floor(playerVideo.duration || 0);
+    const fmt = s => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+    playerTime.textContent = `${fmt(cur)} / ${fmt(dur)}`;
   });
 
-  // Render 6-image contact sheet page
+  playerVideo.addEventListener('ended', () => {
+    playerToggle.textContent = 'Replay';
+  });
+
+  // Stills Contact Sheet Renderer
   function renderImagesPage(page) {
     currentPage = page;
     imagesGrid.replaceChildren();
@@ -363,8 +352,13 @@ export function createProjectViewer({reduced}) {
       img.alt = im.alt || '';
       img.width = im.width || 800;
       img.height = im.height || 1000;
-      img.loading = localIdx < 3 ? 'eager' : 'lazy';
+      img.loading = 'eager';
       img.decoding = 'async';
+      img.onerror = () => {
+        if (img.src !== im.src) {
+          img.src = im.src;
+        }
+      };
 
       const zoomBadge = document.createElement('span');
       zoomBadge.className = 'gallery-zoom-badge';
@@ -383,7 +377,7 @@ export function createProjectViewer({reduced}) {
 
       const title = document.createElement('span');
       title.className = 'gallery-card-title';
-      title.textContent = im.alt || `${currentProject.title} — Frame ${globalIdx + 1}`;
+      title.textContent = im.alt || currentProject.name || currentProject.title;
 
       caption.append(num, title);
       card.append(thumb, caption);
@@ -394,38 +388,45 @@ export function createProjectViewer({reduced}) {
   }
 
   function renderPagination() {
-    pageNumbers.replaceChildren();
-
     if (totalPages <= 1) {
       paginationNav.hidden = true;
       return;
     }
-
     paginationNav.hidden = false;
-    pagePrev.disabled = (currentPage === 0);
-    pageNext.disabled = (currentPage === totalPages - 1);
 
-    for (let p = 0; p < totalPages; p++) {
+    pagePrev.disabled = currentPage === 0;
+    pageNext.disabled = currentPage === totalPages - 1;
+
+    pageNumbers.replaceChildren();
+    for (let i = 0; i < totalPages; i++) {
       const btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'page-num-btn' + (p === currentPage ? ' is-active' : '');
-      btn.textContent = String(p + 1).padStart(2, '0');
-      btn.setAttribute('aria-label', `Go to page ${p + 1}`);
+      btn.className = `page-num-btn ${i === currentPage ? 'is-active' : ''}`;
+      btn.textContent = String(i + 1).padStart(2, '0');
+      btn.setAttribute('aria-label', `Go to page ${i + 1}`);
       btn.addEventListener('click', () => {
-        renderImagesPage(p);
+        renderImagesPage(i);
+        scroll.querySelector('#section-stills')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
       pageNumbers.append(btn);
     }
   }
 
   pagePrev.addEventListener('click', () => {
-    if (currentPage > 0) renderImagesPage(currentPage - 1);
-  });
-  pageNext.addEventListener('click', () => {
-    if (currentPage < totalPages - 1) renderImagesPage(currentPage + 1);
+    if (currentPage > 0) {
+      renderImagesPage(currentPage - 1);
+      scroll.querySelector('#section-stills')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 
-  // Render compact, refined campaign films
+  pageNext.addEventListener('click', () => {
+    if (currentPage < totalPages - 1) {
+      renderImagesPage(currentPage + 1);
+      scroll.querySelector('#section-stills')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // Campaign Films Section Renderer with Native Controls & Posters
   function renderFilms(films) {
     filmsSlot.replaceChildren();
     if (!films || films.length === 0) {
@@ -437,39 +438,25 @@ export function createProjectViewer({reduced}) {
     filmsSection.hidden = false;
     jumpFilmsBtn.hidden = false;
 
-    // Single-Film Editorial Composition (e.g. Casa Mirador, Sable, Salt & Silk)
+    // Single-Film Editorial Composition (Casa Mirador, Sable Glass Studio, Salt & Silk)
     if (films.length === 1) {
       const f = films[0];
       const wrap = document.createElement('div');
       wrap.className = 'project-films-single';
 
-      // Left: Compact vertical preview card
-      const filmCard = document.createElement('div');
-      filmCard.className = 'film-card';
+      const mediaCard = document.createElement('div');
+      mediaCard.className = 'film-card-media';
 
-      const thumb = document.createElement('button');
-      thumb.type = 'button';
-      thumb.className = 'film-card-thumb';
-      thumb.setAttribute('aria-label', `Watch film: ${f.title}`);
+      const video = document.createElement('video');
+      video.src = f.src;
+      video.poster = f.poster;
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.setAttribute('aria-label', `${currentProject.name || currentProject.title} — ${f.title}`);
 
-      const poster = document.createElement('img');
-      poster.src = f.poster;
-      poster.alt = f.title || '';
-      poster.loading = 'lazy';
+      mediaCard.append(video);
 
-      const formatTag = document.createElement('span');
-      formatTag.className = 'film-format-tag';
-      formatTag.textContent = '9:16 FILM';
-
-      const playBadge = document.createElement('span');
-      playBadge.className = 'film-play-badge';
-      playBadge.innerHTML = '<span class="play-arrow">▶</span><span>Play</span>';
-
-      thumb.append(poster, formatTag, playBadge);
-      thumb.addEventListener('click', () => openFilmPlayer(f));
-      filmCard.append(thumb);
-
-      // Right: Editorial description & action
       const narrativeBox = document.createElement('div');
       narrativeBox.className = 'film-single-editorial';
 
@@ -502,15 +489,15 @@ export function createProjectViewer({reduced}) {
       const watchBtn = document.createElement('button');
       watchBtn.type = 'button';
       watchBtn.className = 'film-watch-btn';
-      watchBtn.innerHTML = '<span>▶ Watch in Cinematic Player</span><span>↗</span>';
+      watchBtn.innerHTML = '<span>Watch in Fullscreen Theater</span><span>↗</span>';
       watchBtn.addEventListener('click', () => openFilmPlayer(f));
       actionWrap.append(watchBtn);
 
       narrativeBox.append(kicker, heading, desc, specs, actionWrap);
-      wrap.append(filmCard, narrativeBox);
+      wrap.append(mediaCard, narrativeBox);
       filmsSlot.append(wrap);
     } 
-    // Multi-Film Compact Grid (e.g. Élan Pâtisserie with 3 films)
+    // Multi-Film Compact Grid (Élan Pâtisserie with 3 films)
     else {
       const grid = document.createElement('div');
       grid.className = 'project-films-collection';
@@ -519,26 +506,18 @@ export function createProjectViewer({reduced}) {
         const card = document.createElement('article');
         card.className = 'film-card';
 
-        const thumb = document.createElement('button');
-        thumb.type = 'button';
-        thumb.className = 'film-card-thumb';
-        thumb.setAttribute('aria-label', `Play film ${idx + 1}: ${f.title}`);
+        const mediaCard = document.createElement('div');
+        mediaCard.className = 'film-card-media';
 
-        const poster = document.createElement('img');
-        poster.src = f.poster;
-        poster.alt = f.title || '';
-        poster.loading = 'lazy';
+        const video = document.createElement('video');
+        video.src = f.src;
+        video.poster = f.poster;
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        video.setAttribute('aria-label', `${currentProject.name || currentProject.title} — ${f.title}`);
 
-        const formatTag = document.createElement('span');
-        formatTag.className = 'film-format-tag';
-        formatTag.textContent = '9:16 FILM';
-
-        const playBadge = document.createElement('span');
-        playBadge.className = 'film-play-badge';
-        playBadge.innerHTML = '<span class="play-arrow">▶</span><span>Play</span>';
-
-        thumb.append(poster, formatTag, playBadge);
-        thumb.addEventListener('click', () => openFilmPlayer(f));
+        mediaCard.append(video);
 
         const caption = document.createElement('div');
         caption.className = 'film-card-caption';
@@ -551,8 +530,15 @@ export function createProjectViewer({reduced}) {
         title.className = 'film-card-title';
         title.textContent = f.title;
 
-        caption.append(num, title);
-        card.append(thumb, caption);
+        const cinematicBtn = document.createElement('button');
+        cinematicBtn.type = 'button';
+        cinematicBtn.className = 'film-card-cinematic-btn';
+        cinematicBtn.textContent = 'Enlarge ⤢';
+        cinematicBtn.setAttribute('aria-label', `Enlarge film ${idx + 1}`);
+        cinematicBtn.addEventListener('click', () => openFilmPlayer(f));
+
+        caption.append(num, title, cinematicBtn);
+        card.append(mediaCard, caption);
         grid.append(card);
       });
 
@@ -572,32 +558,19 @@ export function createProjectViewer({reduced}) {
     }
   });
 
-  // Explicit Brand Background Artwork mapping
-  const brandProfiles = {
-    'casa-mirador': {
-      theme: 'casa',
-      bgImage: '/public/projects/casa-mirador/casa-gallery-bg.webp',
-      bgColor: '#dfd4c3',
-      name: 'Casa Mirador'
-    },
-    'elan-bakery': {
-      theme: 'elan',
-      bgImage: '/public/projects/elan-bakery/elan-gallery-bg.webp',
-      bgColor: '#f2ead9',
-      name: 'élan Pâtisserie'
-    },
-    'sable-glass-studio': {
-      theme: 'sable',
-      bgImage: '/public/projects/sable-glass-studio/sable-gallery-bg.webp',
-      bgColor: '#d0c4ac',
-      name: 'Sable Glass Studio'
-    },
-    'salt-and-silk': {
-      theme: 'salt',
-      bgImage: '/public/projects/salt-and-silk/salt-gallery-bg.webp',
-      bgColor: '#d8c2af',
-      name: 'Salt & Silk'
-    }
+  // Project-specific editorial descriptions (replacing generic repetitive text)
+  const editorialDescriptions = {
+    'casa-mirador': 'A sculptural private sanctuary in Marrakech. Material tactility, soft ambient daylight, and the quiet dignity of handcrafted Moroccan plaster and limestone.',
+    'elan-bakery': 'A warm visual identity and campaign for a boutique Parisian pâtisserie. Tactile paper goods, refined confectionery packaging, and ambient cafe moments.',
+    'sable-glass-studio': 'Light caught in mouth-blown glass. An intimate visual monograph exploring sculptural glassware, studio lookbooks, and material transparency.',
+    'salt-and-silk': 'Couture dark chocolate and artisanal sea salt. Packaging design, tactile still lifes, and campaign films celebrating sensory contrast.'
+  };
+
+  const projectKickers = {
+    'casa-mirador': 'ARCHITECTURE & SPATIAL IDENTITY',
+    'elan-bakery': 'BRAND IDENTITY & PACKAGING',
+    'sable-glass-studio': 'OBJECT DESIGN & LIGHT DIRECTION',
+    'salt-and-silk': 'COUTURE CONFECTIONERY & ART DIRECTION'
   };
 
   return {
@@ -629,54 +602,28 @@ export function createProjectViewer({reduced}) {
         ar: ['إغلاق النافذة', 'العودة إلى المشاريع', 'الدراسات البصرية', 'أفلام الحملة']
       }[lang] || ['Close window', 'Back to selected work', 'Visual Studies', 'Campaign Films'];
 
-      // Apply Individual Art Direction theme & explicit brand background
-      const profile = brandProfiles[project.slug];
-      dialog.dataset.theme = profile ? profile.theme : (project.theme || 'casa');
+      // Ensure warm editorial ivory background throughout — NO custom backgrounds or images
+      dialog.dataset.theme = project.slug;
       dialog.dataset.project = project.slug;
-
-      if (profile) {
-        scroll.style.backgroundColor = profile.bgColor;
-        scroll.style.backgroundImage = `url('${profile.bgImage}')`;
-        scroll.style.backgroundRepeat = 'no-repeat';
-        scroll.style.backgroundPosition = 'top left';
-        scroll.style.backgroundSize = '100% auto';
-      } else {
-        scroll.style.backgroundColor = '';
-        scroll.style.backgroundImage = '';
-      }
+      scroll.style.backgroundColor = '#F2F0EA';
+      scroll.style.backgroundImage = 'none';
 
       // Top Bar information
       const projNum = project.number || (selectedWork.findIndex(p => p.slug === project.slug) + 1).toString().padStart(2, '0');
       dialog.querySelector('[data-room-number]').textContent = `${projNum} / 04`;
       dialog.querySelector('[data-room-category]').textContent = project.category || project.title || 'Creative Direction';
-      dialog.querySelector('[data-room-name]').textContent = (profile && profile.name) || project.name || project.title;
+      dialog.querySelector('[data-room-name]').textContent = project.name || project.title;
       closeButton.setAttribute('aria-label', words[0]);
       returnBtn.querySelector('span:first-child').textContent = words[1];
 
-      // Editorial Intro Block — Art-Directed Brand Backgrounds with Embedded Logos
-      const hasEmbeddedLogo = Boolean(profile);
-      const logoSlot = dialog.querySelector('[data-brand-logo-slot]');
+      // Editorial Header: Title and project-specific narrative
       const titleEl = dialog.querySelector('#project-room-title');
-      const editorialHeader = dialog.querySelector('.project-editorial-header');
+      titleEl.style.display = 'block';
+      titleEl.textContent = project.name || project.title;
 
-      editorialHeader.classList.toggle('has-art-header', hasEmbeddedLogo);
-
-      if (hasEmbeddedLogo) {
-        // Logo is already embedded directly in the brand background artwork at top-left.
-        // We leave logoSlot empty and hide titleEl to remove duplicate logos and titles.
-        logoSlot.innerHTML = '';
-        titleEl.style.display = 'none';
-        dialog.querySelector('[data-room-name]').textContent = profile.name;
-      } else {
-        logoSlot.innerHTML = '';
-        titleEl.style.display = '';
-        titleEl.textContent = project.name || project.title;
-        dialog.querySelector('[data-room-name]').textContent = project.name || project.title;
-      }
-
-      dialog.querySelector('[data-meta-kicker]').textContent = (project.category || project.title || '').toUpperCase();
+      dialog.querySelector('[data-meta-kicker]').textContent = projectKickers[project.slug] || (project.category || '').toUpperCase();
       dialog.querySelector('[data-meta-year]').textContent = project.year || '2026';
-      dialog.querySelector('[data-meta-intro]').textContent = project.intro || (project.title + ' — A curated creative monograph by Mou Grasso.');
+      dialog.querySelector('[data-meta-intro]').textContent = editorialDescriptions[project.slug] || project.intro || (project.name || project.title);
 
       // Deliverables Pills
       const tagsContainer = dialog.querySelector('[data-meta-tags]');
@@ -703,11 +650,14 @@ export function createProjectViewer({reduced}) {
       
       if (currentFilms.length > 0) {
         jumpFilmsBtn.hidden = false;
-        dialog.querySelector('[data-films-count]').textContent = String(currentFilms.length);
+        dialog.querySelector('[data-films-count]').textContent = String(currentFilms.length).padStart(2, '0');
         dialog.querySelector('[data-label-films]').textContent = words[3];
       } else {
         jumpFilmsBtn.hidden = true;
       }
+
+      // Reset Jump Nav active state
+      jumpPills.forEach(p => p.classList.toggle('is-active', p.dataset.jumpTarget === 'stills'));
 
       renderImagesPage(0);
       renderFilms(currentFilms);
@@ -719,7 +669,6 @@ export function createProjectViewer({reduced}) {
 
       if (!dialog.open) {
         dialog.showModal();
-        // Sophisticated entrance motion
         if (!reduced.matches && window.gsap) {
           animation = gsap.fromTo(dialog,
             {opacity: 0, scale: 0.95, y: 20},
