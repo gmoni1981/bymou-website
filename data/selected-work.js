@@ -318,12 +318,12 @@ export const selectedWork = [
     "title": "Hospitality Branding",
     "number": "02",
     "thumbnail": {
-      "src": "/public/projects/elan-bakery/exhibition/cover-patisserie.webp",
-      "preview": "/public/projects/elan-bakery/exhibition/cover-patisserie-640.webp",
-      "width": 1122,
-      "height": 1402,
-      "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_48_04 PM.png",
-      "alt": "Elan pâtisserie identity with cream and terracotta packaging beside a glazed chocolate pastry"
+      "src": "/public/projects/elan-bakery/terracotta-facade.png",
+      "preview": "/public/projects/elan-bakery/terracotta-facade.png",
+      "width": 1672,
+      "height": 941,
+      "sourceFilename": "Élan Pâtisserie’s Bold Terracotta Façade.png",
+      "alt": "Élan Pâtisserie storefront with its large wordmark and terracotta façade graphics"
     }
   },
   {
