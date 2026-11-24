@@ -40,6 +40,21 @@ a { color:inherit; }
 </style>
 <link rel="stylesheet" href="/work/scoop-identity.css?v=2">
 <link rel="stylesheet" href="/work/scoop-campaign.css?v=4">
+<style>
+.scoop-studio-signature {
+ background:#faf8f4;
+ color:#111;
+ padding:clamp(64px,11vw,170px) 6vw;
+ text-align:center;
+}
+.scoop-studio-signature p {
+ max-width:27em;
+ margin:0 auto;
+ font:700 clamp(25px,4.05vw,60px)/1.16 Arial,Helvetica,sans-serif;
+ letter-spacing:-.045em;
+ text-wrap:balance;
+}
+</style>
 </head>
 <body>
 <header class="scoop-nav">
@@ -172,5 +187,8 @@ toggle.addEventListener('click', () => {
  </div>
 </section>
 <script src="/work/scoop-campaign.js" defer></script>
+<section id="scoop-studio-signature" class="scoop-studio-signature" aria-label="About BYMOU Studio">
+ <p>We are BYMOU Studio, an independent creative studio specializing in brand strategy, art direction, visual identity, design, and AI-driven production—creating bold, distinctive experiences across digital and physical worlds.</p>
+</section>
 </body>
 </html>
