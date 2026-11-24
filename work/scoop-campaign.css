@@ -1,0 +1,27 @@
+.scoop-campaign { background:#fff; padding:clamp(32px,6vw,96px) 4vw; display:grid; gap:clamp(24px,4vw,64px); }
+.campaign-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.campaign-portrait { aspect-ratio:9/16; }
+.campaign-wide { aspect-ratio:16/9; }
+.campaign-film { position:relative; }
+.scoop-campaign img,.campaign-film video { display:block; width:100%; height:auto; }
+.campaign-portrait img,.campaign-film video { width:100%; height:100%; object-fit:contain; }
+.campaign-portrait img { object-fit:cover; }
+.campaign-actions { position:absolute; right:12px; bottom:12px; display:flex; gap:8px; }
+.campaign-actions button { min-width:44px; min-height:44px; color:#111; background:#fff; border:0; font:21px/1 Arial,sans-serif; cursor:pointer; }
+.campaign-actions button[hidden] { display:none; }
+.campaign-actions button[aria-pressed=true] { text-decoration:underline; }
+.scoop-campaign[data-motion] [data-reveal] { transition:opacity 500ms ease,transform 500ms ease; }
+.scoop-campaign[data-motion] [data-reveal]:not([data-in]) { opacity:0; transform:translateY(14px); }
+@media(max-width:650px) { .campaign-pair { grid-template-columns:minmax(0,1fr); } }
+@media(prefers-reduced-motion:reduce) {
+ .scoop-campaign[data-motion] [data-reveal] { opacity:1; transform:none; transition:none; }
+}
+/* Keep decoded media from contributing intrinsic height to the fixed frames. */
+.campaign-portrait { position:relative; min-width:0; }
+.campaign-portrait > img,.campaign-film > video { position:absolute; inset:0; }
+
+.campaign-stills .campaign-portrait img { object-position:var(--stills-focus) center; }
+
+.campaign-illustration { background:#faf8f4; color:#17100f; padding:clamp(54px,9vw,145px) 0; }
+.campaign-illustration p { width:88%; margin:0 auto; font:700 clamp(23px,3.1vw,42px)/1.2 Arial,Helvetica,sans-serif; letter-spacing:-.037em; text-align:center; }
+@media(max-width:650px) { .campaign-illustration p { width:90%; } }
