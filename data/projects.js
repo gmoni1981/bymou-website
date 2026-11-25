@@ -605,97 +605,22 @@ export const projects = [
     }
   },
   {
-    "name": "Salt and Silk",
-    "slug": "salt-and-silk",
-    "category": "Packaging & campaign",
-    "categoryStatus": "Suggested category, confirm",
-    "year": null,
+    "name": "SNAP THEORY",
+    "slug": "snap-theory",
+    "category": "Branding, Packaging & Art Direction",
     "hero": {
-      "id": "salt-silk-chocolate-chip-still-life",
-      "type": "image",
-      "src": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-still-life.webp",
-      "srcset": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-still-life-768.webp 768w, /public/projects/salt-and-silk/salt-silk-chocolate-chip-still-life.webp 1122w",
-      "width": 1122,
-      "height": 1402,
-      "alt": "Three Salt and Silk tins behind a bowl of chocolate-coated chips on stone.",
-      "sourceFilename": "Salt & Silk Chocolate Chip Still Life.png",
-      "sourceIndex": 2,
-      "position": "50% 45%"
+      "src": "/public/projects/snap-theory/poster-mosaic.png",
+      "preview": "/public/projects/snap-theory/poster-mosaic.png",
+      "width": 1672,
+      "height": 941,
+      "alt": "Twenty-one SNAP THEORY posters featuring bold typography, illustrations and colorful protein crisp packaging",
+      "sourceFilename": "Snap Theory poster mosaic.png"
     },
-    "heroStatus": "Ready",
-    "intro": "Salt, chocolate, contrast. A tactile direction for a small daily indulgence.",
-    "copyStatus": "Draft copy, replace before publishing",
-    "role": null,
-    "scope": null,
-    "gallery": [
-      {
-        "id": "salt-silk-chocolate-chip-packaging",
-        "type": "image",
-        "src": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-packaging.webp",
-        "srcset": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-packaging-768.webp 768w, /public/projects/salt-and-silk/salt-silk-chocolate-chip-packaging.webp 1122w",
-        "width": 1122,
-        "height": 1402,
-        "alt": "Salt and Silk chocolate tins, coated chips and a cream packaging composition.",
-        "sourceFilename": "Salt & Silk Chocolate Chip Packaging.png",
-        "sourceIndex": 1
-      }
-    ],
-    "outputs": [
-      {
-        "type": "ugc",
-        "label": "UGC ad",
-        "status": "Asset needed",
-        "media": []
-      },
-      {
-        "type": "stills",
-        "label": "Campaign stills",
-        "status": "Supplied",
-        "media": [
-          "salt-silk-chocolate-chip-packaging",
-          "salt-silk-chocolate-chip-still-life"
-        ]
-      },
-      {
-        "type": "film",
-        "label": "Film",
-        "status": "Asset needed",
-        "media": []
-      }
-    ],
-    "media": [
-      {
-        "id": "salt-silk-chocolate-chip-packaging",
-        "type": "image",
-        "src": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-packaging.webp",
-        "srcset": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-packaging-768.webp 768w, /public/projects/salt-and-silk/salt-silk-chocolate-chip-packaging.webp 1122w",
-        "width": 1122,
-        "height": 1402,
-        "alt": "Salt and Silk chocolate tins, coated chips and a cream packaging composition.",
-        "sourceFilename": "Salt & Silk Chocolate Chip Packaging.png",
-        "sourceIndex": 1
-      },
-      {
-        "id": "salt-silk-chocolate-chip-still-life",
-        "type": "image",
-        "src": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-still-life.webp",
-        "srcset": "/public/projects/salt-and-silk/salt-silk-chocolate-chip-still-life-768.webp 768w, /public/projects/salt-and-silk/salt-silk-chocolate-chip-still-life.webp 1122w",
-        "width": 1122,
-        "height": 1402,
-        "alt": "Three Salt and Silk tins behind a bowl of chocolate-coated chips on stone.",
-        "sourceFilename": "Salt & Silk Chocolate Chip Still Life.png",
-        "sourceIndex": 2
-      }
-    ],
-    "translations": {
-      "fr": {
-        "category": "Packaging et campagne",
-        "intro": "Sel, chocolat, contraste. Une direction tactile pour un plaisir quotidien."
-      },
-      "it": {
-        "category": "Packaging e campagna",
-        "intro": "Sale, cioccolato, contrasto. Una direzione tattile per un piccolo piacere quotidiano."
-      }
-    }
+    "intro": "SNAP THEORY is a new-generation chocolate-covered protein snack brand built around one simple idea: good taste should never be a compromise.",
+    "role": "BYMOU Studio",
+    "gallery": [],
+    "outputs": [],
+    "media": [],
+    "translations": {}
   }
 ];

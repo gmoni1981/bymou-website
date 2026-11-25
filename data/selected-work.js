@@ -398,82 +398,29 @@ export const selectedWork = [
     }
   },
   {
-    "name": "Salt & Silk",
-    "title": "Packaging & Art Direction",
-    "slug": "salt-and-silk",
-    "number": "04",
-    "theme": "salt",
-    "category": "Packaging & Campaign",
-    "year": "2026",
-    "intro": "Salt, chocolate, and tactile contrast. An intimate art direction for a couture confectionery experience.",
-    "deliverables": ["Packaging Design", "Product Still Life", "Tactile Textures", "Couture Campaign"],
+    "name": "SNAP THEORY",
+    "title": "SNAP THEORY",
+    "slug": "snap-theory",
+    "category": "Branding, Packaging & Art Direction",
+    "intro": "SNAP THEORY is a new-generation chocolate-covered protein snack brand built around one simple idea: good taste should never be a compromise.",
     "images": [
       {
-        "src": "/public/projects/salt-and-silk/exhibition/01.webp",
-        "preview": "/public/projects/salt-and-silk/exhibition/01-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Gourmet Chocolate-Covered Potato Chips.png",
-        "alt": "Gourmet Chocolate-Covered Potato Chips"
-      },
-      {
-        "src": "/public/projects/salt-and-silk/exhibition/02.webp",
-        "preview": "/public/projects/salt-and-silk/exhibition/02-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Salt & Silk Chocolate Chip Packaging.png",
-        "alt": "Salt & Silk Chocolate Chip Packaging"
-      },
-      {
-        "src": "/public/projects/salt-and-silk/exhibition/03.webp",
-        "preview": "/public/projects/salt-and-silk/exhibition/03-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Salt & Silk Chocolate Chip Still Life.png",
-        "alt": "Salt & Silk Chocolate Chip Still Life"
-      },
-      {
-        "src": "/public/projects/salt-and-silk/exhibition/04.webp",
-        "preview": "/public/projects/salt-and-silk/exhibition/04-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Salt & Silk Chocolate Chips.png",
-        "alt": "Salt & Silk Chocolate Chips"
-      },
-      {
-        "src": "/public/projects/salt-and-silk/exhibition/05.webp",
-        "preview": "/public/projects/salt-and-silk/exhibition/05-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Salt & Silk Chocolate Tin Trio.png",
-        "alt": "Salt & Silk Chocolate Tin Trio"
-      },
-      {
-        "src": "/public/projects/salt-and-silk/exhibition/06.webp",
-        "preview": "/public/projects/salt-and-silk/exhibition/06-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Salt & Silk Gourmet Chocolate Chip Gift Box.png",
-        "alt": "Salt & Silk Gourmet Chocolate Chip Gift Box"
-      },
-      {
-        "src": "/public/projects/salt-and-silk/exhibition/07.webp",
-        "preview": "/public/projects/salt-and-silk/exhibition/07-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Three Chocolates, One Salt.png",
-        "alt": "Three Chocolates, One Salt"
+        "src": "/public/projects/snap-theory/poster-mosaic.png",
+        "preview": "/public/projects/snap-theory/poster-mosaic.png",
+        "width": 1672,
+        "height": 941,
+        "alt": "Twenty-one SNAP THEORY posters featuring bold typography, illustrations and colorful protein crisp packaging",
+        "sourceFilename": "Snap Theory poster mosaic.png"
       }
     ],
     "thumbnail": {
-      "src": "/public/projects/salt-and-silk/exhibition/cover-display.webp",
-      "preview": "/public/projects/salt-and-silk/exhibition/cover-display-640.webp",
-      "width": 1122,
-      "height": 1402,
-      "alt": "Salt & Silk chocolate-covered chips with dark, milk and white chocolate packaging on a sunlit table",
-      "sourceFilename": "Salt & Silk Chocolate Chip Display.png"
+      "src": "/public/projects/snap-theory/poster-mosaic.png",
+      "preview": "/public/projects/snap-theory/poster-mosaic.png",
+      "width": 1672,
+      "height": 941,
+      "alt": "Twenty-one SNAP THEORY posters featuring bold typography, illustrations and colorful protein crisp packaging",
+      "sourceFilename": "Snap Theory poster mosaic.png"
     },
-    "title": "Packaging & Art Direction",
     "number": "04"
   }
 ];

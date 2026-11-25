@@ -1,0 +1,96 @@
+@font-face { font-family:SnapBodoni; src:url('/assets/fonts/bodoni-moda.woff2') format('woff2'); font-display:swap; }
+.snap-page { margin:0; background:#fff; color:#17100f; font-family:Arial,Helvetica,sans-serif; }
+.snap-nav { display:flex; justify-content:space-between; align-items:center; gap:24px; min-height:76px; padding:0 4vw; font-size:13px; }
+.snap-nav img { display:block; width:clamp(94px,10vw,148px); height:auto; }
+.snap-nav a { color:inherit; text-underline-offset:4px; }
+.snap-hero { margin:0; }
+.snap-hero img { display:block; width:100%; height:auto; }
+.snap-intro { width:min(92%,1280px); margin-inline:auto; padding:clamp(48px,8vw,120px) 0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:clamp(20px,5vw,72px); }
+.snap-intro h1 { margin:0; font:400 clamp(46px,6.5vw,104px)/.91 SnapBodoni,Georgia,serif; letter-spacing:-.06em; }
+.snap-disciplines { margin:20px 0 0; font-size:14px; line-height:1.5; }
+.snap-copy p { margin:0 0 .8em; font-size:clamp(21px,2.3vw,32px); line-height:1.24; letter-spacing:-.028em; }
+.snap-copy .snap-tagline { margin:1.25em 0 0; font-weight:700; }
+@media(max-width:700px) {
+ .snap-nav { min-height:62px; }
+ .snap-intro { grid-template-columns:minmax(0,1fr); }
+ .snap-disciplines { margin-top:12px; }
+}
+
+.snap-slider { background-color:#F3E9D2; color:#17100f; --cult-progress:.2; }
+.snap-slider[data-slide="1"] { background-color:#C6F432; }
+.snap-slider[data-slide="2"] { background-color:#F6B8C8; }
+.snap-slider[data-slide="3"] { background-color:#244BE5; color:#fff; }
+.snap-slider[data-slide="4"] { background-color:#F06E43; }
+.snap-slider .cult-progress { background:color-mix(in srgb, currentColor 28%, transparent); }
+.snap-slider .cult-progress span { background:currentColor; }
+
+.snap-campaign {
+ width:min(92%,1120px);
+ margin-inline:auto;
+ padding:clamp(42px,7vw,100px) 0;
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:20px;
+}
+.snap-campaign figure { margin:0; }
+.snap-campaign-frame { position:relative; aspect-ratio:9/16; background:#f6f2ed; }
+.snap-campaign-frame :is(video,img) { display:block; width:100%; height:100%; object-fit:contain; }
+.snap-campaign figcaption { margin-top:12px; font-size:11px; letter-spacing:.09em; line-height:1.4; }
+.snap-film-controls { position:absolute; inset:auto 10px 10px auto; display:flex; gap:4px; }
+.snap-film-controls[hidden] { display:none; }
+.snap-film-controls button {
+ min-height:44px;
+ border:0;
+ padding:0 12px;
+ background:#fff;
+ color:#17100f;
+ font:inherit;
+ font-size:12px;
+ cursor:pointer;
+}
+@media(max-width:700px) {
+ .snap-campaign { grid-template-columns:minmax(0,1fr); gap:26px; }
+}
+
+.snap-campaign-artwork { width:min(92%,1120px); margin-inline:auto; padding-bottom:clamp(42px,7vw,100px); }
+.snap-campaign-artwork img { display:block; width:100%; height:auto; }
+
+.snap-motion { width:min(92%,1120px); margin-inline:auto; }
+.snap-motion-pair {
+ display:grid;
+ /* Source width/height ratios give both portraits the same height without cropping. */
+ grid-template-columns:minmax(0,.800285fr) minmax(0,.562799fr);
+ gap:20px;
+}
+.snap-motion-pair img { display:block; width:100%; height:auto; }
+.snap-motion-film { aspect-ratio:16/9; margin-top:20px; }
+.snap-motion-copy { padding:clamp(44px,8vw,110px) 0; text-align:center; }
+.snap-motion-label { margin:0 0 14px; font-size:11px; letter-spacing:.09em; }
+.snap-motion-copy h2 {
+ margin:0;
+ font:400 clamp(42px,7vw,94px)/.96 SnapBodoni,Georgia,serif;
+ letter-spacing:-.055em;
+ text-wrap:balance;
+}
+.snap-motion-description {
+ max-width:38em;
+ margin:clamp(20px,3vw,38px) auto 0;
+ font-size:clamp(19px,2vw,28px);
+ line-height:1.35;
+ letter-spacing:-.025em;
+}
+@media(max-width:700px) {
+ .snap-motion-pair { grid-template-columns:minmax(0,1fr); }
+}
+
+.snap-retail-gallery {
+ padding:0 4vw clamp(32px,6vw,96px);
+ display:grid;
+ gap:clamp(24px,4vw,64px);
+}
+.snap-retail-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.snap-retail-gallery img { display:block; width:100%; height:auto; }
+@media(max-width:650px) {
+ .snap-retail-pair { grid-template-columns:minmax(0,1fr); }
+}
+.snap-retail-pair img { aspect-ratio:9/16; object-fit:cover; }

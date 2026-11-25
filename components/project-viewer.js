@@ -445,7 +445,7 @@ export function createProjectViewer({reduced}) {
     filmsSection.hidden = false;
     jumpFilmsBtn.hidden = false;
 
-    // Single-Film Editorial Composition (Casa Mirador, Sable Glass Studio, Salt & Silk)
+    // Single-Film Editorial Composition (Casa Mirador, Sable Glass Studio)
     if (films.length === 1) {
       const f = films[0];
       const wrap = document.createElement('div');
@@ -570,14 +570,12 @@ export function createProjectViewer({reduced}) {
     'casa-mirador': 'A sculptural private sanctuary in Marrakech. Material tactility, soft ambient daylight, and the quiet dignity of handcrafted Moroccan plaster and limestone.',
     'elan-bakery': 'A warm visual identity and campaign for a boutique Parisian pâtisserie. Tactile paper goods, refined confectionery packaging, and ambient cafe moments.',
     'sable-glass-studio': 'Light caught in mouth-blown glass. An intimate visual monograph exploring sculptural glassware, studio lookbooks, and material transparency.',
-    'salt-and-silk': 'Couture dark chocolate and artisanal sea salt. Packaging design, tactile still lifes, and campaign films celebrating sensory contrast.'
   };
 
   const projectKickers = {
     'casa-mirador': 'ARCHITECTURE & SPATIAL IDENTITY',
     'elan-bakery': 'BRAND IDENTITY & PACKAGING',
     'sable-glass-studio': 'OBJECT DESIGN & LIGHT DIRECTION',
-    'salt-and-silk': 'COUTURE CONFECTIONERY & ART DIRECTION'
   };
 
   return {
