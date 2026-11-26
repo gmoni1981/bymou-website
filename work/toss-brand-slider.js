@@ -9,6 +9,12 @@
   let drag;
   let scrollFrame = 0;
   let previousStep = -1;
+  let targetStep = 0;
+  let advanceTimer;
+  let snapTimer;
+  let nextAdvance = 0;
+  const dwell = 1050;
+  const stride = () => Math.min(460, window.innerHeight * .55);
 
   function select(index) {
     active = (index + slides.length) % slides.length;
@@ -18,38 +24,72 @@
     count.textContent = [active + 1, slides.length].map(n => String(n).padStart(2, '0')).join(' / ');
   }
 
+  function advance() {
+    clearTimeout(advanceTimer);
+    if (reduced.matches || active === targetStep) return;
+    const delay = nextAdvance - performance.now();
+    if (delay > 0) {
+      advanceTimer = setTimeout(advance, delay);
+      return;
+    }
+    select(active + Math.sign(targetStep - active));
+    nextAdvance = performance.now() + dwell;
+    if (active !== targetStep) advanceTimer = setTimeout(advance, dwell);
+  }
+
   function updateFromScroll() {
     scrollFrame = 0;
     if (reduced.matches) return;
-    const stride = Math.min(220, window.innerHeight * .28);
-    slider.style.setProperty('--toss-run', `${stride * (slides.length - 1)}px`);
     const distance = -slider.getBoundingClientRect().top;
-    const step = Math.max(0, Math.min(slides.length - 1, Math.round(distance / stride)));
-    if (step === previousStep) return;
-    previousStep = step;
-    select(step);
+    const step = Math.max(0, Math.min(slides.length - 1, Math.round(distance / stride())));
+    if (step !== previousStep) {
+      previousStep = targetStep = step;
+      advance();
+    }
+    clearTimeout(snapTimer);
+    if (distance >= 0 && distance <= stride() * (slides.length - 1)) {
+      snapTimer = setTimeout(() => {
+        const offset = slider.getBoundingClientRect().top + step * stride();
+        if (!drag && Math.abs(offset) > 2) window.scrollBy({ top:offset, behavior:'smooth' });
+      }, 180);
+    }
   }
 
   function queueScrollUpdate() {
     if (!scrollFrame) scrollFrame = requestAnimationFrame(updateFromScroll);
   }
 
-  window.addEventListener('scroll', queueScrollUpdate, { passive:true });
-  window.addEventListener('resize', queueScrollUpdate, { passive:true });
-  reduced.addEventListener('change', () => {
-    previousStep = -1;
+  function resize() {
+    slider.style.setProperty('--toss-run', `${stride() * (slides.length - 1)}px`);
     queueScrollUpdate();
+  }
+
+  function manual(index) {
+    clearTimeout(advanceTimer);
+    clearTimeout(snapTimer);
+    select(index);
+    targetStep = active;
+    nextAdvance = performance.now() + dwell;
+  }
+
+  window.addEventListener('scroll', queueScrollUpdate, { passive:true });
+  window.addEventListener('resize', resize, { passive:true });
+  reduced.addEventListener('change', () => {
+    clearTimeout(advanceTimer);
+    clearTimeout(snapTimer);
+    previousStep = -1;
+    resize();
   });
   slider.dataset.scrollReady = '';
-  updateFromScroll();
+  resize();
 
   slider.querySelectorAll('[data-toss-step]').forEach(button => {
-    button.addEventListener('click', () => select(active + Number(button.dataset.tossStep)));
+    button.addEventListener('click', () => manual(active + Number(button.dataset.tossStep)));
   });
   viewport.addEventListener('keydown', event => {
     if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
     event.preventDefault();
-    select(active + (event.key === 'ArrowLeft' ? -1 : 1));
+    manual(active + (event.key === 'ArrowLeft' ? -1 : 1));
   });
 
   viewport.addEventListener('pointerdown', event => {
@@ -75,7 +115,7 @@
     slider.style.removeProperty('--toss-drag');
     if (event.type === 'pointerup' && Math.abs(dx) > 38 && Math.abs(dx) > Math.abs(dy) * 1.2) {
       const next = active + (dx < 0 ? 1 : -1);
-      if (next >= 0 && next < slides.length) select(next);
+      if (next >= 0 && next < slides.length) manual(next);
     }
   }
   viewport.addEventListener('pointerup', finish);

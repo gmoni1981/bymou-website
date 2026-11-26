@@ -1,5 +1,5 @@
 .toss-brand-slider { color:#321123; }
-.toss-brand-slider[data-slide="0"] { background-color:#FFF5E9; }
+.toss-brand-slider[data-slide="0"] { background-color:#E84C3B; }
 .toss-brand-slider[data-slide="1"] { background-color:#F8D94D; }
 .toss-brand-slider[data-slide="2"] { background-color:#CDB4E8; }
 .toss-brand-slider .cult-pin { padding:clamp(26px,5vw,72px) 4vw 20px; }
@@ -28,4 +28,9 @@
  .toss-brand-slider[data-scroll-ready] .cult-window {
   width:min(100%,1280px,max(120px,calc((100svh - clamp(26px,5vw,72px) - 86px) * 1672 / 941)));
  }
+}
+
+@media(prefers-reduced-motion:no-preference) {
+ .toss-brand-slider { transition-duration:720ms; }
+ .toss-brand-slider .cult-track { transition-duration:680ms; }
 }
