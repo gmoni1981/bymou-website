@@ -6,3 +6,5 @@
 .work-index .wi-project:has(img[src$="poster-mosaic.png"]) .scroll-stack-card__shade { display:none; }
 
 .work-index .wi-subtitle { margin:clamp(14px,2vw,24px) 0 0; font-size:clamp(14px,1.35vw,18px); line-height:1.45; }
+
+.work-index .wi-project-link img[src$="/toss-club/good-food-bad-manners.png"] { object-fit:contain; background:#fbd643; }

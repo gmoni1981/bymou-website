@@ -21,5 +21,12 @@ export const projects = [
     "cover": "/public/projects/snap-theory/poster-mosaic.png",
     "alt": "Twenty-one SNAP THEORY posters featuring bold typography, illustrations and colorful protein crisp packaging",
     "href": "/work/snap-theory.html"
+  },
+  {
+    "name": "TOSS CLUB",
+    "category": "Branding, Packaging & Art Direction",
+    "cover": "/public/projects/toss-club/good-food-bad-manners.png",
+    "alt": "TOSS CLUB Crunch Club, Green Goddess and Spicy Romance salad bowls on yellow with the line Good food. Bad manners.",
+    "href": "/work/toss-club.html"
   }
 ];
