@@ -19,3 +19,20 @@ html.viewer-open{overflow:hidden}.sv-signature-path{stroke-width:.6}.sv-signatur
   .wordmark-svg { height: 22px; }
   .boot-gate .wordmark-svg { height: clamp(40px, 10vw, 64px); }
 }
+
+.site-header .studio-login-link {
+ display:inline-flex;
+ align-items:center;
+ gap:3px;
+ min-height:44px;
+ font-size:10px;
+ text-transform:uppercase;
+ white-space:nowrap;
+ text-decoration:none;
+ text-underline-offset:4px;
+}
+.site-header .studio-login-link:hover,
+.site-header .studio-login-link:focus-visible { text-decoration:underline; }
+@media(max-width:700px) {
+ .site-header .studio-login-link { font-size:9px; }
+}
