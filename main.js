@@ -6,7 +6,7 @@ initInterlude();
 let lenis=null;const createLenis=()=>{lenis?.destroy();lenis=null;if(!reduced.matches&&window.Lenis){lenis=new Lenis({autoRaf:false,anchors:true,smoothWheel:true,duration:1.05,prevent:el=>el.closest?.('dialog,.camera-roll,.fit-preview')});lenis.on('scroll',()=>ST?.update())}};createLenis();
 if(location.hash){const hashEl=document.querySelector(location.hash);if(hashEl){const jump=()=>{if(lenis)lenis.scrollTo(hashEl,{immediate:true});else hashEl.scrollIntoView()};setTimeout(jump,150);setTimeout(jump,600)}}
 document.addEventListener('bymou:vieweropen',()=>{lenis?.stop();document.documentElement.classList.add('viewer-open')});document.addEventListener('bymou:viewerclose',()=>{document.documentElement.classList.remove('viewer-open');lenis?.start()});
-const video=document.querySelector('#hero-film'),screen=document.querySelector('.film-screen'),track=document.querySelector('.first-frame'),stamp=document.querySelector('#film-time');
+const video=document.querySelector('#hero-film'),screen=document.querySelector('.film-screen'),track=document.querySelector('.first-frame');
 let desired=0,seeking=false,ready=false,blob=null,lastSeek=-1,lastFlash=-999,lastProgress=0;const fired=new Set();
 const filmState={target:0,ready:false,duration:7.041995};window.__bymouFilm=filmState;
 function filmError(){if(document.querySelector('.film-error'))return;const p=document.createElement('p');p.className='film-error';p.textContent='The film could not load. The rest of the portfolio is ready below.';document.querySelector('.hero-stage').append(p)}
@@ -14,7 +14,7 @@ async function loadFilm(){if(reduced.matches||blob)return;try{const response=awa
 video.addEventListener('loadedmetadata',()=>{ready=true;filmState.ready=true;filmState.duration=video.duration;video.pause();desired=Math.min(desired,video.duration-1/24)});
 video.addEventListener('loadeddata',()=>{screen.classList.add('is-ready')});video.addEventListener('seeked',()=>{seeking=false;screen.classList.add('is-ready')});video.addEventListener('error',filmError);
 function seekFilm(){if(!ready||seeking||reduced.matches||video.readyState<2)return;const t=Math.min(video.duration-1/24,Math.round(desired*24)/24);if(Math.abs(video.currentTime-t)<1/48)return;seeking=true;lastSeek=performance.now();video.currentTime=t;}
-function updateFilm(progress){const p=Math.max(0,Math.min(1,(progress-.44)/.56));desired=p*7.0;filmState.target=desired;stamp.textContent=desired.toFixed(2).padStart(5,'0');if(progress>lastProgress){const thresholds=[.46,.66,.85],next=thresholds.find(t=>progress>=t&&!fired.has(t));if(next&&performance.now()-lastFlash>1000){fired.add(next);lastFlash=performance.now();gsap.fromTo('.beat-flash',{opacity:.8},{opacity:0,duration:.06,overwrite:true})}}lastProgress=progress;}
+function updateFilm(progress){const p=Math.max(0,Math.min(1,(progress-.44)/.56));desired=p*7.0;filmState.target=desired;if(progress>lastProgress){const thresholds=[.46,.66,.85],next=thresholds.find(t=>progress>=t&&!fired.has(t));if(next&&performance.now()-lastFlash>1000){fired.add(next);lastFlash=performance.now();gsap.fromTo('.beat-flash',{opacity:.8},{opacity:0,duration:.06,overwrite:true})}}lastProgress=progress;}
 let motionContext;
 function setupMotion(){
  motionContext?.revert();
