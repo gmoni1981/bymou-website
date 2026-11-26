@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import WorkPressureTitle from '../work-text-pressure/WorkPressureTitle.jsx';
 import ScrollStack, { ScrollStackItem } from './ScrollStack.jsx';
 import './editorial.css';
 import { projects } from './projects.js';
@@ -16,7 +17,7 @@ if (mount) {
             <img src={cover} alt={alt} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
             <span className="wi-project-caption">
               <span className="wi-label">{String(index + 1).padStart(2, '0')} / {category}</span>
-              <span className="wi-project-title">{name}</span>
+              <span className="wi-project-title"><WorkPressureTitle text={name} /></span>
               <span className="wi-arrow" aria-hidden="true">↗</span>
             </span>
           </a>

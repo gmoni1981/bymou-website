@@ -6,12 +6,17 @@
  font-stretch:25% 151%;
  font-display:swap;
 }
+
 .wi-pressure-heading { position:relative; margin-top:14px; }
-.work-index .wi-pressure-heading :is(h2,.text-pressure-title) {
+.work-index .wi-pressure-heading h2,
+.work-index .wi-project-caption .wi-project-title {
  margin:0;
  font:500 clamp(30px,5.4vw,76px)/1.08 "BYMOU Pressure", "Avenir Next", Avenir, sans-serif;
  letter-spacing:.015em;
 }
-.wi-pressure-mount { position:absolute; inset:0; pointer-events:none; }
-.wi-pressure-mount:has(.text-pressure-title) { pointer-events:auto; }
-.wi-pressure-heading:has(.text-pressure-title) #selected-title { opacity:0; }
+.wi-pressure-title { display:block; position:relative; }
+.wi-pressure-mount { position:absolute; inset:0; }
+.wi-pressure-title:has(.text-pressure-title) > .wi-pressure-label { opacity:0; }
+@media(max-width:375px) {
+ .work-index .wi-project-caption .wi-project-title { font-size:clamp(24px,7.5vw,28px); }
+}

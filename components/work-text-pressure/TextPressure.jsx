@@ -152,8 +152,8 @@ const TextPressure = ({
 
     (fixedTypography ? container : window)?.addEventListener('mousemove', handleMouseMove);
     if (fixedTypography) container?.addEventListener('mouseleave', handleLeave);
-    if (!fixedTypography) window.addEventListener('touchstart', handleTouch, { passive: true });
-    if (!fixedTypography) window.addEventListener('touchmove', handleTouch, { passive: true });
+    (fixedTypography ? container : window)?.addEventListener('touchstart', handleTouch, { passive: true });
+    (fixedTypography ? container : window)?.addEventListener('touchmove', handleTouch, { passive: true });
     window.addEventListener('touchend', handleLeave);
     window.addEventListener('touchcancel', handleLeave);
     window.addEventListener('scroll', wake, { passive: true, capture: true });
@@ -178,8 +178,8 @@ const TextPressure = ({
     return () => {
       (fixedTypography ? container : window)?.removeEventListener('mousemove', handleMouseMove);
       container?.removeEventListener('mouseleave', handleLeave);
-      window.removeEventListener('touchstart', handleTouch);
-      window.removeEventListener('touchmove', handleTouch);
+      (fixedTypography ? container : window)?.removeEventListener('touchstart', handleTouch);
+      (fixedTypography ? container : window)?.removeEventListener('touchmove', handleTouch);
       window.removeEventListener('touchend', handleLeave);
       window.removeEventListener('touchcancel', handleLeave);
       window.removeEventListener('scroll', wake, { capture: true });
@@ -329,7 +329,7 @@ const TextPressure = ({
 
   const titleStyle = {
     fontFamily,
-    textTransform: 'uppercase',
+    textTransform: fixedTypography ? 'none' : 'uppercase',
     fontSize: fixedTypography ? undefined : fontSize,
     lineHeight: fixedTypography ? undefined : 1,
     transform: `scale(1, ${scaleY})`,
@@ -347,17 +347,21 @@ const TextPressure = ({
     '--text-pressure-stroke-color': strokeColor
   };
 
+  const Container = fixedTypography ? 'span' : 'div';
+  const Title = fixedTypography ? 'span' : 'h1';
+
   return (
-    <div
+    <Container
       ref={containerRef}
       style={{
         position: 'relative',
+        display: 'block',
         width: '100%',
         height: '100%',
         background: 'transparent'
       }}
     >
-      <style>{`
+      {!fixedTypography && <style>{`
         ${fontUrl ? `@import url('${fontUrl}');` : ''}
 
         .text-pressure-title.is-stroke span {
@@ -374,8 +378,8 @@ const TextPressure = ({
           -webkit-text-stroke-width: var(--text-pressure-stroke-width);
           -webkit-text-stroke-color: var(--text-pressure-stroke-color);
         }
-      `}</style>
-      <h1
+      `}</style>}
+      <Title
         ref={titleRef}
         aria-label={text}
         className={`text-pressure-title ${stroke ? 'is-stroke' : ''} ${className}`}
@@ -394,8 +398,8 @@ const TextPressure = ({
             {fixedTypography && char === ' ' ? '\u00a0' : char}
           </span>
         ))}
-      </h1>
-    </div>
+      </Title>
+    </Container>
   );
 };
 
