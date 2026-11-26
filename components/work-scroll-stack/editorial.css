@@ -1,0 +1,30 @@
+.work-index { background:#101010; color:#f0e8db; padding:clamp(48px,8vw,112px) 0 0; }
+.work-index .wi-header { width:min(88%,1280px); margin:0 auto clamp(30px,5vw,70px); padding-top:16px; border-top:1px solid #f0e8db55; }
+.work-index .wi-label { font:11px/1.5 var(--mono,monospace); letter-spacing:.15em; text-transform:uppercase; }
+.work-index .wi-header h2 { margin:14px 0 0; font:400 clamp(63px,10vw,152px)/.9 var(--serif,Georgia); letter-spacing:-.065em; text-transform:none; }
+.work-index .scroll-stack__inner { width:min(88%,1280px); margin-inline:auto; padding-inline:0; }
+.work-index .scroll-stack-card.wi-project { height:clamp(380px,72svh,710px); border-radius:0; padding:0; overflow:hidden; background:#211e19; color:#faf2e4; box-shadow:0 -1px 0 #ffffff40; }
+.work-index .wi-project-link { display:grid; height:100%; grid-template-rows:minmax(0,1fr) auto; color:inherit; text-decoration:none; position:relative; }
+.work-index .wi-project-link img { display:block; width:100%; height:100%; object-fit:cover; }
+.work-index .wi-project-caption { position:relative; display:grid; gap:5px; background:#171614; padding:clamp(15px,2vw,30px); padding-right:65px; }
+.work-index .wi-project-title { font:400 clamp(31px,5vw,76px)/.95 var(--serif,Georgia); letter-spacing:-.04em; }
+.work-index .wi-arrow { position:absolute; right:clamp(17px,3vw,42px); bottom:23%; font:clamp(20px,3vw,40px)/1 var(--serif,Georgia); }
+.work-index .wi-project-link:focus-visible { outline:2px solid #f0e8db; outline-offset:-4px; }
+@media (max-width:550px) {
+  .work-index .wi-header,.work-index .scroll-stack__inner { width:92%; }
+  .work-index .scroll-stack-card.wi-project { height:clamp(330px,65svh,550px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .work-index .scroll-stack__slot { position:relative; top:auto !important; }
+  .work-index .scroll-stack-card { transform:none !important; }
+  .work-index .scroll-stack-card__shade { opacity:0; }
+}
+
+.work-index .wi-project-link img[src$="terracotta-facade.png"] { object-fit:contain; background:#f1e4d2; }
+
+/* The poster grid keeps every tile visible at the original aspect ratio. */
+.work-index .scroll-stack-card.wi-project:has(img[src$="poster-mosaic.png"]) { height:auto; box-shadow:none; }
+.work-index .wi-project-link img[src$="poster-mosaic.png"] { height:auto; aspect-ratio:1672/941; }
+.work-index .wi-project:has(img[src$="poster-mosaic.png"]) .scroll-stack-card__shade { display:none; }
+
+.work-index .wi-subtitle { margin:clamp(14px,2vw,24px) 0 0; font-size:clamp(14px,1.35vw,18px); line-height:1.45; }

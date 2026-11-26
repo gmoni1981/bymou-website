@@ -1,9 +1,7 @@
 import {initInterlude} from './components/editorial-interlude.js';
 import {heroSignaturePaths} from './components/hero-signature.js';
-import {initSelectedWork} from './components/selected-work.js?v=202';
 const reduced=matchMedia('(prefers-reduced-motion:reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
 const gsap=window.gsap,ST=window.ScrollTrigger;
-const showcase=initSelectedWork({reduced});
 initInterlude();
 let lenis=null;const createLenis=()=>{lenis?.destroy();lenis=null;if(!reduced.matches&&window.Lenis){lenis=new Lenis({autoRaf:false,anchors:true,smoothWheel:true,duration:1.05,prevent:el=>el.closest?.('dialog,.camera-roll,.fit-preview')});lenis.on('scroll',()=>ST?.update())}};createLenis();
 if(location.hash){const hashEl=document.querySelector(location.hash);if(hashEl){const jump=()=>{if(lenis)lenis.scrollTo(hashEl,{immediate:true});else hashEl.scrollIntoView()};setTimeout(jump,150);setTimeout(jump,600)}}
@@ -63,6 +61,6 @@ function setupMotion(){
 }
 setupMotion();reduced.addEventListener('change',()=>{createLenis();setupMotion();ST?.refresh()});
 let mx=0,my=0;document.querySelector('.portrait-scene').addEventListener('pointermove',e=>{if(reduced.matches||!fine.matches)return;mx=(e.clientX/innerWidth-.5)*5;my=(e.clientY/innerHeight-.5)*-4});document.querySelector('.portrait-scene').addEventListener('pointerleave',()=>{mx=my=0});let rx=0,ry=0;
-const tick=time=>{lenis?.raf(time*1000);showcase.tick(time);seekFilm();if(seeking&&performance.now()-lastSeek>2000)seeking=false;if(!reduced.matches&&fine.matches&&window.scrollY<innerHeight){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;document.querySelector('.mirror-ring').style.transform=`translateX(-50%) perspective(900px) rotateY(${rx}deg) rotateX(${ry}deg)`}};
+const tick=time=>{lenis?.raf(time*1000);seekFilm();if(seeking&&performance.now()-lastSeek>2000)seeking=false;if(!reduced.matches&&fine.matches&&window.scrollY<innerHeight){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;document.querySelector('.mirror-ring').style.transform=`translateX(-50%) perspective(900px) rotateY(${rx}deg) rotateX(${ry}deg)`}};
 if(gsap){gsap.ticker.add(tick);gsap.ticker.lagSmoothing(0)}else{const nativeTick=t=>{tick(t/1000);requestAnimationFrame(nativeTick)};requestAnimationFrame(nativeTick)}
 document.fonts.ready.then(()=>ST?.refresh());window.addEventListener('pagehide',()=>{if(blob)URL.revokeObjectURL(blob)});
