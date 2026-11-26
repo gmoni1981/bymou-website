@@ -271,3 +271,14 @@
     const analytics=document.createElement('script');analytics.async=true;analytics.src='https://www.googletagmanager.com/gtag/js?id=G-Q428VQGBG2';document.head.append(analytics);
   }
 })();
+
+// Keep standalone portfolio films on the same playback policy as case-study films.
+if (document.querySelector('video') && !document.querySelector('script[src="/portfolio-video.js"]')) {
+  const style = document.createElement('link');
+  style.rel = 'stylesheet';
+  style.href = '/portfolio-video.css';
+  document.head.append(style);
+  const script = document.createElement('script');
+  script.src = '/portfolio-video.js';
+  document.head.append(script);
+}

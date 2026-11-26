@@ -1,0 +1,18 @@
+.portfolio-video-host { position:relative; }
+.portfolio-video-sound {
+ position:absolute;
+ z-index:4;
+ right:10px;
+ bottom:10px;
+ margin:0;
+ min-height:36px;
+ padding:0 10px;
+ border:0;
+ border-radius:0;
+ background:#faf6ef;
+ color:#17100f;
+ font:12px/1 Arial,sans-serif;
+ cursor:pointer;
+}
+.portfolio-video-sound[hidden] { display:none; }
+.portfolio-video-sound:focus-visible { outline:2px solid #17100f; outline-offset:2px; }

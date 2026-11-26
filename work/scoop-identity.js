@@ -1,16 +1,19 @@
-(() => {
-  const section = document.querySelector('.cult');
-  if (!section) return;
+document.querySelectorAll('.cult').forEach(section => {
   const windowEl = section.querySelector('.cult-window');
   const slides = [...section.querySelectorAll('.cult-slide')];
   const count = section.querySelector('.cult-count');
   const caption = section.querySelector('.cult-caption');
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
-  const labels = [
+  const defaultLabels = [
     ['THE PRODUCT', 'Packaging System / Flavor Identity'],
     ['THE LANGUAGE', 'Typography / Color / Visual Identity'],
     ['THE CHARACTERS', 'The Cult / Character Universe'],
   ];
+  const labels = slides.map((slide, index) => slide.dataset.title
+    ? [slide.dataset.title, slide.dataset.caption]
+    : defaultLabels[index]);
+  const last = slides.length - 1;
+  const total = String(slides.length).padStart(2, '0');
   let captionMotion;
   const desktop = matchMedia('(min-width:761px) and (min-height:570px) and (prefers-reduced-motion:no-preference)');
   let active = 0;
@@ -27,7 +30,7 @@
     section.style.setProperty('--cult-index', active);
     section.style.setProperty('--cult-progress', (active + 1) / slides.length);
     slides.forEach((slide, i) => slide.setAttribute('aria-hidden', String(i !== active)));
-    count.textContent = number + ' / 03';
+    count.textContent = number + ' / ' + total;
     caption.querySelector('.cult-ghost').textContent = number;
     caption.querySelector('h3').textContent = number + ' — ' + labels[active][0];
     caption.querySelector('p').textContent = labels[active][1];
@@ -43,11 +46,11 @@
     frame = 0;
     if (!desktop.matches) return;
     const distance = -section.getBoundingClientRect().top;
-    if (distance < 0 || distance > stride() * 2 + 1) {
+    if (distance < 0 || distance > stride() * last + 1) {
       previousStep = -1;
       return;
     }
-    const step = Math.min(2, Math.floor(distance / stride() + .5));
+    const step = Math.min(last, Math.floor(distance / stride() + .5));
     if (previousStep !== step) {
       previousStep = step;
       select(step);
@@ -58,14 +61,14 @@
     select(active + direction);
     if (!desktop.matches) return;
     const top = section.getBoundingClientRect().top;
-    if (top <= 1 && top >= -stride() * 2 - 1) {
+    if (top <= 1 && top >= -stride() * last - 1) {
       previousStep = active;
       window.scrollTo({ top: scrollY + top + active * stride(), behavior: 'instant' });
     }
   }
 
   function resize() {
-    section.style.setProperty('--cult-run', stride() * 2 + 'px');
+    section.style.setProperty('--cult-run', stride() * last + 'px');
     previousStep = -1;
     update();
   }
@@ -105,4 +108,4 @@
   }
   section.setAttribute('data-ready', '');
   resize();
-})();
+});

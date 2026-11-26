@@ -12,10 +12,10 @@
  <meta property="og:url" content="https://bymou.space/work/snap-theory.html">
  <link rel="canonical" href="https://bymou.space/work/snap-theory.html">
  <link rel="icon" href="/assets/favicon/favicon.ico">
- <link rel="stylesheet" href="/work/snap-identity.css?v=2">
+ <link rel="stylesheet" href="/work/scoop-identity.css?v=2">
  <link rel="stylesheet" href="/work/snap-theory.css">
- <script src="/work/snap-identity.js?v=3" defer></script>
-</head>
+ <script src="/work/scoop-identity.js?v=4" defer></script>
+<link rel="stylesheet" href="/portfolio-video.css"><script src="/portfolio-video.js" defer></script></head>
 <body class="snap-page">
  <header class="snap-nav">
   <a href="/" aria-label="BYMOU Studio home"><img src="/assets/brand/bymou-logo.svg" alt="BYMOU" width="226" height="46"></a>
@@ -63,18 +63,12 @@
  </div>
 </section>
   <div class="snap-character-ad" id="snap-character-ad">
-   <video src="/public/projects/snap-theory/character-sheet-ad.mp4" width="1920" height="1080" playsinline preload="metadata" controls aria-label="SNAP THEORY advertising film"></video>
-   <div class="snap-film-controls" hidden><button type="button">Play</button></div>
+   <video src="/public/projects/snap-theory/character-sheet-ad.mp4" width="1920" height="1080" preload="metadata" aria-label="SNAP THEORY advertising film" autoplay muted loop playsinline></video>
   </div>
-  <script src="/work/snap-character-ad.js" defer></script>
   <section class="snap-campaign" aria-label="SNAP THEORY campaign">
    <figure>
     <div class="snap-campaign-frame">
-     <video src="/public/projects/snap-theory/the-bite.mp4" width="720" height="1280" muted loop playsinline preload="metadata" controls aria-labelledby="snap-film-caption"></video>
-     <div class="snap-film-controls" hidden>
-      <button type="button" data-snap-play>Play</button>
-      <button type="button" data-snap-sound aria-label="Campaign film sound" aria-pressed="false">Sound off</button>
-     </div>
+     <video src="/public/projects/snap-theory/the-bite.mp4" width="720" height="1280" preload="metadata" aria-labelledby="snap-film-caption" autoplay muted loop playsinline></video>
     </div>
     <figcaption id="snap-film-caption">01 / CAMPAIGN FILM — THE BITE</figcaption>
    </figure>
@@ -94,11 +88,7 @@
     <img src="/public/projects/snap-theory/snap-the-crisp.png" width="941" height="1672" alt="Two illustrated hands snap a chocolate crisp under the word SNAP" loading="lazy" decoding="async">
    </div>
    <div class="snap-campaign-frame snap-motion-film">
-    <video src="/public/projects/snap-theory/illustrated-motion.mp4" width="1280" height="720" muted loop playsinline preload="metadata" controls aria-label="SNAP THEORY illustrated motion advertisement"></video>
-    <div class="snap-film-controls" hidden>
-     <button type="button" data-snap-play>Play</button>
-     <button type="button" data-snap-sound aria-label="Illustrated motion film sound" aria-pressed="false">Sound off</button>
-    </div>
+    <video src="/public/projects/snap-theory/illustrated-motion.mp4" width="1280" height="720" preload="metadata" aria-label="SNAP THEORY illustrated motion advertisement" autoplay muted loop playsinline></video>
    </div>
    <div class="snap-motion-copy">
     <p class="snap-motion-label" id="snap-motion-label">03 / ILLUSTRATION &amp; MOTION</p>
@@ -118,8 +108,40 @@
     <img src="/public/projects/snap-theory/the-break-is-the-signature.png" width="941" height="1672" alt="Hands break a chocolate crisp in two beneath the word SNAP" loading="lazy" decoding="async">
    </div>
   </section>
+<section class="cult snap-slider" data-illustration-carousel aria-labelledby="snap-illustration-slider" aria-roledescription="carousel">
+ <div class="cult-pin">
+  <header class="cult-heading">
+   <p class="cult-kicker">004 — CAMPAIGN ILLUSTRATION</p>
+   <div class="cult-mask"><h2 id="snap-illustration-slider">EVERY DAY HAS ITS SNAP.</h2></div>
+  </header>
+  <div class="cult-window" tabindex="0" aria-label="Campaign illustrations. Use Left and Right arrows to browse.">
+   <div class="cult-track">
+    <div class="cult-slide" role="group" aria-label="1 of 5: A Crisp Pause Across Generations" data-title="A CRISP PAUSE ACROSS GENERATIONS" data-caption=""><img src="/public/projects/snap-theory/across-generations.png" alt="Two illustrated people share chocolate crisps on a park bench" width="1672" height="941" loading="lazy" decoding="async"></div>
+    <div class="cult-slide" role="group" aria-label="2 of 5: Between Sets" data-title="BETWEEN SETS" data-caption="" aria-hidden="true"><img src="/public/projects/snap-theory/between-sets.png" alt="An illustrated athlete takes a snack break in an Antwerp gym" width="1672" height="941" loading="lazy" decoding="async"></div>
+    <div class="cult-slide" role="group" aria-label="3 of 5: Choose a Snack" data-title="CHOOSE A SNACK" data-caption="" aria-hidden="true"><img src="/public/projects/snap-theory/choose-a-snack.png" alt="An illustrated mother and son pick a SNAP THEORY snack in a shop" width="1672" height="941" loading="lazy" decoding="async"></div>
+    <div class="cult-slide" role="group" aria-label="4 of 5: Paris Café" data-title="PARIS CAFÉ" data-caption="" aria-hidden="true"><img src="/public/projects/snap-theory/paris-cafe-photographer.png" alt="An illustrated photographer pauses with a crisp at a Paris café" width="1672" height="941" loading="lazy" decoding="async"></div>
+    <div class="cult-slide" role="group" aria-label="5 of 5: The Detour Home" data-title="THE DETOUR HOME" data-caption="" aria-hidden="true"><img src="/public/projects/snap-theory/the-detour-home.png" alt="An illustrated pedestrian holds a crisp and a SNAP THEORY pouch on a rainy street" width="1672" height="941" loading="lazy" decoding="async"></div>
+   </div>
+  </div>
+  <div class="cult-controls">
+   <div class="cult-caption"><span class="cult-ghost" aria-hidden="true">01</span><h3>01 — A CRISP PAUSE ACROSS GENERATIONS</h3><p></p></div>
+   <div class="cult-nav">
+    <button type="button" data-cult-step="-1" aria-label="Previous illustration"><svg viewBox="0 0 48 24" aria-hidden="true"><path d="M46 12H3m0 0L13 2M3 12l10 10"/></svg></button>
+    <span class="cult-count" role="status">01 / 05</span>
+    <button type="button" data-cult-step="1" aria-label="Next illustration"><svg viewBox="0 0 48 24" aria-hidden="true"><path d="M2 12h43m0 0L35 2m10 10L35 22"/></svg></button>
+   </div>
+   <div class="cult-progress" aria-hidden="true"><span></span></div>
+  </div>
+ </div>
+</section>
+  <section class="snap-motion snap-motion-copy" aria-labelledby="snap-art-direction-label">
+   <p class="snap-motion-label" id="snap-art-direction-label">ILLUSTRATION &amp; ART DIRECTION</p>
+   <h2>A little chaos. A lot of character.</h2>
+   <p class="snap-motion-description">We brought hand-drawn characters into photographed spaces to capture the small pauses in an ordinary day. A break between sets, a moment at a café, or a shared snack on a park bench gives SNAP THEORY a place in each scene.</p>
+   <p class="snap-disciplines">Creative Direction · Character Design · Illustration · Art Direction</p>
+  </section>
   <div class="snap-website-film" id="snap-website-film">
-   <video src="/public/projects/snap-theory/website-campaign.mp4" width="1280" height="720" muted loop playsinline preload="metadata" aria-label="SNAP THEORY website scrolling on a laptop"></video>
+   <video src="/public/projects/snap-theory/website-campaign.mp4" width="1280" height="720" preload="metadata" aria-label="SNAP THEORY website scrolling on a laptop" autoplay muted loop playsinline></video>
   </div>
   <section class="snap-vision" aria-labelledby="snap-vision-title">
    <div class="snap-motion-copy snap-vision-inner">
@@ -140,7 +162,5 @@
    </div>
   </section>
  </main>
-<script src="/work/snap-campaign.js" defer></script>
-<script src="/work/snap-vision.js" defer></script>
 </body>
 </html>

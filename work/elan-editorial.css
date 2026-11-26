@@ -1,0 +1,41 @@
+@font-face { font-family:ElanBodoni; src:url('/assets/fonts/bodoni-moda.woff2') format('woff2'); font-display:swap; }
+.elan-page { --cream:#fbf5e9; --cocoa:#332019; --terra:#914b36; margin:0; background:var(--cream); color:var(--cocoa); font-family:Arial,Helvetica,sans-serif; }
+.elan-page * { box-sizing:border-box; }
+.elan-page a { color:inherit; text-underline-offset:4px; }
+.elan-nav { min-height:76px; padding:16px 4vw; display:flex; align-items:center; justify-content:space-between; gap:20px; font-size:13px; }
+.elan-nav img { display:block; width:clamp(94px,10vw,148px); height:auto; }
+.elan-page figure { margin:0; }
+.elan-hero,.elan-wide { aspect-ratio:16/9; }
+.elan-page figure img { display:block; width:100%; height:100%; object-fit:cover; }
+.elan-page .elan-hero img { object-position:center 46%; }
+.elan-masthead { text-align:center; padding:clamp(38px,8vw,105px) 4vw 0; }
+.elan-masthead img { width:clamp(96px,13vw,172px); height:auto; }
+.elan-masthead h1 { font:400 clamp(50px,10vw,155px)/.97 ElanBodoni,Georgia,serif; letter-spacing:-.065em; margin:16px 0; }
+.elan-masthead p { color:var(--terra); font-size:11px; text-transform:uppercase; letter-spacing:.16em; }
+.elan-editorial { width:min(92%,1600px); margin:auto; display:grid; gap:clamp(20px,4vw,66px); }
+.elan-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.elan-pair figure { aspect-ratio:9/16; }
+.elan-page .elan-contain img { object-fit:contain; background:#f1e4d2; }
+.elan-statement { padding:clamp(38px,7vw,105px) 0; text-align:center; }
+.elan-statement p { width:min(92%,35em); margin:0 auto; font-weight:700; font-size:clamp(22px,3.1vw,43px); line-height:1.22; letter-spacing:-.038em; text-wrap:pretty; }
+.elan-statement p+p { margin-top:.7em; }
+@media(max-width:650px) {
+ .elan-pair { grid-template-columns:minmax(0,1fr); gap:14px; }
+ .elan-nav { min-height:62px; }
+}
+/* Reserve each frame before its image decodes. */
+.elan-page figure { position:relative; min-width:0; overflow:hidden; }
+.elan-page figure img { position:absolute; inset:0; }
+
+.elan-collage-pair figure { aspect-ratio:1122/1402; }
+.elan-page .elan-collage-pair img,
+.elan-collage-pair video { display:block; width:100%; height:100%; object-fit:contain; }
+.elan-collage-pair video { position:absolute; inset:0; }
+.elan-film-sound {
+ position:absolute; right:8px; bottom:8px; padding:10px 12px;
+ border:0; background:var(--cream); color:var(--cocoa);
+ font:inherit; font-size:12px; cursor:pointer;
+}
+@media(max-width:650px) {
+ .elan-collage-pair figure:last-child { aspect-ratio:9/16; }
+}

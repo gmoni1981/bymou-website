@@ -55,7 +55,7 @@ a { color:inherit; }
  text-wrap:balance;
 }
 </style>
-</head>
+<link rel="stylesheet" href="/portfolio-video.css"><script src="/portfolio-video.js" defer></script></head>
 <body>
 <header class="scoop-nav">
  <a href="/it/" aria-label="BYMOU home"><img src="/assets/brand/bymou-logo.svg" alt="BYMOU" width="226" height="46"></a>
@@ -107,7 +107,7 @@ a { color:inherit; }
   </div>
  </div>
 </section>
-<script src="/work/scoop-identity.js?v=2" defer></script>
+<script src="/work/scoop-identity.js?v=4" defer></script>
 <script>
 const toggle = document.querySelector('.scoop-toggle');
 const more = document.querySelector('#scoop-more');
@@ -123,20 +123,12 @@ toggle.addEventListener('click', () => {
  <div class="campaign-pair">
   <div class="campaign-portrait" id="campaign-vertical-image" data-reveal><img src="/public/projects/scoop-cult/campaign/campaign-vertical-image.png" width="1122" height="1402" loading="lazy" alt="SCOOP CULT ice cream sandwiches in clear wrappers against electric blue"></div>
   <div class="campaign-film campaign-portrait" data-reveal id="campaign-vertical-video">
-   <video muted playsinline loop preload="metadata" poster="/public/projects/scoop-cult/campaign/campaign-vertical-video-poster.jpg" src="/public/projects/scoop-cult/campaign/campaign-vertical-video.mp4" aria-label="SCOOP CULT vertical advertisement"></video>
-   <div class="campaign-actions">
-    <button type="button" data-campaign-sound aria-label="Unmute video" aria-pressed="false"><span aria-hidden="true">♪</span></button>
-    <button type="button" data-campaign-replay hidden aria-label="Play advertisement"><span aria-hidden="true">▶</span></button>
-   </div>
+   <video preload="metadata" poster="/public/projects/scoop-cult/campaign/campaign-vertical-video-poster.jpg" src="/public/projects/scoop-cult/campaign/campaign-vertical-video.mp4" aria-label="SCOOP CULT vertical advertisement" autoplay muted loop playsinline></video>
   </div>
  </div>
  <img id="campaign-landscape-image" data-reveal src="/public/projects/scoop-cult/campaign/campaign-landscape-image.png" width="1672" height="941" loading="lazy" alt="Fisheye portrait of a model holding SCOOP CULT Chocolate ice cream">
  <div class="campaign-film campaign-wide" data-reveal id="campaign-hero-video">
-   <video muted playsinline  preload="metadata" poster="/public/projects/scoop-cult/campaign/campaign-hero-video-poster.jpg" src="/public/projects/scoop-cult/campaign/campaign-hero-video.mp4" aria-label="SCOOP CULT campaign film"></video>
-   <div class="campaign-actions">
-    <button type="button" data-campaign-sound aria-label="Unmute video" aria-pressed="false"><span aria-hidden="true">♪</span></button>
-    <button type="button" data-campaign-replay  aria-label="Replay campaign film"><span aria-hidden="true">↻</span></button>
-   </div>
+   <video  preload="metadata" poster="/public/projects/scoop-cult/campaign/campaign-hero-video-poster.jpg" src="/public/projects/scoop-cult/campaign/campaign-hero-video.mp4" aria-label="SCOOP CULT campaign film" autoplay muted loop playsinline></video>
   </div>
  <div id="campaign-editorial-stills" class="campaign-pair campaign-stills">
   <div class="campaign-portrait" data-reveal style="--stills-focus:56%"><img src="/public/projects/scoop-cult/campaign/stills/skyward.png" width="1672" height="941" alt="Model in sunglasses reaching for a spoonful of vanilla berry ice cream" loading="lazy" decoding="async"></div>
@@ -150,11 +142,7 @@ toggle.addEventListener('click', () => {
  <img id="campaign-outdoor-poster" data-reveal src="/public/projects/scoop-cult/campaign/outdoor-poster.png" alt="Outdoor SCOOP CULT poster with a pink hand holding a stack of ice cream sandwiches" width="2048" height="1152" loading="lazy" decoding="async">
  <div class="campaign-pair campaign-stills" id="campaign-ad-1">
   <div class="campaign-film campaign-portrait" data-reveal>
-   <video muted playsinline loop preload="metadata" poster="/public/projects/scoop-cult/campaign/ad-1-poster.jpg" src="/public/projects/scoop-cult/campaign/ad-1.mp4" aria-label="SCOOP CULT AD 1"></video>
-   <div class="campaign-actions">
-    <button type="button" data-campaign-sound aria-label="Unmute video" aria-pressed="false"><span aria-hidden="true">♪</span></button>
-    <button type="button" data-campaign-replay hidden aria-label="Play advertisement"><span aria-hidden="true">▶</span></button>
-   </div>
+   <video preload="metadata" poster="/public/projects/scoop-cult/campaign/ad-1-poster.jpg" src="/public/projects/scoop-cult/campaign/ad-1.mp4" aria-label="SCOOP CULT AD 1" autoplay muted loop playsinline></video>
   </div>
   <div class="campaign-portrait" data-reveal style="--stills-focus:71.5%"><img  src="/public/projects/scoop-cult/campaign/cobalt-pint.png" alt="Woman against a cobalt wall tasting ice cream from a spoon and holding a pink SCOOP CULT pint" width="1672" height="941" loading="lazy" decoding="async"></div>
  </div>
@@ -171,32 +159,33 @@ toggle.addEventListener('click', () => {
  <img id="campaign-blue-skies-group" data-reveal src="/public/projects/scoop-cult/campaign/stills/blue-skies-group.png" width="1672" height="941" alt="Friends reach for a lime SCOOP CULT Vanilla Berry Swirl pint under a blue sky" loading="lazy" decoding="async">
  <div class="campaign-pair" id="campaign-london-stroll">
   <div class="campaign-film campaign-portrait" data-reveal>
-   <video muted loop playsinline preload="metadata" poster="/public/projects/scoop-cult/campaign/london-stroll-video-poster.jpg" src="/public/projects/scoop-cult/campaign/london-stroll-video.mp4" aria-label="SCOOP CULT vertical campaign video"></video>
-   <div class="campaign-actions"><button type="button" data-campaign-sound aria-label="Unmute video" aria-pressed="false"><span aria-hidden="true">♪</span></button><button type="button" data-campaign-replay hidden aria-label="Play video"><span aria-hidden="true">▶</span></button></div>
+   <video preload="metadata" poster="/public/projects/scoop-cult/campaign/london-stroll-video-poster.jpg" src="/public/projects/scoop-cult/campaign/london-stroll-video.mp4" aria-label="SCOOP CULT vertical campaign video" autoplay muted loop playsinline></video>
   </div>
   <div class="campaign-portrait" data-reveal><img src="/public/projects/scoop-cult/campaign/london-park-carton.png" width="941" height="1672" alt="SCOOP CULT Chocolate Cookie Crunch box carried on a sunny London stroll" loading="lazy" decoding="async" style="object-fit:contain"></div>
  </div>
- <div class="campaign-film campaign-wide" data-reveal>
-   <video muted loop playsinline preload="metadata" poster="/public/projects/scoop-cult/campaign/illustration-film-poster.jpg" src="/public/projects/scoop-cult/campaign/illustration-film.mp4" aria-label="SCOOP CULT illustration campaign film"></video>
-   <div class="campaign-actions"><button type="button" data-campaign-sound aria-label="Unmute video" aria-pressed="false"><span aria-hidden="true">♪</span></button><button type="button" data-campaign-replay hidden aria-label="Play video"><span aria-hidden="true">▶</span></button></div>
+ <div class="campaign-pair" id="campaign-finished-videos">
+  <div class="campaign-film campaign-portrait" data-reveal>
+   <video preload="metadata" poster="/public/projects/scoop-cult/campaign/typography-poster.jpg" src="/public/projects/scoop-cult/campaign/typography.mp4" aria-label="SCOOP CULT Typography" autoplay muted loop playsinline></video>
   </div>
+  <div class="campaign-film campaign-portrait" data-reveal>
+   <video preload="metadata" poster="/public/projects/scoop-cult/campaign/takes-london-poster.jpg" src="/public/projects/scoop-cult/campaign/takes-london.mp4" aria-label="SCOOP CULT Takes London" autoplay muted loop playsinline></video>
+  </div>
+ </div>
  <div class="campaign-illustration" data-reveal>
   <p>We developed a distinctive hand-drawn illustration system that brings SCOOP CULT’s playful personality to life. Inspired by the ingredients and cravings behind each flavor, our illustrations combine expressive lines, bold silhouettes, and vibrant two-tone colors to create a playful, unmistakable visual identity.
 
   From melting scoops and cookie sandwiches to berries, chocolate, and graphic symbols, the system brings personality and consistency to packaging, advertising, animation, and digital experiences.</p>
  </div>
  <div id="campaign-after-writing" class="campaign-film" data-reveal style="aspect-ratio:1672/942">
-  <video muted loop playsinline preload="metadata" poster="/public/projects/scoop-cult/campaign/laptop-website-scroll-poster.jpg" src="/public/projects/scoop-cult/campaign/laptop-website-scroll.mp4" aria-label="SCOOP CULT website scrolling on a laptop"></video>
-  <div class="campaign-actions"><button type="button" data-campaign-sound aria-label="Unmute video" aria-pressed="false"><span aria-hidden="true">♪</span></button><button type="button" data-campaign-replay hidden aria-label="Play video"><span aria-hidden="true">▶</span></button></div>
+  <video preload="metadata" poster="/public/projects/scoop-cult/campaign/laptop-website-scroll-poster.jpg" src="/public/projects/scoop-cult/campaign/laptop-website-scroll.mp4" aria-label="SCOOP CULT website scrolling on a laptop" autoplay muted loop playsinline></video>
  </div>
  <div class="campaign-film" data-reveal style="aspect-ratio:1280/720">
-  <video muted loop playsinline preload="metadata" poster="/public/projects/scoop-cult/campaign/campaign-animation-d1da8eb9-poster.jpg" src="/public/projects/scoop-cult/campaign/campaign-animation-d1da8eb9.mp4" aria-label="SCOOP CULT campaign animation"></video>
-  <div class="campaign-actions"><button type="button" data-campaign-sound aria-label="Unmute video" aria-pressed="false"><span aria-hidden="true">♪</span></button><button type="button" data-campaign-replay hidden aria-label="Play video"><span aria-hidden="true">▶</span></button></div>
+  <video preload="metadata" poster="/public/projects/scoop-cult/campaign/campaign-animation-d1da8eb9-poster.jpg" src="/public/projects/scoop-cult/campaign/campaign-animation-d1da8eb9.mp4" aria-label="SCOOP CULT campaign animation" autoplay muted loop playsinline></video>
  </div>
  <img data-reveal src="/public/projects/scoop-cult/campaign/storefront.png" alt="SCOOP CULT storefront with campaign posters" width="1672" height="941" loading="lazy" decoding="async">
  <img data-reveal src="/public/projects/scoop-cult/campaign/neon-on-chrome.png" alt="SCOOP CULT pints and cookie sandwiches on a chrome cart" width="1672" height="941" loading="lazy" decoding="async">
 </section>
-<script src="/work/scoop-campaign.js" defer></script>
+<script src="/work/scoop-reveal.js" defer></script>
 <section id="scoop-studio-signature" class="scoop-studio-signature" aria-label="About BYMOU Studio">
  <p>We are BYMOU Studio, an independent creative studio specializing in brand strategy, art direction, visual identity, design, and AI-driven production—creating bold, distinctive experiences across digital and physical worlds.</p>
 </section>

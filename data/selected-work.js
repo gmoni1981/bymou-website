@@ -1,201 +1,38 @@
 // Supplied assets. Casa follows attachment order, including the two additional moodboards.
 export const selectedWork = [
   {
-    "name": "Casa Mirador",
-    "title": "Architecture & Interiors",
-    "slug": "casa-mirador",
-    "number": "01",
-    "theme": "casa",
-    "category": "Spatial Direction",
-    "year": "2026",
-    "intro": "A place taking shape. Material, light, and the quiet dignity of Moroccan stone.",
-    "deliverables": ["Spatial Architecture", "Interior Direction", "Material Palette", "Photographic Studies"],
+    "name": "SCOOP CULT",
+    "title": "SCOOP CULT",
+    "slug": "scoop-cult",
+    "theme": "scoop",
+    "category": "Branding / Art Direction / Campaign",
+    "intro": "Seriously Good. Never Serious.",
+    "deliverables": [
+      "Branding",
+      "Art Direction",
+      "Campaign"
+    ],
     "images": [
       {
-        "src": "/public/projects/casa-mirador/sequence/01.webp",
-        "preview": "/public/projects/casa-mirador/sequence/01-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_09_49 PM-1.png",
-        "alt": "Sunlit courtyard with twin arches and a reflecting pool"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/02.webp",
-        "preview": "/public/projects/casa-mirador/sequence/02-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_09_53 PM-3.png",
-        "alt": "Architectural presentation with elevation, floor plan and material palette"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/03.webp",
-        "preview": "/public/projects/casa-mirador/sequence/03-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Casa Mirador_ Moroccan Courtyard Sketch.png",
-        "alt": "Annotated courtyard perspective with arches and a central tree"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/04.webp",
-        "preview": "/public/projects/casa-mirador/sequence/04-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Casa Mirador Courtyard Sketch.png",
-        "alt": "Hand drawn facade elevation and courtyard floor plan"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/05.webp",
-        "preview": "/public/projects/casa-mirador/sequence/05-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_10_03 PM-7.png",
-        "alt": "Property presentation combining courtyard, interiors and roof terrace"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/06.webp",
-        "preview": "/public/projects/casa-mirador/sequence/06-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_10_00 PM-6.png",
-        "alt": "Interior moodboard with plaster, timber, linen and bronze finishes"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/07.webp",
-        "preview": "/public/projects/casa-mirador/sequence/07-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_09_58 PM-5.png",
-        "alt": "Construction interior overlaid with furniture and lighting drawings"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/08.webp",
-        "preview": "/public/projects/casa-mirador/sequence/08-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Blueprints of a Future Living Space.png",
-        "alt": "Unfinished room with proposed furnishings outlined in white"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/09.webp",
-        "preview": "/public/projects/casa-mirador/sequence/09-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_23_51 PM.png",
-        "alt": "Completed living and dining room in warm afternoon light"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/10.webp",
-        "preview": "/public/projects/casa-mirador/sequence/10-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_23_42 PM.png",
-        "alt": "Unfinished interior before furnishing, with exposed plaster and tools"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/11.webp",
-        "preview": "/public/projects/casa-mirador/sequence/11-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_23_32 PM.png",
-        "alt": "Furniture layout and selected furnishings for the courtyard house"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/12.webp",
-        "preview": "/public/projects/casa-mirador/sequence/12-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_23_19 PM.png",
-        "alt": "Material samples and furniture selection on a cream presentation board"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/13.webp",
-        "preview": "/public/projects/casa-mirador/sequence/13-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_22_57 PM.png",
-        "alt": "Exploded axonometric of the courtyard house and roof terrace"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/14.webp",
-        "preview": "/public/projects/casa-mirador/sequence/14-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_23_09 PM.png",
-        "alt": "Living room looking through an arched doorway to the pool"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/15.webp",
-        "preview": "/public/projects/casa-mirador/sequence/15-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_19_42 PM-4.png",
-        "alt": "Furniture, lighting and decorative objects with a material palette"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/16.webp",
-        "preview": "/public/projects/casa-mirador/sequence/16-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_19_40 PM-3.png",
-        "alt": "Linen dressed bedroom with brass pendants beside the courtyard"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/17.webp",
-        "preview": "/public/projects/casa-mirador/sequence/17-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_19_37 PM-2.png",
-        "alt": "Open living room, dining area and kitchen with natural finishes"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/18.webp",
-        "preview": "/public/projects/casa-mirador/sequence/18-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_19_36 PM-1.png",
-        "alt": "Pool courtyard viewed from a shaded seating area"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/19.webp",
-        "preview": "/public/projects/casa-mirador/sequence/19-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 02_10_06 PM-8.png",
-        "alt": "Courtyard at blue hour illuminated by lanterns and candles"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/20.webp",
-        "preview": "/public/projects/casa-mirador/sequence/20-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Mediterranean Moroccan Interiors Moodboard.png",
-        "alt": "Torn paper collage of Moroccan textures and white furniture silhouettes"
-      },
-      {
-        "src": "/public/projects/casa-mirador/sequence/21.webp",
-        "preview": "/public/projects/casa-mirador/sequence/21-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Moroccan Interiors in a Paper Collage.png",
-        "alt": "Furniture and greenery emerging from a sketched paper envelope on olive green"
+        "src": "/public/projects/scoop-cult/showcase.png",
+        "preview": "/public/projects/scoop-cult/showcase.png",
+        "alt": "SCOOP CULT ice cream tubs and chocolate cookie sandwich packaging on a coral set",
+        "width": 1672,
+        "height": 941
       }
     ],
-    "title": "Architecture & Interiors",
-    "number": "01",
     "thumbnail": {
-      "src": "/public/projects/casa-mirador/exhibition/cover-courtyard.webp",
-      "preview": "/public/projects/casa-mirador/exhibition/cover-courtyard-640.webp",
-      "width": 1122,
-      "height": 1402,
-      "alt": "Casa Mirador courtyard villa with a swimming pool, arched terrace and palms in warm sunlight",
-      "sourceFilename": "Casa Mirador_ Marrakech Courtyard Villa.png"
+      "src": "/public/projects/scoop-cult/showcase.png",
+      "preview": "/public/projects/scoop-cult/showcase.png",
+      "alt": "SCOOP CULT ice cream tubs and chocolate cookie sandwich packaging on a coral set",
+      "width": 1672,
+      "height": 941
     }
   },
   {
     "name": "Élan Pâtisserie",
     "title": "Hospitality Branding",
     "slug": "elan-bakery",
-    "number": "02",
     "theme": "elan",
     "category": "Identity & Campaign",
     "year": "2026",
@@ -316,85 +153,13 @@ export const selectedWork = [
       }
     ],
     "title": "Hospitality Branding",
-    "number": "02",
     "thumbnail": {
-      "src": "/public/projects/elan-bakery/terracotta-facade.png",
-      "preview": "/public/projects/elan-bakery/terracotta-facade.png",
+      "src": "/public/projects/elan-bakery/elan-unwrapped.png",
+      "preview": "/public/projects/elan-bakery/elan-unwrapped.png",
       "width": 1672,
       "height": 941,
-      "sourceFilename": "Élan Pâtisserie’s Bold Terracotta Façade.png",
-      "alt": "Élan Pâtisserie storefront with its large wordmark and terracotta façade graphics"
-    }
-  },
-  {
-    "name": "Sable Glass Studio",
-    "title": "Brand Identity",
-    "slug": "sable-glass-studio",
-    "number": "03",
-    "theme": "sable",
-    "category": "Identity & Art Direction",
-    "year": "2026",
-    "intro": "Light caught in glass. A study of sculptural form, warmth, and the objects we choose to live with.",
-    "deliverables": ["Visual Identity", "Lookbook Photography", "Material Tactility", "Studio Packaging"],
-    "images": [
-      {
-        "src": "/public/projects/sable-glass-studio/exhibition/03.webp",
-        "preview": "/public/projects/sable-glass-studio/exhibition/03-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Sable Glass Studio Poster.png",
-        "alt": "Sable Glass Studio Poster"
-      },
-      {
-        "src": "/public/projects/sable-glass-studio/exhibition/01.webp",
-        "preview": "/public/projects/sable-glass-studio/exhibition/01-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "ChatGPT Image Oct 19, 2026, 12_25_43 AM.png",
-        "alt": "Sable Glass Studio contact sheet with glassware, sketches and material studies"
-      },
-      {
-        "src": "/public/projects/sable-glass-studio/exhibition/02.webp",
-        "preview": "/public/projects/sable-glass-studio/exhibition/02-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Sable Glass Studio Editorial.png",
-        "alt": "Sable Glass Studio Editorial"
-      },
-      {
-        "src": "/public/projects/sable-glass-studio/exhibition/04.webp",
-        "preview": "/public/projects/sable-glass-studio/exhibition/04-640.webp",
-        "width": 1097,
-        "height": 1434,
-        "sourceFilename": "Sable Hand-Blown Glass Studio Lookbook.png",
-        "alt": "Sable Hand-Blown Glass Studio Lookbook"
-      },
-      {
-        "src": "/public/projects/sable-glass-studio/exhibition/05.webp",
-        "preview": "/public/projects/sable-glass-studio/exhibition/05-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Sable Hand-Blown Glass Studio Poster.png",
-        "alt": "Sable Hand-Blown Glass Studio Poster"
-      },
-      {
-        "src": "/public/projects/sable-glass-studio/exhibition/06.webp",
-        "preview": "/public/projects/sable-glass-studio/exhibition/06-640.webp",
-        "width": 1122,
-        "height": 1402,
-        "sourceFilename": "Warm Artisan Glass Studio Moodboard.png",
-        "alt": "Warm Artisan Glass Studio Moodboard"
-      }
-    ],
-    "title": "Brand Identity",
-    "number": "03",
-    "thumbnail": {
-      "src": "/public/projects/sable-glass-studio/exhibition/cover-sunlit-glass.webp",
-      "preview": "/public/projects/sable-glass-studio/exhibition/cover-sunlit-glass-640.webp",
-      "width": 1122,
-      "height": 1402,
-      "sourceFilename": "Hand-Blown Glass in Sunlit Archways.png",
-      "alt": "Amber hand-blown glass vase and bowl with Sable packaging on a sunlit stone plinth"
+      "sourceFilename": "Élan unwrapped.png",
+      "alt": "A pastry being unwrapped in cream and terracotta Élan Pâtisserie paper"
     }
   },
   {
@@ -420,7 +185,6 @@ export const selectedWork = [
       "height": 941,
       "alt": "Twenty-one SNAP THEORY posters featuring bold typography, illustrations and colorful protein crisp packaging",
       "sourceFilename": "Snap Theory poster mosaic.png"
-    },
-    "number": "04"
+    }
   }
 ];
