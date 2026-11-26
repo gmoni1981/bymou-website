@@ -1,4 +1,4 @@
-import {initInterlude} from './components/editorial-interlude.js';
+import {initInterlude} from './components/editorial-interlude.js?v=206';
 import {heroSignaturePaths} from './components/hero-signature.js';
 const reduced=matchMedia('(prefers-reduced-motion:reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
 const gsap=window.gsap,ST=window.ScrollTrigger;
