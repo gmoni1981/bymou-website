@@ -1,5 +1,3 @@
-import {initWalkthroughShowcase} from './components/walkthrough-showcase.js';
-import {initWebsiteShowcase} from './components/website-showcase.js?v=210';
 import {initInterlude} from './components/editorial-interlude.js';
 import {heroSignaturePaths} from './components/hero-signature.js';
 import {initSelectedWork} from './components/selected-work.js?v=202';
@@ -7,8 +5,6 @@ const reduced=matchMedia('(prefers-reduced-motion:reduce)'),fine=matchMedia('(ho
 const gsap=window.gsap,ST=window.ScrollTrigger;
 const showcase=initSelectedWork({reduced});
 initInterlude();
-initWebsiteShowcase({reduced});
-initWalkthroughShowcase({reduced});
 let lenis=null;const createLenis=()=>{lenis?.destroy();lenis=null;if(!reduced.matches&&window.Lenis){lenis=new Lenis({autoRaf:false,anchors:true,smoothWheel:true,duration:1.05,prevent:el=>el.closest?.('dialog,.camera-roll,.fit-preview')});lenis.on('scroll',()=>ST?.update())}};createLenis();
 if(location.hash){const hashEl=document.querySelector(location.hash);if(hashEl){const jump=()=>{if(lenis)lenis.scrollTo(hashEl,{immediate:true});else hashEl.scrollIntoView()};setTimeout(jump,150);setTimeout(jump,600)}}
 document.addEventListener('bymou:vieweropen',()=>{lenis?.stop();document.documentElement.classList.add('viewer-open')});document.addEventListener('bymou:viewerclose',()=>{document.documentElement.classList.remove('viewer-open');lenis?.start()});
