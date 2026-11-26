@@ -1,0 +1,12 @@
+.toss-brand-slider { color:#321123; }
+.toss-brand-slider[data-slide="0"] { background-color:#FFF5E9; }
+.toss-brand-slider[data-slide="1"] { background-color:#F8D94D; }
+.toss-brand-slider[data-slide="2"] { background-color:#CDB4E8; }
+.toss-brand-slider .cult-pin { padding:clamp(26px,5vw,72px) 4vw 20px; }
+.toss-brand-slider .cult-window { width:min(100%,1280px); cursor:grab; }
+.toss-brand-slider .cult-window.is-dragging { cursor:grabbing; }
+.toss-brand-slider .cult-track { transform:translateX(calc(var(--cult-index,0) * -100% + var(--toss-drag,0px))); }
+.toss-brand-slider .is-dragging .cult-track { transition:none; }
+.toss-brand-slider .cult-slide img { opacity:1; transform:none; }
+.toss-brand-slider .cult-controls { width:min(100%,1280px); display:flex; justify-content:center; }
+.toss-brand-slider .cult-count { font-size:clamp(20px,3vw,34px); }
