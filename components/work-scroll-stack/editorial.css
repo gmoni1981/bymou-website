@@ -29,4 +29,12 @@
 
 .work-index .wi-subtitle { margin:clamp(14px,2vw,24px) 0 0; font-size:clamp(14px,1.35vw,18px); line-height:1.45; }
 
-.work-index .wi-project-link img[src$="/toss-club/good-food-bad-manners.png"] { object-fit:contain; background:#fbd643; }
+/* Let the TOSS CLUB artwork set its own height without side panels. */
+.work-index .scroll-stack-card.wi-project:has(img[src$="/toss-club/good-food-bad-manners.png"]) { height:auto; }
+.work-index .wi-project-link:has(img[src$="/toss-club/good-food-bad-manners.png"]) { height:auto; grid-template-rows:auto auto; }
+.work-index .wi-project-link img[src$="/toss-club/good-food-bad-manners.png"] {
+ width:100%;
+ height:auto;
+ aspect-ratio:auto 16 / 9;
+ object-fit:contain;
+}
