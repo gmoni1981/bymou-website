@@ -1,2 +1,7 @@
 .work-index .wi-header { position:relative; }
 .wi-gravity-layer { position:absolute; pointer-events:none; }
+
+.work-index .wi-header h2 {
+ font:500 clamp(30px,5.4vw,76px)/1.08 "Avenir Next", Avenir, "Century Gothic", Futura, sans-serif;
+ letter-spacing:.015em;
+}
