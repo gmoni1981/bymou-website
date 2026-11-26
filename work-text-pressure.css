@@ -1,0 +1,17 @@
+@font-face {
+ font-family:"BYMOU Pressure";
+ src:url('/assets/fonts/roboto-flex-latin.woff2') format('woff2');
+ font-style:normal;
+ font-weight:100 1000;
+ font-stretch:25% 151%;
+ font-display:swap;
+}
+.wi-pressure-heading { position:relative; margin-top:14px; }
+.work-index .wi-pressure-heading :is(h2,.text-pressure-title) {
+ margin:0;
+ font:500 clamp(30px,5.4vw,76px)/1.08 "BYMOU Pressure", "Avenir Next", Avenir, sans-serif;
+ letter-spacing:.015em;
+}
+.wi-pressure-mount { position:absolute; inset:0; pointer-events:none; }
+.wi-pressure-mount:has(.text-pressure-title) { pointer-events:auto; }
+.wi-pressure-heading:has(.text-pressure-title) #selected-title { opacity:0; }
