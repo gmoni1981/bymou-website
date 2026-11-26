@@ -7,6 +7,8 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let active = 0;
   let drag;
+  let scrollFrame = 0;
+  let previousStep = -1;
 
   function select(index) {
     active = (index + slides.length) % slides.length;
@@ -15,6 +17,31 @@
     slides.forEach((slide, i) => slide.setAttribute('aria-hidden', String(i !== active)));
     count.textContent = [active + 1, slides.length].map(n => String(n).padStart(2, '0')).join(' / ');
   }
+
+  function updateFromScroll() {
+    scrollFrame = 0;
+    if (reduced.matches) return;
+    const stride = Math.min(220, window.innerHeight * .28);
+    slider.style.setProperty('--toss-run', `${stride * (slides.length - 1)}px`);
+    const distance = -slider.getBoundingClientRect().top;
+    const step = Math.max(0, Math.min(slides.length - 1, Math.round(distance / stride)));
+    if (step === previousStep) return;
+    previousStep = step;
+    select(step);
+  }
+
+  function queueScrollUpdate() {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateFromScroll);
+  }
+
+  window.addEventListener('scroll', queueScrollUpdate, { passive:true });
+  window.addEventListener('resize', queueScrollUpdate, { passive:true });
+  reduced.addEventListener('change', () => {
+    previousStep = -1;
+    queueScrollUpdate();
+  });
+  slider.dataset.scrollReady = '';
+  updateFromScroll();
 
   slider.querySelectorAll('[data-toss-step]').forEach(button => {
     button.addEventListener('click', () => select(active + Number(button.dataset.tossStep)));
