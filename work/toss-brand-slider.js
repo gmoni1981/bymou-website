@@ -17,9 +17,7 @@
   const stride = () => Math.min(460, window.innerHeight * .55);
 
   function select(index) {
-    const next = (index + slides.length) % slides.length;
-    if (next !== active) viewport.scrollTop = 0;
-    active = next;
+    active = (index + slides.length) % slides.length;
     slider.dataset.slide = active;
     slider.style.setProperty('--cult-index', active);
     slides.forEach((slide, i) => slide.setAttribute('aria-hidden', String(i !== active)));
