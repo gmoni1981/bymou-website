@@ -14,7 +14,7 @@ if (mount) {
       {projects.map(({ name, category, cover, alt, href }, index) => (
         <ScrollStackItem key={href} itemClassName="wi-project">
           <a className="wi-project-link" href={href}>
-            <img src={cover} alt={alt} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+            <img src={cover} alt={alt} loading={index === 0 || href === '/work/good-bug.html' ? 'eager' : 'lazy'} decoding="async" />
             <span className="wi-project-caption">
               <span className="wi-label">{String(index + 1).padStart(2, '0')} / {category}</span>
               <span className="wi-project-title"><WorkPressureTitle text={name} /></span>

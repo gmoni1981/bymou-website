@@ -16,3 +16,38 @@
  aspect-ratio:auto 16 / 9;
  object-fit:contain;
 }
+
+@media (max-width:550px) {
+  .work-index .scroll-stack__slot .scroll-stack-card.wi-project {
+    height:auto;
+  }
+
+  .work-index .scroll-stack__slot .wi-project-link {
+    height:auto;
+    grid-template-rows:auto auto;
+  }
+
+  .work-index .scroll-stack__slot .wi-project-link img {
+    width:100%;
+    height:auto;
+    aspect-ratio:16 / 9;
+    object-fit:contain;
+    object-position:center;
+    background-color:#f0e8db;
+  }
+
+  .work-index .scroll-stack__slot .wi-project-caption {
+    grid-template-rows:minmax(49.5px, auto) auto;
+    padding:15px 50px 15px 15px;
+  }
+
+  .work-index .scroll-stack__slot .wi-arrow {
+    right:16px;
+    bottom:15px;
+  }
+}
+
+.work-index .wi-project-link img[src$="/good-bug/cobalt-can-trio.png"] {
+  object-fit:contain;
+  background-color:#0022D7;
+}

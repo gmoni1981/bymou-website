@@ -28,5 +28,12 @@ export const projects = [
     "cover": "/public/projects/toss-club/good-food-bad-manners.png",
     "alt": "TOSS CLUB Crunch Club, Green Goddess and Spicy Romance salad bowls on yellow with the line Good food. Bad manners.",
     "href": "/work/toss-club.html"
+  },
+  {
+    "name": "GOOD BUG",
+    "category": "Brand Strategy · Naming · Visual Identity · Packaging · Art Direction · Advertising Campaign",
+    "cover": "/public/projects/good-bug/cobalt-can-trio.png",
+    "alt": "Three GOOD BUG soda cans on cobalt blue with oversized cream lettering",
+    "href": "/work/good-bug.html"
   }
 ];
